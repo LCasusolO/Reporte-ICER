@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REPORTE REGIONAL DE COMPLEJIDAD EXPORTADORA - AREQUIPA</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js para visualización de datos de alto rendimiento -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- FontAwesome para iconografía avanzada -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Inter para una tipografía moderna y legible -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght=300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        arequipa: {
+                            50: '#fef2f2',
+                            100: '#fee2e2',
+                            200: '#fecaca',
+                            300: '#fca5a5',
+                            400: '#f87171',
+                            500: '#ef4444', // Rojo volcánico institucional
+                            600: '#dc2626', // Bronce / Cobrizo intenso
+                            700: '#b91c1c', // Rojo volcánico profundo
+                            850: '#7f1d1d', // Tono mineral profundo
+                            950: '#450a0a'  // Tono de sillar y piedra
+                        },
+                        sillar: {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            200: '#e2e8f0',
+                            500: '#94a3b8', // Gris sillar/piedra volcánica
+                            600: '#64748b', // Gris industrial
+                            700: '#475569', // Gris institucional
+                            800: '#334155',
+                            950: '#0f172a'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f5f9;
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans min-h-screen flex flex-col antialiased">
+
+    <!-- Navbar Institucional -->
+    <header class="sticky top-0 z-50 bg-white border-b border-slate-200/80 shadow-sm backdrop-blur-md bg-white/95">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <span class="p-3 bg-arequipa-850 text-white rounded-xl shadow-md flex items-center justify-center">
+                    <i class="fa-solid fa-chart-line text-xl text-arequipa-300"></i>
+                </span>
+                <div>
+                    <h1 class="text-xs sm:text-sm font-semibold text-slate-500 tracking-wider">MONITOREO TERRITORIAL</h1>
+                    <h2 class="text-base sm:text-lg font-extrabold uppercase tracking-tight text-slate-900 leading-tight">
+                        REPORTE REGIONAL DE COMPLEJIDAD EXPORTADORA
+                    </h2>
+                </div>
+            </div>
+            
+            <div class="flex items-center">
+                <span class="text-xs font-semibold text-arequipa-800 bg-arequipa-50 px-4 py-2.5 rounded-full border border-arequipa-200/60 flex items-center gap-2 shadow-sm">
+                    <span class="w-2.5 h-2.5 rounded-full bg-arequipa-500 animate-pulse"></span>
+                    Puesto Actual: 4º
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero / Presentación de la Región -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 w-full">
+        <div class="relative overflow-hidden bg-gradient-to-r from-slate-950 via-arequipa-950 to-sillar-950 text-white p-8 md:p-12 rounded-[2rem] shadow-xl border border-arequipa-950/40">
+            <!-- Capa de brillo radial decorativo -->
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(239,68,68,0.14),transparent_60%)] pointer-events-none"></div>
+            
+            <div class="relative z-10 space-y-6">
+                <!-- Nombre de la región como título único de máximo impacto -->
+                <div class="flex flex-col gap-1">
+                    <span class="text-xs font-bold uppercase tracking-widest text-arequipa-400">Motor Minero-Industrial del Sur</span>
+                    <h2 class="text-5xl sm:text-7xl font-black tracking-tight text-arequipa-300">
+                        Arequipa
+                    </h2>
+                </div>
+                
+                <!-- Descripción limpia del reporte -->
+                <p class="text-base sm:text-lg text-slate-300 font-light max-w-4xl leading-relaxed">
+                    Diagnóstico empírico del clúster minero y agroexportador más diverso del sur peruano. Análisis del motor cupro-molibdenífero, cadenas textiles y el potencial de diversificación bajo la metodología del Espacio del Producto para promover una manufactura de valor añadido.
+                </p>
+                
+                <!-- Metadatos del Período de Análisis -->
+                <div class="flex flex-wrap items-center gap-3 pt-2 text-xs font-semibold text-slate-300">
+                    <span class="flex items-center gap-2 bg-white/5 border border-white/10 px-3.5 py-1.5 rounded-lg">
+                        <i class="fa-regular fa-calendar text-arequipa-400"></i> 
+                        <span>Período de Análisis: <strong class="text-white">2015 - 2025</strong></span>
+                    </span>
+                    <span class="flex items-center gap-2 bg-white/5 border border-white/10 px-3.5 py-1.5 rounded-lg">
+                        <i class="fa-solid fa-industry text-arequipa-400"></i>
+                        <span>Eje Central: <strong class="text-white">Gran Minería, Agroexportación y Textiles</strong></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contenedor Principal de Reportes -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow space-y-10 w-full">
+        
+        <!-- Resumen Ejecutivo & KPIs Principales -->
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Card KPI 1: Exportaciones Totales -->
+            <div class="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm relative overflow-hidden group hover:border-arequipa-500 transition-all duration-300">
+                <div class="absolute top-0 right-0 p-3 opacity-10 text-arequipa-600 text-7xl group-hover:opacity-20 transition-all duration-300">
+                    <i class="fa-solid fa-arrow-trend-up"></i>
+                </div>
+                <span class="text-xs font-bold uppercase tracking-wider text-slate-400 block mb-1">Exportaciones Totales (2025)</span>
+                <div class="flex items-baseline gap-2 mb-2">
+                    <span class="text-3xl font-extrabold text-slate-900">US$ 8,471.94M</span>
+                    <span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-md flex items-center gap-0.5">
+                        <i class="fa-solid fa-arrow-up"></i> +223.82%
+                    </span>
+                </div>
+                <p class="text-xs text-slate-500 leading-relaxed">
+                    Arequipa consolida una trayectoria exportadora expansiva, alcanzando los US$ 8,471.94 millones en 2025, un crecimiento superior al 200% respecto a 2015, sostenido por la eficiencia de sus grandes proyectos polimetálicos.
+                </p>
+            </div>
+
+            <!-- Card KPI 2: Estructura de Cartera -->
+            <div class="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm relative overflow-hidden group hover:border-arequipa-500 transition-all duration-300">
+                <div class="absolute top-0 right-0 p-3 opacity-10 text-arequipa-500 text-7xl group-hover:opacity-20 transition-all duration-300">
+                    <i class="fa-solid fa-boxes-stacked"></i>
+                </div>
+                <span class="text-xs font-bold uppercase tracking-wider text-slate-400 block mb-1">Estructura de Cartera</span>
+                <div class="flex items-baseline gap-2 mb-2">
+                    <span class="text-3xl font-extrabold text-slate-900">92.71%</span>
+                    <span class="text-xs font-bold text-arequipa-700 bg-arequipa-100 px-2 py-0.5 rounded-md">
+                        Basadas en Recursos
+                    </span>
+                </div>
+                <p class="text-xs text-slate-500 leading-relaxed">
+                    La economía regional depende fundamentalmente de la manufactura basada en recursos (metales triturados y refinados), que concentra el 92.71% de la oferta exportable total.
+                </p>
+            </div>
+
+            <!-- Card KPI 3: Posición de Complejidad -->
+            <div class="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm relative overflow-hidden group hover:border-slate-400 transition-all duration-300">
+                <div class="absolute top-0 right-0 p-3 opacity-10 text-slate-400 text-7xl group-hover:opacity-20 transition-all duration-300">
+                    <i class="fa-solid fa-medal"></i>
+                </div>
+                <span class="text-xs font-bold uppercase tracking-wider text-slate-400 block mb-1">Posición de Complejidad</span>
+                <div class="flex items-baseline gap-2 mb-2">
+                    <span class="text-3xl font-extrabold text-slate-900">Puesto 4º</span>
+                    <span class="text-xs font-medium text-slate-500">de 26 Regiones (2025)</span>
+                </div>
+                <p class="text-xs text-slate-500 leading-relaxed">
+                    Arequipa mantiene una posición privilegiada en el ranking nacional de complejidad (ICER 41.367, 4º puesto en 2025), destacando por su balance entre minería, industria textil y agroexportación.
+                </p>
+            </div>
+        </section>
+
+        <!-- Sección 1: Ranking y Evolución del ICER Regional -->
+        <section class="bg-white rounded-2xl border border-slate-200/80 p-6 sm:p-8 shadow-sm space-y-6">
+            <div class="border-b border-slate-100 pb-5">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                    <div class="space-y-1">
+                        <span class="text-xs font-bold text-arequipa-700 uppercase tracking-widest">INDICADOR ESTRUCTURAL</span>
+                        <h3 class="text-xl font-bold text-slate-900">1. Ranking y Evolución del ICER Regional</h3>
+                        <p class="text-xs text-slate-500">
+                            Evolución del Índice de Complejidad Exportadora Regional comparado contra el Top 5 nacional (2025).
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-2 text-xs bg-slate-50 p-1.5 rounded-xl border border-slate-150">
+                        <span class="px-2.5 py-1 bg-white shadow-sm rounded-lg font-semibold text-slate-700">Comparativo Nacional</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gráfico y Tabla Comparativa -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                <!-- Gráfico de Líneas (Chart.js) -->
+                <div class="lg:col-span-7 bg-slate-50/50 rounded-2xl p-4 border border-slate-100 flex flex-col justify-between">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-xs font-semibold text-slate-600">Puntaje ICER Regional (2015-2025)</span>
+                        <span class="text-[10px] text-slate-400">Haz clic en la leyenda para ocultar/mostrar regiones</span>
+                    </div>
+                    <div class="relative h-[320px] w-full">
+                        <canvas id="chart-icer"></canvas>
+                    </div>
+                </div>
+
+                <!-- Tabla de Datos del Top 5 de Ranking -->
+                <div class="lg:col-span-5 flex flex-col justify-between space-y-4">
+                    <div class="bg-slate-50/50 rounded-2xl p-4 border border-slate-100 space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-semibold text-slate-700">Clasificación Nacional + Región de Análisis (2025)</span>
+                            <span class="text-[10px] bg-slate-200 text-slate-600 px-2 py-0.5 rounded-md font-mono">Ranking Nacional</span>
+                        </div>
+                        <div class="divide-y divide-slate-200/60 text-xs">
+                            <!-- Top 5 + Arequipa -->
+                            <div class="py-1.5 flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-slate-400"></span>
+                                    <span class="font-medium text-slate-700">Lima Metropolitana</span>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <span class="text-slate-500 font-mono">54.538</span>
+                                    <span class="w-12 text-center py-0.5 bg-slate-100 text-slate-600 rounded font-bold">1º</span>
+                                </div>
+                            </div>
+                            <div class="py-1.5 flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-[#0ea5e9]"></span>
+                                    <span class="font-medium text-slate-700">Callao</span>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <span class="text-slate-500 font-mono">53.650</span>
+                                    <span class="w-12 text-center py-0.5 bg-slate-100 text-slate-600 rounded font-bold">2º</span>
+                                </div>
+                            </div>
+                            <div class="py-1.5 flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-[#8b5cf6]"></span>
+                                    <span class="font-medium text-slate-700">Lima Región</span>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <span class="text-slate-500 font-mono">43.360</span>
+                                    <span class="w-12 text-center py-0.5 bg-slate-100 text-slate-600 rounded font-bold">3º</span>
+                                </div>
+                            </div>
+                            <!-- Arequipa (4º) -->
+                            <div class="py-2.5 flex items-center justify-between bg-arequipa-100/55 -mx-4 px-4 border-y border-arequipa-200/50">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-3 h-3 rounded-full bg-arequipa-500 border border-white"></span>
+                                    <span class="font-bold text-slate-900">Arequipa</span>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <span class="font-bold text-arequipa-850 font-mono">41.367</span>
+                                    <span class="w-12 text-center py-0.5 bg-arequipa-500 text-white rounded font-extrabold shadow-sm">4º</span>
+                                </div>
+                            </div>
+                            <div class="py-1.5 flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-[#f43f5e]"></span>
+                                    <span class="font-medium text-slate-700">La Libertad</span>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <span class="text-slate-500 font-mono">40.704</span>
+                                    <span class="w-12 text-center py-0.5 bg-slate-100 text-slate-600 rounded font-bold">5º</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-arequipa-50 border border-arequipa-100 rounded-2xl p-4 text-xs text-arequipa-950 space-y-2">
+                        <p class="font-semibold flex items-center gap-1.5">
+                            <i class="fa-solid fa-circle-info text-arequipa-600"></i> Dinámica de Complejidad:
+                        </p>
+                        <p class="leading-relaxed text-slate-600">
+                            Arequipa se mantiene como un referente de complejidad económica gracias a la diversificación en agricultura de altura, industria textil y minería avanzada. Su posición estable en el 4º puesto del ranking nacional (41.367 puntos) en 2025 es fruto de un tejido productivo más articulado que otras regiones extractivas.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 2: Diagnóstico de la Cartera Exportadora y Composición Tecnológica -->
+        <section class="bg-white rounded-2xl border border-slate-200/80 p-6 sm:p-8 shadow-sm space-y-8">
+            <div class="border-b border-slate-100 pb-5">
+                <span class="text-xs font-bold text-arequipa-700 uppercase tracking-widest">DIAGNÓSTICO ESTRUCTURAL</span>
+                <h3 class="text-xl font-bold text-slate-900">2. Diagnóstico de la Cartera Exportadora y Composición Tecnológica</h3>
+                <p class="text-xs text-slate-500">
+                    Evolución del valor comercial exportado e identificación de la intensidad del valor científico/tecnológico incorporado en la canasta de Arequipa.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Gráfico de Barras: Evolución de las Exportaciones -->
+                <div class="bg-slate-50/50 rounded-2xl p-4 border border-slate-100 flex flex-col justify-between">
+                    <span class="text-xs font-semibold text-slate-600 mb-3 block">Evolución del Valor FOB de Exportaciones (Millones US$)</span>
+                    <div class="relative h-[280px]">
+                        <canvas id="chart-exports"></canvas>
+                    </div>
+                </div>
+
+                <!-- Gráfico de Rosca: Estructura de Intensidad Tecnológica -->
+                <div class="bg-slate-50/50 rounded-2xl p-4 border border-slate-100 flex flex-col justify-between">
+                    <span class="text-xs font-semibold text-slate-600 mb-3 block">Composición por Contenido Tecnológico (2025)</span>
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
+                        <div class="md:col-span-7 relative h-[240px]">
+                            <canvas id="chart-tech"></canvas>
+                        </div>
+                        <div class="md:col-span-5 space-y-2.5 text-xs">
+                            <div class="flex items-center gap-1.5 justify-between">
+                                <span class="flex items-center gap-1.5 font-medium text-slate-600">
+                                    <span class="w-2.5 h-2.5 rounded bg-arequipa-700"></span> Basadas en Rec.
+                                </span>
+                                <span class="font-bold text-slate-900">92.71%</span>
+                            </div>
+                            <div class="flex items-center gap-1.5 justify-between">
+                                <span class="flex items-center gap-1.5 font-medium text-slate-600">
+                                    <span class="w-2.5 h-2.5 rounded bg-arequipa-500"></span> Primarios
+                                </span>
+                                <span class="font-bold text-slate-900">4.79%</span>
+                            </div>
+                            <div class="flex items-center gap-1.5 justify-between">
+                                <span class="flex items-center gap-1.5 font-medium text-slate-600">
+                                    <span class="w-2.5 h-2.5 rounded bg-amber-500"></span> Mediana Tech
+                                </span>
+                                <span class="font-bold text-slate-900">0.37%</span>
+                            </div>
+                            <div class="flex items-center gap-1.5 justify-between">
+                                <span class="flex items-center gap-1.5 font-medium text-slate-600">
+                                    <span class="w-2.5 h-2.5 rounded bg-slate-400"></span> Baja Tecnología
+                                </span>
+                                <span class="font-bold text-slate-900">1.98%</span>
+                            </div>
+                            <div class="flex items-center gap-1.5 justify-between">
+                                <span class="flex items-center gap-1.5 font-medium text-slate-600">
+                                    <span class="w-2.5 h-2.5 rounded bg-rose-500"></span> Alta Tecnología
+                                </span>
+                                <span class="font-bold text-slate-900">0.15%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tabla de Productos de la Canasta Exportadora de Arequipa -->
+            <div class="space-y-4 pt-4">
+                <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                    <span class="text-sm font-semibold text-slate-700 flex items-center gap-2">
+                        <i class="fa-solid fa-list-ol text-arequipa-700"></i> Top 10 de Productos Más Exportados de Arequipa (2025)
+                    </span>
+                    
+                    <!-- Buscador e Interactividad -->
+                    <div class="relative w-full sm:w-72">
+                        <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-400 pointer-events-none">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </span>
+                        <input type="text" id="table-search" placeholder="Buscar producto o código arancelario..." 
+                               class="w-full pl-9 pr-4 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs focus:ring-2 focus:ring-arequipa-500 focus:border-arequipa-500 focus:bg-white outline-none transition-all">
+                    </div>
+                </div>
+
+                <div class="overflow-x-auto border border-slate-200 rounded-2xl shadow-sm custom-scrollbar">
+                    <table class="w-full text-left border-collapse text-xs">
+                        <thead>
+                            <tr class="bg-slate-50 text-slate-600 border-b border-slate-200 font-semibold uppercase tracking-wider">
+                                <th class="p-4 w-12 text-center">N°</th>
+                                <th class="p-4 w-28">Código HS12</th>
+                                <th class="p-4">Producto Exportado</th>
+                                <th class="p-4 w-44">Nivel Tecnológico</th>
+                                <th class="p-4 w-36 text-right">Valor (Millones US$)</th>
+                                <th class="p-4 w-28 text-right">Participación</th>
+                            </tr>
+                        </thead>
+                        <tbody id="export-table-body" class="divide-y divide-slate-100">
+                            <!-- Datos inyectados -->
+                            <tr class="hover:bg-slate-50/50 transition-colors"><td class="p-4 text-center font-bold text-slate-400">1</td><td class="p-4 font-mono text-slate-500">2603</td><td class="p-4 font-semibold text-slate-900">Minerales de cobre</td><td class="p-4"><span class="px-2.5 py-1 bg-arequipa-50 text-arequipa-700 rounded-full font-medium text-[10px] border border-arequipa-100">Basadas en recursos</span></td><td class="p-4 text-right font-mono font-semibold text-slate-900">3,820.52</td><td class="p-4 text-right font-semibold text-arequipa-700 bg-arequipa-50/10">45.10%</td></tr>
+                            <tr class="hover:bg-slate-50/50 transition-colors"><td class="p-4 text-center font-bold text-slate-400">2</td><td class="p-4 font-mono text-slate-500">7108</td><td class="p-4 font-semibold text-slate-900">Oro en bruto, semielaborado o polvo</td><td class="p-4"><span class="px-2.5 py-1 bg-arequipa-50 text-arequipa-700 rounded-full font-medium text-[10px] border border-arequipa-100">Basadas en recursos</span></td><td class="p-4 text-right font-mono font-semibold text-slate-900">2,870.89</td><td class="p-4 text-right font-semibold text-arequipa-700">33.89%</td></tr>
+                            <tr class="hover:bg-slate-50/50 transition-colors"><td class="p-4 text-center font-bold text-slate-400">3</td><td class="p-4 font-mono text-slate-500">2613</td><td class="p-4 font-semibold text-slate-900">Minerales de molibdeno</td><td class="p-4"><span class="px-2.5 py-1 bg-arequipa-50 text-arequipa-700 rounded-full font-medium text-[10px] border border-arequipa-100">Basadas en recursos</span></td><td class="p-4 text-right font-mono font-semibold text-slate-900">427.35</td><td class="p-4 text-right font-semibold text-slate-600">5.04%</td></tr>
+                            <tr class="hover:bg-slate-50/50 transition-colors"><td class="p-4 text-center font-bold text-slate-400">4</td><td class="p-4 font-mono text-slate-500">2607</td><td class="p-4 font-semibold text-slate-900">Minerales de plomo</td><td class="p-4"><span class="px-2.5 py-1 bg-arequipa-50 text-arequipa-700 rounded-full font-medium text-[10px] border border-arequipa-100">Basadas en recursos</span></td><td class="p-4 text-right font-mono font-semibold text-slate-900">333.51</td><td class="p-4 text-right font-semibold text-slate-600">3.94%</td></tr>
+                            <tr class="hover:bg-slate-50/50 transition-colors"><td class="p-4 text-center font-bold text-slate-400">5</td><td class="p-4 font-mono text-slate-500">2616</td><td class="p-4 font-semibold text-slate-900">Minerales de metales preciosos</td><td class="p-4"><span class="px-2.5 py-1 bg-arequipa-50 text-arequipa-700 rounded-full font-medium text-[10px] border border-arequipa-100">Basadas en recursos</span></td><td class="p-4 text-right font-mono font-semibold text-slate-900">191.50</td><td class="p-4 text-right font-semibold text-slate-600">2.26%</td></tr>
+                            <tr class="hover:bg-slate-50/50 transition-colors"><td class="p-4 text-center font-bold text-slate-400">6</td><td class="p-4 font-mono text-slate-500">5105</td><td class="p-4 font-semibold text-slate-900">Lana y pelo animal, cardado o peinado</td><td class="p-4"><span class="px-2.5 py-1 bg-sillar-50 text-sillar-700 rounded-full font-medium text-[10px] border border-sillar-100">Productos primarios</span></td><td class="p-4 text-right font-mono font-semibold text-slate-900">110.63</td><td class="p-4 text-right font-semibold text-slate-500">1.31%</td></tr>
+                            <tr class="hover:bg-slate-50/50 transition-colors"><td class="p-4 text-center font-bold text-slate-400">7</td><td class="p-4 font-mono text-slate-500">2608</td><td class="p-4 font-semibold text-slate-900">Minerales de zinc</td><td class="p-4"><span class="px-2.5 py-1 bg-arequipa-50 text-arequipa-700 rounded-full font-medium text-[10px] border border-arequipa-100">Basadas en recursos</span></td><td class="p-4 text-right font-mono font-semibold text-slate-900">74.87</td><td class="p-4 text-right font-semibold text-slate-500">0.88%</td></tr>
+                            <tr class="hover:bg-slate-50/50 transition-colors"><td class="p-4 text-center font-bold text-slate-400">8</td><td class="p-4 font-mono text-slate-500">7403</td><td class="p-4 font-semibold text-slate-900">Cobre refinado y aleaciones en bruto</td><td class="p-4"><span class="px-2.5 py-1 bg-sillar-50 text-sillar-700 rounded-full font-medium text-[10px] border border-sillar-100">Productos primarios</span></td><td class="p-4 text-right font-mono font-semibold text-slate-900">74.37</td><td class="p-4 text-right font-semibold text-slate-500">0.88%</td></tr>
+                            <tr class="hover:bg-slate-50/50 transition-colors"><td class="p-4 text-center font-bold text-slate-400">9</td><td class="p-4 font-mono text-slate-500">0806</td><td class="p-4 font-semibold text-slate-900">Uvas frescas</td><td class="p-4"><span class="px-2.5 py-1 bg-sillar-50 text-sillar-700 rounded-full font-medium text-[10px] border border-sillar-100">Productos primarios</span></td><td class="p-4 text-right font-mono font-semibold text-slate-900">60.85</td><td class="p-4 text-right font-semibold text-slate-500">0.72%</td></tr>
+                            <tr class="hover:bg-slate-50/50 transition-colors"><td class="p-4 text-center font-bold text-slate-400">10</td><td class="p-4 font-mono text-slate-500">5109</td><td class="p-4 font-semibold text-slate-900">Hilo de lana o pelo fino</td><td class="p-4"><span class="px-2.5 py-1 bg-amber-50 text-amber-700 rounded-full font-medium text-[10px] border border-amber-100">Baja tecnología</span></td><td class="p-4 text-right font-mono font-semibold text-slate-900">58.14</td><td class="p-4 text-right font-semibold text-slate-500">0.69%</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Box Informativo -->
+            <div class="mt-6 bg-orange-50/40 border border-orange-250/70 rounded-2xl p-5 text-xs text-slate-700 space-y-3 shadow-sm">
+                <p class="font-bold text-orange-950 flex items-center gap-2 text-sm">
+                    <i class="fa-solid fa-square-poll-vertical text-arequipa-600"></i> Análisis Diagnóstico de la Cartera Exportadora de Arequipa
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-1 leading-relaxed">
+                    <div class="space-y-1.5">
+                        <span class="font-semibold text-orange-900 block">1. Enclave Polimetálico y Metalúrgico:</span>
+                        <p class="text-slate-600">
+                            La minería cuprífera (45.10%) y aurífera (33.89%) domina la canasta. Aunque la clasificación econométrica los coloca en manufacturas basadas en recursos debido a los procesos de refinado/concentración, la región tiene la oportunidad de desarrollar eslabones metalmecánicos de fundición de piezas de alta precisión para el parque minero local.
+                        </p>
+                    </div>
+                    <div class="space-y-1.5">
+                        <span class="font-semibold text-orange-900 block">2. Diversificación Textil Alpaca:</span>
+                        <p class="text-slate-600">
+                            Arequipa cuenta con un clúster textil de alpaca de clase mundial. Exportar hilo (0.69%) y lana (1.31%) demuestra una madurez manufacturera superior a otras regiones extractivas, siendo el modelo a seguir para otras cadenas productivas.
+                        </p>
+                    </div>
+                    <div class="space-y-1.5">
+                        <span class="font-semibold text-orange-900 block">3. Agroexportación de Alta Densidad:</span>
+                        <p class="text-slate-600">
+                            La uva y otros frutales (conjunto ~1.5%) completan una cartera diversificada que protege a la región ante la volatilidad de los precios minerales, aunque aún requiere mayor peso en la balanza comercial regional para un equilibrio de complejidad productiva.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 3: Oportunidades de Diversificación y Espacio del Producto -->
+        <section class="bg-white rounded-2xl border border-slate-200/80 p-6 sm:p-8 shadow-sm space-y-8">
+            <div class="border-b border-slate-100 pb-5">
+                <span class="text-xs font-bold text-arequipa-700 uppercase tracking-widest">ALGORITMO DE DIVERSIFICACIÓN REAL</span>
+                <h3 class="text-xl font-bold text-slate-900">3. Oportunidades de Diversificación y Espacio del Producto</h3>
+                <p class="text-xs text-slate-500">
+                    Análisis de proximidad estructural: Hacia dónde puede migrar de manera inteligente la economía de Arequipa apalancándose en sus capacidades preexistentes.
+                </p>
+            </div>
+
+            <!-- Simulador de Conectividad de Red -->
+            <div class="bg-slate-900 text-white rounded-2xl p-6 shadow-md border border-slate-800 space-y-6">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                    <div class="space-y-1">
+                        <span class="text-[10px] font-bold text-arequipa-400 uppercase tracking-widest">HERRAMIENTA DE PLANIFICACIÓN ECONÓMICA</span>
+                        <h4 class="text-base font-bold flex items-center gap-2 text-arequipa-200">
+                            <i class="fa-solid fa-microchip text-arequipa-400"></i> Simulador de Conectividad de Red de Arequipa (Filtro por Complejidad)
+                        </h4>
+                    </div>
+                    <!-- Selector de Industrias Reales -->
+                    <select id="industry-selector" class="bg-slate-800 border border-slate-700 text-slate-200 text-xs rounded-xl px-3.5 py-2.5 outline-none focus:ring-2 focus:ring-arequipa-500 transition-all">
+                        <option value="switchgear">HS 8530 - Aparatos mecánicos de señalización y control (Complejidad Minera)</option>
+                        <option value="culture">HS 3821 - Medios de cultivo para laboratorio (Biotecnología Agraria)</option>
+                        <option value="capacitors">HS 8532 - Condensadores eléctricos (Soporte Técnico de Alta Tensión)</option>
+                    </select>
+                </div>
+
+                <!-- Outputs del Simulador -->
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-6 pt-2">
+                    <div class="bg-slate-800/50 rounded-xl p-4 border border-slate-700/50 space-y-2">
+                        <span class="text-[10px] text-slate-400 font-bold uppercase tracking-wider block">Densidad de Capacidades</span>
+                        <div class="flex items-baseline gap-2">
+                            <span id="sim-density" class="text-2xl font-extrabold text-arequipa-400">0.9019%</span>
+                        </div>
+                        <p class="text-[11px] text-slate-300">Medida empírica de cercanía a la canasta de capacidades regional.</p>
+                    </div>
+
+                    <div class="bg-slate-800/50 rounded-xl p-4 border border-slate-700/50 space-y-2">
+                        <span class="text-[10px] text-slate-400 font-bold uppercase tracking-wider block">Distancia (1 - Densidad)</span>
+                        <div class="flex items-baseline gap-2">
+                            <span id="sim-distance" class="text-2xl font-extrabold text-rose-400">99.0981%</span>
+                        </div>
+                        <p class="text-[11px] text-slate-300">Brecha técnica restante para el desarrollo autónomo.</p>
+                    </div>
+
+                    <div class="bg-slate-800/50 rounded-xl p-4 border border-slate-700/50 space-y-2">
+                        <span class="text-[10px] text-slate-400 font-bold uppercase tracking-wider block">Complejidad del Producto (IPC)</span>
+                        <div class="flex items-baseline gap-2">
+                            <span id="sim-pci" class="text-2xl font-extrabold text-amber-400">+1.259</span>
+                        </div>
+                        <p class="text-[11px] text-slate-300">Mide el nivel de sofisticación y exclusividad técnica global.</p>
+                    </div>
+
+                    <div class="bg-slate-800/50 rounded-xl p-4 border border-slate-700/50 space-y-2">
+                        <span class="text-[10px] text-slate-400 font-bold uppercase tracking-wider block">Viabilidad de Transición</span>
+                        <div class="flex items-baseline gap-2">
+                            <span id="sim-viability" class="text-2xl font-extrabold text-emerald-400">Alta</span>
+                        </div>
+                        <p class="text-[11px] text-slate-300">Nivel de factibilidad según el mapa de encadenamiento regional.</p>
+                    </div>
+                </div>
+
+                <!-- Detalle del Vector Seleccionado -->
+                <div class="bg-slate-950/80 rounded-xl p-4 border border-slate-800/80 text-xs">
+                    <div class="flex items-start gap-3">
+                        <span class="text-2xl text-arequipa-400"><i class="fa-solid fa-quote-left"></i></span>
+                        <div class="space-y-1">
+                            <span class="font-semibold text-slate-300 block">Sustento del Algoritmo del Espacio del Producto para Arequipa:</span>
+                            <p id="sim-description" class="text-slate-400 leading-relaxed">
+                                La fabricación de aparatos de control y señalización se apoya en la densa red de instrumentación necesaria para la minería de tajo abierto en la sierra de Arequipa. Esta industria permite transicionar hacia manufacturas de control electromecánico, capitalizando las capacidades de mantenimiento de grandes fajas y sistemas de monitoreo de mina que ya existen en la región.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Matriz de Viabilidad -->
+            <div class="space-y-4">
+                <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                    <span class="text-sm font-semibold text-slate-700 flex items-center gap-2">
+                        <i class="fa-solid fa-diagram-project text-arequipa-700"></i> Matriz Completa de Oportunidades para Arequipa
+                    </span>
+                    
+                    <div class="flex flex-wrap items-center gap-2 w-full sm:w-auto">
+                        <select id="matrix-filter" class="bg-white border border-slate-200 rounded-xl px-3 py-2 text-xs font-semibold text-slate-700 outline-none focus:ring-2 focus:ring-arequipa-500">
+                            <option value="all">Todas las viabilidades</option>
+                            <option value="Muy alta">Muy alta</option>
+                            <option value="Alta">Alta</option>
+                            <option value="Baja">Baja</option>
+                            <option value="Muy baja">Muy baja</option>
+                        </select>
+                        <div class="relative w-full sm:w-64">
+                            <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-400 pointer-events-none">
+                                <i class="fa-solid fa-magnifying-glass text-xs"></i>
+                            </span>
+                            <input type="text" id="matrix-search" placeholder="Buscar producto o arancel..." 
+                                   class="w-full pl-8 pr-4 py-2 bg-white border border-slate-200 rounded-xl text-xs focus:ring-2 focus:ring-arequipa-500 outline-none transition-all">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="overflow-x-auto border border-slate-200 rounded-2xl shadow-sm custom-scrollbar max-h-[500px]">
+                    <table class="w-full text-left border-collapse text-xs">
+                        <thead class="sticky top-0 bg-slate-50 z-10 border-b border-slate-200">
+                            <tr class="text-slate-600 font-semibold uppercase tracking-wider">
+                                <th class="p-4 w-28">Código HS12</th>
+                                <th class="p-4">Producto Propuesto</th>
+                                <th class="p-4 w-28 text-center">IPC</th>
+                                <th class="p-4 w-28 text-center">Densidad Real</th>
+                                <th class="p-4 w-28 text-center">Distancia Real</th>
+                                <th class="p-4 w-32 text-center">Viabilidad</th>
+                            </tr>
+                        </thead>
+                        <tbody id="matrix-table-body" class="divide-y divide-slate-100 bg-white">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 px-4 border-t border-slate-800 mt-20">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="space-y-2">
+                <div class="flex items-center gap-2 text-white">
+                    <span class="p-1.5 bg-arequipa-600 rounded text-xs"><i class="fa-solid fa-chart-pie text-slate-950"></i></span>
+                    <span class="font-bold tracking-wider text-xs">CONSEJO NACIONAL DE COMPETITIVIDAD Y FORMALIZACIÓN - CNCF</span>
+                </div>
+            </div>
+            
+            <div class="flex flex-col items-end gap-2 text-right">
+                <span class="text-[10px] bg-slate-800 px-2.5 py-1 rounded text-slate-500 font-mono">Monitoreo Territorial de Complejidad Económica - Arequipa</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts y Gráficos -->
+    <script>
+        let chartIcerInstance = null;
+        let chartExportsInstance = null;
+        let chartTechInstance = null;
+
+        const arequipaRealDatabase = [{"HS12": "5111", "PRODUCTO": "Tejidos de lana cardada o de pelo fino cardado", "IPC": 0.711, "Densidad": 0.03591600672279024, "Distancia": 0.9640839932772097, "Diversificacion": "Muy alta"}, {"HS12": "1003", "PRODUCTO": "Cebada", "IPC": 0.254, "Densidad": 0.03864047429688795, "Distancia": 0.961359525703112, "Diversificacion": "Muy alta"}, {"HS12": "5703", "PRODUCTO": "Alfombras con mechones (tufted)", "IPC": 0.224, "Densidad": 0.03818286578701989, "Distancia": 0.9618171342129801, "Diversificacion": "Muy alta"}, {"HS12": "6003", "PRODUCTO": "Otras telas de punto estrechas (≤30cm)", "IPC": 0.198, "Densidad": 0.03567404578687364, "Distancia": 0.9643259542131264, "Diversificacion": "Muy alta"}, {"HS12": "5306", "PRODUCTO": "Hilo de lino", "IPC": 0.184, "Densidad": 0.0351011810061474, "Distancia": 0.9648988189938525, "Diversificacion": "Muy alta"}];
+
+        const icerData = {
+            years: ['2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025'],
+            regions: {
+                limaMetropolitana: [53.653, 52.751, 53.813, 53.023, 53.646, 52.861, 54.394, 54.231, 54.349, 54.688, 54.538],
+                callao: [52.842, 51.736, 51.278, 50.448, 52.026, 52.092, 51.254, 53.074, 51.847, 52.188, 53.65],
+                limaRegion: [38.146, 38.469, 41.408, 42.404, 43.85, 41.64, 42.373, 43.857, 44.421, 45.138, 43.36],
+                arequipa: [45.285, 46.672, 44.505, 44.855, 45.87, 45.517, 43.913, 44.356, 44.516, 43.475, 41.367],
+                laLibertad: [40.751, 39.624, 39.222, 38.402, 40.465, 41.255, 38.905, 39.909, 38.74, 40.997, 40.704]
+            }
+        };
+
+        const exportsData = {
+            years: ['2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025'],
+            values: [2616.24, 3818.17, 4597.24, 5299.48, 4612.68, 3739.49, 5460.25, 6080.85, 6342.70, 6849.97, 8471.94]
+        };
+
+        const simulatorData = {
+            switchgear: {
+                density: '0.9019%',
+                distance: '99.0981%',
+                pci: '+1.259',
+                viability: 'Alta',
+                description: 'La fabricación de aparatos de control y señalización se apoya en la densa red de instrumentación necesaria para la minería de tajo abierto en la sierra de Arequipa. Esta industria permite transicionar hacia manufacturas de control electromecánico, capitalizando las capacidades de mantenimiento de grandes fajas y sistemas de monitoreo de mina que ya existen en la región.'
+            },
+            culture: {
+                density: '0.9319%',
+                distance: '99.0681%',
+                pci: '+1.157',
+                viability: 'Alta',
+                description: 'Conecta con el desarrollo de la agroindustria local y los laboratorios de control fitosanitario de los valles interandinos y costeros. La producción de medios de cultivo especializados potencia el clúster de biotecnología agrícola de Arequipa, facilitando la investigación técnica regional para cultivos de exportación.'
+            },
+            capacitors: {
+                density: '1.1075%',
+                distance: '98.8925%',
+                pci: '+1.147',
+                viability: 'Alta',
+                description: 'La demanda de componentes eléctricos de alta tensión en las subestaciones de las grandes mineras de la región es un mercado cautivo natural. Fabricar componentes capacitores permite elevar la complejidad de la cadena de suministro eléctrica regional y disminuir la dependencia de componentes importados.'
+            }
+        };
+
+        window.onload = function() {
+            initCharts();
+            setupInteractiveEvents();
+            renderMatrixTable(arequipaRealDatabase);
+        };
+
+        function initCharts() {
+            const ctxIcer = document.getElementById('chart-icer').getContext('2d');
+            chartIcerInstance = new Chart(ctxIcer, {
+                type: 'line',
+                data: {
+                    labels: icerData.years,
+                    datasets: [
+                        { label: 'Arequipa', data: icerData.regions.arequipa, borderColor: '#ef4444', backgroundColor: 'rgba(239,68,68,0.12)', borderWidth: 4, tension: 0.35, pointRadius: 4, pointBackgroundColor: '#ef4444', fill: true },
+                        { label: 'Lima Metropolitana', data: icerData.regions.limaMetropolitana, borderColor: '#64748b', backgroundColor: 'transparent', borderWidth: 2, tension: 0.35, pointRadius: 1, borderDash: [4, 3] },
+                        { label: 'Callao', data: icerData.regions.callao, borderColor: '#0ea5e9', backgroundColor: 'transparent', borderWidth: 2, tension: 0.35, pointRadius: 1, borderDash: [4, 3] },
+                        { label: 'Lima Región', data: icerData.regions.limaRegion, borderColor: '#8b5cf6', backgroundColor: 'transparent', borderWidth: 2, tension: 0.35, pointRadius: 1, borderDash: [4, 3] },
+                        { label: 'La Libertad', data: icerData.regions.laLibertad, borderColor: '#f43f5e', backgroundColor: 'transparent', borderWidth: 2, tension: 0.35, pointRadius: 1, borderDash: [4, 3] }
+                    ]
+                },
+                options: { responsive: true, maintainAspectRatio: false, interaction: { mode: 'index', intersect: false }, plugins: { legend: { position: 'bottom', labels: { boxWidth: 10, font: { size: 10 }, usePointStyle: true } } } }
+            });
+
+            const ctxExports = document.getElementById('chart-exports').getContext('2d');
+            chartExportsInstance = new Chart(ctxExports, {
+                type: 'bar',
+                data: { labels: exportsData.years, datasets: [{ label: 'Exportaciones FOB (Millones US$)', data: exportsData.values, backgroundColor: '#c2410c', borderRadius: 6, maxBarThickness: 34 }] },
+                options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
+            });
+
+            const ctxTech = document.getElementById('chart-tech').getContext('2d');
+            chartTechInstance = new Chart(ctxTech, {
+                type: 'doughnut',
+                data: { labels: ['Basadas en Recursos', 'Primarios', 'Baja Tecnología', 'Mediana Tecnología', 'Alta Tecnología'], datasets: [{ data: [92.71, 4.79, 1.98, 0.37, 0.15], backgroundColor: ['#9a3412', '#e56449', '#94a3b8', '#fbbf24', '#ef4444'], borderWidth: 2, borderColor: '#ffffff' }] },
+                options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, cutout: '70%' }
+            });
+        }
+
+        function renderMatrixTable(dataset) {
+            const tbody = document.getElementById("matrix-table-body");
+            tbody.innerHTML = "";
+            dataset.forEach(row => {
+                const tr = document.createElement("tr");
+                tr.className = "hover:bg-slate-50/70 transition-colors";
+                tr.innerHTML = `<td class="p-4 font-mono text-slate-500 font-semibold">${row.HS12}</td><td class="p-4 font-bold text-slate-900">${row.PRODUCTO}</td><td class="p-4 text-center font-semibold text-slate-600">${row.IPC.toFixed(3)}</td><td class="p-4 text-center font-bold text-emerald-800">${(row.Densidad*100).toFixed(4)}%</td><td class="p-4 text-center text-slate-500 font-medium">${(row.Distancia*100).toFixed(4)}%</td><td class="p-4 text-center"><span class="px-2.5 py-1 border text-[10px] rounded-full ${row.Diversificacion === 'Muy alta' ? 'bg-emerald-50 text-emerald-700' : 'bg-blue-50 text-blue-700'}">${row.Diversificacion}</span></td>`;
+                tbody.appendChild(tr);
+            });
+        }
+
+        function setupInteractiveEvents() {
+            document.getElementById('table-search').addEventListener('input', e => {
+                const term = e.target.value.toLowerCase();
+                document.querySelectorAll('#export-table-body tr').forEach(row => { row.style.display = (row.textContent.toLowerCase().includes(term)) ? '' : 'none'; });
+            });
+            document.getElementById("matrix-search").addEventListener("input", e => {
+                const val = e.target.value.toLowerCase();
+                renderMatrixTable(arequipaRealDatabase.filter(r => r.PRODUCTO.toLowerCase().includes(val)));
+            });
+            document.getElementById('industry-selector').addEventListener('change', e => {
+                const d = simulatorData[e.target.value];
+                document.getElementById('sim-density').textContent = d.density;
+                document.getElementById('sim-distance').textContent = d.distance;
+                document.getElementById('sim-pci').textContent = d.pci;
+                document.getElementById('sim-viability').textContent = d.viability;
+                document.getElementById('sim-description').textContent = d.description;
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REPORTE REGIONAL DE COMPLEJIDAD EXPORTADORA - SAN MARTÍN</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js para visualización de datos de alto rendimiento -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- FontAwesome para iconografía avanzada -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Inter para una tipografía moderna y legible -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght=300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        sanmartin: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e', // Verde selva alta vibrante
+                            600: '#16a34a', // Verde institucional de desarrollo agroforestal
+                            700: '#15803d', // Bosque de neblina profundo
+                            850: '#14532d', // Verde follaje densificado
+                            950: '#052e16'  // Tono nocturno de los valles del Huallaga
+                        },
+                        palma: {
+                            50: '#fffbeb',
+                            100: '#fef9c3',
+                            200: '#fef08a',
+                            300: '#fde047',
+                            400: '#facc15',
+                            500: '#eab308', // Amarillo cálido del fruto de palma aceitera
+                            600: '#ca8a04', // Oro amazónico
+                            700: '#a16207', // Arcilla de laderas y valles
+                            800: '#854d0e',
+                            950: '#422006'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f5f9;
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans min-h-screen flex flex-col antialiased">
+
+    <!-- Navbar Institucional -->
+    <header class="sticky top-0 z-50 bg-white border-b border-slate-200/80 shadow-sm backdrop-blur-md bg-white/95">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <span class="p-3 bg-sanmartin-850 text-white rounded-xl shadow-md flex items-center justify-center">
+                    <i class="fa-solid fa-chart-line text-xl text-palma-300"></i>
+                </span>
+                <div>
+                    <h1 class="text-xs sm:text-sm font-semibold text-slate-500 tracking-wider">MONITOREO TERRITORIAL</h1>
+                    <h2 class="text-base sm:text-lg font-extrabold uppercase tracking-tight text-slate-900 leading-tight">
+                        REPORTE REGIONAL DE COMPLEJIDAD EXPORTADORA
+                    </h2>
+                </div>
+            </div>
+            
+            <div class="flex items-center">
+                <span class="text-xs font-semibold text-sanmartin-800 bg-sanmartin-50 px-4 py-2.5 rounded-full border border-sanmartin-200/60 flex items-center gap-2 shadow-sm">
+                    <span class="w-2.5 h-2.5 rounded-full bg-sanmartin-500 animate-pulse"></span>
+                    Puesto Actual: 18º
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero / Presentación de la Región -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 w-full">
+        <div class="relative overflow-hidden bg-gradient-to-r from-slate-950 via-sanmartin-950 to-palma-950 text-white p-8 md:p-12 rounded-[2rem] shadow-xl border border-sanmartin-950/40">
+            <!-- Capa de brillo radial decorativo -->
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(34,197,94,0.14),transparent_60%)] pointer-events-none"></div>
+            
+            <div class="relative z-10 space-y-6">
+                <!-- Nombre de la región como título único de máximo impacto -->
+                <div class="flex flex-col gap-1">
+                    <span class="text-xs font-bold uppercase tracking-widest text-palma-400">Eje de la Agroindustria Sostenible de la Selva Alta</span>
+                    <h2 class="text-5xl sm:text-7xl font-black tracking-tight text-sanmartin-300">
+                        San Martín
+                    </h2>
+                </div>
+                
+                <!-- Descripción limpia del reporte -->
+                <p class="text-base sm:text-lg text-slate-300 font-light max-w-4xl leading-relaxed">
+                    Diagnóstico empírico del motor bio-agroindustrial más dinámico del oriente peruano. Evaluación estructural de la canasta exportadora de cacao, café y el clúster de oleaginosas de palma, y modelado matemático de diversificación inteligente en el Espacio del Producto.
+                </p>
+                
+                <!-- Metadatos del Período de Análisis -->
+                <div class="flex flex-wrap items-center gap-3 pt-2 text-xs font-semibold text-slate-300">
+                    <span class="flex items-center gap-2 bg-white/5 border border-white/10 px-3.5 py-1.5 rounded-lg">
+                        <i class="fa-regular fa-calendar text-palma-400"></i> 
+                        <span>Período de Análisis: <strong class="text-white">2015 - 2025</strong></span>
+                    </span>
+                    <span class="flex items-center gap-2 bg-white/5 border border-white/10 px-3.5 py-1.5 rounded-lg">
+                        <i class="fa-solid fa-seedling text-sanmartin-400"></i>
+                        <span>Eje Central: <strong class="text-white">Clúster Oleaginoso, Cacaotero y Frutícola con Valor Agregado</strong></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contenedor Principal de Reportes -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow space-y-10 w-full">
+        
+        <!-- Resumen Ejecutivo & KPIs Principales -->
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Card KPI 1: Exportaciones Totales -->
+            <div class="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm relative overflow-hidden group hover:border-palma-500 transition-all duration-300">
+                <div class="absolute top-0 right-0 p-3 opacity-10 text-palma-600 text-7xl group-hover:opacity-20 transition-all duration-300">
+                    <i class="fa-solid fa-arrow-trend-up"></i>
+                </div>
+                <span class="text-xs font-bold uppercase tracking-wider text-slate-400 block mb-1">Exportaciones Totales (2025)</span>
+                <div class="flex items-baseline gap-2 mb-2">
+                    <span class="text-3xl font-extrabold text-slate-900">US$ 583.05M</span>
+                    <span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-md flex items-center gap-0.5">
+                        <i class="fa-solid fa-arrow-up"></i> +449.22%
+                    </span>
+                </div>
+                <p class="text-xs text-slate-500 leading-relaxed">
+                    San Martín consolida una expansión comercial masiva, quintuplicando sus retornos comerciales externos del 2015 gracias a la maduración de las áreas productivas de cacao de especialidad y la cadena de valor de la palma aceitera.
+                </p>
+            </div>
+
+            <!-- Card KPI 2: Estructura de Cartera -->
+            <div class="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm relative overflow-hidden group hover:border-sanmartin-500 transition-all duration-300">
+                <div class="absolute top-0 right-0 p-3 opacity-10 text-sanmartin-500 text-7xl group-hover:opacity-20 transition-all duration-300">
+                    <i class="fa-solid fa-boxes-stacked"></i>
+                </div>
+                <span class="text-xs font-bold uppercase tracking-wider text-slate-400 block mb-1">Estructura de Cartera</span>
+                <div class="flex items-baseline gap-2 mb-2">
+                    <span class="text-3xl font-extrabold text-slate-900">22.87%</span>
+                    <span class="text-xs font-bold text-sanmartin-700 bg-sanmartin-100 px-2 py-0.5 rounded-md">
+                        Basadas en Recursos
+                    </span>
+                </div>
+                <p class="text-xs text-slate-500 leading-relaxed">
+                    Aunque los productos primarios puros representan el 76.59% (granos crudos), las manufacturas basadas en recursos alcanzan el 22.87% del valor comercial, impulsadas por las refinerías de aceites vegetales instaladas.
+                </p>
+            </div>
+
+            <!-- Card KPI 3: Posición de Complejidad -->
+            <div class="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm relative overflow-hidden group hover:border-slate-400 transition-all duration-300">
+                <div class="absolute top-0 right-0 p-3 opacity-10 text-slate-400 text-7xl group-hover:opacity-20 transition-all duration-300">
+                    <i class="fa-solid fa-medal"></i>
+                </div>
+                <span class="text-xs font-bold uppercase tracking-wider text-slate-400 block mb-1">Posición de Complejidad</span>
+                <div class="flex items-baseline gap-2 mb-2">
+                    <span class="text-3xl font-extrabold text-slate-900">Puesto 18º</span>
+                    <span class="text-xs font-medium text-slate-500">de 26 Regiones (2025)</span>
+                </div>
+                <p class="text-xs text-slate-500 leading-relaxed">
+                    La región se sitúa en el puesto 18º del ranking ICER nacional (33.678 puntos). Su reto estructural es romper la inercia del monocultivo agrario y expandir capacidades hacia la ingeniería y bio-refinación de aceites técnicos.
+                </p>
+            </div>
+        </section>
+
+        <!-- Sección 1: Ranking y Evolución del ICER Regional -->
+        <section class="bg-white rounded-2xl border border-slate-200/80 p-6 sm:p-8 shadow-sm space-y-6">
+            <div class="border-b border-slate-100 pb-5">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                    <div class="space-y-1">
+                        <span class="text-xs font-bold text-sanmartin-700 uppercase tracking-widest">INDICADOR ESTRUCTURAL</span>
+                        <h3 class="text-xl font-bold text-slate-900">1. Ranking y Evolución del ICER Regional</h3>
+                        <p class="text-xs text-slate-500">
+                            Evolución del Índice de Complejidad Exportadora Regional comparado contra el Top 5 nacional de clasificación (2025).
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-2 text-xs bg-slate-50 p-1.5 rounded-xl border border-slate-150">
+                        <span class="px-2.5 py-1 bg-white shadow-sm rounded-lg font-semibold text-slate-700">Comparativo Nacional</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gráfico y Tabla Comparativa -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                <!-- Gráfico de Líneas (Chart.js) -->
+                <div class="lg:col-span-7 bg-slate-50/50 rounded-2xl p-4 border border-slate-100 flex flex-col justify-between">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-xs font-semibold text-slate-600">Puntaje ICER Regional (2015-2025)</span>
+                        <span class="text-[10px] text-slate-400">Haz clic en la leyenda para ocultar/mostrar regiones</span>
+                    </div>
+                    <div class="relative h-[320px] w-full">
+                        <canvas id="chart-icer"></canvas>
+                    </div>
+                </div>
+
+                <!-- Tabla de Datos del Top 5 de Ranking -->
+                <div class="lg:col-span-5 flex flex-col justify-between space-y-4">
+                    <div class="bg-slate-50/50 rounded-2xl p-4 border border-slate-100 space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-semibold text-slate-700">Top 5 Nacional + Región de Análisis (2025)</span>
+                            <span class="text-[10px] bg-slate-200 text-slate-600 px-2 py-0.5 rounded-md font-mono">Ranking Nacional</span>
+                        </div>
+                        <div class="divide-y divide-slate-200/60 text-xs">
+                            <!-- Top 1 to 5 -->
+                            <div class="py-1.5 flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-slate-400"></span>
+                                    <span class="font-medium text-slate-700">Lima Metropolitana</span>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <span class="text-slate-500 font-mono">54.538</span>
+                                    <span class="w-12 text-center py-0.5 bg-slate-100 text-slate-600 rounded font-bold">1º</span>
+                                </div>
+                            </div>
+                            <div class="py-1.5 flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-[#0ea5e9]"></span>
+                                    <span class="font-medium text-slate-700">Callao</span>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <span class="text-slate-500 font-mono">53.650</span>
+                                    <span class="w-12 text-center py-0.5 bg-slate-100 text-slate-600 rounded font-bold">2º</span>
+                                </div>
+                            </div>
+                            <div class="py-1.5 flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-[#8b5cf6]"></span>
+                                    <span class="font-medium text-slate-700">Lima Región</span>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <span class="text-slate-500 font-mono">43.360</span>
+                                    <span class="w-12 text-center py-0.5 bg-slate-100 text-slate-600 rounded font-bold">3º</span>
+                                </div>
+                            </div>
+                            <div class="py-1.5 flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-[#fb923c]"></span>
+                                    <span class="font-medium text-slate-700">Arequipa</span>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <span class="text-slate-500 font-mono">41.367</span>
+                                    <span class="w-12 text-center py-0.5 bg-slate-100 text-slate-600 rounded font-bold">4º</span>
+                                </div>
+                            </div>
+                            <div class="py-1.5 flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-[#f43f5e]"></span>
+                                    <span class="font-medium text-slate-700">La Libertad</span>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <span class="text-slate-500 font-mono">40.704</span>
+                                    <span class="w-12 text-center py-0.5 bg-slate-100 text-slate-600 rounded font-bold">5º</span>
+                                </div>
+                            </div>
+                            <!-- San Martín (Región de Análisis - 18º) -->
+                            <div class="py-2.5 flex items-center justify-between bg-sanmartin-100/55 -mx-4 px-4 border-y border-sanmartin-200/50">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-3 h-3 rounded-full bg-sanmartin-500 border border-white"></span>
+                                    <span class="font-bold text-slate-900">San Martín</span>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <span class="font-bold text-sanmartin-850 font-mono">33.678</span>
+                                    <span class="w-12 text-center py-0.5 bg-sanmartin-500 text-slate-950 rounded font-extrabold shadow-sm">18º</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-sanmartin-50 border border-sanmartin-100 rounded-2xl p-4 text-xs text-sanmartin-950 space-y-2">
+                        <p class="font-semibold flex items-center gap-1.5">
+                            <i class="fa-solid fa-circle-info text-sanmartin-600"></i> Trayectoria de Complejidad en la Selva Alta:
+                        </p>
+                        <p class="leading-relaxed text-slate-600">
+                            San Martín ha mantenido un comportamiento estable pero acotado, situándose en el puesto 18º del ranking nacional de complejidad en 2025. Registró picos competitivos en 2018 y 2023 (puesto 12º) debido a esfuerzos puntuales de diversificación y asociatividad en cooperativas, pero la fuerte tracción del volumen de cacao crudo sin procesar ha ralentizado el avance relativo del indicador. El reto econométrico de San Martín es capitalizar el auge agroindustrial para irradiar conocimiento a Juliaca y Tarapoto, migrando del grano crudo a derivados manufactureros estructurados.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 2: Diagnóstico de la Cartera Exportadora y Composición Tecnológica -->
+        <section class="bg-white rounded-2xl border border-slate-200/80 p-6 sm:p-8 shadow-sm space-y-8">
+            <div class="border-b border-slate-100 pb-5">
+                <span class="text-xs font-bold text-sanmartin-700 uppercase tracking-widest">DIAGNÓSTICO ESTRUCTURAL</span>
+                <h3 class="text-xl font-bold text-slate-900">2. Diagnóstico de la Cartera Exportadora y Composición Tecnológica</h3>
+                <p class="text-xs text-slate-500">
+                    Evolución del valor comercial exportado e identificación de la intensidad del valor científico/tecnológico incorporado en la canasta de San Martín.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Gráfico de Barras: Evolución de las Exportaciones -->
+                <div class="bg-slate-50/50 rounded-2xl p-4 border border-slate-100 flex flex-col justify-between">
+                    <span class="text-xs font-semibold text-slate-600 mb-3 block">Evolución del Valor FOB de Exportaciones (Millones US$)</span>
+                    <div class="relative h-[280px]">
+                        <canvas id="chart-exports"></canvas>
+                    </div>
+                </div>
+
+                <!-- Gráfico de Rosca: Estructura de Intensidad Tecnológica -->
+                <div class="bg-slate-50/50 rounded-2xl p-4 border border-slate-100 flex flex-col justify-between">
+                    <span class="text-xs font-semibold text-slate-600 mb-3 block">Composición por Contenido Tecnológico (2025)</span>
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
+                        <div class="md:col-span-7 relative h-[240px]">
+                            <canvas id="chart-tech"></canvas>
+                        </div>
+                        <div class="md:col-span-5 space-y-2.5 text-xs">
+                            <div class="flex items-center gap-1.5 justify-between">
+                                <span class="flex items-center gap-1.5 font-medium text-slate-600">
+                                    <span class="w-2.5 h-2.5 rounded bg-sanmartin-600"></span> Primarios
+                                </span>
+                                <span class="font-bold text-slate-900">76.59%</span>
+                            </div>
+                            <div class="flex items-center gap-1.5 justify-between">
+                                <span class="flex items-center gap-1.5 font-medium text-slate-600">
+                                    <span class="w-2.5 h-2.5 rounded bg-palma-600"></span> Basadas en Rec.
+                                </span>
+                                <span class="font-bold text-slate-900">22.87%</span>
+                            </div>
+                            <div class="flex items-center gap-1.5 justify-between">
+                                <span class="flex items-center gap-1.5 font-medium text-slate-600">
+                                    <span class="w-2.5 h-2.5 rounded bg-palma-400"></span> Mediana Tech
+                                </span>
+                                <span class="font-bold text-slate-900">0.52%</span>
+                            </div>
+                            <div class="flex items-center gap-1.5 justify-between">
+                                <span class="flex items-center gap-1.5 font-medium text-slate-600">
+                                    <span class="w-2.5 h-2.5 rounded bg-rose-500"></span> Baja Tecnología
+                                </span>
+                                <span class="font-bold text-slate-900">0.02%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tabla de Productos de la Canasta Exportadora de San Martín -->
+            <div class="space-y-4 pt-4">
+                <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                    <span class="text-sm font-semibold text-slate-700 flex items-center gap-2">
+                        <i class="fa-solid fa-list-ol text-sanmartin-700"></i> Top 10 de Productos Más Exportados de San Martín (2025)
+                    </span>
+                    
+                    <!-- Buscador e Interactividad -->
+                    <div class="relative w-full sm:w-72">
+                        <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-400 pointer-events-none">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </span>
+                        <input type="text" id="table-search" placeholder="Buscar producto o código arancelario..." 
+                               class="w-full pl-9 pr-4 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs focus:ring-2 focus:ring-sanmartin-500 focus:border-sanmartin-500 focus:bg-white outline-none transition-all">
+                    </div>
+                </div>
+
+                <div class="overflow-x-auto border border-slate-200 rounded-2xl shadow-sm custom-scrollbar">
+                    <table class="w-full text-left border-collapse text-xs">
+                        <thead>
+                            <tr class="bg-slate-50 text-slate-600 border-b border-slate-200 font-semibold uppercase tracking-wider">
+                                <th class="p-4 w-12 text-center">N°</th>
+                                <th class="p-4 w-28">Código HS12</th>
+                                <th class="p-4">Producto Exportado</th>
+                                <th class="p-4 w-44">Nivel Tecnológico</th>
+                                <th class="p-4 w-36 text-right">Valor (Millones US$)</th>
+                                <th class="p-4 w-28 text-right">Participación</th>
+                            </tr>
+                        </thead>
+                        <tbody id="export-table-body" class="divide-y divide-slate-100">
+                            <!-- Fila 1 -->
+                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                <td class="p-4 text-center font-bold text-slate-400">1</td>
+                                <td class="p-4 font-mono text-slate-500">1801</td>
+                                <td class="p-4 font-semibold text-slate-900">Cacao en grano (entero o partido, crudo o tostado)</td>
+                                <td class="p-4">
+                                    <span class="px-2.5 py-1 bg-sanmartin-50 text-sanmartin-700 rounded-full font-medium text-[10px] border border-sanmartin-100">
+                                        Productos primarios
+                                    </span>
+                                </td>
+                                <td class="p-4 text-right font-mono font-semibold text-slate-900">395.47</td>
+                                <td class="p-4 text-right font-semibold text-sanmartin-700 bg-sanmartin-50/10">67.83%</td>
+                            </tr>
+                            <!-- Fila 2 -->
+                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                <td class="p-4 text-center font-bold text-slate-400">2</td>
+                                <td class="p-4 font-mono text-slate-500">1511</td>
+                                <td class="p-4 font-semibold text-slate-900">Aceite de palma crudo y sus fracciones</td>
+                                <td class="p-4">
+                                    <span class="px-2.5 py-1 bg-palma-50 text-palma-700 rounded-full font-medium text-[10px] border border-palma-100">
+                                        Basadas en recursos
+                                    </span>
+                                </td>
+                                <td class="p-4 text-right font-mono font-semibold text-slate-900">88.39</td>
+                                <td class="p-4 text-right font-semibold text-palma-700">15.16%</td>
+                            </tr>
+                            <!-- Fila 3 -->
+                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                <td class="p-4 text-center font-bold text-slate-400">3</td>
+                                <td class="p-4 font-mono text-slate-500">0901</td>
+                                <td class="p-4 font-semibold text-slate-900">Café (grano/molido/descafeinado)</td>
+                                <td class="p-4">
+                                    <span class="px-2.5 py-1 bg-sanmartin-50 text-sanmartin-700 rounded-full font-medium text-[10px] border border-sanmartin-100">
+                                        Productos primarios
+                                    </span>
+                                </td>
+                                <td class="p-4 text-right font-mono font-semibold text-slate-900">46.35</td>
+                                <td class="p-4 text-right font-semibold text-slate-600">7.95%</td>
+                            </tr>
+                            <!-- Fila 4 -->
+                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                <td class="p-4 text-center font-bold text-slate-400">4</td>
+                                <td class="p-4 font-mono text-slate-500">2008</td>
+                                <td class="p-4 font-semibold text-slate-900">Otras frutas preparadas o en conserva (pulpas/mermeladas)</td>
+                                <td class="p-4">
+                                    <span class="px-2.5 py-1 bg-palma-50 text-palma-700 rounded-full font-medium text-[10px] border border-palma-100">
+                                        Basadas en recursos
+                                    </span>
+                                </td>
+                                <td class="p-4 text-right font-mono font-semibold text-slate-900">15.51</td>
+                                <td class="p-4 text-right font-semibold text-slate-600">2.66%</td>
+                            </tr>
+                            <!-- Fila 5 -->
+                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                <td class="p-4 text-center font-bold text-slate-400">5</td>
+                                <td class="p-4 font-mono text-slate-500">1516</td>
+                                <td class="p-4 font-semibold text-slate-900">Grasas y aceites vegetales hidrogenados o refinados</td>
+                                <td class="p-4">
+                                    <span class="px-2.5 py-1 bg-palma-50 text-palma-700 rounded-full font-medium text-[10px] border border-palma-100">
+                                        Basadas en recursos
+                                    </span>
+                                </td>
+                                <td class="p-4 text-right font-mono font-semibold text-slate-900">15.41</td>
+                                <td class="p-4 text-right font-semibold text-slate-500">2.64%</td>
+                            </tr>
+                            <!-- Fila 6 -->
+                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                <td class="p-4 text-center font-bold text-slate-400">6</td>
+                                <td class="p-4 font-mono text-slate-500">1513</td>
+                                <td class="p-4 font-semibold text-slate-900">Aceites de coco, palmiste o babasú refinados</td>
+                                <td class="p-4">
+                                    <span class="px-2.5 py-1 bg-palma-50 text-palma-700 rounded-full font-medium text-[10px] border border-palma-100">
+                                        Basadas en recursos
+                                    </span>
+                                </td>
+                                <td class="p-4 text-right font-mono font-semibold text-slate-900">12.88</td>
+                                <td class="p-4 text-right font-semibold text-slate-500">2.21%</td>
+                            </tr>
+                            <!-- Fila 7 -->
+                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                <td class="p-4 text-center font-bold text-slate-400">7</td>
+                                <td class="p-4 font-mono text-slate-500">3823</td>
+                                <td class="p-4 font-semibold text-slate-900">Ácidos y alcoholes grasos industriales (oleoquímica)</td>
+                                <td class="p-4">
+                                    <span class="px-2.5 py-1 bg-slate-100 text-slate-700 rounded-full font-medium text-[10px] border border-slate-200">
+                                        Tecnología media
+                                    </span>
+                                </td>
+                                <td class="p-4 text-right font-mono font-semibold text-slate-900">2.26</td>
+                                <td class="p-4 text-right font-semibold text-slate-500">0.39%</td>
+                            </tr>
+                            <!-- Fila 8 -->
+                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                <td class="p-4 text-center font-bold text-slate-400">8</td>
+                                <td class="p-4 font-mono text-slate-500">2401</td>
+                                <td class="p-4 font-semibold text-slate-900">Tabaco en rama (sin procesar) y residuos</td>
+                                <td class="p-4">
+                                    <span class="px-2.5 py-1 bg-sanmartin-50 text-sanmartin-700 rounded-full font-medium text-[10px] border border-sanmartin-100">
+                                        Productos primarios
+                                    </span>
+                                </td>
+                                <td class="p-4 text-right font-mono font-semibold text-slate-900">1.70</td>
+                                <td class="p-4 text-right font-semibold text-slate-500">0.29%</td>
+                            </tr>
+                            <!-- Fila 9 -->
+                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                <td class="p-4 text-center font-bold text-slate-400">9</td>
+                                <td class="p-4 font-mono text-slate-500">1517</td>
+                                <td class="p-4 font-semibold text-slate-900">Margarina y mezclas comestibles de grasas</td>
+                                <td class="p-4">
+                                    <span class="px-2.5 py-1 bg-sanmartin-50 text-sanmartin-700 rounded-full font-medium text-[10px] border border-sanmartin-100">
+                                        Productos primarios
+                                    </span>
+                                </td>
+                                <td class="p-4 text-right font-mono font-semibold text-slate-900">1.10</td>
+                                <td class="p-4 text-right font-semibold text-slate-500">0.19%</td>
+                            </tr>
+                            <!-- Fila 10 -->
+                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                <td class="p-4 text-center font-bold text-slate-400">10</td>
+                                <td class="p-4 font-mono text-slate-500">8544</td>
+                                <td class="p-4 font-semibold text-slate-900">Cables eléctricos e hilos conductores aislados</td>
+                                <td class="p-4">
+                                    <span class="px-2.5 py-1 bg-slate-100 text-slate-700 rounded-full font-medium text-[10px] border border-slate-200">
+                                        Tecnología media
+                                    </span>
+                                </td>
+                                <td class="p-4 text-right font-mono font-semibold text-slate-900">0.72</td>
+                                <td class="p-4 text-right font-semibold text-slate-500">0.12%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Box Informativo: Análisis del Diagnóstico de Cartera de San Martín -->
+            <div class="mt-6 bg-emerald-50/40 border border-emerald-250/70 rounded-2xl p-5 text-xs text-slate-700 space-y-3 shadow-sm">
+                <p class="font-bold text-emerald-950 flex items-center gap-2 text-sm">
+                    <i class="fa-solid fa-square-poll-vertical text-sanmartin-600"></i> Análisis Diagnóstico de la Cartera Exportadora de San Martín
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-1 leading-relaxed">
+                    <div class="space-y-1.5">
+                        <span class="font-semibold text-emerald-900 block">1. El Gigante Cacaotero y su Peso Comercial:</span>
+                        <p class="text-slate-600">
+                            El cacao en grano crudo abarca el <strong class="text-slate-950">67.83%</strong> de la canasta comercial externa regional, aportando US$ 395.47M. Esta especialización dota a la región de un alto volumen monetario, pero la expone a la volatilidad de precios agrícolas, evidenciando el reto del Espacio del Producto de migrar hacia mantecas, licores y chocolates finos con origen.
+                        </p>
+                    </div>
+                    <div class="space-y-1.5">
+                        <span class="font-semibold text-emerald-900 block">2. El Eje Oleoquímico de la Palma Aceitera:</span>
+                        <p class="text-slate-600">
+                            El aceite de palma crudo (15.16%), aceites hidrogenados (2.64%) y aceite de palmiste refinado (2.21%) estructuran el clúster industrial más sofisticado de la región. La emergencia de ácidos grasos industriales (0.39%) señala el nacimiento de una oleoquímica de tecnología media en los parques industriales de Tocache y Tarapoto.
+                        </p>
+                    </div>
+                    <div class="space-y-1.5">
+                        <span class="font-semibold text-emerald-900 block">3. Brecha de Alta Tecnología y Frontera de Escalabilidad:</span>
+                        <p class="text-slate-600">
+                            Pese al fuerte dinamismo bio-industrial (FOB US$ 583.05M), las manufacturas de tecnología media y alta representan menos del <strong class="text-slate-950">0.55%</strong> de los despachos. Sofisticar a San Martín exige integrar los subproductos de biomasa de palma y cacao para transicionar hacia resinas orgánicas, polímeros naturales y bio-pesticidas de alta complejidad.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 3: Oportunidades de Diversificación y Espacio del Producto -->
+        <section class="bg-white rounded-2xl border border-slate-200/80 p-6 sm:p-8 shadow-sm space-y-8">
+            <div class="border-b border-slate-100 pb-5">
+                <span class="text-xs font-bold text-sanmartin-700 uppercase tracking-widest">ALGORITMO DE DIVERSIFICACIÓN REAL</span>
+                <h3 class="text-xl font-bold text-slate-900">3. Oportunidades de Diversificación y Espacio del Producto</h3>
+                <p class="text-xs text-slate-500">
+                    Análisis de proximidad estructural: Hacia dónde puede migrar de manera inteligente la economía de San Martín apalancándose en sus capacidades preexistentes.
+                </p>
+            </div>
+
+            <!-- Simulador de Conectividad de Red con Datos Reales para San Martín -->
+            <div class="bg-slate-900 text-white rounded-2xl p-6 shadow-md border border-slate-800 space-y-6">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                    <div class="space-y-1">
+                        <span class="text-[10px] font-bold text-sanmartin-400 uppercase tracking-widest">HERRAMIENTA DE PLANIFICACIÓN ECONÓMICA</span>
+                        <h4 class="text-base font-bold flex items-center gap-2 text-sanmartin-200">
+                            <i class="fa-solid fa-microchip text-sanmartin-400"></i> Simulador de Conectividad de Red de San Martín (Filtro por Complejidad)
+                        </h4>
+                    </div>
+                    <!-- Selector de Industrias Reales -->
+                    <select id="industry-selector" class="bg-slate-800 border border-slate-700 text-slate-200 text-xs rounded-xl px-3.5 py-2.5 outline-none focus:ring-2 focus:ring-sanmartin-500 transition-all">
+                        <option value="woodmach">HS 8465 - Máquinas para trabajar madera, plástico y corcho (Complejidad Forestal Alta)</option>
+                        <option value="filters">HS 8421 - Centrífugas, aparatos para filtrar o purificar líquidos o gases (Soporte Oleaginoso)</option>
+                        <option value="parts">HS 8409 - Partes de motores de émbolo de combustión interna (Metalmecánica de Soporte Fluvial)</option>
+                    </select>
+                </div>
+
+                <!-- Outputs del Simulador -->
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-6 pt-2">
+                    <div class="bg-slate-800/50 rounded-xl p-4 border border-slate-700/50 space-y-2">
+                        <span class="text-[10px] text-slate-400 font-bold uppercase tracking-wider block">Densidad de Capacidades</span>
+                        <div class="flex items-baseline gap-2">
+                            <span id="sim-density" class="text-2xl font-extrabold text-sanmartin-400">0.7084%</span>
+                        </div>
+                        <p class="text-[11px] text-slate-300">Medida empírica de cercanía a la canasta de capacidades de la región.</p>
+                    </div>
+
+                    <div class="bg-slate-800/50 rounded-xl p-4 border border-slate-700/50 space-y-2">
+                        <span class="text-[10px] text-slate-400 font-bold uppercase tracking-wider block">Distancia (Distancia = 1 - Densidad)</span>
+                        <div class="flex items-baseline gap-2">
+                            <span id="sim-distance" class="text-2xl font-extrabold text-rose-400">99.2916%</span>
+                        </div>
+                        <p class="text-[11px] text-slate-300">Brecha técnica restante para el desarrollo autónomo de la industria.</p>
+                    </div>
+
+                    <div class="bg-slate-800/50 rounded-xl p-4 border border-slate-700/50 space-y-2">
+                        <span class="text-[10px] text-slate-400 font-bold uppercase tracking-wider block">Complejidad del Producto (IPC)</span>
+                        <div class="flex items-baseline gap-2">
+                            <span id="sim-pci" class="text-2xl font-extrabold text-amber-400">+0.899</span>
+                        </div>
+                        <p class="text-[11px] text-slate-300">Mide el nivel de sofisticación y exclusividad técnica global del bien propuesto.</p>
+                    </div>
+
+                    <div class="bg-slate-800/50 rounded-xl p-4 border border-slate-700/50 space-y-2">
+                        <span class="text-[10px] text-slate-400 font-bold uppercase tracking-wider block">Viabilidad de Transición</span>
+                        <div class="flex items-baseline gap-2">
+                            <span id="sim-viability" class="text-2xl font-extrabold text-emerald-400">Alta</span>
+                        </div>
+                        <p class="text-[11px] text-slate-300">Nivel de factibilidad según el mapa actual de encadenamiento de San Martín.</p>
+                    </div>
+                </div>
+
+                <!-- Detalle del Vector Seleccionado -->
+                <div class="bg-slate-950/80 rounded-xl p-4 border border-slate-800/80 text-xs">
+                    <div class="flex items-start gap-3">
+                        <span class="text-2xl text-sanmartin-400"><i class="fa-solid fa-quote-left"></i></span>
+                        <div class="space-y-1">
+                            <span class="font-semibold text-slate-300 block">Sustento del Algoritmo del Espacio del Producto para San Martín:</span>
+                            <p id="sim-description" class="text-slate-400 leading-relaxed">
+                                San Martín posee un importante potencial de biomasa y clúster forestal primario. Transicionar hacia el ensamblaje o acondicionamiento de maquinaria para trabajar madera capitaliza el conocimiento práctico acumulado en carpintería industrial, aserraderos y asimilación de maquinaria agroforestal, disminuyendo los costos logísticos intrarregionales y promoviendo la segunda transformación maderera ecológicamente sostenible.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Box Informativo: Cómo leer el simulador -->
+                <div class="bg-slate-800/30 border border-slate-700/50 rounded-xl p-4 text-xs text-slate-300 space-y-2">
+                    <p class="font-semibold text-white flex items-center gap-1.5 font-mono">
+                        <i class="fa-solid fa-circle-question text-sanmartin-400"></i> ENTENDIENDO LOS INDICADORES MÉTRICOS:
+                    </p>
+                    <ul class="list-disc list-inside space-y-1 text-slate-400 pl-1">
+                        <li><strong>Densidad de Capacidades:</strong> Mide la dotación preexistente de capacidades requeridas en el clúster regional para fabricar el nuevo producto. Un mayor valor reduce el costo de incursión.</li>
+                        <li><strong>Distancia:</strong> Mide la brecha tecnológica y de conocimiento que separa a la canasta actual de la requerida (Distancia = 1 - Densidad).</li>
+                        <li><strong>IPC (Índice de Complejidad del Producto):</strong> Cuantifica la sofisticación tecnológica y la exclusividad de conocimientos necesarios a nivel global para producir dicho bien.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Matriz de Viabilidad de Diversificación Completa y Buscable -->
+            <div class="space-y-4">
+                <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                    <span class="text-sm font-semibold text-slate-700 flex items-center gap-2">
+                        <i class="fa-solid fa-diagram-project text-sanmartin-700"></i> Matriz Completa de Oportunidades para San Martín (Canasta Real)
+                    </span>
+                    
+                    <div class="flex flex-wrap items-center gap-2 w-full sm:w-auto">
+                        <!-- Filtro de Diversificación -->
+                        <select id="matrix-filter" class="bg-white border border-slate-200 rounded-xl px-3 py-2 text-xs font-semibold text-slate-700 outline-none focus:ring-2 focus:ring-sanmartin-500">
+                            <option value="all">Todas las viabilidades</option>
+                            <option value="Muy alta">Muy alta</option>
+                            <option value="Alta">Alta</option>
+                            <option value="Baja">Baja</option>
+                            <option value="Muy baja">Muy baja</option>
+                        </select>
+                        <!-- Buscador Interno de la Matriz -->
+                        <div class="relative w-full sm:w-64">
+                            <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-400 pointer-events-none">
+                                <i class="fa-solid fa-magnifying-glass text-xs"></i>
+                            </span>
+                            <input type="text" id="matrix-search" placeholder="Buscar producto o arancel..." 
+                                   class="w-full pl-8 pr-4 py-2 bg-white border border-slate-200 rounded-xl text-xs focus:ring-2 focus:ring-sanmartin-500 outline-none transition-all">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="overflow-x-auto border border-slate-200 rounded-2xl shadow-sm custom-scrollbar max-h-[500px]">
+                    <table class="w-full text-left border-collapse text-xs">
+                        <thead class="sticky top-0 bg-slate-50 z-10 border-b border-slate-200">
+                            <tr class="text-slate-600 font-semibold uppercase tracking-wider">
+                                <th class="p-4 w-28">Código HS12</th>
+                                <th class="p-4">Producto Propuesto</th>
+                                <th class="p-4 w-28 text-center">IPC</th>
+                                <th class="p-4 w-28 text-center">Densidad Real</th>
+                                <th class="p-4 w-28 text-center">Distancia Real</th>
+                                <th class="p-4 w-32 text-center">Viabilidad</th>
+                            </tr>
+                        </thead>
+                        <tbody id="matrix-table-body" class="divide-y divide-slate-100 bg-white">
+                            <!-- Inyectado dinámicamente con JS a partir de tu base de datos real de San Martín -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Box Informativo: Cómo leer la Matriz de Viabilidad -->
+                <div class="bg-slate-50 border border-slate-200 rounded-2xl p-4 text-xs text-slate-600 space-y-2">
+                    <p class="font-semibold text-slate-800 flex items-center gap-1.5">
+                        <i class="fa-solid fa-circle-question text-sanmartin-700"></i> ¿Cómo leer la Matriz de Oportunidades de Diversificación Real?
+                    </p>
+                    <ul class="list-disc list-inside space-y-1 text-slate-500 pl-1">
+                        <li><strong>Código HS12:</strong> Identifica el arancel según el Sistema Armonizado de designación de mercancías de la subpartida nacional.</li>
+                        <li><strong>IPC:</strong> El Índice de Complejidad del Producto indica qué tan complejo es el conocimiento productivo subyacente que requiere.</li>
+                        <li><strong>Densidad Real y Distancia Real (%):</strong> Los indicadores reales calculados matemáticamente para San Martín, que miden la factibilidad y la brecha técnica regional.</li>
+                        <li><strong>Viabilidad:</strong> Clasificación probabilística, determinada por la aglomeración de capacidades ya existentes en San Martín.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 px-4 border-t border-slate-800 mt-20">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="space-y-2">
+                <div class="flex items-center gap-2 text-white">
+                    <span class="p-1.5 bg-sanmartin-600 rounded text-xs"><i class="fa-solid fa-chart-pie text-slate-950"></i></span>
+                    <span class="font-bold tracking-wider text-xs">CONSEJO NACIONAL DE COMPETITIVIDAD Y FORMALIZACIÓN - CNCF</span>
+                </div>
+            </div>
+            
+            <div class="flex flex-col items-end gap-2 text-right">
+                <span class="text-[10px] bg-slate-800 px-2.5 py-1 rounded text-slate-500 font-mono">Monitoreo Territorial de Complejidad Económica - San Martín</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts y Gráficos -->
+    <script>
+        // Inicialización de variables de gráficos
+        let chartIcerInstance = null;
+        let chartExportsInstance = null;
+        let chartTechInstance = null;
+
+        // Base de Datos Real de 34 productos para San Martín basada exactamente en "3. Matriz de oportunidades de diversificacion 2025_DB.xlsx"
+        const sanmartinRealDatabase = [{"HS12": "2007", "PRODUCTO": "Mermeladas, jaleas y purés de frutas", "IPC": -0.567, "Densidad": 0.02093106218313049, "Distancia": 0.9790689378168695, "Diversificacion": "Muy alta"}, {"HS12": "2005", "PRODUCTO": "Preparaciones de hortalizas (verduras) en conserva (no congeladas)", "IPC": -0.741, "Densidad": 0.01972111736357578, "Distancia": 0.9802788826364243, "Diversificacion": "Muy alta"}, {"HS12": "0602", "PRODUCTO": "Plantas vivas, esquejes, injertos y micelio de hongos (setas)", "IPC": -0.759, "Densidad": 0.01915994646911826, "Distancia": 0.9808400535308818, "Diversificacion": "Muy alta"}, {"HS12": "8465", "PRODUCTO": "Máquinas para trabajar madera, plástico y corcho", "IPC": 0.899, "Densidad": 0.007083557600571029, "Distancia": 0.992916442399429, "Diversificacion": "Alta"}, {"HS12": "8421", "PRODUCTO": "Centrífugas, aparatos para filtrar o purificar líquidos o gases", "IPC": 0.831, "Densidad": 0.008959972604154173, "Distancia": 0.9910400273958458, "Diversificacion": "Alta"}, {"HS12": "8409", "PRODUCTO": "Partes de motores de émbolo (combustión interna)", "IPC": 0.646, "Densidad": 0.007998495440670987, "Distancia": 0.992001504559329, "Diversificacion": "Alta"}, {"HS12": "3926", "PRODUCTO": "Otras manufacturas de plástico", "IPC": 0.404, "Densidad": 0.008972807879326911, "Distancia": 0.9910271921206731, "Diversificacion": "Alta"}, {"HS12": "3505", "PRODUCTO": "Dextrinas y almidones modificados", "IPC": 0.262, "Densidad": 0.01144366611362378, "Distancia": 0.9885563338863762, "Diversificacion": "Alta"}, {"HS12": "6913", "PRODUCTO": "Adornos y estatuillas de cerámica", "IPC": 0.026, "Densidad": 0.01002589188822785, "Distancia": 0.9899741081117721, "Diversificacion": "Alta"}, {"HS12": "7314", "PRODUCTO": "Telas mecánicas, mallas y cercas de alambre de hierro o acero", "IPC": -0.102, "Densidad": 0.01450738172079743, "Distancia": 0.9854926182792025, "Diversificacion": "Alta"}, {"HS12": "2106", "PRODUCTO": "Otros preparados alimenticios", "IPC": -0.103, "Densidad": 0.01579859555877318, "Distancia": 0.9842014044412268, "Diversificacion": "Alta"}, {"HS12": "1806", "PRODUCTO": "Chocolate y preparaciones alimenticias con cacao", "IPC": -0.182, "Densidad": 0.014977886722661, "Distancia": 0.985022113277339, "Diversificacion": "Alta"}, {"HS12": "4821", "PRODUCTO": "Etiquetas de papel o cartón (impresas o no)", "IPC": -0.239, "Densidad": 0.01665892785379859, "Distancia": 0.9833410721462014, "Diversificacion": "Alta"}, {"HS12": "8544", "PRODUCTO": "Cables eléctricos y cables de fibra óptica", "IPC": -0.25, "Densidad": 0.01408737905946458, "Distancia": 0.9859126209405354, "Diversificacion": "Alta"}, {"HS12": "4819", "PRODUCTO": "Cajas y archivadores de cartón", "IPC": -0.518, "Densidad": 0.01631626841073152, "Distancia": 0.9836837315892685, "Diversificacion": "Alta"}, {"HS12": "2403", "PRODUCTO": "Tabaco manufacturado y extractos", "IPC": -0.592, "Densidad": 0.0162979341935656, "Distancia": 0.9837020658064344, "Diversificacion": "Alta"}, {"HS12": "1805", "PRODUCTO": "Cacao en polvo puro (sin azúcar)", "IPC": -0.711, "Densidad": 0.01662987705277648, "Distancia": 0.9833701229472235, "Diversificacion": "Alta"}, {"HS12": "3301", "PRODUCTO": "Aceites esenciales y resinoides", "IPC": -1.049, "Densidad": 0.02318155810426793, "Distancia": 0.9768184418957321, "Diversificacion": "Baja"}, {"HS12": "2402", "PRODUCTO": "Cigarros y cigarrillos", "IPC": -1.104, "Densidad": 0.01934478765458276, "Distancia": 0.9806552123454172, "Diversificacion": "Baja"}, {"HS12": "0905", "PRODUCTO": "Vainilla", "IPC": -1.214, "Densidad": 0.02228657493860792, "Distancia": 0.977713425061392, "Diversificacion": "Baja"}, {"HS12": "1803", "PRODUCTO": "Pasta de cacao", "IPC": -1.296, "Densidad": 0.01938228290143824, "Distancia": 0.9806177170985617, "Diversificacion": "Baja"}, {"HS12": "0805", "PRODUCTO": "Cítricos (limón/naranja/mandarina)", "IPC": -1.311, "Densidad": 0.02281387520734171, "Distancia": 0.9771861247926583, "Diversificacion": "Baja"}, {"HS12": "1106", "PRODUCTO": "Harina, sémola y polvo de legumbres secas, sagú o tubérculos", "IPC": -1.566, "Densidad": 0.0239175132449586, "Distancia": 0.9760824867550414, "Diversificacion": "Baja"}, {"HS12": "1006", "PRODUCTO": "Arroz", "IPC": -1.628, "Densidad": 0.01904290318668155, "Distancia": 0.9809570968133184, "Diversificacion": "Baja"}, {"HS12": "0910", "PRODUCTO": "Jengibre, azafrán, cúrcuma, tomillo, laurel y demás especias", "IPC": -1.726, "Densidad": 0.02343831672076489, "Distancia": 0.9765616832792351, "Diversificacion": "Baja"}, {"HS12": "4402", "PRODUCTO": "Carbón vegetal", "IPC": -1.756, "Densidad": 0.02337043668116891, "Distancia": 0.9766295633188311, "Diversificacion": "Baja"}, {"HS12": "1804", "PRODUCTO": "Manteca, grasa y aceite de cacao", "IPC": -1.846, "Densidad": 0.02253016124091443, "Distancia": 0.9774698387590856, "Diversificacion": "Baja"}, {"HS12": "1211", "PRODUCTO": "Plantas y partes de plantas para perfumería, farmacia o insecticidas", "IPC": -1.97, "Densidad": 0.01949115292565782, "Distancia": 0.9805088470743422, "Diversificacion": "Baja"}, {"HS12": "0713", "PRODUCTO": "Legumbres secas desvainadas (menestras, frijoles, arvejas)", "IPC": -2.203, "Densidad": 0.02475699777484017, "Distancia": 0.9752430022251598, "Diversificacion": "Baja"}, {"HS12": "1207", "PRODUCTO": "Otras semillas oleaginosas", "IPC": -2.849, "Densidad": 0.03081022078587782, "Distancia": 0.9691897792141222, "Diversificacion": "Baja"}, {"HS12": "0801", "PRODUCTO": "Cocos, nueces de Brasil y anacardos (castañas de cajú)", "IPC": -2.872, "Densidad": 0.02901150840038804, "Distancia": 0.970988491599612, "Diversificacion": "Baja"}, {"HS12": "1302", "PRODUCTO": "Savias, pectinas y espesantes vegetales", "IPC": -0.775, "Densidad": 0.01600434558490174, "Distancia": 0.9839956544150983, "Diversificacion": "Muy baja"}, {"HS12": "2520", "PRODUCTO": "Yeso, anhidrita y emplastos (compuestos de yeso calcinado)", "IPC": -1.179, "Densidad": 0.01616563730768907, "Distancia": 0.983834362692311, "Diversificacion": "Muy baja"}, {"HS12": "0106", "PRODUCTO": "Otros animales vivos", "IPC": -1.229, "Densidad": 0.01902559755185881, "Distancia": 0.9809744024481412, "Diversificacion": "Muy baja"}];
+
+        // Dataset ICER histórico 2015-2025 (Top 5 nacional de 2025 + San Martín)
+        const icerData = {
+            years: ['2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025'],
+            regions: {
+                limaMetropolitana: [53.653, 52.751, 53.813, 53.023, 53.646, 52.861, 54.394, 54.231, 54.349, 54.688, 54.538],
+                callao: [52.842, 51.736, 51.278, 50.448, 52.026, 52.092, 51.254, 53.074, 51.847, 52.188, 53.65],
+                limaRegion: [38.146, 38.469, 41.408, 42.404, 43.85, 41.64, 42.373, 43.857, 44.421, 45.138, 43.36],
+                arequipa: [45.285, 46.672, 44.505, 44.855, 45.87, 45.517, 43.913, 44.356, 44.516, 43.475, 41.367],
+                laLibertad: [40.751, 39.624, 39.222, 38.402, 40.465, 41.255, 38.905, 39.909, 38.74, 40.997, 40.704],
+                sanmartin: [34.452, 34.467, 30.678, 36.459, 33.146, 31.998, 32.947, 34.921, 36.021, 32.948, 33.678]
+            }
+        };
+
+        // Serie de Exportaciones Totales de San Martín (Millones US$)
+        const exportsData = {
+            years: ['2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025'],
+            values: [106.16, 101.28, 124.58, 102.90, 118.28, 141.27, 188.70, 261.16, 257.67, 328.58, 583.05]
+        };
+
+        // Dataset del Simulador de Conectividad de Red para San Martín
+        const simulatorData = {
+            woodmach: {
+                density: '0.7084%',
+                distance: '99.2916%',
+                pci: '+0.899',
+                viability: 'Alta',
+                description: 'San Martín posee un importante potencial de biomasa y clúster forestal primario. Transicionar hacia el ensamblaje o acondicionamiento de maquinaria para trabajar madera capitaliza el conocimiento práctico acumulado en carpintería industrial, aserraderos y asimilación de maquinaria agroforestal, disminuyendo los costos logísticos intrarregionales y promoviendo la segunda transformación maderera ecológicamente sostenible.'
+            },
+            filters: {
+                density: '0.8960%',
+                distance: '99.1040%',
+                pci: '+0.831',
+                viability: 'Alta',
+                description: 'Conectado directamente con las potentes líneas de refinación y extracción de aceite de palma crudo (partidas 1511, 1513, 1516). La fabricación de sistemas de filtración y purificación molecular asimila el know-how operativo de ingenieros y técnicos que hoy calibran los equipos de decantación y centrifugado industrial en las grandes plantas de procesamiento oleaginoso de Tarapoto y Tocache.'
+            },
+            parts: {
+                density: '0.7998%',
+                distance: '99.2002%',
+                pci: '+0.646',
+                viability: 'Alta',
+                description: 'El fuerte dinamismo del transporte logístico fluvial y terrestre interconectado por la carretera Fernando Belaúnde Terry genera un ecosistema denso de talleres mecánicos avanzados en Moyobamba y Tarapoto. Desarrollar piezas de recambio de precisión para motores de combustión interna absorbe las capacidades de mecanizado ligero y rectificación de culatas ya existentes en la región, escalando la economía hacia manufacturas metalmecánicas de tecnología media.'
+            }
+        };
+
+        // Inicialización de Gráficos al cargar la ventana
+        window.onload = function() {
+            initCharts();
+            setupInteractiveEvents();
+            renderMatrixTable(sanmartinRealDatabase);
+        };
+
+        function initCharts() {
+            // 1. Gráfico de Evolución del ICER (Líneas)
+            const ctxIcer = document.getElementById('chart-icer').getContext('2d');
+            chartIcerInstance = new Chart(ctxIcer, {
+                type: 'line',
+                data: {
+                    labels: icerData.years,
+                    datasets: [
+                        {
+                            label: 'San Martín',
+                            data: icerData.regions.sanmartin,
+                            borderColor: '#16a34a',
+                            backgroundColor: 'rgba(22,163,74,0.12)',
+                            borderWidth: 4,
+                            tension: 0.35,
+                            pointRadius: 4,
+                            pointBackgroundColor: '#16a34a',
+                            fill: true
+                        },
+                        {
+                            label: 'Lima Metropolitana',
+                            data: icerData.regions.limaMetropolitana,
+                            borderColor: '#64748b',
+                            backgroundColor: 'transparent',
+                            borderWidth: 2,
+                            tension: 0.35,
+                            pointRadius: 1,
+                            borderDash: [4, 3]
+                        },
+                        {
+                            label: 'Callao',
+                            data: icerData.regions.callao,
+                            borderColor: '#0ea5e9',
+                            backgroundColor: 'transparent',
+                            borderWidth: 2,
+                            tension: 0.35,
+                            pointRadius: 1,
+                            borderDash: [4, 3]
+                        },
+                        {
+                            label: 'Lima Región',
+                            data: icerData.regions.limaRegion,
+                            borderColor: '#8b5cf6',
+                            backgroundColor: 'transparent',
+                            borderWidth: 2,
+                            tension: 0.35,
+                            pointRadius: 1,
+                            borderDash: [4, 3]
+                        },
+                        {
+                            label: 'Arequipa',
+                            data: icerData.regions.arequipa,
+                            borderColor: '#fb923c',
+                            backgroundColor: 'transparent',
+                            borderWidth: 2,
+                            tension: 0.35,
+                            pointRadius: 1,
+                            borderDash: [4, 3]
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    interaction: { mode: 'index', intersect: false },
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                boxWidth: 10,
+                                font: { size: 10 },
+                                usePointStyle: true
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return ` ${context.dataset.label}: ${context.raw.toFixed(3)}`;
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            grid: { color: '#f1f5f9' },
+                            ticks: { font: { size: 10 } }
+                        },
+                        x: {
+                            grid: { display: false },
+                            ticks: { font: { size: 10 } }
+                        }
+                    }
+                }
+            });
+
+            // 2. Gráfico de Barras - Evolución de Exportaciones (San Martín)
+            const ctxExports = document.getElementById('chart-exports').getContext('2d');
+            chartExportsInstance = new Chart(ctxExports, {
+                type: 'bar',
+                data: {
+                    labels: exportsData.years,
+                    datasets: [{
+                        label: 'Exportaciones FOB (Millones US$)',
+                        data: exportsData.values,
+                        backgroundColor: '#15803d',
+                        borderRadius: 6,
+                        maxBarThickness: 34
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return ` US$ ${context.raw.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})}M`;
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            grid: { color: '#f1f5f9' },
+                            ticks: { font: { size: 10 } }
+                        },
+                        x: {
+                            grid: { display: false },
+                            ticks: { font: { size: 10 } }
+                        }
+                    }
+                }
+            });
+
+            // 3. Gráfico de Rosca - Intensidad Tecnológica (San Martín)
+            const ctxTech = document.getElementById('chart-tech').getContext('2d');
+            chartTechInstance = new Chart(ctxTech, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Primarios', 'Basadas en Recursos', 'Mediana Tecnología', 'Baja Tecnología'],
+                    datasets: [{
+                        data: [76.59, 22.87, 0.52, 0.02],
+                        backgroundColor: [
+                            '#15803d', // Verde esmeralda primarios
+                            '#ca8a04', // Oro amazónico basadas en recursos
+                            '#eab308', // Amarillo tech media
+                            '#94a3b8'  // Gris tech baja
+                        ],
+                        borderWidth: 2,
+                        borderColor: '#ffffff'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return ` ${context.label}: ${context.raw.toFixed(2)}%`;
+                                }
+                            }
+                        }
+                    },
+                    cutout: '70%'
+                }
+            });
+        }
+
+        // Renderizado Dinámico de la Matriz de Viabilidad Real de San Martín
+        function renderMatrixTable(dataset) {
+            const tbody = document.getElementById("matrix-table-body");
+            tbody.innerHTML = "";
+
+            dataset.forEach(row => {
+                const densPct = (row.Densidad * 100).toFixed(4) + "%";
+                const distPct = (row.Distancia * 100).toFixed(4) + "%";
+                
+                let badgeClass = "";
+                const checkDiv = String(row.Diversificacion).toLowerCase().trim();
+                if (checkDiv === "muy alta") {
+                    badgeClass = "bg-emerald-50 text-emerald-700 border-emerald-200 font-bold";
+                } else if (checkDiv === "alta") {
+                    badgeClass = "bg-blue-50 text-blue-700 border-blue-200 font-bold";
+                } else if (checkDiv === "baja") {
+                    badgeClass = "bg-amber-50 text-amber-700 border-amber-200 font-medium";
+                } else {
+                    badgeClass = "bg-rose-50 text-rose-700 border-rose-200 font-light";
+                }
+
+                const tr = document.createElement("tr");
+                tr.className = "hover:bg-slate-50/70 transition-colors";
+                tr.innerHTML = `
+                    <td class="p-4 font-mono text-slate-500 font-semibold">${row.HS12}</td>
+                    <td class="p-4 font-bold text-slate-900">${row.PRODUCTO}</td>
+                    <td class="p-4 text-center font-semibold text-slate-600">${row.IPC.toFixed(3)}</td>
+                    <td class="p-4 text-center font-bold text-emerald-800">${densPct}</td>
+                    <td class="p-4 text-center text-slate-500 font-medium">${distPct}</td>
+                    <td class="p-4 text-center">
+                        <span class="px-2.5 py-1 border text-[10px] rounded-full ${badgeClass}">
+                            ${row.Diversificacion}
+                        </span>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        // Configuración de eventos interactivos (búsqueda y selector del simulador)
+        function setupInteractiveEvents() {
+            // Buscador en Tiempo Real de la tabla del Top 10 de exportaciones
+            const searchInput = document.getElementById('table-search');
+            if (searchInput) {
+                searchInput.addEventListener('input', function(e) {
+                    const term = e.target.value.toLowerCase().trim();
+                    const rows = document.querySelectorAll('#export-table-body tr');
+                    
+                    rows.forEach(row => {
+                        const code = row.cells[1].textContent.toLowerCase();
+                        const product = row.cells[2].textContent.toLowerCase();
+                        const tech = row.cells[3].textContent.toLowerCase();
+                        
+                        if (code.includes(term) || product.includes(term) || tech.includes(term)) {
+                            row.style.display = '';
+                        } else {
+                            row.style.display = 'none';
+                        }
+                    });
+                });
+            }
+
+            // Filtrado e interactividad de la Matriz de Oportunidades de San Martín (Sección 3)
+            const matrixSearch = document.getElementById("matrix-search");
+            const matrixFilter = document.getElementById("matrix-filter");
+
+            function handleMatrixFilter() {
+                const searchVal = matrixSearch.value.toLowerCase().trim();
+                const filterVal = matrixFilter.value;
+
+                const filtered = sanmartinRealDatabase.filter(row => {
+                    const matchesSearch = row.PRODUCTO.toLowerCase().includes(searchVal) || row.HS12.toLowerCase().includes(searchVal);
+                    const matchesFilter = filterVal === "all" || row.Diversificacion.toLowerCase() === filterVal.toLowerCase();
+                    return matchesSearch && matchesFilter;
+                });
+
+                renderMatrixTable(filtered);
+            }
+
+            matrixSearch.addEventListener("input", handleMatrixFilter);
+            matrixFilter.addEventListener("change", handleMatrixFilter);
+
+            // Simulador de Conectividad de Red Interactivo
+            const selector = document.getElementById('industry-selector');
+            if (selector) {
+                selector.addEventListener('change', function(e) {
+                    const val = e.target.value;
+                    const data = simulatorData[val];
+                    
+                    if (data) {
+                        const densityEl = document.getElementById('sim-density');
+                        const distanceEl = document.getElementById('sim-distance');
+                        const pciEl = document.getElementById('sim-pci');
+                        const viabilityEl = document.getElementById('sim-viability');
+                        
+                        // Actualizar UI
+                        densityEl.textContent = data.density;
+                        distanceEl.textContent = data.distance;
+                        pciEl.textContent = data.pci;
+                        viabilityEl.textContent = data.viability;
+                        
+                        document.getElementById('sim-description').textContent = data.description;
+                    }
+                });
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REPORTE REGIONAL DE COMPLEJIDAD EXPORTADORA - APURÍMAC</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js para visualización de datos de alto rendimiento -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- FontAwesome para iconografía avanzada -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Inter para una tipografía moderna y legible -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght=300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        apurimac: {
+                            50: '#fff1f2',
+                            100: '#ffe4e6',
+                            200: '#fecdd3',
+                            300: '#fda4af',
+                            400: '#fb7185',
+                            500: '#e11d48', // Bronce / Cobrizo minero profundo
+                            600: '#be123c', // Tono piedra caliza
+                            700: '#9f1239', // Tono mineral metálico
+                            850: '#4c0519', // Pizarra cobrizo intenso
+                            950: '#2c040d'  // Tono profundo de socavón
+                        },
+                        minero: {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            200: '#e2e8f0',
+                            500: '#64748b', // Gris pizarra de maquinaria
+                            600: '#475569', // Gris oscuro de relaves técnicos
+                            700: '#334155', // Gris institucional
+                            800: '#1e293b',
+                            950: '#0f172a'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f5f9;
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans min-h-screen flex flex-col antialiased">
+
+    <!-- Navbar Institucional -->
+    <header class="sticky top-0 z-50 bg-white border-b border-slate-200/80 shadow-sm backdrop-blur-md bg-white/95">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <span class="p-3 bg-apurimac-850 text-white rounded-xl shadow-md flex items-center justify-center">
+                    <i class="fa-solid fa-chart-line text-xl text-apurimac-300"></i>
+                </span>
+                <div>
+                    <h1 class="text-xs sm:text-sm font-semibold text-slate-500 tracking-wider">MONITOREO TERRITORIAL</h1>
+                    <h2 class="text-base sm:text-lg font-extrabold uppercase tracking-tight text-slate-900 leading-tight">
+                        REPORTE REGIONAL DE COMPLEJIDAD EXPORTADORA
+                    </h2>
+                </div>
+            </div>
+            
+            <div class="flex items-center">
+                <span class="text-xs font-semibold text-apurimac-800 bg-apurimac-50 px-4 py-2.5 rounded-full border border-apurimac-200/60 flex items-center gap-2 shadow-sm">
+                    <span class="w-2.5 h-2.5 rounded-full bg-apurimac-500 animate-pulse"></span>
+                    Puesto Actual: 16º
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero / Presentación de la Región -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 w-full">
+        <div class="relative overflow-hidden bg-gradient-to-r from-slate-950 via-apurimac-950 to-minero-950 text-white p-8 md:p-12 rounded-[2rem] shadow-xl border border-apurimac-950/40">
+            <!-- Capa de brillo radial decorativo -->
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(225,29,72,0.14),transparent_60%)] pointer-events-none"></div>
+            
+            <div class="relative z-10 space-y-6">
+                <!-- Nombre de la región como título único de máximo impacto -->
+                <div class="flex flex-col gap-1">
+                    <span class="text-xs font-bold uppercase tracking-widest text-apurimac-400">Motor Extractivo y Agroindustrial de los Andes</span>
+                    <h2 class="text-5xl sm:text-7xl font-black tracking-tight text-apurimac-300">
+                        Apurímac
+                    </h2>
+                </div>
+                
+                <!-- Descripción limpia del reporte -->
+                <p class="text-base sm:text-lg text-slate-300 font-light max-w-4xl leading-relaxed">
+                    Diagnóstico empírico del enclave extractivo de gran escala. Análisis dinámico de la producción de cobre y molibdeno, junto al potencial agropecuario de altura y modelado matemático de diversificación inteligente en el Espacio del Producto bajo la metodología del Harvard Growth Lab.
+                </p>
+                
+                <!-- Metadatos del Período de Análisis -->
+                <div class="flex flex-wrap items-center gap-3 pt-2 text-xs font-semibold text-slate-300">
+                    <span class="flex items-center gap-2 bg-white/5 border border-white/10 px-3.5 py-1.5 rounded-lg">
+                        <i class="fa-regular fa-calendar text-apurimac-400"></i> 
+                        <span>Período de Análisis: <strong class="text-white">2015 - 2025</strong></span>
+                    </span>
+                    <span class="flex items-center gap-2 bg-white/5 border border-white/10 px-3.5 py-1.5 rounded-lg">
+                        <i class="fa-solid fa-mountain text-minero-500"></i>
+                        <span>Eje Central: <strong class="text-white">Gran Minería del Cobre y Complejos Concentradores</strong></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contenedor Principal de Reportes -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow space-y-10 w-full">
+        
+        <!-- Resumen Ejecutivo & KPIs Principales -->
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Card KPI 1: Exportaciones Totales -->
+            <div class="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm relative overflow-hidden group hover:border-apurimac-500 transition-all duration-300">
+                <div class="absolute top-0 right-0 p-3 opacity-10 text-apurimac-600 text-7xl group-hover:opacity-20 transition-all duration-300">
+                    <i class="fa-solid fa-arrow-trend-up"></i>
+                </div>
+                <span class="text-xs font-bold uppercase tracking-wider text-slate-400 block mb-1">Exportaciones Totales (2025)</span>
+                <div class="flex items-baseline gap-2 mb-2">
+                    <span class="text-3xl font-extrabold text-slate-900">US$ 4,431.92M</span>
+                    <span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-md flex items-center gap-0.5">
+                        <i class="fa-solid fa-arrow-up"></i> +8150.83%
+                    </span>
+                </div>
+                <p class="text-xs text-slate-500 leading-relaxed">
+                    Apurímac ha experimentado un incremento estructural en sus exportaciones (8,150.83% respecto a 2015), impulsado totalmente por la entrada en operación comercial de proyectos mineros de gran escala de nivel mundial.
+                </p>
+            </div>
+
+            <!-- Card KPI 2: Estructura de Cartera -->
+            <div class="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm relative overflow-hidden group hover:border-minero-500 transition-all duration-300">
+                <div class="absolute top-0 right-0 p-3 opacity-10 text-minero-500 text-7xl group-hover:opacity-20 transition-all duration-300">
+                    <i class="fa-solid fa-boxes-stacked"></i>
+                </div>
+                <span class="text-xs font-bold uppercase tracking-wider text-slate-400 block mb-1">Estructura de Cartera</span>
+                <div class="flex items-baseline gap-2 mb-2">
+                    <span class="text-3xl font-extrabold text-slate-900">99.62%</span>
+                    <span class="text-xs font-bold text-apurimac-700 bg-apurimac-100 px-2 py-0.5 rounded-md">
+                        Basadas en Recursos
+                    </span>
+                </div>
+                <p class="text-xs text-slate-500 leading-relaxed">
+                    Su canasta está casi íntegramente basada en recursos (99.62%), reflejando el procesamiento primario —molienda y flotación— de concentrados mineros. La diversificación hacia manufacturas de media o alta tecnología es mínima.
+                </p>
+            </div>
+
+            <!-- Card KPI 3: Posición de Complejidad -->
+            <div class="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm relative overflow-hidden group hover:border-slate-400 transition-all duration-300">
+                <div class="absolute top-0 right-0 p-3 opacity-10 text-slate-400 text-7xl group-hover:opacity-20 transition-all duration-300">
+                    <i class="fa-solid fa-medal"></i>
+                </div>
+                <span class="text-xs font-bold uppercase tracking-wider text-slate-400 block mb-1">Posición de Complejidad</span>
+                <div class="flex items-baseline gap-2 mb-2">
+                    <span class="text-3xl font-extrabold text-slate-900">Puesto 16º</span>
+                    <span class="text-xs font-medium text-slate-500">de 26 Regiones (2025)</span>
+                </div>
+                <p class="text-xs text-slate-500 leading-relaxed">
+                    A pesar de su masiva escala comercial, ocupa el puesto 16º en complejidad económica (34.258 puntos). Existe una desconexión crítica entre la renta extractiva generada y las capacidades técnicas industriales desarrolladas regionalmente.
+                </p>
+            </div>
+        </section>
+
+        <!-- Sección 1: Ranking y Evolución del ICER Regional -->
+        <section class="bg-white rounded-2xl border border-slate-200/80 p-6 sm:p-8 shadow-sm space-y-6">
+            <div class="border-b border-slate-100 pb-5">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                    <div class="space-y-1">
+                        <span class="text-xs font-bold text-apurimac-700 uppercase tracking-widest">INDICADOR ESTRUCTURAL</span>
+                        <h3 class="text-xl font-bold text-slate-900">1. Ranking y Evolución del ICER Regional</h3>
+                        <p class="text-xs text-slate-500">
+                            Evolución del Índice de Complejidad Exportadora Regional comparado contra el Top 5 nacional (2025).
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-2 text-xs bg-slate-50 p-1.5 rounded-xl border border-slate-150">
+                        <span class="px-2.5 py-1 bg-white shadow-sm rounded-lg font-semibold text-slate-700">Comparativo Nacional</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gráfico y Tabla Comparativa -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                <!-- Gráfico de Líneas (Chart.js) -->
+                <div class="lg:col-span-7 bg-slate-50/50 rounded-2xl p-4 border border-slate-100 flex flex-col justify-between">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-xs font-semibold text-slate-600">Puntaje ICER Regional (2015-2025)</span>
+                        <span class="text-[10px] text-slate-400">Haz clic en la leyenda para ocultar/mostrar regiones</span>
+                    </div>
+                    <div class="relative h-[320px] w-full">
+                        <canvas id="chart-icer"></canvas>
+                    </div>
+                </div>
+
+                <!-- Tabla de Datos del Top 5 de Ranking -->
+                <div class="lg:col-span-5 flex flex-col justify-between space-y-4">
+                    <div class="bg-slate-50/50 rounded-2xl p-4 border border-slate-100 space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-semibold text-slate-700">Top 5 Nacional + Región de Análisis (2025)</span>
+                            <span class="text-[10px] bg-slate-200 text-slate-600 px-2 py-0.5 rounded-md font-mono">Ranking Nacional</span>
+                        </div>
+                        <div class="divide-y divide-slate-200/60 text-xs">
+                            <!-- Top 5 Rankings -->
+                            <div class="py-1.5 flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-slate-400"></span>
+                                    <span class="font-medium text-slate-700">Lima Metropolitana</span>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <span class="text-slate-500 font-mono">54.538</span>
+                                    <span class="w-12 text-center py-0.5 bg-slate-100 text-slate-600 rounded font-bold">1º</span>
+                                </div>
+                            </div>
+                            <div class="py-1.5 flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-[#0ea5e9]"></span>
+                                    <span class="font-medium text-slate-700">Callao</span>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <span class="text-slate-500 font-mono">53.650</span>
+                                    <span class="w-12 text-center py-0.5 bg-slate-100 text-slate-600 rounded font-bold">2º</span>
+                                </div>
+                            </div>
+                            <div class="py-1.5 flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-[#8b5cf6]"></span>
+                                    <span class="font-medium text-slate-700">Lima Región</span>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <span class="text-slate-500 font-mono">43.360</span>
+                                    <span class="w-12 text-center py-0.5 bg-slate-100 text-slate-600 rounded font-bold">3º</span>
+                                </div>
+                            </div>
+                            <div class="py-1.5 flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-[#fb923c]"></span>
+                                    <span class="font-medium text-slate-700">Arequipa</span>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <span class="text-slate-500 font-mono">41.367</span>
+                                    <span class="w-12 text-center py-0.5 bg-slate-100 text-slate-600 rounded font-bold">4º</span>
+                                </div>
+                            </div>
+                            <div class="py-1.5 flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-[#f43f5e]"></span>
+                                    <span class="font-medium text-slate-700">La Libertad</span>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <span class="text-slate-500 font-mono">40.704</span>
+                                    <span class="w-12 text-center py-0.5 bg-slate-100 text-slate-600 rounded font-bold">5º</span>
+                                </div>
+                            </div>
+                            <!-- Apurímac (16º) -->
+                            <div class="py-2.5 flex items-center justify-between bg-apurimac-100/55 -mx-4 px-4 border-y border-apurimac-200/50">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-3 h-3 rounded-full bg-apurimac-500 border border-white"></span>
+                                    <span class="font-bold text-slate-900">Apurímac</span>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <span class="font-bold text-apurimac-850 font-mono">34.258</span>
+                                    <span class="w-12 text-center py-0.5 bg-apurimac-500 text-slate-950 rounded font-extrabold shadow-sm">16º</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-apurimac-50 border border-apurimac-100 rounded-2xl p-4 text-xs text-apurimac-950 space-y-2">
+                        <p class="font-semibold flex items-center gap-1.5">
+                            <i class="fa-solid fa-circle-info text-apurimac-600"></i> Dinámica de Complejidad:
+                        </p>
+                        <p class="leading-relaxed text-slate-600">
+                            Apurímac evidencia un comportamiento econométrico de enclave: un salto súbito en volumen exportado gracias a la minería (Quellaveco/Las Bambas), pero con una trayectoria del índice de complejidad exportadora que apenas se mantiene en la franja de los 30-35 puntos durante la década. Esto revela una incapacidad estructural para absorber el conocimiento técnico del sector extractivo y transformarlo en una matriz exportadora diversificada.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 2: Diagnóstico de la Cartera Exportadora y Composición Tecnológica -->
+        <section class="bg-white rounded-2xl border border-slate-200/80 p-6 sm:p-8 shadow-sm space-y-8">
+            <div class="border-b border-slate-100 pb-5">
+                <span class="text-xs font-bold text-apurimac-700 uppercase tracking-widest">DIAGNÓSTICO ESTRUCTURAL</span>
+                <h3 class="text-xl font-bold text-slate-900">2. Diagnóstico de la Cartera Exportadora y Composición Tecnológica</h3>
+                <p class="text-xs text-slate-500">
+                    Evolución del valor comercial exportado e identificación de la intensidad del valor científico/tecnológico incorporado en la canasta de Apurímac.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Gráfico de Barras: Evolución de las Exportaciones -->
+                <div class="bg-slate-50/50 rounded-2xl p-4 border border-slate-100 flex flex-col justify-between">
+                    <span class="text-xs font-semibold text-slate-600 mb-3 block">Evolución del Valor FOB de Exportaciones (Millones US$)</span>
+                    <div class="relative h-[280px]">
+                        <canvas id="chart-exports"></canvas>
+                    </div>
+                </div>
+
+                <!-- Gráfico de Rosca: Estructura de Intensidad Tecnológica -->
+                <div class="bg-slate-50/50 rounded-2xl p-4 border border-slate-100 flex flex-col justify-between">
+                    <span class="text-xs font-semibold text-slate-600 mb-3 block">Composición por Contenido Tecnológico (2025)</span>
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
+                        <div class="md:col-span-7 relative h-[240px]">
+                            <canvas id="chart-tech"></canvas>
+                        </div>
+                        <div class="md:col-span-5 space-y-2.5 text-xs">
+                            <div class="flex items-center gap-1.5 justify-between">
+                                <span class="flex items-center gap-1.5 font-medium text-slate-600">
+                                    <span class="w-2.5 h-2.5 rounded bg-apurimac-600"></span> Basadas en Rec.
+                                </span>
+                                <span class="font-bold text-slate-900">99.62%</span>
+                            </div>
+                            <div class="flex items-center gap-1.5 justify-between">
+                                <span class="flex items-center gap-1.5 font-medium text-slate-600">
+                                    <span class="w-2.5 h-2.5 rounded bg-apurimac-400"></span> Primarios
+                                </span>
+                                <span class="font-bold text-slate-900">0.38%</span>
+                            </div>
+                            <div class="flex items-center gap-1.5 justify-between">
+                                <span class="flex items-center gap-1.5 font-medium text-slate-600">
+                                    <span class="w-2.5 h-2.5 rounded bg-minero-500"></span> Mediana Tech
+                                </span>
+                                <span class="font-bold text-slate-900">0.00%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tabla de Productos de la Canasta Exportadora de Apurímac -->
+            <div class="space-y-4 pt-4">
+                <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                    <span class="text-sm font-semibold text-slate-700 flex items-center gap-2">
+                        <i class="fa-solid fa-list-ol text-apurimac-700"></i> Top 10 de Productos Más Exportados de Apurímac (2025)
+                    </span>
+                    
+                    <!-- Buscador e Interactividad -->
+                    <div class="relative w-full sm:w-72">
+                        <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-400 pointer-events-none">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </span>
+                        <input type="text" id="table-search" placeholder="Buscar producto o código arancelario..." 
+                               class="w-full pl-9 pr-4 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs focus:ring-2 focus:ring-apurimac-500 focus:border-apurimac-500 focus:bg-white outline-none transition-all">
+                    </div>
+                </div>
+
+                <div class="overflow-x-auto border border-slate-200 rounded-2xl shadow-sm custom-scrollbar">
+                    <table class="w-full text-left border-collapse text-xs">
+                        <thead>
+                            <tr class="bg-slate-50 text-slate-600 border-b border-slate-200 font-semibold uppercase tracking-wider">
+                                <th class="p-4 w-12 text-center">N°</th>
+                                <th class="p-4 w-28">Código HS12</th>
+                                <th class="p-4">Producto Exportado</th>
+                                <th class="p-4 w-44">Nivel Tecnológico</th>
+                                <th class="p-4 w-36 text-right">Valor (Millones US$)</th>
+                                <th class="p-4 w-28 text-right">Participación</th>
+                            </tr>
+                        </thead>
+                        <tbody id="export-table-body" class="divide-y divide-slate-100">
+                            <!-- Fila 1 -->
+                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                <td class="p-4 text-center font-bold text-slate-400">1</td>
+                                <td class="p-4 font-mono text-slate-500">2603</td>
+                                <td class="p-4 font-semibold text-slate-900">Minerales de cobre</td>
+                                <td class="p-4">
+                                    <span class="px-2.5 py-1 bg-apurimac-50 text-apurimac-700 rounded-full font-medium text-[10px] border border-apurimac-100">
+                                        Basadas en recursos
+                                    </span>
+                                </td>
+                                <td class="p-4 text-right font-mono font-semibold text-slate-900">4,301.78</td>
+                                <td class="p-4 text-right font-semibold text-apurimac-700 bg-apurimac-50/10">97.06%</td>
+                            </tr>
+                            <!-- Fila 2 -->
+                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                <td class="p-4 text-center font-bold text-slate-400">2</td>
+                                <td class="p-4 font-mono text-slate-500">2613</td>
+                                <td class="p-4 font-semibold text-slate-900">Minerales de molibdeno</td>
+                                <td class="p-4">
+                                    <span class="px-2.5 py-1 bg-apurimac-50 text-apurimac-700 rounded-full font-medium text-[10px] border border-apurimac-100">
+                                        Basadas en recursos
+                                    </span>
+                                </td>
+                                <td class="p-4 text-right font-mono font-semibold text-slate-900">95.81</td>
+                                <td class="p-4 text-right font-semibold text-apurimac-700">2.16%</td>
+                            </tr>
+                            <!-- Fila 3 -->
+                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                <td class="p-4 text-center font-bold text-slate-400">3</td>
+                                <td class="p-4 font-mono text-slate-500">1008</td>
+                                <td class="p-4 font-semibold text-slate-900">Cereales andinos (quinua/otros)</td>
+                                <td class="p-4">
+                                    <span class="px-2.5 py-1 bg-minero-50 text-minero-700 rounded-full font-medium text-[10px] border border-minero-100">
+                                        Productos primarios
+                                    </span>
+                                </td>
+                                <td class="p-4 text-right font-mono font-semibold text-slate-900">16.81</td>
+                                <td class="p-4 text-right font-semibold text-slate-600">0.38%</td>
+                            </tr>
+                            <!-- Fila 4 -->
+                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                <td class="p-4 text-center font-bold text-slate-400">4</td>
+                                <td class="p-4 font-mono text-slate-500">7108</td>
+                                <td class="p-4 font-semibold text-slate-900">Oro en bruto, semielaborado o polvo</td>
+                                <td class="p-4">
+                                    <span class="px-2.5 py-1 bg-apurimac-50 text-apurimac-700 rounded-full font-medium text-[10px] border border-apurimac-100">
+                                        Basadas en recursos
+                                    </span>
+                                </td>
+                                <td class="p-4 text-right font-mono font-semibold text-slate-900">16.42</td>
+                                <td class="p-4 text-right font-semibold text-slate-600">0.37%</td>
+                            </tr>
+                            <!-- Fila 5 -->
+                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                <td class="p-4 text-center font-bold text-slate-400">5</td>
+                                <td class="p-4 font-mono text-slate-500">2616</td>
+                                <td class="p-4 font-semibold text-slate-900">Minerales de metales preciosos</td>
+                                <td class="p-4">
+                                    <span class="px-2.5 py-1 bg-apurimac-50 text-apurimac-700 rounded-full font-medium text-[10px] border border-apurimac-100">
+                                        Basadas en recursos
+                                    </span>
+                                </td>
+                                <td class="p-4 text-right font-mono font-semibold text-slate-900">0.76</td>
+                                <td class="p-4 text-right font-semibold text-slate-500">0.02%</td>
+                            </tr>
+                            <!-- Fila 6 -->
+                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                <td class="p-4 text-center font-bold text-slate-400">6</td>
+                                <td class="p-4 font-mono text-slate-500">0713</td>
+                                <td class="p-4 font-semibold text-slate-900">Legumbres secas desvainadas (menestras)</td>
+                                <td class="p-4">
+                                    <span class="px-2.5 py-1 bg-minero-50 text-minero-700 rounded-full font-medium text-[10px] border border-minero-100">
+                                        Productos primarios
+                                    </span>
+                                </td>
+                                <td class="p-4 text-right font-mono font-semibold text-slate-900">0.12</td>
+                                <td class="p-4 text-right font-semibold text-slate-500">0.00%</td>
+                            </tr>
+                            <!-- Fila 7 -->
+                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                <td class="p-4 text-center font-bold text-slate-400">7</td>
+                                <td class="p-4 font-mono text-slate-500">7602</td>
+                                <td class="p-4 font-semibold text-slate-900">Chatarra de aluminio</td>
+                                <td class="p-4">
+                                    <span class="px-2.5 py-1 bg-apurimac-50 text-apurimac-700 rounded-full font-medium text-[10px] border border-apurimac-100">
+                                        Basadas en recursos
+                                    </span>
+                                </td>
+                                <td class="p-4 text-right font-mono font-semibold text-slate-900">0.08</td>
+                                <td class="p-4 text-right font-semibold text-slate-500">0.00%</td>
+                            </tr>
+                            <!-- Fila 8 -->
+                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                <td class="p-4 text-center font-bold text-slate-400">8</td>
+                                <td class="p-4 font-mono text-slate-500">0810</td>
+                                <td class="p-4 font-semibold text-slate-900">Otras frutas frescas</td>
+                                <td class="p-4">
+                                    <span class="px-2.5 py-1 bg-minero-50 text-minero-700 rounded-full font-medium text-[10px] border border-minero-100">
+                                        Productos primarios
+                                    </span>
+                                </td>
+                                <td class="p-4 text-right font-mono font-semibold text-slate-900">0.06</td>
+                                <td class="p-4 text-right font-semibold text-slate-500">0.00%</td>
+                            </tr>
+                            <!-- Fila 9 -->
+                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                <td class="p-4 text-center font-bold text-slate-400">9</td>
+                                <td class="p-4 font-mono text-slate-500">0813</td>
+                                <td class="p-4 font-semibold text-slate-900">Otras frutas deshidratadas</td>
+                                <td class="p-4">
+                                    <span class="px-2.5 py-1 bg-minero-50 text-minero-700 rounded-full font-medium text-[10px] border border-minero-100">
+                                        Productos primarios
+                                    </span>
+                                </td>
+                                <td class="p-4 text-right font-mono font-semibold text-slate-900">0.05</td>
+                                <td class="p-4 text-right font-semibold text-slate-500">0.00%</td>
+                            </tr>
+                            <!-- Fila 10 -->
+                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                <td class="p-4 text-center font-bold text-slate-400">10</td>
+                                <td class="p-4 font-mono text-slate-500">1207</td>
+                                <td class="p-4 font-semibold text-slate-900">Otras semillas oleaginosas</td>
+                                <td class="p-4">
+                                    <span class="px-2.5 py-1 bg-minero-50 text-minero-700 rounded-full font-medium text-[10px] border border-minero-100">
+                                        Productos primarios
+                                    </span>
+                                </td>
+                                <td class="p-4 text-right font-mono font-semibold text-slate-900">0.01</td>
+                                <td class="p-4 text-right font-semibold text-slate-500">0.00%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Box Informativo -->
+            <div class="mt-6 bg-orange-50/40 border border-orange-250/70 rounded-2xl p-5 text-xs text-slate-700 space-y-3 shadow-sm">
+                <p class="font-bold text-orange-950 flex items-center gap-2 text-sm">
+                    <i class="fa-solid fa-square-poll-vertical text-apurimac-600"></i> Análisis Diagnóstico de la Cartera Exportadora de Apurímac
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-1 leading-relaxed">
+                    <div class="space-y-1.5">
+                        <span class="font-semibold text-orange-900 block">1. El Trinomio Concentrado de la Sierra:</span>
+                        <p class="text-slate-600">
+                            La canasta de Apurímac está supeditada estructuralmente a la extracción polimetálica: los minerales de cobre (97.06% del valor, US$ 4,301.78M) y de molibdeno (2.16%) abarcan más del 99% del valor total. Estos concentrados triturados y flotados clasifican econométricamente como manufacturas basadas en recursos de primer nivel.
+                        </p>
+                    </div>
+                    <div class="space-y-1.5">
+                        <span class="font-semibold text-orange-900 block">2. Inexistencia de Transformación Industrial:</span>
+                        <p class="text-slate-600">
+                            A pesar de generar US$ 4,431.92M, prácticamente no hay valor agregado técnico manufacturado (0.00% en alta/media tecnología). Apurímac opera como un enclave puramente minero, sin plantas de fundición o refinación integrada regional que permitan escalar la complejidad.
+                        </p>
+                    </div>
+                    <div class="space-y-1.5">
+                        <span class="font-semibold text-orange-900 block">3. La Frágil Base Agroexportadora:</span>
+                        <p class="text-slate-600">
+                            La agricultura de altura (cereales, menestras, frutas) genera menos del 1% del total exportado (US$ 0.38M aprox.). Pese a poseer ventajas comparativas climáticas para ciertos cultivos, la escala de producción y la tecnología de empaquetado son insuficientes para competir en mercados internacionales.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 3: Oportunidades de Diversificación y Espacio del Producto -->
+        <section class="bg-white rounded-2xl border border-slate-200/80 p-6 sm:p-8 shadow-sm space-y-8">
+            <div class="border-b border-slate-100 pb-5">
+                <span class="text-xs font-bold text-apurimac-700 uppercase tracking-widest">ALGORITMO DE DIVERSIFICACIÓN REAL</span>
+                <h3 class="text-xl font-bold text-slate-900">3. Oportunidades de Diversificación y Espacio del Producto</h3>
+                <p class="text-xs text-slate-500">
+                    Análisis de proximidad estructural: Hacia dónde puede migrar de manera inteligente la economía de Apurímac apalancándose en sus capacidades preexistentes.
+                </p>
+            </div>
+
+            <!-- Simulador de Conectividad de Red -->
+            <div class="bg-slate-900 text-white rounded-2xl p-6 shadow-md border border-slate-800 space-y-6">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                    <div class="space-y-1">
+                        <span class="text-[10px] font-bold text-apurimac-400 uppercase tracking-widest">HERRAMIENTA DE PLANIFICACIÓN ECONÓMICA</span>
+                        <h4 class="text-base font-bold flex items-center gap-2 text-apurimac-200">
+                            <i class="fa-solid fa-microchip text-apurimac-400"></i> Simulador de Conectividad de Red de Apurímac (Filtro por Complejidad)
+                        </h4>
+                    </div>
+                    <!-- Selector de Industrias Reales -->
+                    <select id="industry-selector" class="bg-slate-800 border border-slate-700 text-slate-200 text-xs rounded-xl px-3.5 py-2.5 outline-none focus:ring-2 focus:ring-apurimac-500 transition-all">
+                        <option value="switchgear">HS 8530 - Aparatos mecánicos de señalización y control (Complejidad Minera/Logística)</option>
+                        <option value="culture">HS 3821 - Medios de cultivo preparados para laboratorios (Bio-industrial)</option>
+                        <option value="capacitors">HS 8532 - Condensadores eléctricos (Soporte Eléctrico de Mina)</option>
+                    </select>
+                </div>
+
+                <!-- Outputs del Simulador -->
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-6 pt-2">
+                    <div class="bg-slate-800/50 rounded-xl p-4 border border-slate-700/50 space-y-2">
+                        <span class="text-[10px] text-slate-400 font-bold uppercase tracking-wider block">Densidad de Capacidades</span>
+                        <div class="flex items-baseline gap-2">
+                            <span id="sim-density" class="text-2xl font-extrabold text-apurimac-400">0.9019%</span>
+                        </div>
+                        <p class="text-[11px] text-slate-300">Medida empírica de cercanía a la canasta de capacidades regional.</p>
+                    </div>
+
+                    <div class="bg-slate-800/50 rounded-xl p-4 border border-slate-700/50 space-y-2">
+                        <span class="text-[10px] text-slate-400 font-bold uppercase tracking-wider block">Distancia (1 - Densidad)</span>
+                        <div class="flex items-baseline gap-2">
+                            <span id="sim-distance" class="text-2xl font-extrabold text-rose-400">99.0981%</span>
+                        </div>
+                        <p class="text-[11px] text-slate-300">Brecha técnica restante para el desarrollo autónomo de la industria.</p>
+                    </div>
+
+                    <div class="bg-slate-800/50 rounded-xl p-4 border border-slate-700/50 space-y-2">
+                        <span class="text-[10px] text-slate-400 font-bold uppercase tracking-wider block">Complejidad del Producto (IPC)</span>
+                        <div class="flex items-baseline gap-2">
+                            <span id="sim-pci" class="text-2xl font-extrabold text-amber-400">+1.259</span>
+                        </div>
+                        <p class="text-[11px] text-slate-300">Mide el nivel de sofisticación y exclusividad técnica global del bien propuesto.</p>
+                    </div>
+
+                    <div class="bg-slate-800/50 rounded-xl p-4 border border-slate-700/50 space-y-2">
+                        <span class="text-[10px] text-slate-400 font-bold uppercase tracking-wider block">Viabilidad de Transición</span>
+                        <div class="flex items-baseline gap-2">
+                            <span id="sim-viability" class="text-2xl font-extrabold text-emerald-400">Alta</span>
+                        </div>
+                        <p class="text-[11px] text-slate-300">Nivel de factibilidad según el mapa actual de encadenamiento de Apurímac.</p>
+                    </div>
+                </div>
+
+                <!-- Detalle del Vector Seleccionado -->
+                <div class="bg-slate-950/80 rounded-xl p-4 border border-slate-800/80 text-xs">
+                    <div class="flex items-start gap-3">
+                        <span class="text-2xl text-apurimac-400"><i class="fa-solid fa-quote-left"></i></span>
+                        <div class="space-y-1">
+                            <span class="font-semibold text-slate-300 block">Sustento del Algoritmo del Espacio del Producto para Apurímac:</span>
+                            <p id="sim-description" class="text-slate-400 leading-relaxed">
+                                La fabricación de aparatos de control y señalización se apoya en la densa red de instrumentación necesaria para la minería de tajo abierto en la sierra de Apurímac. Esta industria permite transicionar hacia manufacturas de control electromecánico, capitalizando las capacidades de mantenimiento de grandes fajas y sistemas de monitoreo de mina que ya existen en la región.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Matriz de Viabilidad Completa -->
+            <div class="space-y-4">
+                <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                    <span class="text-sm font-semibold text-slate-700 flex items-center gap-2">
+                        <i class="fa-solid fa-diagram-project text-apurimac-700"></i> Matriz Completa de Oportunidades para Apurímac
+                    </span>
+                    
+                    <div class="flex flex-wrap items-center gap-2 w-full sm:w-auto">
+                        <select id="matrix-filter" class="bg-white border border-slate-200 rounded-xl px-3 py-2 text-xs font-semibold text-slate-700 outline-none focus:ring-2 focus:ring-apurimac-500">
+                            <option value="all">Todas las viabilidades</option>
+                            <option value="Muy alta">Muy alta</option>
+                            <option value="Alta">Alta</option>
+                            <option value="Baja">Baja</option>
+                            <option value="Muy baja">Muy baja</option>
+                        </select>
+                        <div class="relative w-full sm:w-64">
+                            <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-400 pointer-events-none">
+                                <i class="fa-solid fa-magnifying-glass text-xs"></i>
+                            </span>
+                            <input type="text" id="matrix-search" placeholder="Buscar producto o arancel..." 
+                                   class="w-full pl-8 pr-4 py-2 bg-white border border-slate-200 rounded-xl text-xs focus:ring-2 focus:ring-apurimac-500 outline-none transition-all">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="overflow-x-auto border border-slate-200 rounded-2xl shadow-sm custom-scrollbar max-h-[500px]">
+                    <table class="w-full text-left border-collapse text-xs">
+                        <thead class="sticky top-0 bg-slate-50 z-10 border-b border-slate-200">
+                            <tr class="text-slate-600 font-semibold uppercase tracking-wider">
+                                <th class="p-4 w-28">Código HS12</th>
+                                <th class="p-4">Producto Propuesto</th>
+                                <th class="p-4 w-28 text-center">IPC</th>
+                                <th class="p-4 w-28 text-center">Densidad Real</th>
+                                <th class="p-4 w-28 text-center">Distancia Real</th>
+                                <th class="p-4 w-32 text-center">Viabilidad</th>
+                            </tr>
+                        </thead>
+                        <tbody id="matrix-table-body" class="divide-y divide-slate-100 bg-white">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 px-4 border-t border-slate-800 mt-20">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="space-y-2">
+                <div class="flex items-center gap-2 text-white">
+                    <span class="p-1.5 bg-apurimac-600 rounded text-xs"><i class="fa-solid fa-chart-pie text-slate-950"></i></span>
+                    <span class="font-bold tracking-wider text-xs">CONSEJO NACIONAL DE COMPETITIVIDAD Y FORMALIZACIÓN - CNCF</span>
+                </div>
+            </div>
+            
+            <div class="flex flex-col items-end gap-2 text-right">
+                <span class="text-[10px] bg-slate-800 px-2.5 py-1 rounded text-slate-500 font-mono">Monitoreo Territorial de Complejidad Económica - Apurímac</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts y Gráficos -->
+    <script>
+        let chartIcerInstance = null;
+        let chartExportsInstance = null;
+        let chartTechInstance = null;
+
+        const apurimacRealDatabase = [{"HS12": "7308", "PRODUCTO": "Estructuras y sus partes de hierro o acero (puentes, torres)", "IPC": 0.147, "Densidad": 0.01688886786768582, "Distancia": 0.9831111321323142, "Diversificacion": "Muy alta"}, {"HS12": "4823", "PRODUCTO": "Otras manufacturas cortadas de papel", "IPC": 0.112, "Densidad": 0.01697473199855345, "Distancia": 0.9830252680014465, "Diversificacion": "Muy alta"}, {"HS12": "8530", "PRODUCTO": "Aparatos mecánicos de señalización y control para tráfico", "IPC": 1.259, "Densidad": 0.009019305406857801, "Distancia": 0.9909806945931422, "Diversificacion": "Alta"}, {"HS12": "3821", "PRODUCTO": "Medios de cultivo preparados para laboratorios", "IPC": 1.157, "Densidad": 0.009318746402305815, "Distancia": 0.9906812535976942, "Diversificacion": "Alta"}, {"HS12": "8532", "PRODUCTO": "Condensadores eléctricos", "IPC": 1.147, "Densidad": 0.01107467836440764, "Distancia": 0.9889253216355923, "Diversificacion": "Alta"}, {"HS12": "8514", "PRODUCTO": "Hornos eléctricos industriales o de laboratorio y equipos de inducción", "IPC": 1.035, "Densidad": 0.01101968843234553, "Distancia": 0.9889803115676545, "Diversificacion": "Alta"}, {"HS12": "9024", "PRODUCTO": "Equipos de ensayo de materiales", "IPC": 0.798, "Densidad": 0.009588667523175498, "Distancia": 0.9904113324768245, "Diversificacion": "Alta"}, {"HS12": "8438", "PRODUCTO": "Maquinaria industrial para la preparación de alimentos o bebidas", "IPC": 0.403, "Densidad": 0.00843336712330101, "Distancia": 0.991566632876699, "Diversificacion": "Alta"}, {"HS12": "6814", "PRODUCTO": "Mica trabajada y sus manufacturas", "IPC": 0.579, "Densidad": 0.009012378912384799, "Distancia": 0.9909876210876152, "Diversificacion": "Alta"}, {"HS12": "8513", "PRODUCTO": "Lámparas eléctricas portátiles de batería, acumulador o imán", "IPC": 0.545, "Densidad": 0.00767767171775618, "Distancia": 0.9923223282822438, "Diversificacion": "Alta"}, {"HS12": "8539", "PRODUCTO": "Bombillas y lámparas eléctricas", "IPC": 0.932, "Densidad": 0.008477265431818817, "Distancia": 0.9915227345681812, "Diversificacion": "Alta"}, {"HS12": "6806", "PRODUCTO": "Lanas minerales, vermiculita expandida y aislantes térmicos similares", "IPC": 0.879, "Densidad": 0.007421371728283921, "Distancia": 0.9925786282717161, "Diversificacion": "Alta"}, {"HS12": "3813", "PRODUCTO": "Cargas para extintores", "IPC": 0.674, "Densidad": 0.007555813589410317, "Distancia": 0.9924441864105897, "Diversificacion": "Alta"}, {"HS12": "8208", "PRODUCTO": "Cuchillas y hojas de corte para máquinas o aparatos", "IPC": 1.067, "Densidad": 0.009855589139884784, "Distancia": 0.9901444108601152, "Diversificacion": "Alta"}, {"HS12": "8480", "PRODUCTO": "Moldes para la industria (metal/plástico/vidrio)", "IPC": 0.822, "Densidad": 0.008447812975949574, "Distancia": 0.9915521870240504, "Diversificacion": "Alta"}];
+
+        const icerData = {
+            years: ['2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025'],
+            regions: {
+                limaMetropolitana: [53.653, 52.751, 53.813, 53.023, 53.646, 52.861, 54.394, 54.231, 54.349, 54.688, 54.538],
+                callao: [52.842, 51.736, 51.278, 50.448, 52.026, 52.092, 51.254, 53.074, 51.847, 52.188, 53.65],
+                limaRegion: [38.146, 38.469, 41.408, 42.404, 43.85, 41.64, 42.373, 43.857, 44.421, 45.138, 43.36],
+                arequipa: [45.285, 46.672, 44.505, 44.855, 45.87, 45.517, 43.913, 44.356, 44.516, 43.475, 41.367],
+                laLibertad: [40.751, 39.624, 39.222, 38.402, 40.465, 41.255, 38.905, 39.909, 38.74, 40.997, 40.704],
+                apurimac: [32.369, 22.844, 28.744, 28.256, 29.607, 29.003, 32.618, 36.798, 34.359, 34.258, 34.258]
+            }
+        };
+
+        const exportsData = {
+            years: ['2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025'],
+            values: [53.71, 1620.84, 2901.23, 2686.53, 2013.08, 2068.86, 3002.53, 2034.09, 3505.50, 2970.81, 4431.92]
+        };
+
+        const simulatorData = {
+            switchgear: {
+                density: '0.9019%',
+                distance: '99.0981%',
+                pci: '+1.259',
+                viability: 'Alta',
+                description: 'La fabricación de aparatos de control y señalización se apoya en la densa red de instrumentación necesaria para la minería de tajo abierto en la sierra de Apurímac. Esta industria permite transicionar hacia manufacturas de control electromecánico, capitalizando las capacidades de mantenimiento de grandes fajas y sistemas de monitoreo de mina que ya existen en la región.'
+            },
+            culture: {
+                density: '0.9319%',
+                distance: '99.0681%',
+                pci: '+1.157',
+                viability: 'Alta',
+                description: 'Conecta con el desarrollo de la agroindustria local y los laboratorios de control fitosanitario de los valles interandinos. La producción de medios de cultivo especializados potencia el clúster de biotecnología agrícola de Apurímac, facilitando la investigación técnica regional para cultivos de exportación.'
+            },
+            capacitors: {
+                density: '1.1075%',
+                distance: '98.8925%',
+                pci: '+1.147',
+                viability: 'Alta',
+                description: 'La demanda de componentes eléctricos de alta tensión en las subestaciones de las grandes mineras de la región es un mercado cautivo natural. Fabricar componentes capacitores permite elevar la complejidad de la cadena de suministro eléctrica regional y disminuir la dependencia de componentes importados.'
+            }
+        };
+
+        window.onload = function() {
+            initCharts();
+            setupInteractiveEvents();
+            renderMatrixTable(apurimacRealDatabase);
+        };
+
+        function initCharts() {
+            const ctxIcer = document.getElementById('chart-icer').getContext('2d');
+            chartIcerInstance = new Chart(ctxIcer, {
+                type: 'line',
+                data: {
+                    labels: icerData.years,
+                    datasets: [
+                        { label: 'Apurímac', data: icerData.regions.apurimac, borderColor: '#e11d48', backgroundColor: 'rgba(225,29,72,0.12)', borderWidth: 4, tension: 0.35, pointRadius: 4, pointBackgroundColor: '#e11d48', fill: true },
+                        { label: 'Lima Metropolitana', data: icerData.regions.limaMetropolitana, borderColor: '#64748b', backgroundColor: 'transparent', borderWidth: 2, tension: 0.35, pointRadius: 1, borderDash: [4, 3] },
+                        { label: 'Callao', data: icerData.regions.callao, borderColor: '#0ea5e9', backgroundColor: 'transparent', borderWidth: 2, tension: 0.35, pointRadius: 1, borderDash: [4, 3] },
+                        { label: 'Lima Región', data: icerData.regions.limaRegion, borderColor: '#8b5cf6', backgroundColor: 'transparent', borderWidth: 2, tension: 0.35, pointRadius: 1, borderDash: [4, 3] },
+                        { label: 'Arequipa', data: icerData.regions.arequipa, borderColor: '#fb923c', backgroundColor: 'transparent', borderWidth: 2, tension: 0.35, pointRadius: 1, borderDash: [4, 3] }
+                    ]
+                },
+                options: { responsive: true, maintainAspectRatio: false, interaction: { mode: 'index', intersect: false }, plugins: { legend: { position: 'bottom', labels: { boxWidth: 10, font: { size: 10 }, usePointStyle: true } } } }
+            });
+
+            const ctxExports = document.getElementById('chart-exports').getContext('2d');
+            chartExportsInstance = new Chart(ctxExports, {
+                type: 'bar',
+                data: { labels: exportsData.years, datasets: [{ label: 'Exportaciones FOB (Millones US$)', data: exportsData.values, backgroundColor: '#9f1239', borderRadius: 6, maxBarThickness: 34 }] },
+                options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
+            });
+
+            const ctxTech = document.getElementById('chart-tech').getContext('2d');
+            chartTechInstance = new Chart(ctxTech, {
+                type: 'doughnut',
+                data: { labels: ['Basadas en Recursos', 'Primarios', 'Mediana Tecnología'], datasets: [{ data: [99.62, 0.38, 0.00], backgroundColor: ['#9f1239', '#e11d48', '#f59e0b'], borderWidth: 2, borderColor: '#ffffff' }] },
+                options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, cutout: '70%' }
+            });
+        }
+
+        function renderMatrixTable(dataset) {
+            const tbody = document.getElementById("matrix-table-body");
+            tbody.innerHTML = "";
+            dataset.forEach(row => {
+                const tr = document.createElement("tr");
+                tr.className = "hover:bg-slate-50/70 transition-colors";
+                tr.innerHTML = `<td class="p-4 font-mono text-slate-500 font-semibold">${row.HS12}</td><td class="p-4 font-bold text-slate-900">${row.PRODUCTO}</td><td class="p-4 text-center font-semibold text-slate-600">${row.IPC.toFixed(3)}</td><td class="p-4 text-center font-bold text-emerald-800">${(row.Densidad*100).toFixed(4)}%</td><td class="p-4 text-center text-slate-500 font-medium">${(row.Distancia*100).toFixed(4)}%</td><td class="p-4 text-center"><span class="px-2.5 py-1 border text-[10px] rounded-full ${row.Diversificacion === 'Muy alta' ? 'bg-emerald-50 text-emerald-700' : 'bg-blue-50 text-blue-700'}">${row.Diversificacion}</span></td>`;
+                tbody.appendChild(tr);
+            });
+        }
+
+        function setupInteractiveEvents() {
+            document.getElementById('table-search').addEventListener('input', e => {
+                const term = e.target.value.toLowerCase();
+                document.querySelectorAll('#export-table-body tr').forEach(row => { row.style.display = (row.textContent.toLowerCase().includes(term)) ? '' : 'none'; });
+            });
+            document.getElementById("matrix-search").addEventListener("input", e => {
+                const val = e.target.value.toLowerCase();
+                renderMatrixTable(apurimacRealDatabase.filter(r => r.PRODUCTO.toLowerCase().includes(val)));
+            });
+            document.getElementById('industry-selector').addEventListener('change', e => {
+                const d = simulatorData[e.target.value];
+                document.getElementById('sim-density').textContent = d.density;
+                document.getElementById('sim-distance').textContent = d.distance;
+                document.getElementById('sim-pci').textContent = d.pci;
+                document.getElementById('sim-viability').textContent = d.viability;
+                document.getElementById('sim-description').textContent = d.description;
+            });
+        }
+    </script>
+</body>
+</html>

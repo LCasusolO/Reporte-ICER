@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REPORTE REGIONAL DE COMPLEJIDAD EXPORTADORA - MOQUEGUA</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js para visualización de datos de alto rendimiento -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- FontAwesome para iconografía avanzada -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Inter para una tipografía moderna y legible -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght=300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        moquegua: {
+                            50: '#fdf8f5',
+                            100: '#fbebe1',
+                            200: '#f7d3c3',
+                            300: '#f0b19b',
+                            400: '#e2846a',
+                            500: '#c2410c', // Naranja quemado / cobre institucional
+                            600: '#9a3412', // Marrón cobrizo de fundición
+                            700: '#7c2d12', // Bronce industrial
+                            850: '#431407', // Pizarra cobrizo oscuro
+                            950: '#2c0a03'  // Tono mineral de veta profunda
+                        },
+                        pizarra: {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            200: '#e2e8f0',
+                            500: '#64748b', // Gris pizarra de maquinaria
+                            600: '#475569', // Gris oscuro de relaves técnicos
+                            700: '#334155', // Gris institucional
+                            800: '#1e293b', 
+                            950: '#0f172a'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f5f9;
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans min-h-screen flex flex-col antialiased">
+
+    <!-- Navbar Institucional -->
+    <header class="sticky top-0 z-50 bg-white border-b border-slate-200/80 shadow-sm backdrop-blur-md bg-white/95">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <span class="p-3 bg-moquegua-850 text-white rounded-xl shadow-md flex items-center justify-center">
+                    <i class="fa-solid fa-chart-line text-xl text-moquegua-300"></i>
+                </span>
+                <div>
+                    <h1 class="text-xs sm:text-sm font-semibold text-slate-500 tracking-wider">MONITOREO TERRITORIAL</h1>
+                    <h2 class="text-base sm:text-lg font-extrabold uppercase tracking-tight text-slate-900 leading-tight">
+                        REPORTE REGIONAL DE COMPLEJIDAD EXPORTADORA
+                    </h2>
+                </div>
+            </div>
+            
+            <div class="flex items-center">
+                <span class="text-xs font-semibold text-moquegua-800 bg-moquegua-50 px-4 py-2.5 rounded-full border border-moquegua-200/60 flex items-center gap-2 shadow-sm">
+                    <span class="w-2.5 h-2.5 rounded-full bg-moquegua-500 animate-pulse"></span>
+                    Puesto Actual: 10º
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero / Presentación de la Región -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 w-full">
+        <div class="relative overflow-hidden bg-gradient-to-r from-slate-950 via-moquegua-950 to-pizarra-950 text-white p-8 md:p-12 rounded-[2rem] shadow-xl border border-moquegua-950/40">
+            <!-- Capa de brillo radial decorativo -->
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(194,65,12,0.14),transparent_60%)] pointer-events-none"></div>
+            
+            <div class="relative z-10 space-y-6">
+                <!-- Nombre de la región como título único de máximo impacto -->
+                <div class="flex flex-col gap-1">
+                    <span class="text-xs font-bold uppercase tracking-widest text-moquegua-400">Epicentro Minero-Metalúrgico del Sur del Perú</span>
+                    <h2 class="text-5xl sm:text-7xl font-black tracking-tight text-moquegua-300">
+                        Moquegua
+                    </h2>
+                </div>
+                
+                <!-- Descripción limpia del reporte -->
+                <p class="text-base sm:text-lg text-slate-300 font-light max-w-4xl leading-relaxed">
+                    Diagnóstico empírico del clúster minero con mayor expansión comercial del país. Análisis dinámico de la producción de cobre, molibdeno y derivados químicos, y modelado de fronteras de diversificación en el Espacio del Producto bajo los estándares del Harvard Growth Lab.
+                </p>
+                
+                <!-- Metadatos del Período de Análisis -->
+                <div class="flex flex-wrap items-center gap-3 pt-2 text-xs font-semibold text-slate-300">
+                    <span class="flex items-center gap-2 bg-white/5 border border-white/10 px-3.5 py-1.5 rounded-lg">
+                        <i class="fa-regular fa-calendar text-moquegua-400"></i> 
+                        <span>Período de Análisis: <strong class="text-white">2015 - 2025</strong></span>
+                    </span>
+                    <span class="flex items-center gap-2 bg-white/5 border border-white/10 px-3.5 py-1.5 rounded-lg">
+                        <i class="fa-solid fa-industry text-pizarra-500"></i>
+                        <span>Eje Central: <strong class="text-white">Minería de Gran Escala, Metalurgia e Industria del Puerto</strong></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contenedor Principal de Reportes -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow space-y-10 w-full">
+        
+        <!-- Resumen Ejecutivo & KPIs Principales -->
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Card KPI 1: Exportaciones Totales -->
+            <div class="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm relative overflow-hidden group hover:border-moquegua-500 transition-all duration-300">
+                <div class="absolute top-0 right-0 p-3 opacity-10 text-moquegua-600 text-7xl group-hover:opacity-20 transition-all duration-300">
+                    <i class="fa-solid fa-arrow-trend-up"></i>
+                </div>
+                <span class="text-xs font-bold uppercase tracking-wider text-slate-400 block mb-1">Exportaciones Totales (2025)</span>
+                <div class="flex items-baseline gap-2 mb-2">
+                    <span class="text-3xl font-extrabold text-slate-900">US$ 5,285.10M</span>
+                    <span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-md flex items-center gap-0.5">
+                        <i class="fa-solid fa-arrow-up"></i> +342.45%
+                    </span>
+                </div>
+                <p class="text-xs text-slate-500 leading-relaxed">
+                    Moquegua consolida un salto exponencial sin precedentes en su capacidad exportadora, multiplicando por más de cuatro veces sus valores de 2015 impulsada por la maduración operativa de Quellaveco y la ampliación de Cuajone.
+                </p>
+            </div>
+
+            <!-- Card KPI 2: Estructura de Cartera -->
+            <div class="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm relative overflow-hidden group hover:border-pizarra-500 transition-all duration-300">
+                <div class="absolute top-0 right-0 p-3 opacity-10 text-pizarra-500 text-7xl group-hover:opacity-20 transition-all duration-300">
+                    <i class="fa-solid fa-boxes-stacked"></i>
+                </div>
+                <span class="text-xs font-bold uppercase tracking-wider text-slate-400 block mb-1">Estructura de Cartera</span>
+                <div class="flex items-baseline gap-2 mb-2">
+                    <span class="text-3xl font-extrabold text-slate-900">80.61%</span>
+                    <span class="text-xs font-bold text-moquegua-700 bg-moquegua-100 px-2 py-0.5 rounded-md">
+                        Basadas en Recursos
+                    </span>
+                </div>
+                <p class="text-xs text-slate-500 leading-relaxed">
+                    Las manufacturas basadas en recursos concentran el 80.61% del valor comercial, debido a la catalogación técnica de los concentrados de cobre y molibdeno triturados y refinados en las plantas concentradoras regionales.
+                </p>
+            </div>
+
+            <!-- Card KPI 3: Posición de Complejidad -->
+            <div class="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm relative overflow-hidden group hover:border-slate-400 transition-all duration-300">
+                <div class="absolute top-0 right-0 p-3 opacity-10 text-slate-400 text-7xl group-hover:opacity-20 transition-all duration-300">
+                    <i class="fa-solid fa-medal"></i>
+                </div>
+                <span class="text-xs font-bold uppercase tracking-wider text-slate-400 block mb-1">Posición de Complejidad</span>
+                <div class="flex items-baseline gap-2 mb-2">
+                    <span class="text-3xl font-extrabold text-slate-900">Puesto 10º</span>
+                    <span class="text-xs font-medium text-slate-500">de 26 Regiones (2025)</span>
+                </div>
+                <p class="text-xs text-slate-500 leading-relaxed">
+                    La región se sitúa firmemente en el Top 10 del ranking ICER nacional (37.246 puntos). El reto econométrico no es el volumen de divisas generadas, sino la sofisticación de encadenamientos mecánicos y químicos aguas abajo.
+                </p>
+            </div>
+        </section>
+
+        <!-- Sección 1: Ranking y Evolución del ICER Regional -->
+        <section class="bg-white rounded-2xl border border-slate-200/80 p-6 sm:p-8 shadow-sm space-y-6">
+            <div class="border-b border-slate-100 pb-5">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                    <div class="space-y-1">
+                        <span class="text-xs font-bold text-moquegua-700 uppercase tracking-widest">INDICADOR ESTRUCTURAL</span>
+                        <h3 class="text-xl font-bold text-slate-900">1. Ranking y Evolución del ICER Regional</h3>
+                        <p class="text-xs text-slate-500">
+                            Evolución del Índice de Complejidad Exportadora Regional comparado contra el Top 5 nacional de clasificación (2025).
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-2 text-xs bg-slate-50 p-1.5 rounded-xl border border-slate-150">
+                        <span class="px-2.5 py-1 bg-white shadow-sm rounded-lg font-semibold text-slate-700">Comparativo: Top 5 + Moquegua</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gráfico y Tabla Comparativa -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                <!-- Gráfico de Líneas (Chart.js) -->
+                <div class="lg:col-span-7 bg-slate-50/50 rounded-2xl p-4 border border-slate-100 flex flex-col justify-between">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-xs font-semibold text-slate-600">Puntaje ICER Regional (2015-2025)</span>
+                        <span class="text-[10px] text-slate-400">Haz clic en la leyenda para ocultar/mostrar regiones</span>
+                    </div>
+                    <div class="relative h-[320px] w-full">
+                        <canvas id="chart-icer"></canvas>
+                    </div>
+                </div>
+
+                <!-- Tabla de Datos del Top 5 de Ranking -->
+                <div class="lg:col-span-5 flex flex-col justify-between space-y-4">
+                    <div class="bg-slate-50/50 rounded-2xl p-4 border border-slate-100 space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-semibold text-slate-700">Clasificación Nacional de Complejidad (2025)</span>
+                            <span class="text-[10px] bg-slate-200 text-slate-600 px-2 py-0.5 rounded-md font-mono">Ranking Nacional</span>
+                        </div>
+                        <div class="divide-y divide-slate-200/60 text-xs">
+                            <!-- Lima Metropolitana (1º) -->
+                            <div class="py-2 flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-slate-400"></span>
+                                    <span class="font-medium text-slate-700">Lima Metropolitana</span>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <span class="text-slate-500 font-mono">54.538</span>
+                                    <span class="w-12 text-center py-0.5 bg-slate-100 text-slate-600 rounded font-bold">1º</span>
+                                </div>
+                            </div>
+                            <!-- Callao (2º) -->
+                            <div class="py-2 flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-[#0ea5e9]"></span>
+                                    <span class="font-medium text-slate-700">Callao</span>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <span class="text-slate-500 font-mono">53.650</span>
+                                    <span class="w-12 text-center py-0.5 bg-slate-100 text-slate-600 rounded font-bold">2º</span>
+                                </div>
+                            </div>
+                            <!-- Lima Región (3º) -->
+                            <div class="py-2 flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-[#8b5cf6]"></span>
+                                    <span class="font-medium text-slate-700">Lima Región</span>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <span class="text-slate-500 font-mono">43.360</span>
+                                    <span class="w-12 text-center py-0.5 bg-slate-100 text-slate-600 rounded font-bold">3º</span>
+                                </div>
+                            </div>
+                            <!-- Arequipa (4º) -->
+                            <div class="py-2 flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-[#e11d48]"></span>
+                                    <span class="font-medium text-slate-700">Arequipa</span>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <span class="text-slate-500 font-mono">41.367</span>
+                                    <span class="w-12 text-center py-0.5 bg-slate-100 text-slate-600 rounded font-bold">4º</span>
+                                </div>
+                            </div>
+                            <!-- La Libertad (5º) -->
+                            <div class="py-2 flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-[#f43f5e]"></span>
+                                    <span class="font-medium text-slate-700">La Libertad</span>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <span class="text-slate-500 font-mono">40.704</span>
+                                    <span class="w-12 text-center py-0.5 bg-slate-100 text-slate-600 rounded font-bold">5º</span>
+                                </div>
+                            </div>
+                            <!-- Moquegua (Región de Análisis - 10º) -->
+                            <div class="py-2.5 flex items-center justify-between bg-moquegua-100/55 -mx-4 px-4 border-y border-moquegua-200/50">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-3 h-3 rounded-full bg-moquegua-500 border border-white"></span>
+                                    <span class="font-bold text-slate-900">Moquegua</span>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <span class="font-bold text-moquegua-850 font-mono">37.246</span>
+                                    <span class="w-12 text-center py-0.5 bg-moquegua-500 text-white rounded font-extrabold shadow-sm">10º</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-moquegua-50 border border-moquegua-100 rounded-2xl p-4 text-xs text-moquegua-950 space-y-2">
+                        <p class="font-semibold flex items-center gap-1.5">
+                            <i class="fa-solid fa-circle-info text-moquegua-600"></i> Brecha y Estabilidad del ICER:
+                        </p>
+                        <p class="leading-relaxed text-slate-600">
+                            Moquegua muestra un desempeño institucional notablemente estable en su índice de complejidad, oscilando entre los puestos 5° y 14° a lo largo de la serie histórica. En 2025 se ubica en el puesto 10° con un ICER de 37.246 puntos. El principal fenómeno econométrico regional radica en que, pese a multiplicar exponencialmente su volumen comercial exportado por el auge del cobre, su estructura de conocimientos subyacentes se mantiene rígida, evidenciando que la masa monetaria no genera automáticamente sofisticación en el Espacio del Producto si no se implementan políticas activas de diversificación industrial.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 2: Diagnóstico de la Cartera Exportadora y Composición Tecnológica -->
+        <section class="bg-white rounded-2xl border border-slate-200/80 p-6 sm:p-8 shadow-sm space-y-8">
+            <div class="border-b border-slate-100 pb-5">
+                <span class="text-xs font-bold text-moquegua-700 uppercase tracking-widest">DIAGNÓSTICO ESTRUCTURAL</span>
+                <h3 class="text-xl font-bold text-slate-900">2. Diagnóstico de la Cartera Exportadora y Composición Tecnológica</h3>
+                <p class="text-xs text-slate-500">
+                    Evolución del valor comercial exportado e identificación de la intensidad del valor científico/tecnológico incorporado en la canasta de Moquegua.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Gráfico de Barras: Evolución de las Exportaciones -->
+                <div class="bg-slate-50/50 rounded-2xl p-4 border border-slate-100 flex flex-col justify-between">
+                    <span class="text-xs font-semibold text-slate-600 mb-3 block">Evolución del Valor FOB de Exportaciones (Millones US$)</span>
+                    <div class="relative h-[280px]">
+                        <canvas id="chart-exports"></canvas>
+                    </div>
+                </div>
+
+                <!-- Gráfico de Rosca: Estructura de Intensidad Tecnológica -->
+                <div class="bg-slate-50/50 rounded-2xl p-4 border border-slate-100 flex flex-col justify-between">
+                    <span class="text-xs font-semibold text-slate-600 mb-3 block">Composición por Contenido Tecnológico (2025)</span>
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
+                        <div class="md:col-span-7 relative h-[240px]">
+                            <canvas id="chart-tech"></canvas>
+                        </div>
+                        <div class="md:col-span-5 space-y-2.5 text-xs">
+                            <div class="flex items-center gap-1.5 justify-between">
+                                <span class="flex items-center gap-1.5 font-medium text-slate-600">
+                                    <span class="w-2.5 h-2.5 rounded bg-moquegua-600"></span> Basadas en Rec.
+                                </span>
+                                <span class="font-bold text-slate-900">80.61%</span>
+                            </div>
+                            <div class="flex items-center gap-1.5 justify-between">
+                                <span class="flex items-center gap-1.5 font-medium text-slate-600">
+                                    <span class="w-2.5 h-2.5 rounded bg-moquegua-400"></span> Primarios
+                                </span>
+                                <span class="font-bold text-slate-900">19.38%</span>
+                            </div>
+                            <div class="flex items-center gap-1.5 justify-between">
+                                <span class="flex items-center gap-1.5 font-medium text-slate-600">
+                                    <span class="w-2.5 h-2.5 rounded bg-pizarra-500"></span> Baja Tecnología
+                                </span>
+                                <span class="font-bold text-slate-900">0.00%</span>
+                            </div>
+                            <div class="flex items-center gap-1.5 justify-between">
+                                <span class="flex items-center gap-1.5 font-medium text-slate-600">
+                                    <span class="w-2.5 h-2.5 rounded bg-amber-500"></span> Mediana Tech
+                                </span>
+                                <span class="font-bold text-slate-900">0.00%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tabla de Productos de la Canasta Exportadora de Moquegua -->
+            <div class="space-y-4 pt-4">
+                <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                    <span class="text-sm font-semibold text-slate-700 flex items-center gap-2">
+                        <i class="fa-solid fa-list-ol text-moquegua-700"></i> Top 10 de Productos Más Exportados de Moquegua (2025)
+                    </span>
+                    
+                    <!-- Buscador e Interactividad -->
+                    <div class="relative w-full sm:w-72">
+                        <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-400 pointer-events-none">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </span>
+                        <input type="text" id="table-search" placeholder="Buscar producto o código arancelario..." 
+                               class="w-full pl-9 pr-4 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs focus:ring-2 focus:ring-moquegua-500 focus:border-moquegua-500 focus:bg-white outline-none transition-all">
+                    </div>
+                </div>
+
+                <div class="overflow-x-auto border border-slate-200 rounded-2xl shadow-sm custom-scrollbar">
+                    <table class="w-full text-left border-collapse text-xs">
+                        <thead>
+                            <tr class="bg-slate-50 text-slate-600 border-b border-slate-200 font-semibold uppercase tracking-wider">
+                                <th class="p-4 w-12 text-center">N°</th>
+                                <th class="p-4 w-28">Código HS12</th>
+                                <th class="p-4">Producto Exportado</th>
+                                <th class="p-4 w-44">Nivel Tecnológico</th>
+                                <th class="p-4 w-36 text-right">Valor (Millones US$)</th>
+                                <th class="p-4 w-28 text-right">Participación</th>
+                            </tr>
+                        </thead>
+                        <tbody id="export-table-body" class="divide-y divide-slate-100">
+                            <!-- Fila 1 -->
+                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                <td class="p-4 text-center font-bold text-slate-400">1</td>
+                                <td class="p-4 font-mono text-slate-500">2603</td>
+                                <td class="p-4 font-semibold text-slate-900">Minerales de cobre</td>
+                                <td class="p-4">
+                                    <span class="px-2.5 py-1 bg-moquegua-50 text-moquegua-700 rounded-full font-medium text-[10px] border border-moquegua-100">
+                                        Basadas en recursos
+                                    </span>
+                                </td>
+                                <td class="p-4 text-right font-mono font-semibold text-slate-900">3,623.05</td>
+                                <td class="p-4 text-right font-semibold text-moquegua-700 bg-moquegua-50/10">68.55%</td>
+                            </tr>
+                            <!-- Fila 2 -->
+                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                <td class="p-4 text-center font-bold text-slate-400">2</td>
+                                <td class="p-4 font-mono text-slate-500">7403</td>
+                                <td class="p-4 font-semibold text-slate-900">Cobre refinado y aleaciones en bruto</td>
+                                <td class="p-4">
+                                    <span class="px-2.5 py-1 bg-pizarra-50 text-pizarra-700 rounded-full font-medium text-[10px] border border-pizarra-100">
+                                        Productos primarios
+                                    </span>
+                                </td>
+                                <td class="p-4 text-right font-mono font-semibold text-slate-900">910.89</td>
+                                <td class="p-4 text-right font-semibold text-pizarra-700">17.24%</td>
+                            </tr>
+                            <!-- Fila 3 -->
+                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                <td class="p-4 text-center font-bold text-slate-400">3</td>
+                                <td class="p-4 font-mono text-slate-500">2613</td>
+                                <td class="p-4 font-semibold text-slate-900">Minerales de molibdeno</td>
+                                <td class="p-4">
+                                    <span class="px-2.5 py-1 bg-moquegua-50 text-moquegua-700 rounded-full font-medium text-[10px] border border-moquegua-100">
+                                        Basadas en recursos
+                                    </span>
+                                </td>
+                                <td class="p-4 text-right font-mono font-semibold text-slate-900">541.23</td>
+                                <td class="p-4 text-right font-semibold text-slate-600">10.24%</td>
+                            </tr>
+                            <!-- Fila 4 -->
+                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                <td class="p-4 text-center font-bold text-slate-400">4</td>
+                                <td class="p-4 font-mono text-slate-500">7402</td>
+                                <td class="p-4 font-semibold text-slate-900">Cobre sin refinar y ánodos</td>
+                                <td class="p-4">
+                                    <span class="px-2.5 py-1 bg-pizarra-50 text-pizarra-700 rounded-full font-medium text-[10px] border border-pizarra-100">
+                                        Productos primarios
+                                    </span>
+                                </td>
+                                <td class="p-4 text-right font-mono font-semibold text-slate-900">63.17</td>
+                                <td class="p-4 text-right font-semibold text-slate-600">1.20%</td>
+                            </tr>
+                            <!-- Fila 5 -->
+                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                <td class="p-4 text-center font-bold text-slate-400">5</td>
+                                <td class="p-4 font-mono text-slate-500">2807</td>
+                                <td class="p-4 font-semibold text-slate-900">Ácido sulfúrico y óleum</td>
+                                <td class="p-4">
+                                    <span class="px-2.5 py-1 bg-moquegua-50 text-moquegua-700 rounded-full font-medium text-[10px] border border-moquegua-100">
+                                        Basadas en recursos
+                                    </span>
+                                </td>
+                                <td class="p-4 text-right font-mono font-semibold text-slate-900">56.33</td>
+                                <td class="p-4 text-right font-semibold text-slate-500">1.07%</td>
+                            </tr>
+                            <!-- Fila 6 -->
+                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                <td class="p-4 text-center font-bold text-slate-400">6</td>
+                                <td class="p-4 font-mono text-slate-500">7108</td>
+                                <td class="p-4 font-semibold text-slate-900">Oro en bruto, semielaborado o polvo</td>
+                                <td class="p-4">
+                                    <span class="px-2.5 py-1 bg-moquegua-50 text-moquegua-700 rounded-full font-medium text-[10px] border border-moquegua-100">
+                                        Basadas en recursos
+                                    </span>
+                                </td>
+                                <td class="p-4 text-right font-mono font-semibold text-slate-900">24.94</td>
+                                <td class="p-4 text-right font-semibold text-slate-500">0.47%</td>
+                            </tr>
+                            <!-- Fila 7 -->
+                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                <td class="p-4 text-center font-bold text-slate-400">7</td>
+                                <td class="p-4 font-mono text-slate-500">2301</td>
+                                <td class="p-4 font-semibold text-slate-900">Harinas de carne/pescado no comestibles</td>
+                                <td class="p-4">
+                                    <span class="px-2.5 py-1 bg-pizarra-50 text-pizarra-700 rounded-full font-medium text-[10px] border border-pizarra-100">
+                                        Productos primarios
+                                    </span>
+                                </td>
+                                <td class="p-4 text-right font-mono font-semibold text-slate-900">17.88</td>
+                                <td class="p-4 text-right font-semibold text-slate-500">0.34%</td>
+                            </tr>
+                            <!-- Fila 8 -->
+                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                <td class="p-4 text-center font-bold text-slate-400">8</td>
+                                <td class="p-4 font-mono text-slate-500">0303</td>
+                                <td class="p-4 font-semibold text-slate-900">Pescado congelado entero</td>
+                                <td class="p-4">
+                                    <span class="px-2.5 py-1 bg-pizarra-50 text-pizarra-700 rounded-full font-medium text-[10px] border border-pizarra-100">
+                                        Productos primarios
+                                    </span>
+                                </td>
+                                <td class="p-4 text-right font-mono font-semibold text-slate-900">9.65</td>
+                                <td class="p-4 text-right font-semibold text-slate-500">0.18%</td>
+                            </tr>
+                            <!-- Fila 9 -->
+                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                <td class="p-4 text-center font-bold text-slate-400">9</td>
+                                <td class="p-4 font-mono text-slate-500">0307</td>
+                                <td class="p-4 font-semibold text-slate-900">Moluscos (frescos, congelados o secos)</td>
+                                <td class="p-4">
+                                    <span class="px-2.5 py-1 bg-pizarra-50 text-pizarra-700 rounded-full font-medium text-[10px] border border-pizarra-100">
+                                        Productos primarios
+                                    </span>
+                                </td>
+                                <td class="p-4 text-right font-mono font-semibold text-slate-900">6.69</td>
+                                <td class="p-4 text-right font-semibold text-slate-500">0.13%</td>
+                            </tr>
+                            <!-- Fila 10 -->
+                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                <td class="p-4 text-center font-bold text-slate-400">10</td>
+                                <td class="p-4 font-mono text-slate-500">0304</td>
+                                <td class="p-4 font-semibold text-slate-900">Filetes y demás carne de pescado</td>
+                                <td class="p-4">
+                                    <span class="px-2.5 py-1 bg-pizarra-50 text-pizarra-700 rounded-full font-medium text-[10px] border border-pizarra-100">
+                                        Productos primarios
+                                    </span>
+                                </td>
+                                <td class="p-4 text-right font-mono font-semibold text-slate-900">6.32</td>
+                                <td class="p-4 text-right font-semibold text-slate-500">0.12%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Box Informativo: Análisis del Diagnóstico de Cartera de Moquegua -->
+            <div class="mt-6 bg-orange-50/40 border border-orange-250/70 rounded-2xl p-5 text-xs text-slate-700 space-y-3 shadow-sm">
+                <p class="font-bold text-orange-950 flex items-center gap-2 text-sm">
+                    <i class="fa-solid fa-square-poll-vertical text-moquegua-600"></i> Análisis Diagnóstico de la Cartera Exportadora de Moquegua
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-1 leading-relaxed">
+                    <div class="space-y-1.5">
+                        <span class="font-semibold text-orange-900 block">1. El Dominio Absoluto del Cobre y Molibdeno:</span>
+                        <p class="text-slate-600">
+                            Los minerales de cobre concentran el <strong class="text-slate-950">68.55%</strong> (US$ 3,623.05M), secundados por el cobre refinado en cátodos con <strong class="text-slate-950">17.24%</strong> (US$ 910.89M) y minerales de molibdeno con <strong class="text-slate-950">10.24%</strong>. Este bloque de minería de tajo abierto dota a Moquegua de un volumen comercial masivo, posicionándola como un enclave cuprífero global.
+                        </p>
+                    </div>
+                    <div class="space-y-1.5">
+                        <span class="font-semibold text-orange-900 block">2. Subproductos Químicos de la Fundición:</span>
+                        <p class="text-slate-600">
+                            El ácido sulfúrico (<strong class="text-slate-950">1.07%</strong>, US$ 56.33M) constituye un subproducto químico industrial crítico capturado de la fundición de Ilo. Representa una de las pocas manufacturas complejas de la región con potencial para inducir encadenamientos productivos pesados locales.
+                        </p>
+                    </div>
+                    <div class="space-y-1.5">
+                        <span class="font-semibold text-orange-900 block">3. El Componente Hidrobiológico Litoral:</span>
+                        <p class="text-slate-600">
+                            Las harinas de pescado, pescados congelados enteros y filetes (sumados en 0.64%) marcan la presencia del puerto de Ilo en la pesca no continental. Esto diversifica levemente la base puramente minera y dota de un clúster biológico con capacidades operativas costeras consolidadas.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 3: Oportunidades de Diversificación y Espacio del Producto -->
+        <section class="bg-white rounded-2xl border border-slate-200/80 p-6 sm:p-8 shadow-sm space-y-8">
+            <div class="border-b border-slate-100 pb-5">
+                <span class="text-xs font-bold text-moquegua-700 uppercase tracking-widest">ALGORITMO DE DIVERSIFICACIÓN REAL</span>
+                <h3 class="text-xl font-bold text-slate-900">3. Oportunidades de Diversificación y Espacio del Producto</h3>
+                <p class="text-xs text-slate-500">
+                    Análisis de proximidad estructural: Hacia dónde puede migrar de manera inteligente la economía de Moquegua apalancándose en sus capacidades preexistentes.
+                </p>
+            </div>
+
+            <!-- Simulador de Conectividad de Red con Datos Reales para Moquegua -->
+            <div class="bg-slate-900 text-white rounded-2xl p-6 shadow-md border border-slate-800 space-y-6">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                    <div class="space-y-1">
+                        <span class="text-[10px] font-bold text-moquegua-400 uppercase tracking-widest">HERRAMIENTA DE PLANIFICACIÓN ECONÓMICA</span>
+                        <h4 class="text-base font-bold flex items-center gap-2 text-moquegua-200">
+                            <i class="fa-solid fa-microchip text-moquegua-400"></i> Simulador de Conectividad de Red de Moquegua (Filtro por Producto Complejo)
+                        </h4>
+                    </div>
+                    <!-- Selector de Industrias Reales -->
+                    <select id="industry-selector" class="bg-slate-800 border border-slate-700 text-slate-200 text-xs rounded-xl px-3.5 py-2.5 outline-none focus:ring-2 focus:ring-moquegua-500 transition-all">
+                        <option value="screws">HS 7318 - Tornillos, pernos, tuercas y pasadores de hierro/acero (Metalmecánica Pesada)</option>
+                        <option value="additives">HS 3811 - Aditivos para combustibles y lubricantes de maquinaria (Química de Soporte)</option>
+                        <option value="wine">HS 2204 - Vino de uva y mosto vitivinícola (Agroindustria de los Valles)</option>
+                    </select>
+                </div>
+
+                <!-- Outputs del Simulador -->
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-6 pt-2">
+                    <div class="bg-slate-800/50 rounded-xl p-4 border border-slate-700/50 space-y-2">
+                        <span class="text-[10px] text-slate-400 font-bold uppercase tracking-wider block">Densidad de Capacidades</span>
+                        <div class="flex items-baseline gap-2">
+                            <span id="sim-density" class="text-2xl font-extrabold text-moquegua-400">0.3941%</span>
+                        </div>
+                        <p class="text-[11px] text-slate-300">Medida empírica de cercanía a la canasta de capacidades de la región.</p>
+                    </div>
+
+                    <div class="bg-slate-800/50 rounded-xl p-4 border border-slate-700/50 space-y-2">
+                        <span class="text-[10px] text-slate-400 font-bold uppercase tracking-wider block">Distancia (Distancia = 1 - Densidad)</span>
+                        <div class="flex items-baseline gap-2">
+                            <span id="sim-distance" class="text-2xl font-extrabold text-rose-400">99.6059%</span>
+                        </div>
+                        <p class="text-[11px] text-slate-300">Brecha técnica restante para el desarrollo autónomo de la industria.</p>
+                    </div>
+
+                    <div class="bg-slate-800/50 rounded-xl p-4 border border-slate-700/50 space-y-2">
+                        <span class="text-[10px] text-slate-400 font-bold uppercase tracking-wider block">Complejidad del Producto (IPC)</span>
+                        <div class="flex items-baseline gap-2">
+                            <span id="sim-pci" class="text-2xl font-extrabold text-amber-400">+0.923</span>
+                        </div>
+                        <p class="text-[11px] text-slate-300">Mide el nivel de sofisticación y exclusividad técnica global del bien propuesto.</p>
+                    </div>
+
+                    <div class="bg-slate-800/50 rounded-xl p-4 border border-slate-700/50 space-y-2">
+                        <span class="text-[10px] text-slate-400 font-bold uppercase tracking-wider block">Viabilidad de Transición</span>
+                        <div class="flex items-baseline gap-2">
+                            <span id="sim-viability" class="text-2xl font-extrabold text-emerald-400">Alta</span>
+                        </div>
+                        <p class="text-[11px] text-slate-300">Nivel de factibilidad según el mapa actual de encadenamiento de Moquegua.</p>
+                    </div>
+                </div>
+
+                <!-- Detalle del Vector Seleccionado -->
+                <div class="bg-slate-950/80 rounded-xl p-4 border border-slate-800/80 text-xs">
+                    <div class="flex items-start gap-3">
+                        <span class="text-2xl text-moquegua-400"><i class="fa-solid fa-quote-left"></i></span>
+                        <div class="space-y-1">
+                            <span class="font-semibold text-slate-300 block">Sustento del Algoritmo del Espacio del Producto para Moquegua:</span>
+                            <p id="sim-description" class="text-slate-400 leading-relaxed">
+                                Moquegua concentra operaciones de minería de tajo abierto a gran escala (Cuajone y Quellaveco) y una planta de fundición y refinería en Icono. La producción local de elementos de sujeción mecánica de alta resistencia aprovecha la disponibilidad de subproductos metálicos y la alta densidad de talleres mecánicos de mantenimiento pesado de la región. Esto reduce los costos logísticos de importación y fortalece el clúster de proveedores mineros de la zona sur del país.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Box Informativo: Cómo leer el simulador -->
+                <div class="bg-slate-800/30 border border-slate-700/50 rounded-xl p-4 text-xs text-slate-300 space-y-2">
+                    <p class="font-semibold text-white flex items-center gap-1.5 font-mono">
+                        <i class="fa-solid fa-circle-question text-moquegua-400"></i> ENTENDIENDO LOS INDICADORES MÉTRICOS:
+                    </p>
+                    <ul class="list-disc list-inside space-y-1 text-slate-400 pl-1">
+                        <li><strong>Densidad de Capacidades:</strong> Mide la dotación preexistente de capacidades requeridas en el clúster regional para fabricar el nuevo producto. Un mayor valor reduce el costo de incursión.</li>
+                        <li><strong>Distancia:</strong> Mide la brecha tecnológica y de conocimiento que separa a la canasta actual de la requerida (Distancia = 1 - Densidad).</li>
+                        <li><strong>IPC (Índice de Complejidad del Producto):</strong> Cuantifica la sofisticación tecnológica y la exclusividad de conocimientos necesarios a nivel global para producir dicho bien.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Matriz de Viabilidad de Diversificación Completa y Buscable -->
+            <div class="space-y-4">
+                <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                    <span class="text-sm font-semibold text-slate-700 flex items-center gap-2">
+                        <i class="fa-solid fa-diagram-project text-moquegua-700"></i> Matriz Completa de Oportunidades para Moquegua (Canasta Real)
+                    </span>
+                    
+                    <div class="flex flex-wrap items-center gap-2 w-full sm:w-auto">
+                        <!-- Filtro de Diversificación -->
+                        <select id="matrix-filter" class="bg-white border border-slate-200 rounded-xl px-3 py-2 text-xs font-semibold text-slate-700 outline-none focus:ring-2 focus:ring-moquegua-500">
+                            <option value="all">Todas las viabilidades</option>
+                            <option value="Muy alta">Muy alta</option>
+                            <option value="Alta">Alta</option>
+                            <option value="Baja">Baja</option>
+                            <option value="Muy baja">Muy baja</option>
+                        </select>
+                        <!-- Buscador Interno de la Matriz -->
+                        <div class="relative w-full sm:w-64">
+                            <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-400 pointer-events-none">
+                                <i class="fa-solid fa-magnifying-glass text-xs"></i>
+                            </span>
+                            <input type="text" id="matrix-search" placeholder="Buscar producto o arancel..." 
+                                   class="w-full pl-8 pr-4 py-2 bg-white border border-slate-200 rounded-xl text-xs focus:ring-2 focus:ring-moquegua-500 outline-none transition-all">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="overflow-x-auto border border-slate-200 rounded-2xl shadow-sm custom-scrollbar max-h-[500px]">
+                    <table class="w-full text-left border-collapse text-xs">
+                        <thead class="sticky top-0 bg-slate-50 z-10 border-b border-slate-200">
+                            <tr class="text-slate-600 font-semibold uppercase tracking-wider">
+                                <th class="p-4 w-28">Código HS12</th>
+                                <th class="p-4">Producto Propuesto</th>
+                                <th class="p-4 w-28 text-center">IPC</th>
+                                <th class="p-4 w-28 text-center">Densidad Real</th>
+                                <th class="p-4 w-28 text-center">Distancia Real</th>
+                                <th class="p-4 w-32 text-center">Viabilidad</th>
+                            </tr>
+                        </thead>
+                        <tbody id="matrix-table-body" class="divide-y divide-slate-100 bg-white">
+                            <!-- Inyectado dinámicamente con JS a partir de tu base de datos real de Moquegua -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Box Informativo: Cómo leer la Matriz de Viabilidad -->
+                <div class="bg-slate-50 border border-slate-200 rounded-2xl p-4 text-xs text-slate-600 space-y-2">
+                    <p class="font-semibold text-slate-800 flex items-center gap-1.5">
+                        <i class="fa-solid fa-circle-question text-moquegua-700"></i> ¿Cómo leer la Matriz de Oportunidades de Diversificación Real?
+                    </p>
+                    <ul class="list-disc list-inside space-y-1 text-slate-500 pl-1">
+                        <li><strong>Código HS12:</strong> Identifica el arancel según el Sistema Armonizado de designación de mercancías de la subpartida nacional.</li>
+                        <li><strong>IPC:</strong> El Índice de Complejidad del Producto indica qué tan complejo es el conocimiento productivo subyacente que requiere.</li>
+                        <li><strong>Densidad Real y Distancia Real (%):</strong> Los indicadores reales calculados matemáticamente para Moquegua, que miden la factibilidad y la brecha técnica regional.</li>
+                        <li><strong>Viabilidad:</strong> Clasificación probabilística, determinada por la aglomeración de capacidades ya existentes en Moquegua.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 px-4 border-t border-slate-800 mt-20">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="space-y-2">
+                <div class="flex items-center gap-2 text-white">
+                    <span class="p-1.5 bg-moquegua-600 rounded text-xs"><i class="fa-solid fa-chart-pie text-slate-950"></i></span>
+                    <span class="font-bold tracking-wider text-xs">CONSEJO NACIONAL DE COMPETITIVIDAD Y FORMALIZACIÓN - CNCF</span>
+                </div>
+            </div>
+            
+            <div class="flex flex-col items-end gap-2 text-right">
+                <span class="text-[10px] bg-slate-800 px-2.5 py-1 rounded text-slate-500 font-mono">Monitoreo Territorial de Complejidad Económica - Moquegua</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts y Gráficos -->
+    <script>
+        // Inicialización de variables de gráficos
+        let chartIcerInstance = null;
+        let chartExportsInstance = null;
+        let chartTechInstance = null;
+
+        // Base de Datos Real de productos para Moquegua basada exactamente en "3. Matriz de oportunidades de diversificacion 2025_DB.xlsx"
+        const moqueguaRealDatabase = [{"HS12": "0709", "PRODUCTO": "Otras verduras frescas", "IPC": -0.909, "Densidad": 0.01380320281011278, "Distancia": 0.9861967971898872, "Diversificacion": "Muy alta"}, {"HS12": "0806", "PRODUCTO": "Uvas (frescas o secas, incluidas las pasas)", "IPC": -1.028, "Densidad": 0.01452052963072586, "Distancia": 0.9854794703692742, "Diversificacion": "Muy alta"}, {"HS12": "7318", "PRODUCTO": "Tornillos, pernos, tuercas, remaches y pasadores de hierro o acero", "IPC": 0.923, "Densidad": 0.003940530948830448, "Distancia": 0.9960594690511696, "Diversificacion": "Alta"}, {"HS12": "3811", "PRODUCTO": "Aditivos para combustibles y lubricantes", "IPC": 0.606, "Densidad": 0.006404833833833831, "Distancia": 0.9935951661661662, "Diversificacion": "Alta"}, {"HS12": "2204", "PRODUCTO": "Vino de uva y mosto", "IPC": -0.12, "Densidad": 0.01268591863143109, "Distancia": 0.9873140813685689, "Diversificacion": "Alta"}, {"HS12": "2804", "PRODUCTO": "Hidrógeno, gases nobles y otros elementos no metales", "IPC": -0.178, "Densidad": 0.01043653715455528, "Distancia": 0.9895634628454447, "Diversificacion": "Alta"}, {"HS12": "1806", "PRODUCTO": "Chocolate y preparaciones alimenticias con cacao", "IPC": -0.182, "Densidad": 0.007862199499118724, "Distancia": 0.9921378005008813, "Diversificacion": "Alta"}, {"HS12": "4818", "PRODUCTO": "Papel higiénico, pañuelos, toallas y servilletas (ancho ≤ 36 cm)", "IPC": -0.211, "Densidad": 0.008302456921013425, "Distancia": 0.9916975430789866, "Diversificacion": "Alta"}, {"HS12": "6307", "PRODUCTO": "Otros artículos textiles confeccionados", "IPC": -0.279, "Densidad": 0.01129601883018737, "Distancia": 0.9887039811698126, "Diversificacion": "Alta"}, {"HS12": "2208", "PRODUCTO": "Bebidas alcohólicas y licores (<80%)", "IPC": -0.474, "Densidad": 0.0128168826839791, "Distancia": 0.9871831173160209, "Diversificacion": "Alta"}, {"HS12": "0304", "PRODUCTO": "Filetes y demás carne de pescado (fresca o congelada)", "IPC": -1.072, "Densidad": 0.0220859497210369, "Distancia": 0.977914050278963, "Diversificacion": "Baja"}, {"HS12": "0810", "PRODUCTO": "Otras frutas frescas", "IPC": -1.484, "Densidad": 0.01754372208328919, "Distancia": 0.9824562779167109, "Diversificacion": "Baja"}, {"HS12": "1404", "PRODUCTO": "Otros productos vegetales", "IPC": -1.95, "Densidad": 0.01626709464004781, "Distancia": 0.9837329053599522, "Diversificacion": "Baja"}, {"HS12": "0804", "PRODUCTO": "Dátiles, higos, piñas, paltas (aguacates), mangos y guayabas", "IPC": -2.018, "Densidad": 0.01844677040157103, "Distancia": 0.981553229598429, "Diversificacion": "Baja"}, {"HS12": "0703", "PRODUCTO": "Cebollas, ajos y puerros frescos", "IPC": -2.047, "Densidad": 0.0152118289690011, "Distancia": 0.9847881710309989, "Diversificacion": "Baja"}, {"HS12": "2608", "PRODUCTO": "Minerales de zinc", "IPC": -2.226, "Densidad": 0.02493808692543938, "Distancia": 0.9750619130745606, "Diversificacion": "Baja"}, {"HS12": "2616", "PRODUCTO": "Minerales de metales preciosos", "IPC": -2.261, "Densidad": 0.02628141603173455, "Distancia": 0.9737185839682655, "Diversificacion": "Baja"}, {"HS12": "7108", "PRODUCTO": "Oro en bruto, semielaborado o polvo", "IPC": -2.617, "Densidad": 0.02027793922609856, "Distancia": 0.9797220607739014, "Diversificacion": "Baja"}, {"HS12": "0807", "PRODUCTO": "Melón, sandía y papaya frescos", "IPC": -1.543, "Densidad": 0.01276166700608467, "Distancia": 0.9872383329939153, "Diversificacion": "Muy baja"}];
+
+        // Dataset ICER histórico 2015-2025 (Top 5 nacional de 2025 + Moquegua)
+        const icerData = {
+            years: ['2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025'],
+            regions: {
+                limaMetropolitana: [53.653, 52.751, 53.813, 53.023, 53.646, 52.861, 54.394, 54.231, 54.349, 54.688, 54.538],
+                callao: [52.842, 51.736, 51.278, 50.448, 52.026, 52.092, 51.254, 53.074, 51.847, 52.188, 53.65],
+                limaRegion: [38.146, 38.469, 41.408, 42.404, 43.85, 41.64, 42.373, 43.857, 44.421, 45.138, 43.36],
+                arequipa: [45.285, 46.672, 44.505, 44.855, 45.87, 45.517, 43.913, 44.356, 44.516, 43.475, 41.367],
+                laLibertad: [40.751, 39.624, 39.222, 38.402, 40.465, 41.255, 38.905, 39.909, 38.74, 40.997, 40.704],
+                moquegua: [37.948, 40.958, 41.653, 39.693, 40.068, 37.576, 37.474, 37.814, 38.039, 37.314, 37.246]
+            }
+        };
+
+        // Serie de Exportaciones Totales de Moquegua (Millones US$)
+        const exportsData = {
+            years: ['2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025'],
+            values: [1194.51, 917.61, 972.52, 1186.10, 1227.64, 1253.89, 1738.29, 2259.25, 4107.65, 4446.72, 5285.10]
+        };
+
+        // Dataset del Simulador de Conectividad de Red para Moquegua
+        const simulatorData = {
+            screws: {
+                density: '0.3941%',
+                distance: '99.6059%',
+                pci: '+0.923',
+                viability: 'Alta',
+                description: 'Moquegua concentra operaciones de minería de tajo abierto a gran escala (Cuajone y Quellaveco) y una planta de fundición y refinería en Ilo. La producción local de elementos de sujeción mecánica de alta resistencia aprovecha la disponibilidad de subproductos metálicos y la alta densidad de talleres mecánicos de mantenimiento pesado de la región. Esto reduce los costos logísticos de importación y fortalece el clúster de proveedores mineros de la zona sur del país.'
+            },
+            additives: {
+                density: '0.0640%',
+                distance: '99.3595%',
+                pci: '+0.606',
+                viability: 'Alta',
+                description: 'El gigantesco parque de maquinaria pesada y camiones de acarreo (haul trucks) en las minas moqueguanas genera una demanda cautiva crítica de lubricantes sofisticados y aditivos de rendimiento. Desarrollar esta industria en el puerto de Ilo se conecta con la infraestructura de almacenamiento y distribución de hidrocarburos de la costa, permitiendo incorporar valor químico a la cadena energética del corredor minero del sur.'
+            },
+            wine: {
+                density: '0.1269%',
+                distance: '98.7314%',
+                pci: '-0.120',
+                viability: 'Alta',
+                description: 'Los valles de Moquegua e Ilo poseen una tradición histórica excepcional en vitivinicultura, especializados en la destilación de piscos y vinos bajo condiciones desérticas de alta radiación solar. Escalar la producción de vinos finos de exportación mediante la modernización tecnológica de bodegas e irrigaciones tecnificadas capitaliza las habilidades agronómicas nativas acumuladas, diversificando la canasta regional más allá de los ciclos volátiles de las cotizaciones minerales.'
+            }
+        };
+
+        // Inicialización de Gráficos al cargar la ventana
+        window.onload = function() {
+            initCharts();
+            setupInteractiveEvents();
+            renderMatrixTable(moqueguaRealDatabase);
+        };
+
+        function initCharts() {
+            // 1. Gráfico de Evolución del ICER (Líneas)
+            const ctxIcer = document.getElementById('chart-icer').getContext('2d');
+            chartIcerInstance = new Chart(ctxIcer, {
+                type: 'line',
+                data: {
+                    labels: icerData.years,
+                    datasets: [
+                        {
+                            label: 'Moquegua',
+                            data: icerData.regions.moquegua,
+                            borderColor: '#c2410c',
+                            backgroundColor: 'rgba(194,65,12,0.12)',
+                            borderWidth: 4,
+                            tension: 0.35,
+                            pointRadius: 4,
+                            pointBackgroundColor: '#c2410c',
+                            fill: true
+                        },
+                        {
+                            label: 'Lima Metropolitana',
+                            data: icerData.regions.limaMetropolitana,
+                            borderColor: '#64748b',
+                            backgroundColor: 'transparent',
+                            borderWidth: 2,
+                            tension: 0.35,
+                            pointRadius: 1,
+                            borderDash: [4, 3]
+                        },
+                        {
+                            label: 'Callao',
+                            data: icerData.regions.callao,
+                            borderColor: '#0ea5e9',
+                            backgroundColor: 'transparent',
+                            borderWidth: 2,
+                            tension: 0.35,
+                            pointRadius: 1,
+                            borderDash: [4, 3]
+                        },
+                        {
+                            label: 'Lima Región',
+                            data: icerData.regions.limaRegion,
+                            borderColor: '#8b5cf6',
+                            backgroundColor: 'transparent',
+                            borderWidth: 2,
+                            tension: 0.35,
+                            pointRadius: 1,
+                            borderDash: [4, 3]
+                        },
+                        {
+                            label: 'Arequipa',
+                            data: icerData.regions.arequipa,
+                            borderColor: '#e11d48',
+                            backgroundColor: 'transparent',
+                            borderWidth: 2,
+                            tension: 0.35,
+                            pointRadius: 1,
+                            borderDash: [4, 3]
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    interaction: { mode: 'index', intersect: false },
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                boxWidth: 10,
+                                font: { size: 10 },
+                                usePointStyle: true
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return ` ${context.dataset.label}: ${context.raw.toFixed(3)}`;
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            grid: { color: '#f1f5f9' },
+                            ticks: { font: { size: 10 } }
+                        },
+                        x: {
+                            grid: { display: false },
+                            ticks: { font: { size: 10 } }
+                        }
+                    }
+                }
+            });
+
+            // 2. Gráfico de Barras - Evolución de Exportaciones (Moquegua)
+            const ctxExports = document.getElementById('chart-exports').getContext('2d');
+            chartExportsInstance = new Chart(ctxExports, {
+                type: 'bar',
+                data: {
+                    labels: exportsData.years,
+                    datasets: [{
+                        label: 'Exportaciones FOB (Millones US$)',
+                        data: exportsData.values,
+                        backgroundColor: '#9a3412',
+                        borderRadius: 6,
+                        maxBarThickness: 34
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return ` US$ ${context.raw.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})}M`;
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            grid: { color: '#f1f5f9' },
+                            ticks: { font: { size: 10 } }
+                        },
+                        x: {
+                            grid: { display: false },
+                            ticks: { font: { size: 10 } }
+                        }
+                    }
+                }
+            });
+
+            // 3. Gráfico de Rosca - Intensidad Tecnológica (Moquegua)
+            const ctxTech = document.getElementById('chart-tech').getContext('2d');
+            chartTechInstance = new Chart(ctxTech, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Basadas en Recursos', 'Primarios', 'Baja Tecnología', 'Mediana Tecnología'],
+                    datasets: [{
+                        data: [80.61, 19.38, 0.005, 0.005],
+                        backgroundColor: [
+                            '#9a3412', // Marrón cobre concentrados
+                            '#c2410c', // Naranja quemado primarios refinados
+                            '#64748b', // Gris tech baja
+                            '#f59e0b'  // Tech media
+                        ],
+                        borderWidth: 2,
+                        borderColor: '#ffffff'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return ` ${context.label}: ${context.raw.toFixed(2)}%`;
+                                }
+                            }
+                        }
+                    },
+                    cutout: '70%'
+                }
+            });
+        }
+
+        // Renderizado Dinámico de la Matriz de Viabilidad Real de Moquegua
+        function renderMatrixTable(dataset) {
+            const tbody = document.getElementById("matrix-table-body");
+            tbody.innerHTML = "";
+
+            dataset.forEach(row => {
+                const densPct = (row.Densidad * 100).toFixed(4) + "%";
+                const distPct = (row.Distancia * 100).toFixed(4) + "%";
+                
+                let badgeClass = "";
+                const checkDiv = String(row.Diversificacion).toLowerCase().trim();
+                if (checkDiv === "muy alta") {
+                    badgeClass = "bg-emerald-50 text-emerald-700 border-emerald-200 font-bold";
+                } else if (checkDiv === "alta") {
+                    badgeClass = "bg-blue-50 text-blue-700 border-blue-200 font-bold";
+                } else if (checkDiv === "baja") {
+                    badgeClass = "bg-amber-50 text-amber-700 border-amber-200 font-medium";
+                } else {
+                    badgeClass = "bg-rose-50 text-rose-700 border-rose-200 font-light";
+                }
+
+                const tr = document.createElement("tr");
+                tr.className = "hover:bg-slate-50/70 transition-colors";
+                tr.innerHTML = `
+                    <td class="p-4 font-mono text-slate-500 font-semibold">${row.HS12}</td>
+                    <td class="p-4 font-bold text-slate-900">${row.PRODUCTO}</td>
+                    <td class="p-4 text-center font-semibold text-slate-600">${row.IPC.toFixed(3)}</td>
+                    <td class="p-4 text-center font-bold text-emerald-800">${densPct}</td>
+                    <td class="p-4 text-center text-slate-500 font-medium">${distPct}</td>
+                    <td class="p-4 text-center">
+                        <span class="px-2.5 py-1 border text-[10px] rounded-full ${badgeClass}">
+                            ${row.Diversificacion}
+                        </span>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        // Configuración de eventos interactivos (búsqueda y selector del simulador)
+        function setupInteractiveEvents() {
+            // Buscador en Tiempo Real de la tabla del Top 10 de exportaciones
+            const searchInput = document.getElementById('table-search');
+            if (searchInput) {
+                searchInput.addEventListener('input', function(e) {
+                    const term = e.target.value.toLowerCase().trim();
+                    const rows = document.querySelectorAll('#export-table-body tr');
+                    
+                    rows.forEach(row => {
+                        const code = row.cells[1].textContent.toLowerCase();
+                        const product = row.cells[2].textContent.toLowerCase();
+                        const tech = row.cells[3].textContent.toLowerCase();
+                        
+                        if (code.includes(term) || product.includes(term) || tech.includes(term)) {
+                            row.style.display = '';
+                        } else {
+                            row.style.display = 'none';
+                        }
+                    });
+                });
+            }
+
+            // Filtrado e interactividad de la Matriz de Oportunidades de Moquegua (Sección 3)
+            const matrixSearch = document.getElementById("matrix-search");
+            const matrixFilter = document.getElementById("matrix-filter");
+
+            function handleMatrixFilter() {
+                const searchVal = matrixSearch.value.toLowerCase().trim();
+                const filterVal = matrixFilter.value;
+
+                const filtered = moqueguaRealDatabase.filter(row => {
+                    const matchesSearch = row.PRODUCTO.toLowerCase().includes(searchVal) || row.HS12.toLowerCase().includes(searchVal);
+                    const matchesFilter = filterVal === "all" || row.Diversificacion.toLowerCase() === filterVal.toLowerCase();
+                    return matchesSearch && matchesFilter;
+                });
+
+                renderMatrixTable(filtered);
+            }
+
+            matrixSearch.addEventListener("input", handleMatrixFilter);
+            matrixFilter.addEventListener("change", handleMatrixFilter);
+
+            // Simulador de Conectividad de Red Interactivo
+            const selector = document.getElementById('industry-selector');
+            if (selector) {
+                selector.addEventListener('change', function(e) {
+                    const val = e.target.value;
+                    const data = simulatorData[val];
+                    
+                    if (data) {
+                        const densityEl = document.getElementById('sim-density');
+                        const distanceEl = document.getElementById('sim-distance');
+                        const pciEl = document.getElementById('sim-pci');
+                        const viabilityEl = document.getElementById('sim-viability');
+                        
+                        // Actualizar UI
+                        densityEl.textContent = data.density;
+                        distanceEl.textContent = data.distance;
+                        pciEl.textContent = data.pci;
+                        viabilityEl.textContent = data.viability;
+                        
+                        document.getElementById('sim-description').textContent = data.description;
+                    }
+                });
+            }
+        }
+    </script>
+</body>
+</html>

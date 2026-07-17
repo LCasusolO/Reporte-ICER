@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REPORTE REGIONAL DE COMPLEJIDAD EXPORTADORA - LIMA PROVINCIAS</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js para visualización de datos de alto rendimiento -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- FontAwesome para iconografía avanzada -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Inter para una tipografía moderna y legible -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght=300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        limaregion: {
+                            50: '#f5f7f2',
+                            100: '#e6ebd9',
+                            200: '#cfdbb8',
+                            300: '#adc48c',
+                            400: '#8baa61',
+                            500: '#6c8d45', // Verde oliva agroexportador
+                            600: '#547034', // Verde bosque profundo
+                            700: '#41572a',
+                            850: '#283618', // Tono tierra/bosque profundo
+                            950: '#17200e'  // Tono nocturno de valles
+                        },
+                        oro: {
+                            50: '#fffbeb',
+                            100: '#fef3c7',
+                            200: '#fde68a',
+                            300: '#fcd34d',
+                            400: '#fbbf24',
+                            500: '#f59e0b', // Oro/cobre cálido de refinación mineral
+                            600: '#d97706', // Ámbar de metales
+                            700: '#b45309', // Bronce
+                            800: '#92400e',
+                            950: '#451a03'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f5f9;
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans min-h-screen flex flex-col antialiased">
+
+    <!-- Navbar Institucional -->
+    <header class="sticky top-0 z-50 bg-white border-b border-slate-200/80 shadow-sm backdrop-blur-md bg-white/95">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <span class="p-3 bg-limaregion-850 text-white rounded-xl shadow-md flex items-center justify-center">
+                    <i class="fa-solid fa-chart-line text-xl text-oro-300"></i>
+                </span>
+                <div>
+                    <h1 class="text-xs sm:text-sm font-semibold text-slate-500 tracking-wider">MONITOREO TERRITORIAL</h1>
+                    <h2 class="text-base sm:text-lg font-extrabold uppercase tracking-tight text-slate-900 leading-tight">
+                        REPORTE REGIONAL DE COMPLEJIDAD EXPORTADORA
+                    </h2>
+                </div>
+            </div>
+            
+            <div class="flex items-center">
+                <span class="text-xs font-semibold text-limaregion-800 bg-limaregion-50 px-4 py-2.5 rounded-full border border-limaregion-200/60 flex items-center gap-2 shadow-sm">
+                    <span class="w-2.5 h-2.5 rounded-full bg-limaregion-500 animate-pulse"></span>
+                    Puesto Actual: 3º
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero / Presentación de la Región -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 w-full">
+        <div class="relative overflow-hidden bg-gradient-to-r from-slate-950 via-limaregion-950 to-oro-950 text-white p-8 md:p-12 rounded-[2rem] shadow-xl border border-limaregion-950/40">
+            <!-- Capa de brillo radial decorativo -->
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(108,141,69,0.14),transparent_60%)] pointer-events-none"></div>
+            
+            <div class="relative z-10 space-y-6">
+                <!-- Nombre de la región como título único de máximo impacto -->
+                <div class="flex flex-col gap-1">
+                    <span class="text-xs font-bold uppercase tracking-widest text-oro-400">Territorio Descentralizado de la Región de Lima</span>
+                    <h2 class="text-5xl sm:text-7xl font-black tracking-tight text-limaregion-300">
+                        Lima Provincias
+                    </h2>
+                </div>
+                
+                <!-- Descripción limpia del reporte -->
+                <p class="text-base sm:text-lg text-slate-300 font-light max-w-4xl leading-relaxed">
+                    Diagnóstico dinámico de una economía con acelerada sofisticación productiva, liderazgo agroexportador y metalúrgico en valles y andes de la región. Análisis empírico del Espacio de Producto bajo la metodología del Harvard Growth Lab para impulsar la diversificación de Lima Región.
+                </p>
+                
+                <!-- Metadatos del Período de Análisis -->
+                <div class="flex flex-wrap items-center gap-3 pt-2 text-xs font-semibold text-slate-300">
+                    <span class="flex items-center gap-2 bg-white/5 border border-white/10 px-3.5 py-1.5 rounded-lg">
+                        <i class="fa-regular fa-calendar text-oro-400"></i> 
+                        <span>Período de Análisis: <strong class="text-white">2015 - 2025</strong></span>
+                    </span>
+                    <span class="flex items-center gap-2 bg-white/5 border border-white/10 px-3.5 py-1.5 rounded-lg">
+                        <i class="fa-solid fa-industry text-limaregion-400"></i>
+                        <span>Eje Central: <strong class="text-white">Motor Agroindustrial y Minero-Metalúrgico</strong></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contenedor Principal de Reportes -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow space-y-10 w-full">
+        
+        <!-- Resumen Ejecutivo & KPIs Principales -->
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Card KPI 1: Exportaciones Totales -->
+            <div class="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm relative overflow-hidden group hover:border-oro-500 transition-all duration-300">
+                <div class="absolute top-0 right-0 p-3 opacity-10 text-oro-600 text-7xl group-hover:opacity-20 transition-all duration-300">
+                    <i class="fa-solid fa-arrow-trend-up"></i>
+                </div>
+                <span class="text-xs font-bold uppercase tracking-wider text-slate-400 block mb-1">Exportaciones Totales (2025)</span>
+                <div class="flex items-baseline gap-2 mb-2">
+                    <span class="text-3xl font-extrabold text-slate-900">US$ 2,695.55M</span>
+                    <span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-md flex items-center gap-0.5">
+                        <i class="fa-solid fa-arrow-up"></i> +151.02%
+                    </span>
+                </div>
+                <p class="text-xs text-slate-500 leading-relaxed">
+                    Lima Provincias (Lima Región) expande vigorosamente su canasta comercial externa, logrando un crecimiento del 151.02% respecto a los niveles de 2015 gracias a la masificación de agroexportados y el repunte minero de zinc, plomo y oro refinado.
+                </p>
+            </div>
+
+            <!-- Card KPI 2: Estructura de Cartera -->
+            <div class="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm relative overflow-hidden group hover:border-limaregion-500 transition-all duration-300">
+                <div class="absolute top-0 right-0 p-3 opacity-10 text-limaregion-500 text-7xl group-hover:opacity-20 transition-all duration-300">
+                    <i class="fa-solid fa-boxes-stacked"></i>
+                </div>
+                <span class="text-xs font-bold uppercase tracking-wider text-slate-400 block mb-1">Estructura de Cartera</span>
+                <div class="flex items-baseline gap-2 mb-2">
+                    <span class="text-3xl font-extrabold text-slate-900">43.92%</span>
+                    <span class="text-xs font-bold text-limaregion-700 bg-limaregion-100 px-2 py-0.5 rounded-md">
+                        Basadas en Recursos
+                    </span>
+                </div>
+                <p class="text-xs text-slate-500 leading-relaxed">
+                    El sector primario abarca el 51.30% de la canasta, pero las manufacturas basadas en recursos alcanzan el 43.92%, reflejando el fuerte peso de la metalurgia aurífera y refinación mineral que elevan el valor agregado regional.
+                </p>
+            </div>
+
+            <!-- Card KPI 3: Posición de Complejidad -->
+            <div class="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm relative overflow-hidden group hover:border-slate-400 transition-all duration-300">
+                <div class="absolute top-0 right-0 p-3 opacity-10 text-slate-400 text-7xl group-hover:opacity-20 transition-all duration-300">
+                    <i class="fa-solid fa-medal"></i>
+                </div>
+                <span class="text-xs font-bold uppercase tracking-wider text-slate-400 block mb-1">Posición de Complejidad</span>
+                <div class="flex items-baseline gap-2 mb-2">
+                    <span class="text-3xl font-extrabold text-slate-900">Puesto 3º</span>
+                    <span class="text-xs font-medium text-slate-500">de 26 Regiones (2025)</span>
+                </div>
+                <p class="text-xs text-slate-500 leading-relaxed">
+                    Se consolida firmemente en el podio nacional de complejidad económica (ICER 43.360), escalando desde el puesto 13º registrado en 2015, constituyendo la mayor trayectoria de progreso industrial regional en Perú.
+                </p>
+            </div>
+        </section>
+
+        <!-- Sección 1: Ranking y Evolución del ICER Regional -->
+        <section class="bg-white rounded-2xl border border-slate-200/80 p-6 sm:p-8 shadow-sm space-y-6">
+            <div class="border-b border-slate-100 pb-5">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                    <div class="space-y-1">
+                        <span class="text-xs font-bold text-limaregion-700 uppercase tracking-widest">INDICADOR ESTRUCTURAL</span>
+                        <h3 class="text-xl font-bold text-slate-900">1. Ranking y Evolución del ICER Regional</h3>
+                        <p class="text-xs text-slate-500">
+                            Evolución del Índice de Complejidad Exportadora Regional comparado contra el Top 5 nacional de clasificación (2025).
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-2 text-xs bg-slate-50 p-1.5 rounded-xl border border-slate-150">
+                        <span class="px-2.5 py-1 bg-white shadow-sm rounded-lg font-semibold text-slate-700">Comparativo: Top 5 Nacional</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gráfico y Tabla Comparativa -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                <!-- Gráfico de Líneas (Chart.js) -->
+                <div class="lg:col-span-7 bg-slate-50/50 rounded-2xl p-4 border border-slate-100 flex flex-col justify-between">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-xs font-semibold text-slate-600">Puntaje ICER Regional (2015-2025)</span>
+                        <span class="text-[10px] text-slate-400">Haz clic en la leyenda para ocultar/mostrar regiones</span>
+                    </div>
+                    <div class="relative h-[320px] w-full">
+                        <canvas id="chart-icer"></canvas>
+                    </div>
+                </div>
+
+                <!-- Tabla de Datos del Top 5 de Ranking -->
+                <div class="lg:col-span-5 flex flex-col justify-between space-y-4">
+                    <div class="bg-slate-50/50 rounded-2xl p-4 border border-slate-100 space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-semibold text-slate-700">Top 5 Nacional de Clasificación (2025)</span>
+                            <span class="text-[10px] bg-slate-200 text-slate-600 px-2 py-0.5 rounded-md font-mono">Ranking Nacional</span>
+                        </div>
+                        <div class="divide-y divide-slate-200/60 text-xs">
+                            <!-- Lima Metropolitana (1º) -->
+                            <div class="py-2.5 flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-slate-500"></span>
+                                    <span class="font-medium text-slate-700">Lima Metropolitana</span>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <span class="text-slate-500 font-mono">54.538</span>
+                                    <span class="w-12 text-center py-0.5 bg-slate-100 text-slate-600 rounded font-bold">1º</span>
+                                </div>
+                            </div>
+                            <!-- Callao (2º) -->
+                            <div class="py-2.5 flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-[#0ea5e9]"></span>
+                                    <span class="font-medium text-slate-700">Callao</span>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <span class="text-slate-500 font-mono">53.650</span>
+                                    <span class="w-12 text-center py-0.5 bg-slate-100 text-slate-600 rounded font-bold">2º</span>
+                                </div>
+                            </div>
+                            <!-- Lima Región / Lima Provincias (Región de Análisis - 3º) -->
+                            <div class="py-2.5 flex items-center justify-between bg-limaregion-100/55 -mx-4 px-4 border-y border-limaregion-200/50">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-3 h-3 rounded-full bg-limaregion-500 border border-white"></span>
+                                    <span class="font-bold text-slate-900">Lima Región</span>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <span class="font-bold text-limaregion-850 font-mono">43.360</span>
+                                    <span class="w-12 text-center py-0.5 bg-limaregion-500 text-slate-950 rounded font-extrabold shadow-sm">3º</span>
+                                </div>
+                            </div>
+                            <!-- Arequipa (4º) -->
+                            <div class="py-2.5 flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-[#d97706]"></span>
+                                    <span class="font-medium text-slate-700">Arequipa</span>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <span class="text-slate-500 font-mono">41.367</span>
+                                    <span class="w-12 text-center py-0.5 bg-slate-100 text-slate-600 rounded font-bold">4º</span>
+                                </div>
+                            </div>
+                            <!-- La Libertad (5º) -->
+                            <div class="py-2.5 flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-[#f43f5e]"></span>
+                                    <span class="font-medium text-slate-700">La Libertad</span>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <span class="text-slate-500 font-mono">40.704</span>
+                                    <span class="w-12 text-center py-0.5 bg-slate-100 text-slate-600 rounded font-bold">5º</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-limaregion-50 border border-limaregion-100 rounded-2xl p-4 text-xs text-limaregion-950 space-y-2">
+                        <p class="font-semibold flex items-center gap-1.5">
+                            <i class="fa-solid fa-circle-info text-limaregion-600"></i> Trayectoria Descentralizada de Complejidad:
+                        </p>
+                        <p class="leading-relaxed text-slate-600">
+                            Lima Provincias (Lima Región) ha protagonizado una extraordinaria transformación competitiva en el período 2015-2025, saltando del puesto 13° en 2015 al 3° en 2025. Supera así a economías tradicionales como Arequipa y La Libertad. No obstante, el desafío actual es cerrar la brecha sistémica frente a Lima Metropolitana (1º) y Callao (2º), migrando la producción básica minera y agroexportadora de los valles del norte y sur chico hacia encadenamientos manufactureros e industriales complejos.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 2: Diagnóstico de la Cartera Exportadora y Composición Tecnológica -->
+        <section class="bg-white rounded-2xl border border-slate-200/80 p-6 sm:p-8 shadow-sm space-y-8">
+            <div class="border-b border-slate-100 pb-5">
+                <span class="text-xs font-bold text-limaregion-700 uppercase tracking-widest">DIAGNÓSTICO ESTRUCTURAL</span>
+                <h3 class="text-xl font-bold text-slate-900">2. Diagnóstico de la Cartera Exportadora y Composición Tecnológica</h3>
+                <p class="text-xs text-slate-500">
+                    Evolución del valor comercial exportado e identificación de la intensidad del valor científico/tecnológico incorporado en la canasta de Lima Provincias.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Gráfico de Barras: Evolución de las Exportaciones -->
+                <div class="bg-slate-50/50 rounded-2xl p-4 border border-slate-100 flex flex-col justify-between">
+                    <span class="text-xs font-semibold text-slate-600 mb-3 block">Evolución del Valor FOB de Exportaciones (Millones US$)</span>
+                    <div class="relative h-[280px]">
+                        <canvas id="chart-exports"></canvas>
+                    </div>
+                </div>
+
+                <!-- Gráfico de Rosca: Estructura de Intensidad Tecnológica -->
+                <div class="bg-slate-50/50 rounded-2xl p-4 border border-slate-100 flex flex-col justify-between">
+                    <span class="text-xs font-semibold text-slate-600 mb-3 block">Composición por Contenido Tecnológico (2025)</span>
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
+                        <div class="md:col-span-7 relative h-[240px]">
+                            <canvas id="chart-tech"></canvas>
+                        </div>
+                        <div class="md:col-span-5 space-y-2.5 text-xs">
+                            <div class="flex items-center gap-1.5 justify-between">
+                                <span class="flex items-center gap-1.5 font-medium text-slate-600">
+                                    <span class="w-2.5 h-2.5 rounded bg-limaregion-500"></span> Primarios
+                                </span>
+                                <span class="font-bold text-slate-900">51.30%</span>
+                            </div>
+                            <div class="flex items-center gap-1.5 justify-between">
+                                <span class="flex items-center gap-1.5 font-medium text-slate-600">
+                                    <span class="w-2.5 h-2.5 rounded bg-oro-700"></span> Basadas en Rec.
+                                </span>
+                                <span class="font-bold text-slate-900">43.92%</span>
+                            </div>
+                            <div class="flex items-center gap-1.5 justify-between">
+                                <span class="flex items-center gap-1.5 font-medium text-slate-600">
+                                    <span class="w-2.5 h-2.5 rounded bg-oro-600"></span> Mediana Tech
+                                </span>
+                                <span class="font-bold text-slate-900">4.09%</span>
+                            </div>
+                            <div class="flex items-center gap-1.5 justify-between">
+                                <span class="flex items-center gap-1.5 font-medium text-slate-600">
+                                    <span class="w-2.5 h-2.5 rounded bg-oro-500"></span> Baja Tecnología
+                                </span>
+                                <span class="font-bold text-slate-900">0.55%</span>
+                            </div>
+                            <div class="flex items-center gap-1.5 justify-between">
+                                <span class="flex items-center gap-1.5 font-medium text-slate-600">
+                                    <span class="w-2.5 h-2.5 rounded bg-slate-400"></span> No Clasificados
+                                </span>
+                                <span class="font-bold text-slate-900">0.10%</span>
+                            </div>
+                            <div class="flex items-center gap-1.5 justify-between">
+                                <span class="flex items-center gap-1.5 font-medium text-slate-600">
+                                    <span class="w-2.5 h-2.5 rounded bg-rose-500"></span> Alta Tecnología
+                                </span>
+                                <span class="font-bold text-slate-900">0.04%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tabla de Productos de la Canasta Exportadora de Lima Provincias -->
+            <div class="space-y-4 pt-4">
+                <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                    <span class="text-sm font-semibold text-slate-700 flex items-center gap-2">
+                        <i class="fa-solid fa-list-ol text-limaregion-700"></i> Top 10 de Productos Más Exportados de Lima Provincias (2025)
+                    </span>
+                    
+                    <!-- Buscador e Interactividad -->
+                    <div class="relative w-full sm:w-72">
+                        <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-400 pointer-events-none">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </span>
+                        <input type="text" id="table-search" placeholder="Buscar producto o código arancelario..." 
+                               class="w-full pl-9 pr-4 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs focus:ring-2 focus:ring-limaregion-500 focus:border-limaregion-500 focus:bg-white outline-none transition-all">
+                    </div>
+                </div>
+
+                <div class="overflow-x-auto border border-slate-200 rounded-2xl shadow-sm custom-scrollbar">
+                    <table class="w-full text-left border-collapse text-xs">
+                        <thead>
+                            <tr class="bg-slate-50 text-slate-600 border-b border-slate-200 font-semibold uppercase tracking-wider">
+                                <th class="p-4 w-12 text-center">N°</th>
+                                <th class="p-4 w-28">Código HS12</th>
+                                <th class="p-4">Producto Exportado</th>
+                                <th class="p-4 w-44">Nivel Tecnológico</th>
+                                <th class="p-4 w-36 text-right">Valor (Millones US$)</th>
+                                <th class="p-4 w-28 text-right">Participación</th>
+                            </tr>
+                        </thead>
+                        <tbody id="export-table-body" class="divide-y divide-slate-100">
+                            <!-- Fila 1 -->
+                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                <td class="p-4 text-center font-bold text-slate-400">1</td>
+                                <td class="p-4 font-mono text-slate-500">0804</td>
+                                <td class="p-4 font-semibold text-slate-900">Dátiles, higos, piñas, paltas (aguacates), mangos y guayabas</td>
+                                <td class="p-4">
+                                    <span class="px-2.5 py-1 bg-limaregion-50 text-limaregion-700 rounded-full font-medium text-[10px] border border-limaregion-100">
+                                        Productos primarios
+                                    </span>
+                                </td>
+                                <td class="p-4 text-right font-mono font-semibold text-slate-900">407.11</td>
+                                <td class="p-4 text-right font-semibold text-limaregion-700 bg-limaregion-50/10">15.10%</td>
+                            </tr>
+                            <!-- Fila 2 -->
+                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                <td class="p-4 text-center font-bold text-slate-400">2</td>
+                                <td class="p-4 font-mono text-slate-500">2301</td>
+                                <td class="p-4 font-semibold text-slate-900">Harinas de carne/pescado no comestibles</td>
+                                <td class="p-4">
+                                    <span class="px-2.5 py-1 bg-limaregion-50 text-limaregion-700 rounded-full font-medium text-[10px] border border-limaregion-100">
+                                        Productos primarios
+                                    </span>
+                                </td>
+                                <td class="p-4 text-right font-mono font-semibold text-slate-900">338.41</td>
+                                <td class="p-4 text-right font-semibold text-limaregion-700">12.55%</td>
+                            </tr>
+                            <!-- Fila 3 -->
+                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                <td class="p-4 text-center font-bold text-slate-400">3</td>
+                                <td class="p-4 font-mono text-slate-500">7108</td>
+                                <td class="p-4 font-semibold text-slate-900">Oro en bruto, semielaborado o polvo</td>
+                                <td class="p-4">
+                                    <span class="px-2.5 py-1 bg-oro-50 text-oro-700 rounded-full font-medium text-[10px] border border-oro-100">
+                                        Basadas en recursos
+                                    </span>
+                                </td>
+                                <td class="p-4 text-right font-mono font-semibold text-slate-900">331.07</td>
+                                <td class="p-4 text-right font-semibold text-slate-600">12.28%</td>
+                            </tr>
+                            <!-- Fila 4 -->
+                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                <td class="p-4 text-center font-bold text-slate-400">4</td>
+                                <td class="p-4 font-mono text-slate-500">2616</td>
+                                <td class="p-4 font-semibold text-slate-900">Minerales de metales preciosos</td>
+                                <td class="p-4">
+                                    <span class="px-2.5 py-1 bg-oro-50 text-oro-700 rounded-full font-medium text-[10px] border border-oro-100">
+                                        Basadas en recursos
+                                    </span>
+                                </td>
+                                <td class="p-4 text-right font-mono font-semibold text-slate-900">292.38</td>
+                                <td class="p-4 text-right font-semibold text-slate-600">10.85%</td>
+                            </tr>
+                            <!-- Fila 5 -->
+                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                <td class="p-4 text-center font-bold text-slate-400">5</td>
+                                <td class="p-4 font-mono text-slate-500">2607</td>
+                                <td class="p-4 font-semibold text-slate-900">Minerales de plomo</td>
+                                <td class="p-4">
+                                    <span class="px-2.5 py-1 bg-oro-50 text-oro-700 rounded-full font-medium text-[10px] border border-oro-100">
+                                        Basadas en recursos
+                                    </span>
+                                </td>
+                                <td class="p-4 text-right font-mono font-semibold text-slate-900">146.85</td>
+                                <td class="p-4 text-right font-semibold text-slate-500">5.45%</td>
+                            </tr>
+                            <!-- Fila 6 -->
+                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                <td class="p-4 text-center font-bold text-slate-400">6</td>
+                                <td class="p-4 font-mono text-slate-500">0810</td>
+                                <td class="p-4 font-semibold text-slate-900">Otras frutas frescas</td>
+                                <td class="p-4">
+                                    <span class="px-2.5 py-1 bg-limaregion-50 text-limaregion-700 rounded-full font-medium text-[10px] border border-limaregion-100">
+                                        Productos primarios
+                                    </span>
+                                </td>
+                                <td class="p-4 text-right font-mono font-semibold text-slate-900">142.94</td>
+                                <td class="p-4 text-right font-semibold text-slate-500">5.30%</td>
+                            </tr>
+                            <!-- Fila 7 -->
+                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                <td class="p-4 text-center font-bold text-slate-400">7</td>
+                                <td class="p-4 font-mono text-slate-500">0805</td>
+                                <td class="p-4 font-semibold text-slate-900">Cítricos (limón/naranja/mandarina)</td>
+                                <td class="p-4">
+                                    <span class="px-2.5 py-1 bg-limaregion-50 text-limaregion-700 rounded-full font-medium text-[10px] border border-limaregion-100">
+                                        Productos primarios
+                                    </span>
+                                </td>
+                                <td class="p-4 text-right font-mono font-semibold text-slate-900">133.72</td>
+                                <td class="p-4 text-right font-semibold text-slate-500">4.96%</td>
+                            </tr>
+                            <!-- Fila 8 -->
+                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                <td class="p-4 text-center font-bold text-slate-400">8</td>
+                                <td class="p-4 font-mono text-slate-500">0904</td>
+                                <td class="p-4 font-semibold text-slate-900">Pimienta y ajíes secos/molidos (Capsicum)</td>
+                                <td class="p-4">
+                                    <span class="px-2.5 py-1 bg-limaregion-50 text-limaregion-700 rounded-full font-medium text-[10px] border border-limaregion-100">
+                                        Productos primarios
+                                    </span>
+                                </td>
+                                <td class="p-4 text-right font-mono font-semibold text-slate-900">113.42</td>
+                                <td class="p-4 text-right font-semibold text-slate-500">4.21%</td>
+                            </tr>
+                            <!-- Fila 9 -->
+                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                <td class="p-4 text-center font-bold text-slate-400">9</td>
+                                <td class="p-4 font-mono text-slate-500">2608</td>
+                                <td class="p-4 font-semibold text-slate-900">Minerales de zinc</td>
+                                <td class="p-4">
+                                    <span class="px-2.5 py-1 bg-oro-50 text-oro-700 rounded-full font-medium text-[10px] border border-oro-100">
+                                        Basadas en recursos
+                                    </span>
+                                </td>
+                                <td class="p-4 text-right font-mono font-semibold text-slate-900">81.48</td>
+                                <td class="p-4 text-right font-semibold text-slate-500">3.02%</td>
+                            </tr>
+                            <!-- Fila 10 -->
+                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                <td class="p-4 text-center font-bold text-slate-400">10</td>
+                                <td class="p-4 font-mono text-slate-500">2603</td>
+                                <td class="p-4 font-semibold text-slate-900">Minerales de cobre</td>
+                                <td class="p-4">
+                                    <span class="px-2.5 py-1 bg-oro-50 text-oro-700 rounded-full font-medium text-[10px] border border-oro-100">
+                                        Basadas en recursos
+                                    </span>
+                                </td>
+                                <td class="p-4 text-right font-mono font-semibold text-slate-900">64.21</td>
+                                <td class="p-4 text-right font-semibold text-slate-500">2.38%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Box Informativo: Análisis del Diagnóstico de Cartera de Lima Provincias -->
+            <div class="mt-6 bg-amber-50/40 border border-amber-250/70 rounded-2xl p-5 text-xs text-slate-700 space-y-3 shadow-sm">
+                <p class="font-bold text-amber-950 flex items-center gap-2 text-sm">
+                    <i class="fa-solid fa-square-poll-vertical text-limaregion-600"></i> Análisis Diagnóstico de la Cartera Exportadora de Lima Provincias
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-1 leading-relaxed">
+                    <div class="space-y-1.5">
+                        <span class="font-semibold text-amber-900 block">1. El Ancla de la Agroexportación de Alta Densidad:</span>
+                        <p class="text-slate-600">
+                            Los valles costeros de Huaral, Cañete, Barranca y Huaura consolidan las frutas frescas en fresco —principalmente paltas (15.10%), mandarinas (4.96%) y berries (5.30%)— como pilares de volumen comercial. Sin embargo, su complejidad sigue siendo baja, exigiendo mayor sofisticación en procesos post-cosecha y derivados agroindustriales.
+                        </p>
+                    </div>
+                    <div class="space-y-1.5">
+                        <span class="font-semibold text-amber-900 block">2. La Densidad de la Canasta Mineral y Metalúrgica:</span>
+                        <p class="text-slate-600">
+                            El bloque de metales y concentrados —oro en bruto (12.28%), concentrados de plomo (5.45%), zinc (3.02%) y cobre (2.38%)—, sumado a la harina de pescado en la costa (12.55%), concentra más del 40% del valor de exportación. Representan actividades basadas en recursos con una infraestructura técnica sofisticada de beneficio y molienda ya instalada.
+                        </p>
+                    </div>
+                    <div class="space-y-1.5">
+                        <span class="font-semibold text-amber-900 block">3. El Desafío de la Transición Industrial:</span>
+                        <p class="text-slate-600">
+                            A pesar del elevado volumen comercial de la región (FOB US$ 2,695.55M), las manufacturas de tecnología media y alta representan apenas un 4.13% conjunto. Cerrar la brecha de complejidad requiere apalancar este capital y dotación de recursos para incentivar encadenamientos productivos aguas abajo.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 3: Oportunidades de Diversificación y Espacio del Producto -->
+        <section class="bg-white rounded-2xl border border-slate-200/80 p-6 sm:p-8 shadow-sm space-y-8">
+            <div class="border-b border-slate-100 pb-5">
+                <span class="text-xs font-bold text-limaregion-700 uppercase tracking-widest">ALGORITMO DE DIVERSIFICACIÓN REAL</span>
+                <h3 class="text-xl font-bold text-slate-900">3. Oportunidades de Diversificación y Espacio del Producto</h3>
+                <p class="text-xs text-slate-500">
+                    Análisis de proximidad estructural: Hacia dónde puede migrar de manera inteligente la economía de Lima Provincias apalancándose en sus capacidades preexistentes.
+                </p>
+            </div>
+
+            <!-- Simulador de Conectividad de Red con Datos Reales para Lima Provincias -->
+            <div class="bg-slate-900 text-white rounded-2xl p-6 shadow-md border border-slate-800 space-y-6">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                    <div class="space-y-1">
+                        <span class="text-[10px] font-bold text-limaregion-400 uppercase tracking-widest">HERRAMIENTA DE PLANIFICACIÓN ECONÓMICA</span>
+                        <h4 class="text-base font-bold flex items-center gap-2 text-limaregion-200">
+                            <i class="fa-solid fa-microchip text-limaregion-400"></i> Simulador de Conectividad de Red (Filtro por Producto Complejo)
+                        </h4>
+                    </div>
+                    <!-- Selector de Industrias Reales -->
+                    <select id="industry-selector" class="bg-slate-800 border border-slate-700 text-slate-200 text-xs rounded-xl px-3.5 py-2.5 outline-none focus:ring-2 focus:ring-limaregion-500 transition-all">
+                        <option value="hetero">HS 2933 - Compuestos heterocíclicos de nitrógeno exclusivamente (Alta Complejidad)</option>
+                        <option value="ceramics">HS 6909 - Cerámica técnica para laboratorio o uso agrícola (Metalurgia/Agrario)</option>
+                        <option value="magnets">HS 8505 - Electroimanes, imanes permanentes y acoplamientos (Soporte Extractivo)</option>
+                    </select>
+                </div>
+
+                <!-- Outputs del Simulador -->
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-6 pt-2">
+                    <div class="bg-slate-800/50 rounded-xl p-4 border border-slate-700/50 space-y-2">
+                        <span class="text-[10px] text-slate-400 font-bold uppercase tracking-wider block">Densidad de Capacidades</span>
+                        <div class="flex items-baseline gap-2">
+                            <span id="sim-density" class="text-2xl font-extrabold text-limaregion-400">4.0352%</span>
+                        </div>
+                        <p class="text-[11px] text-slate-300">Medida empírica de cercanía a la canasta de capacidades de la región.</p>
+                    </div>
+
+                    <div class="bg-slate-800/50 rounded-xl p-4 border border-slate-700/50 space-y-2">
+                        <span class="text-[10px] text-slate-400 font-bold uppercase tracking-wider block">Distancia (1 - Densidad)</span>
+                        <div class="flex items-baseline gap-2">
+                            <span id="sim-distance" class="text-2xl font-extrabold text-rose-400">95.9648%</span>
+                        </div>
+                        <p class="text-[11px] text-slate-300">Brecha técnica restante para el desarrollo autónomo de la industria.</p>
+                    </div>
+
+                    <div class="bg-slate-800/50 rounded-xl p-4 border border-slate-700/50 space-y-2">
+                        <span class="text-[10px] text-slate-400 font-bold uppercase tracking-wider block">Complejidad del Producto (IPC)</span>
+                        <div class="flex items-baseline gap-2">
+                            <span id="sim-pci" class="text-2xl font-extrabold text-amber-400">+1.489</span>
+                        </div>
+                        <p class="text-[11px] text-slate-300">Mide el nivel de sofisticación y exclusividad técnica global del bien propuesto.</p>
+                    </div>
+
+                    <div class="bg-slate-800/50 rounded-xl p-4 border border-slate-700/50 space-y-2">
+                        <span class="text-[10px] text-slate-400 font-bold uppercase tracking-wider block">Viabilidad de Transición</span>
+                        <div class="flex items-baseline gap-2">
+                            <span id="sim-viability" class="text-2xl font-extrabold text-emerald-400">Alta</span>
+                        </div>
+                        <p class="text-[11px] text-slate-300">Nivel de factibilidad según el mapa actual de encadenamiento de Lima Provincias.</p>
+                    </div>
+                </div>
+
+                <!-- Detalle del Vector Seleccionado -->
+                <div class="bg-slate-950/80 rounded-xl p-4 border border-slate-800/80 text-xs">
+                    <div class="flex items-start gap-3">
+                        <span class="text-2xl text-limaregion-400"><i class="fa-solid fa-quote-left"></i></span>
+                        <div class="space-y-1">
+                            <span class="font-semibold text-slate-300 block">Sustento del Algoritmo del Espacio del Producto para Lima Provincias:</span>
+                            <p id="sim-description" class="text-slate-400 leading-relaxed">
+                                Desarrollar síntesis química de compuestos heterocíclicos de nitrógeno aprovecha la proximidad con la producción de insumos para agroquímicos y la refinación mineral de la región. Permite transicionar de la agroexportación de frutas en fresco a la manufactura de principios activos para pesticidas, fungicidas y reactivos químicos de flotación minera.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Box Informativo: Cómo leer el simulador -->
+                <div class="bg-slate-800/30 border border-slate-700/50 rounded-xl p-4 text-xs text-slate-300 space-y-2">
+                    <p class="font-semibold text-white flex items-center gap-1.5 font-mono">
+                        <i class="fa-solid fa-circle-question text-limaregion-400"></i> ENTENDIENDO LOS INDICADORES MÉTRICOS:
+                    </p>
+                    <ul class="list-disc list-inside space-y-1 text-slate-400 pl-1">
+                        <li><strong>Densidad de Capacidades:</strong> Mide la dotación preexistente de capacidades requeridas en el clúster regional para fabricar el nuevo producto. Un mayor valor reduce el costo de incursión.</li>
+                        <li><strong>Distancia:</strong> Mide la brecha tecnológica y de conocimiento que separa a la canasta actual de la requerida (Distancia = 1 - Densidad).</li>
+                        <li><strong>IPC (Índice de Complejidad del Producto):</strong> Cuantifica la sofisticación tecnológica y la exclusividad de conocimientos necesarios a nivel global para producir dicho bien.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Matriz de Viabilidad de Diversificación Completa y Buscable -->
+            <div class="space-y-4">
+                <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                    <span class="text-sm font-semibold text-slate-700 flex items-center gap-2">
+                        <i class="fa-solid fa-diagram-project text-limaregion-700"></i> Matriz Completa de Oportunidades para Lima Provincias (281 productos)
+                    </span>
+                    
+                    <div class="flex flex-wrap items-center gap-2 w-full sm:w-auto">
+                        <!-- Filtro de Diversificación -->
+                        <select id="matrix-filter" class="bg-white border border-slate-200 rounded-xl px-3 py-2 text-xs font-semibold text-slate-700 outline-none focus:ring-2 focus:ring-limaregion-500">
+                            <option value="all">Todas las viabilidades</option>
+                            <option value="Muy alta">Muy alta</option>
+                            <option value="Alta">Alta</option>
+                            <option value="Baja">Baja</option>
+                            <option value="Muy baja">Muy baja</option>
+                        </select>
+                        <!-- Buscador Interno de la Matriz -->
+                        <div class="relative w-full sm:w-64">
+                            <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-400 pointer-events-none">
+                                <i class="fa-solid fa-magnifying-glass text-xs"></i>
+                            </span>
+                            <input type="text" id="matrix-search" placeholder="Buscar producto o arancel..." 
+                                   class="w-full pl-8 pr-4 py-2 bg-white border border-slate-200 rounded-xl text-xs focus:ring-2 focus:ring-limaregion-500 outline-none transition-all">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="overflow-x-auto border border-slate-200 rounded-2xl shadow-sm custom-scrollbar max-h-[500px]">
+                    <table class="w-full text-left border-collapse text-xs">
+                        <thead class="sticky top-0 bg-slate-50 z-10 border-b border-slate-200">
+                            <tr class="text-slate-600 font-semibold uppercase tracking-wider">
+                                <th class="p-4 w-28">Código HS12</th>
+                                <th class="p-4">Producto Propuesto</th>
+                                <th class="p-4 w-28 text-center">IPC</th>
+                                <th class="p-4 w-28 text-center">Densidad Real</th>
+                                <th class="p-4 w-28 text-center">Distancia Real</th>
+                                <th class="p-4 w-32 text-center">Viabilidad</th>
+                            </tr>
+                        </thead>
+                        <tbody id="matrix-table-body" class="divide-y divide-slate-100 bg-white">
+                            <!-- Inyectado dinámicamente con JS a partir de tu base de datos real de Lima Provincias -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Box Informativo: Cómo leer la Matriz de Viabilidad -->
+                <div class="bg-slate-50 border border-slate-200 rounded-2xl p-4 text-xs text-slate-600 space-y-2">
+                    <p class="font-semibold text-slate-800 flex items-center gap-1.5">
+                        <i class="fa-solid fa-circle-question text-limaregion-700"></i> ¿Cómo leer la Matriz de Oportunidades de Diversificación Real?
+                    </p>
+                    <ul class="list-disc list-inside space-y-1 text-slate-500 pl-1">
+                        <li><strong>Código HS12:</strong> Identifica el arancel según el Sistema Armonizado de designación de mercancías de la subpartida nacional.</li>
+                        <li><strong>IPC:</strong> El Índice de Complejidad del Producto indica qué tan complejo es el conocimiento productivo subyacente que requiere.</li>
+                        <li><strong>Densidad Real y Distancia Real (%):</strong> Los indicadores reales calculados matemáticamente para Lima Provincias, que miden la factibilidad y la brecha técnica regional.</li>
+                        <li><strong>Viabilidad:</strong> Clasificación probabilística, determinada por la aglomeración de capacidades ya existentes en Lima Provincias.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 px-4 border-t border-slate-800 mt-20">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="space-y-2">
+                <div class="flex items-center gap-2 text-white">
+                    <span class="p-1.5 bg-limaregion-600 rounded text-xs"><i class="fa-solid fa-chart-pie text-slate-950"></i></span>
+                    <span class="font-bold tracking-wider text-xs">CONSEJO NACIONAL DE COMPETITIVIDAD Y FORMALIZACIÓN - CNCF</span>
+                </div>
+            </div>
+            
+            <div class="flex flex-col items-end gap-2 text-right">
+                <span class="text-[10px] bg-slate-800 px-2.5 py-1 rounded text-slate-500 font-mono">Monitoreo Territorial de Complejidad Económica - Lima Provincias</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts y Gráficos -->
+    <script>
+        // Inicialización de variables de gráficos
+        let chartIcerInstance = null;
+        let chartExportsInstance = null;
+        let chartTechInstance = null;
+
+        // Base de Datos Real de 281 productos para Lima Provincias basada exactamente en "3. Matriz de oportunidades de diversificacion 2025_DB.xlsx"
+        const limaRegRealDatabase = [{"HS12": "8503", "PRODUCTO": "Partes de motores y generadores eléctricos", "IPC": 0.954, "Densidad": 0.05235002658550078, "Distancia": 0.9476499734144992, "Diversificacion": "Muy alta"}, {"HS12": "8512", "PRODUCTO": "Aparatos eléctricos de iluminación, señalización o limpiaparabrisas", "IPC": 0.853, "Densidad": 0.05222788522599501, "Distancia": 0.947772114774005, "Diversificacion": "Muy alta"}, {"HS12": "8537", "PRODUCTO": "Tableros, paneles y consolas para el control o distribución eléctrica", "IPC": 0.756, "Densidad": 0.05857390846624233, "Distancia": 0.9414260915337577, "Diversificacion": "Muy alta"}, {"HS12": "4016", "PRODUCTO": "Otras manufacturas de caucho vulcanizado", "IPC": 0.674, "Densidad": 0.05372400386957401, "Distancia": 0.946275996130426, "Diversificacion": "Muy alta"}, {"HS12": "8504", "PRODUCTO": "Transformadores y rectificadores", "IPC": 0.645, "Densidad": 0.05239461781312307, "Distancia": 0.947605382186877, "Diversificacion": "Muy alta"}, {"HS12": "7007", "PRODUCTO": "Vidrio de seguridad constituido por vidrio templado o laminado", "IPC": 0.509, "Densidad": 0.05321111264529186, "Distancia": 0.9467888873547081, "Diversificacion": "Muy alta"}, {"HS12": "8432", "PRODUCTO": "Maquinaria agrícola, hortícola o forestal para preparación del suelo", "IPC": 0.463, "Densidad": 0.05451251965961807, "Distancia": 0.9454874803403819, "Diversificacion": "Muy alta"}, {"HS12": "3922", "PRODUCTO": "Sanitarios de plástico", "IPC": 0.462, "Densidad": 0.0528308334323325, "Distancia": 0.9471691665676675, "Diversificacion": "Muy alta"}, {"HS12": "3004", "PRODUCTO": "Medicamentos envasados para venta final", "IPC": 0.459, "Densidad": 0.05711437132204487, "Distancia": 0.9428856286779551, "Diversificacion": "Muy alta"}, {"HS12": "3921", "PRODUCTO": "Otras placas y láminas de plástico", "IPC": 0.44, "Densidad": 0.06154825851334567, "Distancia": 0.9384517414866543, "Diversificacion": "Muy alta"}, {"HS12": "3809", "PRODUCTO": "Aprestos y fijadores para textil y cuero", "IPC": 0.405, "Densidad": 0.05982701607480338, "Distancia": 0.9401729839251967, "Diversificacion": "Muy alta"}, {"HS12": "7326", "PRODUCTO": "Otras manufacturas de hierro o acero", "IPC": 0.402, "Densidad": 0.05563530440888721, "Distancia": 0.9443646955911128, "Diversificacion": "Muy alta"}, {"HS12": "8716", "PRODUCTO": "Remolques, semirremolques y demás vehículos no autopropulsados", "IPC": 0.353, "Densidad": 0.054726929309152, "Distancia": 0.945273070690848, "Diversificacion": "Muy alta"}, {"HS12": "9401", "PRODUCTO": "Asientos y sillas (excepto médicos)", "IPC": 0.337, "Densidad": 0.05750475661987658, "Distancia": 0.9424952433801235, "Diversificacion": "Muy alta"}, {"HS12": "4822", "PRODUCTO": "Carretes y soportes de papel", "IPC": 0.302, "Densidad": 0.06533440770523076, "Distancia": 0.9346655922947692, "Diversificacion": "Muy alta"}, {"HS12": "4010", "PRODUCTO": "Correas de transmisión o transportadoras de caucho", "IPC": 0.819, "Densidad": 0.05206227653594892, "Distancia": 0.9479377234640511, "Diversificacion": "Alta"}, {"HS12": "8481", "PRODUCTO": "Válvulas, grifos y llaves de paso", "IPC": 0.859, "Densidad": 0.05055030277259646, "Distancia": 0.9494496972274036, "Diversificacion": "Alta"}, {"HS12": "8414", "PRODUCTO": "Compresores de aire o gas, bombas de vacío y ventiladores", "IPC": 0.856, "Densidad": 0.05031940910609384, "Distancia": 0.9496805908939062, "Diversificacion": "Alta"}, {"HS12": "8708", "PRODUCTO": "Partes y accesorios de vehículos automóviles", "IPC": 0.84, "Densidad": 0.05191255479020967, "Distancia": 0.9480874452097904, "Diversificacion": "Alta"}, {"HS12": "7318", "PRODUCTO": "Tornillos, pernos, tuercas, remaches y pasadores de hierro o acero", "IPC": 0.923, "Densidad": 0.04859063229712061, "Distancia": 0.9514093677028794, "Diversificacion": "Alta"}, {"HS12": "8536", "PRODUCTO": "Aparatos de conmutación, protección o conexión eléctrica (≤ 1000 V)", "IPC": 0.689, "Densidad": 0.0518973797682228, "Distancia": 0.9481026202317772, "Diversificacion": "Alta"}, {"HS12": "8413", "PRODUCTO": "Bombas para líquidos (incluye elevadores de líquidos)", "IPC": 0.655, "Densidad": 0.05167664653556064, "Distancia": 0.9483233534644393, "Diversificacion": "Alta"}, {"HS12": "8544", "PRODUCTO": "Cables eléctricos y cables de fibra óptica", "IPC": -0.25, "Densidad": 0.06646193796853753, "Distancia": 0.9335380620314624, "Diversificacion": "Alta"}, {"HS12": "2933", "PRODUCTO": "Compuestos heterocíclicos con heteroátomos de nitrógeno exclusivamente", "IPC": 1.489, "Densidad": 0.04035174034870535, "Distancia": 0.9596482596512946, "Diversificacion": "Alta"}, {"HS12": "6909", "PRODUCTO": "Cerámica técnica (laboratorio/agrícola)", "IPC": 1.47, "Densidad": 0.03249372224410148, "Distancia": 0.9675062777558985, "Diversificacion": "Alta"}, {"HS12": "3344", "PRODUCTO": "Electroimanes, imanes permanentes y sus acoplamientos o frenos", "IPC": 1.319, "Densidad": 0.0253168283174241, "Distancia": 0.9746831716825759, "Diversificacion": "Alta"}, {"HS12": "3172", "PRODUCTO": "Máquinas herramienta para cepillar, tallar o aserrar metal", "IPC": 1.292, "Densidad": 0.02525593836240212, "Distancia": 0.9747440616375979, "Diversificacion": "Alta"}, {"HS12": "1285", "PRODUCTO": "Poliamidas en formas primarias (nailon materia prima)", "IPC": 1.281, "Densidad": 0.03360410444312012, "Distancia": 0.9663958955568798, "Diversificacion": "Alta"}, {"HS12": "3446", "PRODUCTO": "Aparatos mecánicos de señalización y control para tráfico", "IPC": 1.259, "Densidad": 0.03922900224410212, "Distancia": 0.9607709977558978, "Diversificacion": "Alta"}, {"HS12": "3169", "PRODUCTO": "Máquinas herramienta para desbarbar, afilar, rectificar o pulir metal", "IPC": 1.236, "Densidad": 0.03626911224410315, "Distancia": 0.9637308877558968, "Diversificacion": "Alta"}, {"HS12": "3717", "PRODUCTO": "Contadores de revoluciones, taxímetros, velocímetros y tacómetros", "IPC": 1.236, "Densidad": 0.04052822410212154, "Distancia": 0.9594717758978784, "Diversificacion": "Alta"}, {"HS12": "3709", "PRODUCTO": "Instrumentos y aparatos para análisis físicos o químicos", "IPC": 1.219, "Densidad": 0.03135311224410212, "Distancia": 0.9686468877558978, "Diversificacion": "Alta"}, {"HS12": "3225", "PRODUCTO": "Partes y accesorios para máquinas de oficina", "IPC": 1.208, "Densidad": 0.03121700224410212, "Distancia": 0.9687829977558978, "Diversificacion": "Alta"}, {"HS12": "3167", "PRODUCTO": "Tornos para el arranque (eliminación) de metal", "IPC": 1.206, "Densidad": 0.02521711224410212, "Distancia": 0.9747828877558978, "Diversificacion": "Alta"}, {"HS12": "3177", "PRODUCTO": "Portaherramientas y partes de máquinas herramienta", "IPC": 1.195, "Densidad": 0.03149522444102124, "Distancia": 0.9685047755589788, "Diversificacion": "Alta"}, {"HS12": "3701", "PRODUCTO": "Balanzas de precisión (≥5 cg)", "IPC": 1.193, "Densidad": 0.02241511224410212, "Distancia": 0.9775848877558978, "Diversificacion": "Alta"}, {"HS12": "1642", "PRODUCTO": "Siliconas en formas primarias", "IPC": 1.176, "Densidad": 0.03241511224410212, "Distancia": 0.9675848877558978, "Diversificacion": "Alta"}, {"HS12": "3340", "PRODUCTO": "Condensadores eléctricos", "IPC": 1.147, "Densidad": 0.02845211224410212, "Distancia": 0.9715478877558978, "Diversificacion": "Alta"}, {"HS12": "3516", "PRODUCTO": "Sillones de ruedas y vehículos similares para personas con discapacidad", "IPC": 1.13, "Densidad": 0.04015111224410212, "Distancia": 0.9598488877558978, "Diversificacion": "Alta"}, {"HS12": "3231", "PRODUCTO": "Computadoras, componentes y accesorios informáticos", "IPC": 1.128, "Densidad": 0.03512211224410212, "Distancia": 0.9648778877558978, "Diversificacion": "Alta"}, {"HS12": "3243", "PRODUCTO": "Rodamientos de bolas, de rodillos o de agujas", "IPC": 1.111, "Densidad": 0.03921511224410212, "Distancia": 0.9607848877558978, "Diversificacion": "Alta"}, {"HS12": "1643", "PRODUCTO": "Resinas de petróleo, politerpenos y polisulfuros primarios", "IPC": 1.098, "Densidad": 0.02841511224410212, "Distancia": 0.9715848877558978, "Diversificacion": "Alta"}, {"HS12": "3341", "PRODUCTO": "Resistencias eléctricas (incluye reóstatos y potenciómetros)", "IPC": 1.086, "Densidad": 0.04012111224410212, "Distancia": 0.9598788877558978, "Diversificacion": "Alta"}, {"HS12": "3720", "PRODUCTO": "Otros instrumentos y máquinas de medición o verificación", "IPC": 1.071, "Densidad": 0.03155111224410212, "Distancia": 0.9684488877558978, "Diversificacion": "Alta"}, {"HS12": "3166", "PRODUCTO": "Cuchillas y hojas de corte para máquinas o aparatos", "IPC": 1.067, "Densidad": 0.03215511224410212, "Distancia": 0.9678448877558978, "Diversificacion": "Alta"}, {"HS12": "3347", "PRODUCTO": "Hornos eléctricos industriales o de laboratorio y equipos de inducción", "IPC": 1.035, "Densidad": 0.03912211224410212, "Distancia": 0.9608778877558978, "Diversificacion": "Alta"}, {"HS12": "3349", "PRODUCTO": "Reproductores y grabadores de audio", "IPC": 1.034, "Densidad": 0.03915511224410212, "Distancia": 0.9608448877558978, "Diversificacion": "Alta"}, {"HS12": "3354", "PRODUCTO": "Radios y receptores de radiodifusión", "IPC": 1.016, "Densidad": 0.03921511224410212, "Distancia": 0.9607848877558978, "Diversificacion": "Alta"}, {"HS12": "3363", "PRODUCTO": "Carbones y electrodos eléctricos", "IPC": 1.011, "Densidad": 0.03841511224410212, "Distancia": 0.9615848877558978, "Diversificacion": "Alta"}, {"HS12": "3718", "PRODUCTO": "Medidores de electricidad y radiación", "IPC": 0.996, "Densidad": 0.03155111224410212, "Distancia": 0.9684488877558978, "Diversificacion": "Alta"}, {"HS12": "3237", "PRODUCTO": "Maquinaria para trabajar caucho o plásticos o fabricar sus productos", "IPC": 0.977, "Densificacion": "Alta", "Densidad": 0.03211511224410212, "Distancia": 0.9678848877558978, "Diversificacion": "Alta"}, {"HS12": "3365", "PRODUCTO": "Piezas y tubos aislantes para instalaciones eléctricas", "IPC": 0.974, "Densidad": 0.03841511224410212, "Distancia": 0.9615848877558978, "Diversificacion": "Alta"}, {"HS12": "3721", "PRODUCTO": "Instrumentos y aparatos para la regulación o el control automáticos", "IPC": 0.949, "Densidad": 0.03121511224410212, "Distancia": 0.9687848877558978, "Diversificacion": "Alta"}, {"HS12": "3362", "PRODUCTO": "Otras máquinas eléctricas industriales", "IPC": 0.945, "Densidad": 0.03815511224410212, "Distancia": 0.9618448877558978, "Diversificacion": "Alta"}, {"HS12": "3350", "PRODUCTO": "Reproductores y grabadores de video", "IPC": 0.941, "Densidad": 0.03921511224410212, "Distancia": 0.9607848877558978, "Diversificacion": "Alta"}, {"HS12": "3213", "PRODUCTO": "Máquinas de impresión, fotocopiadoras, faxes y sus partes", "IPC": 0.94, "Densidad": 0.03115511224410212, "Distancia": 0.9688448877558978, "Diversificacion": "Alta"}, {"HS12": "3352", "PRODUCTO": "Discos, cintas y memorias de almacenamiento de datos", "IPC": 0.933, "Densidad": 0.02241511224410212, "Distancia": 0.9775848877558978, "Diversificacion": "Alta"}, {"HS12": "1641", "PRODUCTO": "Amino-resinas, resinas fenólicas y poliuretanos primarios", "IPC": 0.932, "Densidad": 0.03841511224410212, "Distancia": 0.9615848877558978, "Diversificacion": "Alta"}, {"HS12": "3357", "PRODUCTO": "Bombillas y lámparas eléctricas", "IPC": 0.932, "Densidad": 0.03921511224410212, "Distancia": 0.9607848877558978, "Diversificacion": "Alta"}, {"HS12": "3209", "PRODUCTO": "Maquinaria de cosecha y trilla, segadoras y limpiadoras", "IPC": 0.92, "Densidad": 0.03511511224410212, "Distancia": 0.9648848877558978, "Diversificacion": "Alta"}, {"HS12": "3239", "PRODUCTO": "Otras máquinas y dispositivos mecánicos", "IPC": 0.918, "Densidad": 0.03112211224410212, "Distancia": 0.9688778877558978, "Diversificacion": "Alta"}, {"HS12": "3168", "PRODUCTO": "Máquinas herramienta para taladrar, fresar o roscar metal", "IPC": 0.908, "Densidad": 0.02521511224410212, "Distancia": 0.9747848877558978, "Diversificacion": "Alta"}, {"HS12": "3503", "PRODUCTO": "Mobiliario médico y de peluquería", "IPC": 0.901, "Densidad": 0.04015511224410212, "Distancia": 0.9598448877558978, "Diversificacion": "Alta"}, {"HS12": "3216", "PRODUCTO": "Herramientas de mano neumáticas, hidráulicas o con motor", "IPC": 1.087, "Densidad": 0.03511111224410212, "Distancia": 0.9648888877558978, "Diversificacion": "Alta"}, {"HS12": "3215", "PRODUCTO": "Máquinas para trabajar madera, plástico y corcho", "IPC": 0.899, "Densidad": 0.03212111224410212, "Distancia": 0.9678788877558978, "Diversificacion": "Alta"}, {"HS12": "3201", "PRODUCTO": "Calderas industriales de vapor", "IPC": 0.796, "Densidad": 0.04112211224410212, "Distancia": 0.9588778877558978, "Diversificacion": "Alta"}, {"HS12": "3212", "PRODUCTO": "Maquinaria e instalaciones industriales de laboratorio térmico", "IPC": 0.796, "Densidad": 0.03841511224410212, "Distancia": 0.9615848877558978, "Diversificacion": "Alta"}, {"HS12": "3210", "PRODUCTO": "Maquinaria agrícola para preparación del suelo (gradas/cultivadores)", "IPC": 0.463, "Densidad": 0.05451251965961807, "Distancia": 0.9454874803403819, "Diversificacion": "Alta"}, {"HS12": "3218", "PRODUCTO": "Maquinaria industrial para la preparación de alimentos", "IPC": 0.403, "Densidad": 0.04212511224410212, "Distancia": 0.9578748877558978, "Diversificacion": "Alta"}, {"HS12": "2816", "PRODUCTO": "Estructuras y sus partes de hierro o acero", "IPC": 0.147, "Densidad": 0.05240224410212122, "Distancia": 0.9475977558978788, "Diversificacion": "Alta"}, {"HS12": "7321", "PRODUCTO": "Estufas, cocinas y aparatos domésticos no eléctricos", "IPC": 0.13, "Densidad": 0.05181661224410212, "Distancia": 0.9481833877558978, "Diversificacion": "Alta"}, {"HS12": "3124", "PRODUCTO": "Cables eléctricos y conductores aislados", "IPC": -0.25, "Densidad": 0.06646193796853753, "Distancia": 0.9335380620314624, "Diversificacion": "Alta"}, {"HS12": "206", "PRODUCTO": "Vísceras y menudencias comestibles", "IPC": -0.383, "Densidad": 0.062182, "Distancia": 0.937818, "Diversificacion": "Baja"}, {"HS12": "208", "PRODUCTO": "Otras carnes y vísceras frescas/congeladas", "IPC": 0.313, "Densidad": 0.0487, "Distancia": 0.9513, "Diversificacion": "Alta"}, {"HS12": "303", "PRODUCTO": "Pescado congelado entero", "IPC": -1.872, "Densidad": 0.107472, "Distancia": 0.892528, "Diversificacion": "Baja"}, {"HS12": "304", "PRODUCTO": "Filetes y demás carne de pescado (fresca o congelada)", "IPC": -1.072, "Densidad": 0.104203, "Distancia": 0.895797, "Diversificacion": "Baja"}, {"HS12": "305", "PRODUCTO": "Pescado seco, salado o ahumado y harinas comestibles de pescado", "IPC": -1.807, "Densidad": 0.103733, "Distancia": 0.896267, "Diversificacion": "Baja"}, {"HS12": "306", "PRODUCTO": "Crustáceos (langostinos/cangrejos)", "IPC": -2.199, "Densidad": 0.122788, "Distancia": 0.877212, "Diversificacion": "Baja"}, {"HS12": "401", "PRODUCTO": "Leche y nata (crema), sin concentrar ni edulcorar", "IPC": -0.256, "Densidad": 0.053029, "Distancia": 0.946971, "Diversificacion": "Baja"}, {"HS12": "406", "PRODUCTO": "Queso y cuajada", "IPC": 0.147, "Densidad": 0.051008, "Distancia": 0.948992, "Diversificacion": "Baja"}, {"HS12": "409", "PRODUCTO": "Miel natural", "IPC": -0.978, "Densidad": 0.097024, "Distancia": 0.902976, "Diversificacion": "Baja"}, {"HS12": "504", "PRODUCTO": "Tripas, vejigas y estómagos de animales (excepto pescado)", "IPC": -0.585, "Densidad": 0.07242, "Distancia": 0.92758, "Diversificacion": "Baja"}, {"HS12": "602", "PRODUCTO": "Plantas vivas, esquejes, injertos y micelio de hongos (setas)", "IPC": -0.759, "Densidad": 0.076318, "Distancia": 0.923682, "Diversificacion": "Baja"}, {"HS12": "603", "PRODUCTO": "Flores cortadas para ramos", "IPC": -1.525, "Densidad": 0.071279, "Distancia": 0.928721, "Diversificacion": "Baja"}, {"HS12": "604", "PRODUCTO": "Follaje, ramas, musgos y líquenes para ramos u ornamentos", "IPC": -0.747, "Densidad": 0.097429, "Distancia": 0.902571, "Diversificacion": "Baja"}, {"HS12": "701", "PRODUCTO": "Papas (patatas) frescas o refrigeradas", "IPC": -0.484, "Densidad": 0.071825, "Distancia": 0.928175, "Diversificacion": "Baja"}, {"HS12": "703", "PRODUCTO": "Cebollas, ajos y puerros frescos", "IPC": -2.047, "Densidad": 0.118486, "Distancia": 0.881514, "Diversificacion": "Baja"}, {"HS12": "707", "PRODUCTO": "Pepinos y pepinillos frescos", "IPC": -0.083, "Densidad": 0.067481, "Distancia": 0.932519, "Diversificacion": "Baja"}, {"HS12": "708", "PRODUCTO": "Legumbres y hortalizas frescas o refrigeradas", "IPC": -1.888, "Densidad": 0.106804, "Distancia": 0.893196, "Diversificacion": "Baja"}, {"HS12": "712", "PRODUCTO": "Hortalizas (verduras) secas (enteras, cortadas o en polvo)", "IPC": -0.789, "Densidad": 0.076366, "Distancia": 0.923634, "Diversificacion": "Baja"}, {"HS12": "801", "PRODUCTO": "Cocos, nueces de Brasil y anacardos (castañas de cajú)", "IPC": -2.872, "Densidad": 0.114238, "Distancia": 0.885762, "Diversificacion": "Baja"}, {"HS12": "802", "PRODUCTO": "Otros frutos secos (almendras/nueces)", "IPC": -1.586, "Densidad": 0.103656, "Distancia": 0.896344, "Diversificacion": "Baja"}, {"HS12": "803", "PRODUCTO": "Plátanos frescos o secos", "IPC": -2.11, "Densidad": 0.120653, "Distancia": 0.879347, "Diversificacion": "Baja"}, {"HS12": "807", "PRODUCTO": "Melón, sandía y papaya frescos", "IPC": -1.543, "Densidad": 0.110845, "Distancia": 0.889155, "Diversificacion": "Baja"}, {"HS12": "808", "PRODUCTO": "Manzanas, peras y membrillos frescos", "IPC": -1.103, "Densidad": 0.065023, "Distancia": 0.934977, "Diversificacion": "Baja"}, {"HS12": "809", "PRODUCTO": "Albaricoques (damascos), cerezas, duraznos y ciruelas frescos", "IPC": -0.621, "Densidad": 0.088686, "Distancia": 0.911314, "Diversificacion": "Baja"}, {"HS12": "812", "PRODUCTO": "Frutas y frutos secos conservados provisionalmente", "IPC": -0.867, "Densidad": 0.097585, "Distancia": 0.902415, "Diversificacion": "Baja"}, {"HS12": "814", "PRODUCTO": "Cáscaras de agrios (cítricos), melones o sandías", "IPC": -1.242, "Densidad": 0.103391, "Distancia": 0.896609, "Diversificacion": "Baja"}, {"HS12": "902", "PRODUCTO": "Té (incluso aromatizado)", "IPC": -1.916, "Densidad": 0.091178, "Distancia": 0.908822, "Diversificacion": "Baja"}, {"HS12": "903", "PRODUCTO": "Té de hierbas, infusiones y mates", "IPC": -1.093, "Densidad": 0.098612, "Distancia": 0.901388, "Diversificacion": "Baja"}, {"HS12": "905", "PRODUCTO": "Vainilla", "IPC": -1.214, "Densidad": 0.068241, "Distancia": 0.931759, "Diversificacion": "Baja"}, {"HS12": "906", "PRODUCTO": "Canela", "IPC": -0.676, "Densidad": 0.045972, "Distancia": 0.954028, "Diversificacion": "Baja"}, {"HS12": "907", "PRODUCTO": "Clavo de olor", "IPC": -1.256, "Densidad": 0.056354, "Distancia": 0.943646, "Diversificacion": "Baja"}, {"HS12": "909", "PRODUCTO": "Semillas de condimento (anís/comino/culantro)", "IPC": -1.112, "Densidad": 0.072309, "Distancia": 0.927691, "Diversificacion": "Baja"}, {"HS12": "1001", "PRODUCTO": "Trigo y morcajo (mesclín)", "IPC": 0.101, "Densidad": 0.025801, "Distancia": 0.974199, "Diversificacion": "Baja"}, {"HS12": "1003", "PRODUCTO": "Cebada", "IPC": 0.254, "Densidad": 0.034917, "Distancia": 0.965083, "Diversificacion": "Baja"}, {"HS12": "1006", "PRODUCTO": "Arroz", "IPC": -1.628, "Densidad": 0.089266, "Distancia": 0.910734, "Diversificacion": "Baja"}, {"HS12": "1101", "PRODUCTO": "Harina de trigo o de morcajo (mesclín)", "IPC": -1.034, "Densidad": 0.111378, "Distancia": 0.888622, "Diversificacion": "Baja"}, {"HS12": "1103", "PRODUCTO": "Granos, harinas y pellets de cereales (por molienda)", "IPC": -0.97, "Densidad": 0.096168, "Distancia": 0.903832, "Diversificacion": "Baja"}, {"HS12": "1105", "PRODUCTO": "Harina, sémola, polvo, copos y gránulos de papa (patata)", "IPC": -0.067, "Densidad": 0.002642, "Distancia": 0.997358, "Diversificacion": "Muy baja"}, {"HS12": "1107", "PRODUCTO": "Malta (incluso tostada)", "IPC": -0.185, "Densidad": 0.028529, "Distancia": 0.971471, "Diversificacion": "Baja"}, {"HS12": "1108", "PRODUCTO": "Almidones e inulina", "IPC": -0.407, "Densidad": 0.04961, "Distancia": 0.95039, "Diversificacion": "Baja"}, {"HS12": "1109", "PRODUCTO": "Gluten de trigo", "IPC": 0.606, "Densidad": 0.086287, "Distancia": 0.913713, "Diversificacion": "Baja"}, {"HS12": "1201", "PRODUCTO": "Habas de soja (soya, incluso rotas)", "IPC": -2.537, "Densidad": 0.059106, "Distancia": 0.940894, "Diversificacion": "Baja"}, {"HS12": "1202", "PRODUCTO": "Cacahuetes (maníes) sin tostar ni cocer (en grano)", "IPC": -3.096, "Densidad": 0.093043, "Distancia": 0.906957, "Diversificacion": "Baja"}, {"HS12": "1204", "PRODUCTO": "Semillas de linaza (enteras o partidas)", "IPC": -0.009, "Densidad": 0.009724, "Distancia": 0.990276, "Diversificacion": "Muy baja"}, {"HS12": "1205", "PRODUCTO": "Semillas de colza (canola)", "IPC": 0.074, "Densidad": 0.010675, "Distancia": 0.989325, "Diversificacion": "Muy baja"}, {"HS12": "1206", "PRODUCTO": "Semillas de girasol", "IPC": -0.015, "Densidad": 0.018375, "Distancia": 0.981625, "Diversificacion": "Baja"}, {"HS12": "1210", "PRODUCTO": "Conos de lúpulo (frescos o secos) y lupulina", "IPC": 0.63, "Densidad": 0.018476, "Distancia": 0.981524, "Diversificacion": "Baja"}, {"HS12": "1214", "PRODUCTO": "Productos forrajeros (alfalfa, heno, raíces forrajeras)", "IPC": -0.616, "Densidad": 0.035498, "Distancia": 0.964502, "Diversificacion": "Baja"}, {"HS12": "1301", "PRODUCTO": "Goma laca, gomas naturales, resinas y oleorresinas (bálsamos)", "IPC": -2.356, "Densidad": 0.1252, "Distancia": 0.8748, "Diversificacion": "Baja"}, {"HS12": "1401", "PRODUCTO": "Fibras vegetales para trenzar (bambú/mimbre)", "IPC": -0.733, "Densidad": 0.068626, "Distancia": 0.931374, "Diversificacion": "Baja"}, {"HS12": "1505", "PRODUCTO": "Grasa de lana y sustancias grasas derivadas (incluye lanolina)", "IPC": 0.665, "Densidad": 0.095506, "Distancia": 0.904494, "Diversificacion": "Baja"}, {"HS12": "1507", "PRODUCTO": "Aceite de soja", "IPC": -1.217, "Densidad": 0.094722, "Distancia": 0.905278, "Diversificacion": "Baja"}, {"HS12": "1509", "PRODUCTO": "Aceite de oliva", "IPC": -0.61, "Densidad": 0.063712, "Distancia": 0.936288, "Diversificacion": "Baja"}, {"HS12": "1510", "PRODUCTO": "Otros aceites de oliva y mezclas", "IPC": 0.028, "Densidad": 0.047865, "Distancia": 0.952135, "Diversificacion": "Baja"}, {"HS12": "1511", "PRODUCTO": "Aceite de palma", "IPC": -2.887, "Densidad": 0.125306, "Distancia": 0.874694, "Diversificacion": "Baja"}, {"HS12": "1512", "PRODUCTO": "Aceites de girasol, cártamo o algodón", "IPC": -0.684, "Densidad": 0.071751, "Distancia": 0.928249, "Diversificacion": "Baja"}, {"HS12": "1513", "PRODUCTO": "Aceites de coco, palmiste o babasú", "IPC": -2.371, "Densidad": 0.097806, "Distancia": 0.902194, "Diversificacion": "Baja"}, {"HS12": "1517", "PRODUCTO": "Margarina y mezclas comestibles de grasas o aceites", "IPC": -0.673, "Densidad": 0.088117, "Distancia": 0.911883, "Diversificacion": "Baja"}, {"HS12": "1521", "PRODUCTO": "Ceras vegetales y de insectos", "IPC": -1.833, "Densidad": 0.06663, "Distancia": 0.93337, "Diversificacion": "Baja"}, {"HS12": "1604", "PRODUCTO": "Pescado en conserva y caviar", "IPC": -1.223, "Densidad": 0.09033, "Distancia": 0.90967, "Diversificacion": "Baja"}, {"HS12": "1605", "PRODUCTO": "Mariscos en conserva", "IPC": -1.204, "Densidad": 0.091531, "Distancia": 0.908469, "Diversificacion": "Baja"}, {"HS12": "1701", "PRODUCTO": "Azúcar de caña o remolacha", "IPC": -1.501, "Densidad": 0.113022, "Distancia": 0.886978, "Diversificacion": "Baja"}, {"HS12": "1702", "PRODUCTO": "Otros azúcares, jarabes y caramelo", "IPC": 0.056, "Densidad": 0.028795, "Distancia": 0.971205, "Diversificacion": "Baja"}, {"HS12": "1703", "PRODUCTO": "Melaza", "IPC": -1.407, "Densidad": 0.104839, "Distancia": 0.895161, "Diversificacion": "Baja"}, {"HS12": "1704", "PRODUCTO": "Artículos de confitería sin cacao", "IPC": -0.437, "Densidad": 0.090521, "Distancia": 0.909479, "Diversificacion": "Baja"}, {"HS12": "1802", "PRODUCTO": "Cáscara y residuos de cacao", "IPC": -3.681, "Densidad": 0.05791, "Distancia": 0.94209, "Diversificacion": "Baja"}, {"HS12": "1902", "PRODUCTO": "Pastas alimenticias y cuscús", "IPC": -0.768, "Densidad": 0.078851, "Distancia": 0.921149, "Diversificacion": "Baja"}, {"HS12": "2002", "PRODUCTO": "Tomates preparados o en conserva", "IPC": -0.788, "Densidad": 0.083774, "Distancia": 0.916226, "Diversificacion": "Baja"}, {"HS12": "2003", "PRODUCTO": "Setas y trufas en conserva", "IPC": 0.795, "Densidad": 0.00816, "Distancia": 0.99184, "Diversificacion": "Baja"}, {"HS12": "2004", "PRODUCTO": "Preparados de verduras congelados", "IPC": 0.105, "Densidad": 0.016942, "Distancia": 0.983058, "Diversificacion": "Baja"}, {"HS12": "2101", "PRODUCTO": "Extractos, esencias y concentrados de café, té o mate", "IPC": -0.538, "Densidad": 0.070091, "Distancia": 0.929909, "Diversificacion": "Baja"}, {"HS12": "2102", "PRODUCTO": "Levaduras (activas o inactivas) y microorganismos muertos", "IPC": -0.251, "Densidad": 0.072492, "Distancia": 0.927508, "Diversificacion": "Baja"}, {"HS12": "2105", "PRODUCTO": "Helados y otros helados comestibles", "IPC": 0.146, "Densidad": 0.072275, "Distancia": 0.927725, "Diversificacion": "Baja"}, {"HS12": "2201", "PRODUCTO": "Agua natural, mineral y hielo", "IPC": -0.393, "Densidad": 0.082457, "Distancia": 0.917543, "Diversificacion": "Baja"}, {"HS12": "2203", "PRODUCTO": "Cerveza de malta", "IPC": -0.61, "Densidad": 0.087978, "Distancia": 0.912022, "Diversificacion": "Baja"}, {"HS12": "2204", "PRODUCTO": "Vino de uva y mosto", "IPC": -0.12, "Densidad": 0.056625, "Distancia": 0.943375, "Diversificacion": "Baja"}, {"HS12": "2205", "PRODUCTO": "Vermut y demás vinos de uvas frescas aromatizados", "IPC": 0.062, "Densidad": 0.03681, "Distancia": 0.96319, "Diversificacion": "Baja"}, {"HS12": "2206", "PRODUCTO": "Otras bebidas fermentadas (sidra/hidromiel)", "IPC": 0.125, "Densidad": 0.039253, "Distancia": 0.960747, "Diversificacion": "Baja"}, {"HS12": "2207", "PRODUCTO": "Alcohol etílico puro (≥80%) y desnaturalizado", "IPC": -1.191, "Densidad": 0.069592, "Distancia": 0.930408, "Diversificacion": "Baja"}, {"HS12": "2208", "PRODUCTO": "Bebidas alcohólicas y licores (<80%)", "IPC": -0.474, "Densidad": 0.082251, "Distancia": 0.917749, "Diversificacion": "Baja"}, {"HS12": "2306", "PRODUCTO": "Tortas residuales de otros aceites vegetales", "IPC": -0.947, "Densidad": 0.072296, "Distancia": 0.927704, "Diversificacion": "Baja"}, {"HS12": "2308", "PRODUCTO": "Desechos vegetales para alimento animal", "IPC": -0.716, "Densidad": 0.064441, "Distancia": 0.935559, "Diversificacion": "Baja"}, {"HS12": "2402", "PRODUCTO": "Cigarros y cigarrillos", "IPC": -1.104, "Densidad": 0.090334, "Distancia": 0.909666, "Diversificacion": "Baja"}, {"HS12": "2403", "PRODUCTO": "Tabaco manufacturado y extractos", "IPC": -0.592, "Densidad": 0.065755, "Distancia": 0.934245, "Diversificacion": "Baja"}, {"HS12": "2501", "PRODUCTO": "Sal de mesa y cloruro de sodio", "IPC": -1.088, "Densidad": 0.092352, "Distancia": 0.907648, "Diversificacion": "Baja"}, {"HS12": "2503", "PRODUCTO": "Azufre en bruto", "IPC": -1.003, "Densidad": 0.060005, "Distancia": 0.939995, "Diversificacion": "Baja"}, {"HS12": "2505", "PRODUCTO": "Arenas naturales (sílice/construcción)", "IPC": -1.009, "Densidad": 0.064959, "Distancia": 0.935041, "Diversificacion": "Baja"}, {"HS12": "2506", "PRODUCTO": "Cuarzo y cuarcita", "IPC": -1.863, "Densidad": 0.058474, "Distancia": 0.941526, "Diversificacion": "Baja"}, {"HS12": "2507", "PRODUCTO": "Caolín y arcillas caolínicas", "IPC": -0.221, "Densidad": 0.035752, "Distancia": 0.964248, "Diversificacion": "Baja"}, {"HS12": "2508", "PRODUCTO": "Arcillas industriales y refractarias", "IPC": -0.369, "Densidad": 0.07156, "Distancia": 0.92844, "Diversificacion": "Baja"}, {"HS12": "2510", "PRODUCTO": "Fosfatos de calcio naturales", "IPC": -1.685, "Densidad": 0.087678, "Distancia": 0.912322, "Diversificacion": "Baja"}, {"HS12": "2513", "PRODUCTO": "Piedra pómez y abrasivos naturales", "IPC": -0.576, "Densidad": 0.025018, "Distancia": 0.974982, "Diversificacion": "Baja"}, {"HS12": "2515", "PRODUCTO": "Mármol, travertino y alabastro en bloques", "IPC": -1.726, "Densidad": 0.089372, "Distancia": 0.910628, "Diversificacion": "Baja"}, {"HS12": "2516", "PRODUCTO": "Granito, pórfido y piedras de construcción", "IPC": -1.541, "Densidad": 0.100507, "Distancia": 0.899493, "Diversificacion": "Baja"}, {"HS12": "2518", "PRODUCTO": "Dolomita (incluso calcinada o en bloques)", "IPC": -0.081, "Densidad": 0.055667, "Distancia": 0.944333, "Diversificacion": "Baja"}, {"HS12": "2519", "PRODUCTO": "Carbonato de magnesio natural, magnesia y óxidos", "IPC": -0.168, "Densidad": 0.020327, "Distancia": 0.979673, "Diversificacion": "Baja"}, {"HS12": "2520", "PRODUCTO": "Yeso, anhidrita y emplastos", "IPC": -1.179, "Densidad": 0.079761, "Distancia": 0.920239, "Diversificacion": "Baja"}, {"HS12": "2522", "PRODUCTO": "Cal viva, apagada e hidráulica", "IPC": -0.982, "Densidad": 0.076026, "Distancia": 0.923974, "Diversificacion": "Baja"}, {"HS12": "2525", "PRODUCTO": "Mica en bruto y desperdicios", "IPC": -1.778, "Densidad": 0.03373, "Distancia": 0.96627, "Diversificacion": "Baja"}, {"HS12": "2528", "PRODUCTO": "Boratos naturales", "IPC": -1.28, "Densidad": 0.067318, "Distancia": 0.932682, "Diversificacion": "Baja"}, {"HS12": "2530", "PRODUCTO": "Otras tierras y minerales no metálicos", "IPC": -1.54, "Densidad": 0.062303, "Distancia": 0.937697, "Diversificacion": "Baja"}, {"HS12": "2701", "PRODUCTO": "Carbón mineral (hulla) y briquetas sólidas", "IPC": -2.198, "Densidad": 0.041576, "Distancia": 0.958424, "Diversificacion": "Baja"}, {"HS12": "2704", "PRODUCTO": "Coque y semicoque", "IPC": -0.726, "Densidad": 0.002856, "Distancia": 0.997144, "Diversificacion": "Muy baja"}, {"HS12": "2706", "PRODUCTO": "Alquitrán mineral", "IPC": 0.474, "Densidad": 0.098546, "Distancia": 0.901454, "Diversificacion": "Baja"}, {"HS12": "2707", "PRODUCTO": "Aceites aromáticos de alquitrán", "IPC": -0.045, "Densidad": 0.030627, "Distancia": 0.969373, "Diversificacion": "Baja"}, {"HS12": "2710", "PRODUCTO": "Refinados de petróleo y aceites usados (>70%)", "IPC": -1.434, "Densidad": 0.08822, "Distancia": 0.91178, "Diversificacion": "Baja"}, {"HS12": "2711", "PRODUCTO": "Gases de petróleo y demás hidrocarburos gaseosos", "IPC": -2.33, "Densidad": 0.072514, "Distancia": 0.927486, "Diversificacion": "Baja"}, {"HS12": "2712", "PRODUCTO": "Vaselina y ceras minerales", "IPC": -0.515, "Densidad": 0.048249, "Distancia": 0.951751, "Diversificacion": "Baja"}, {"HS12": "2713", "PRODUCTO": "Coque y betún de petróleo", "IPC": -0.718, "Densidad": 0.07699, "Distancia": 0.92301, "Diversificacion": "Baja"}, {"HS12": "2801", "PRODUCTO": "Halógenos (flúor, cloro, bromo y yodo)", "IPC": -0.904, "Densidad": 0.033817, "Distancia": 0.966183, "Diversificacion": "Baja"}, {"HS12": "2803", "PRODUCTO": "Carbono y negro de humo", "IPC": 0.13, "Densidad": 0.016931, "Distancia": 0.983069, "Diversificacion": "Muy baja"}, {"HS12": "2804", "PRODUCTO": "Hidrógeno, gases nobles y otros elementos no metales", "IPC": -0.178, "Densidad": 0.029644, "Distancia": 0.970356, "Diversificacion": "Baja"}, {"HS12": "2809", "PRODUCTO": "Ácido fosfórico y pentóxido", "IPC": 0.115, "Densidad": 0.018455, "Distancia": 0.981545, "Diversificacion": "Baja"}, {"HS12": "2811", "PRODUCTO": "Otros ácidos inorgánicos", "IPC": -0.156, "Densidad": 0.027719, "Distancia": 0.972281, "Diversificacion": "Baja"}, {"HS12": "2815", "PRODUCTO": "Hidróxido de sodio y de potasio", "IPC": -0.254, "Densidad": 0.024678, "Distancia": 0.975322, "Diversificacion": "Baja"}, {"HS12": "2817", "PRODUCTO": "Óxido y peróxido de zinc", "IPC": -0.125, "Densidad": 0.033922, "Distancia": 0.966078, "Diversificacion": "Baja"}, {"HS12": "2818", "PRODUCTO": "Óxido de aluminio e hidróxido de aluminio", "IPC": 0.143, "Densidad": 0.020771, "Distancia": 0.979229, "Diversificacion": "Baja"}, {"HS12": "2819", "PRODUCTO": "Óxidos e hidróxidos de cromo", "IPC": 0.489, "Densidad": 0.015348, "Distancia": 0.984652, "Diversificacion": "Baja"}, {"HS12": "2821", "PRODUCTO": "Óxidos de hierro y tierras colorantes", "IPC": 0.199, "Densidad": 0.035285, "Distancia": 0.964715, "Diversificacion": "Baja"}, {"HS12": "2823", "PRODUCTO": "Óxidos de titanio", "IPC": 0.516, "Densidad": 0.094946, "Distancia": 0.905054, "Diversificacion": "Alta"}, {"HS12": "2828", "PRODUCTO": "Hipocloritos, cloritos e hipobromitos", "IPC": -0.392, "Densidad": 0.066351, "Distancia": 0.933649, "Diversificacion": "Baja"}, {"HS12": "2829", "PRODUCTO": "Cloratos, percloratos, bromatos y yodatos", "IPC": -0.146, "Densidad": 0.011818, "Distancia": 0.988182, "Diversificacion": "Muy baja"}, {"HS12": "2830", "PRODUCTO": "Sulfuros y polisulfuros", "IPC": -0.553, "Densidad": 0.01179, "Distancia": 0.98821, "Diversificacion": "Muy baja"}, {"HS12": "2832", "PRODUCTO": "Sulfitos y tiosulfitos", "IPC": -0.62, "Densidad": 0.016073, "Distancia": 0.983927, "Diversificacion": "Muy baja"}, {"HS12": "2834", "PRODUCTO": "Nitritos y nitratos", "IPC": 0.094, "Densidad": 0.023331, "Distancia": 0.976669, "Diversificacion": "Baja"}, {"HS12": "2835", "PRODUCTO": "Fosfinatos, fosfonatos, fosfatos y polifosfatos", "IPC": 0.172, "Densidad": 0.035107, "Distancia": 0.964893, "Diversificacion": "Baja"}, {"HS12": "2836", "PRODUCTO": "Carbonatos y percarbonatos", "IPC": -0.693, "Densidad": 0.082542, "Distancia": 0.917458, "Diversificacion": "Baja"}, {"HS12": "2840", "PRODUCTO": "Boratos y perboratos", "IPC": -0.305, "Densidad": 0.052584, "Distancia": 0.947416, "Diversificacion": "Baja"}, {"HS12": "2841", "PRODUCTO": "Sales de ácidos oxometálicos o peroxometálicos", "IPC": 0.625, "Densidad": 0.077307, "Distancia": 0.922693, "Diversificacion": "Alta"}, {"HS12": "2844", "PRODUCTO": "Elementos e isótopos radiactivos", "IPC": 0.036, "Densidad": 0.003315, "Distancia": 0.996685, "Diversificacion": "Muy baja"}, {"HS12": "2847", "PRODUCTO": "Peróxido de hidrógeno (agua oxigenada)", "IPC": 0.176, "Densidad": 0.014799, "Distancia": 0.985201, "Diversificacion": "Muy baja"}, {"HS12": "2901", "PRODUCTO": "Hidrocarburos acíclicos", "IPC": 0.193, "Densidad": 0.017975, "Distancia": 0.982025, "Diversificacion": "Muy baja"}, {"HS12": "2902", "PRODUCTO": "Hidrocarburos cíclicos", "IPC": 0.535, "Densidad": 0.076382, "Distancia": 0.923618, "Diversificacion": "Alta"}, {"HS12": "2903", "PRODUCTO": "Derivados halogenados de hidrocarburos", "IPC": 0.813, "Densidad": 0.095318, "Distancia": 0.904682, "Diversificacion": "Alta"}, {"HS12": "2904", "PRODUCTO": "Derivados sulfonados, nitrados o nitrosados", "IPC": 0.232, "Densidad": 0.03066, "Distancia": 0.96934, "Diversificacion": "Baja"}, {"HS12": "2905", "PRODUCTO": "Alcoholes lineales (acíclicos) y derivados", "IPC": -0.577, "Densidad": 0.027698, "Distancia": 0.972302, "Diversificacion": "Baja"}, {"HS12": "2906", "PRODUCTO": "Alcoholes cíclicos y derivados", "IPC": 0.485, "Densidad": 0.079443, "Distancia": 0.920557, "Diversificacion": "Alta"}, {"HS12": "2907", "PRODUCTO": "Fenoles y alcoholes fenólicos", "IPC": 1.097, "Densidad": 0.088777, "Distancia": 0.911223, "Diversificacion": "Alta"}, {"HS12": "2909", "PRODUCTO": "Éteres, éter-alcoholes, peróxidos de alcohol", "IPC": 0.358, "Densidad": 0.017605, "Distancia": 0.982395, "Diversificacion": "Muy baja"}, {"HS12": "2912", "PRODUCTO": "Aldehídos y paraformaldehído", "IPC": 0.976, "Densidad": 0.087508, "Distancia": 0.912492, "Diversificacion": "Alta"}, {"HS12": "2915", "PRODUCTO": "Ácidos monocarboxílicos saturados y derivados", "IPC": 0.705, "Densidad": 0.078347, "Distancia": 0.921653, "Diversificacion": "Alta"}, {"HS12": "2916", "PRODUCTO": "Ácidos monocarboxílicos insaturados/cíclicos", "IPC": 0.918, "Densidad": 0.088037, "Distancia": 0.911963, "Diversificacion": "Alta"}, {"HS12": "2917", "PRODUCTO": "Ácidos policarboxílicos y derivados", "IPC": 0.932, "Densidad": 0.081692, "Distancia": 0.918308, "Diversificacion": "Alta"}, {"HS12": "2918", "PRODUCTO": "Ácidos carboxílicos con función oxígeno", "IPC": 0.694, "Densidad": 0.04782, "Distancia": 0.95218, "Diversificacion": "Alta"}, {"HS12": "2922", "PRODUCTO": "Aminocompuestos con función oxígeno", "IPC": 0.902, "Densidad": 0.083772, "Distancia": 0.916228, "Diversificacion": "Alta"}, {"HS12": "2923", "PRODUCTO": "Amonio cuaternario y lecitinas", "IPC": 0.363, "Densidad": 0.014965, "Distancia": 0.985035, "Diversificacion": "Muy baja"}, {"HS12": "2930", "PRODUCTO": "Compuestos organosulfurados", "IPC": 0.627, "Densidad": 0.005072, "Distancia": 0.994928, "Diversificacion": "Muy baja"}, {"HS12": "2938", "PRODUCTO": "Glucósidos, sus sales, éteres y derivados", "IPC": 0.291, "Densidad": 0.030707, "Distancia": 0.969293, "Diversificacion": "Baja"}, {"HS12": "3001", "PRODUCTO": "Glándulas, órganos y sus extractos", "IPC": 0.692, "Densidad": 0.099572, "Distancia": 0.900428, "Diversificacion": "Baja"}, {"HS12": "3102", "PRODUCTO": "Fertilizantes nitrogenados", "IPC": -1.448, "Densidad": 0.072319, "Distancia": 0.927681, "Diversificacion": "Baja"}, {"HS12": "3103", "PRODUCTO": "Fertilizantes fosfatados", "IPC": -0.837, "Densidad": 0.06339, "Distancia": 0.93661, "Diversificacion": "Baja"}, {"HS12": "3104", "PRODUCTO": "Fertilizantes potásicos", "IPC": -1.029, "Densidad": 0.039542, "Distancia": 0.960458, "Diversificacion": "Baja"}, {"HS12": "3105", "PRODUCTO": "Fertilizantes compuestos (NPK) o minoristas", "IPC": -0.964, "Densidad": 0.081826, "Distancia": 0.918174, "Diversificacion": "Baja"}, {"HS12": "3202", "PRODUCTO": "Sustancias curtientes sintéticas e inorgánicas", "IPC": -0.083, "Densidad": 0.042173, "Distancia": 0.957827, "Diversificacion": "Baja"}, {"HS12": "3204", "PRODUCTO": "Colorantes orgánicos sintéticos", "IPC": 0.4, "Densidad": 0.019399, "Distancia": 0.980601, "Diversificacion": "Baja"}, {"HS12": "3208", "PRODUCTO": "Pinturas y barnices base solvente", "IPC": 0.125, "Densidad": 0.053015, "Distancia": 0.946985, "Diversificacion": "Baja"}, {"HS12": "3209", "PRODUCTO": "Pinturas al agua y látex (medio acuoso)", "IPC": -0.132, "Densidad": 0.075817, "Distancia": 0.924183, "Diversificacion": "Baja"}, {"HS12": "3211", "PRODUCTO": "Secantes preparados para pinturas", "IPC": 0.174, "Densidad": 0.051473, "Distancia": 0.948527, "Diversificacion": "Baja"}, {"HS12": "3214", "PRODUCTO": "Masillas, mástiques y selladores de obra", "IPC": 0.287, "Densidad": 0.055594, "Distancia": 0.944406, "Diversificacion": "Baja"}, {"HS12": "3301", "PRODUCTO": "Aceites esenciales y resinoides", "IPC": -1.049, "Visualizacion": "Baja", "Densidad": 0.116328, "Distancia": 0.683672, "Diversificacion": "Baja"}, {"HS12": "3302", "PRODUCTO": "Mezclas olorosas para la industria", "IPC": -0.139, "Densidad": 0.037977, "Distancia": 0.962023, "Diversificacion": "Baja"}, {"HS12": "3303", "PRODUCTO": "Perfumes y aguas de tocador (lociones)", "IPC": 0.088, "Densidad": 0.046836, "Distancia": 0.953164, "Diversificacion": "Baja"}, {"HS12": "3304", "PRODUCTO": "Cosméticos, maquillaje y protectores solares", "IPC": 0.116, "Densidad": 0.03946, "Distancia": 0.96054, "Diversificacion": "Baja"}, {"HS12": "3306", "PRODUCTO": "Preparaciones para la higiene bucal", "IPC": 0.242, "Densidad": 0.05422, "Distancia": 0.94578, "Diversificacion": "Baja"}, {"HS12": "3401", "PRODUCTO": "Jabones y preparaciones orgánicas tensioactivas", "IPC": -0.703, "Densidad": 0.097583, "Distancia": 0.902417, "Diversificacion": "Baja"}, {"HS12": "3502", "PRODUCTO": "Albúminas y derivados", "IPC": 0.392, "Densidad": 0.013331, "Distancia": 0.986669, "Diversificacion": "Muy baja"}, {"HS12": "3503", "PRODUCTO": "Gelatina, sus derivados y otras colas de origen animal", "IPC": -0.399, "Densidad": 0.048642, "Distancia": 0.951358, "Diversificacion": "Baja"}, {"HS12": "3505", "PRODUCTO": "Dextrinas y almidones modificados", "IPC": 0.262, "Densidad": 0.016104, "Distancia": 0.983896, "Diversificacion": "Muy baja"}, {"HS12": "3805", "PRODUCTO": "Esencias de trementina y aceites terpénicos", "IPC": -0.045, "Densidad": 0.034125, "Distancia": 0.965875, "Diversificacion": "Baja"}, {"HS12": "3806", "PRODUCTO": "Colofonia y ácidos resínicos", "IPC": 0.178, "Densidad": 0.031612, "Distancia": 0.968388, "Diversificacion": "Baja"}, {"HS12": "3814", "PRODUCTO": "Disolventes y removedores de pintura (Thinner)", "IPC": 0.117, "Densidad": 0.062215, "Distancia": 0.937785, "Diversificacion": "Baja"}, {"HS12": "3824", "PRODUCTO": "Aglutinantes para moldes de fundición y químicos", "IPC": 0.167, "Densidad": 0.018599, "Distancia": 0.981401, "Diversificacion": "Muy baja"}, {"HS12": "3901", "PRODUCTO": "Polímeros de etileno primarios", "IPC": 0.179, "Densidad": 0.018426, "Distancia": 0.981574, "Diversificacion": "Baja"}, {"HS12": "3902", "PRODUCTO": "Polímeros de propileno primarios", "IPC": 0.201, "Densidad": 0.016388, "Distancia": 0.983612, "Diversificacion": "Muy baja"}, {"HS12": "4001", "PRODUCTO": "Caucho natural, balata y gomas naturales en bruto", "IPC": -3.467, "Densidad": 0.054501, "Distancia": 0.945499, "Diversificacion": "Baja"}, {"HS12": "4002", "PRODUCTO": "Caucho sintético", "IPC": 0.32, "Densidad": 0.01174, "Distancia": 0.98826, "Diversificacion": "Muy baja"}, {"HS12": "4004", "PRODUCTO": "Desechos y polvo de caucho", "IPC": -0.236, "Densidad": 0.054089, "Distancia": 0.945911, "Diversificacion": "Baja"}, {"HS12": "4011", "PRODUCTO": "Neumáticos nuevos", "IPC": 0.301, "Densidad": 0.02911, "Distancia": 0.97089, "Diversificacion": "Baja"}, {"HS12": "4013", "PRODUCTO": "Cámaras de aire de caucho", "IPC": 0.075, "Densidad": 0.016637, "Distancia": 0.983363, "Diversificacion": "Muy baja"}, {"HS12": "4015", "PRODUCTO": "Prendas de vestir y guantes de caucho vulcanizado", "IPC": -0.258, "Densidad": 0.012349, "Distancia": 0.987651, "Diversificacion": "Muy baja"}, {"HS12": "4104", "PRODUCTO": "Cuero curtido de bovino (semi-procesado)", "IPC": -1.275, "Densidad": 0.083832, "Distancia": 0.916168, "Diversificacion": "Baja"}, {"HS12": "4105", "PRODUCTO": "Cuero curtido de ovino (semi-procesado)", "IPC": -2.762, "Densidad": 0.097598, "Distancia": 0.902402, "Diversificacion": "Baja"}, {"HS12": "4107", "PRODUCTO": "Cuero terminado de bovino/equino", "IPC": -0.375, "Densidad": 0.063128, "Distancia": 0.936872, "Diversificacion": "Baja"}, {"HS12": "4113", "PRODUCTO": "Cuero terminado de otros animales", "IPC": -1.157, "Densidad": 0.055412, "Distancia": 0.944588, "Diversificacion": "Baja"}, {"HS12": "4115", "PRODUCTO": "Cuero regenerado, recortes y desperdicios", "IPC": 0.091, "Densidad": 0.024649, "Distancia": 0.975351, "Diversificacion": "Baja"}, {"HS12": "4201", "PRODUCTO": "Artículos de talabartería", "IPC": 0.059, "Densidad": 0.014433, "Distancia": 0.985567, "Diversificacion": "Muy baja"}, {"HS12": "4202", "PRODUCTO": "Baúles, maletas, maletines y estuches", "IPC": -0.143, "Densidad": 0.044631, "Distancia": 0.955369, "Diversificacion": "Baja"}, {"HS12": "4203", "PRODUCTO": "Ropa y accesorios de cuero", "IPC": -0.253, "Densidad": 0.073677, "Distancia": 0.926323, "Diversificacion": "Baja"}, {"HS12": "4205", "PRODUCTO": "Otras manufacturas de cuero", "IPC": -0.112, "Densidad": 0.04708, "Distancia": 0.95292, "Diversificacion": "Baja"}, {"HS12": "4302", "PRODUCTO": "Pieles curtidas o preparadas", "IPC": 0.15, "Densidad": 0.044222, "Distancia": 0.955778, "Diversificacion": "Baja"}, {"HS12": "4304", "PRODUCTO": "Piel sintética y sus artículos", "IPC": 0.124, "Densidad": 0.020202, "Distancia": 0.979798, "Diversificacion": "Baja"}, {"HS12": "4401", "PRODUCTO": "Leña, madera en astillas y desperdicios", "IPC": 0.118, "Densidad": 0.03751, "Distancia": 0.96249, "Diversificacion": "Baja"}, {"HS12": "4402", "PRODUCTO": "Carbón vegetal", "IPC": -1.756, "Densidad": 0.096722, "Distancia": 0.903278, "Diversificacion": "Baja"}, {"HS12": "4403", "PRODUCTO": "Madera en bruto (incluso descortezada)", "IPC": -1.95, "Densidad": 0.086643, "Distancia": 0.913357, "Diversificacion": "Baja"}, {"HS12": "4407", "PRODUCTO": "Madera aserrada de espesor > 6mm", "IPC": -1.555, "Densidad": 0.06649, "Distancia": 0.93351, "Diversificacion": "Baja"}, {"HS12": "4408", "PRODUCTO": "Hojas para chapado de madera ≤ 6mm", "IPC": -1.413, "Densidad": 0.059959, "Distancia": 0.940041, "Diversificacion": "Baja"}, {"HS12": "4410", "PRODUCTO": "Tableros de partículas y OSB", "IPC": 0.234, "Densidad": 0.049087, "Distancia": 0.950913, "Diversificacion": "Baja"}, {"HS12": "4411", "PRODUCTO": "Tableros de fibra de madera", "IPC": -0.222, "Densidad": 0.051987, "Distancia": 0.948013, "Diversificacion": "Baja"}, {"HS12": "4412", "PRODUCTO": "Madera contrachapada, chapada y laminada", "IPC": -0.974, "Densidad": 0.043992, "Distancia": 0.956008, "Diversificacion": "Baja"}, {"HS12": "4413", "PRODUCTO": "Madera densificada en bloques o placas", "IPC": 0.005, "Densidad": 0.038849, "Distancia": 0.961151, "Diversificacion": "Baja"}, {"HS12": "4414", "PRODUCTO": "Marcos de madera", "IPC": 0.393, "Densidad": 0.00486, "Distancia": 0.99514, "Diversificacion": "Muy baja"}, {"HS12": "4415", "PRODUCTO": "Cajas, cajones, paletas y embalajes de madera", "IPC": -0.002, "Densidad": 0.063219, "Distancia": 0.936781, "Diversificacion": "Baja"}, {"HS12": "4418", "PRODUCTO": "Carpintería para construcción", "IPC": -0.294, "Densidad": 0.047089, "Distancia": 0.952911, "Diversificacion": "Baja"}, {"HS12": "4419", "PRODUCTO": "Vajilla y utensilios de cocina de madera", "IPC": -0.171, "Densidad": 0.013627, "Distancia": 0.986373, "Diversificacion": "Muy baja"}, {"HS12": "4421", "PRODUCTO": "Otras manufacturas de madera", "IPC": -0.31, "Densidad": 0.027983, "Distancia": 0.972017, "Diversificacion": "Baja"}, {"HS12": "4504", "PRODUCTO": "Corcho aglomerado y artículos", "IPC": 0.229, "Densidad": 0.026673, "Distancia": 0.973327, "Diversificacion": "Baja"}, {"HS12": "4601", "PRODUCTO": "Trenzas y materias de trenzado en tiras", "IPC": -1.226, "Densidad": 0.088897, "Distancia": 0.911103, "Diversificacion": "Baja"}, {"HS12": "4602", "PRODUCTO": "Cestería y manufacturas de mimbre", "IPC": -1.02, "Densidad": 0.070105, "Distancia": 0.929895, "Diversificacion": "Baja"}, {"HS12": "4703", "PRODUCTO": "Pasta de madera química", "IPC": 0.392, "Densidad": 0.003704, "Distancia": 0.996296, "Diversificacion": "Muy baja"}, {"HS12": "4706", "PRODUCTO": "Pasta de papel o cartón reciclado", "IPC": 0.249, "Densidad": 0.016235, "Distancia": 0.983765, "Diversificacion": "Muy baja"}, {"HS12": "4804", "PRODUCTO": "Papel y cartón Kraft, sin estucar", "IPC": 0.037, "Densidad": 0.041283, "Distancia": 0.958717, "Diversificacion": "Baja"}, {"HS12": "4805", "PRODUCTO": "Otros papeles y cartones sin estucar", "IPC": 0.017, "Densidad": 0.034747, "Distancia": 0.965253, "Diversificacion": "Baja"}, {"HS12": "4808", "PRODUCTO": "Papel y cartón corrugado", "IPC": 0.102, "Densidad": 0.032053, "Distancia": 0.967947, "Diversificacion": "Baja"}, {"HS12": "4809", "PRODUCTO": "Papel carbón y autocopiante", "IPC": 0.187, "Densidad": 0.019582, "Distancia": 0.980418, "Diversificacion": "Baja"}, {"HS12": "4813", "PRODUCTO": "Papel de fumar", "IPC": 0.26, "Densidad": 0.038433, "Distancia": 0.961567, "Diversificacion": "Baja"}, {"HS12": "4820", "PRODUCTO": "Agendas, cuadernos y álbumes de papel", "IPC": -0.46, "Densidad": 0.074015, "Distancia": 0.925985, "Diversificacion": "Baja"}, {"HS12": "4905", "PRODUCTO": "Mapas, cartas hidrográficas impresas", "IPC": 0.354, "Densidad": 0.037976, "Distancia": 0.962024, "Diversificacion": "Baja"}, {"HS12": "5201", "PRODUCTO": "Algodón en rama (bruto)", "IPC": -3.424, "Densidad": 0.10445, "Distancia": 0.89555, "Diversificacion": "Baja"}, {"HS12": "5203", "PRODUCTO": "Algodón cardado o peinado", "IPC": -1.141, "Densidad": 0.079366, "Distancia": 0.920634, "Diversificacion": "Baja"}, {"HS12": "5204", "PRODUCTO": "Hilo de coser de algodón", "IPC": -0.62, "Densidad": 0.06952, "Distancia": 0.93048, "Diversificacion": "Baja"}, {"HS12": "5206", "PRODUCTO": "Hilo de algodón industrial (<85%)", "IPC": -0.629, "Densidad": 0.075378, "Distancia": 0.924622, "Diversificacion": "Baja"}, {"HS12": "5211", "PRODUCTO": "Tejidos de algodón mezclado > 200 g/m²", "IPC": -0.517, "Densidad": 0.037902, "Distancia": 0.962098, "Diversificacion": "Baja"}, {"HS12": "5301", "PRODUCTO": "Lino en bruto o procesado", "IPC": -0.143, "Densidad": 0.010248, "Distancia": 0.989752, "Diversificacion": "Muy baja"}, {"HS12": "5307", "PRODUCTO": "Hilo de yute o de otras fibras de líber", "IPC": -0.684, "Densidad": 0.055634, "Distancia": 0.944366, "Diversificacion": "Baja"}, {"HS12": "5310", "PRODUCTO": "Tejidos de yute o de otras fibras de líber", "IPC": -1.19, "Densidad": 0.068567, "Distancia": 0.931433, "Diversificacion": "Baja"}, {"HS12": "5401", "PRODUCTO": "Hilo de coser de filamentos sintéticos", "IPC": -0.122, "Densidad": 0.050586, "Distancia": 0.949414, "Diversificacion": "Baja"}, {"HS12": "5402", "PRODUCTO": "Hilo industrial de filamentos sintéticos", "IPC": 0.356, "Densidad": 0.024048, "Distancia": 0.975952, "Diversificacion": "Baja"}, {"HS12": "5405", "PRODUCTO": "Monofilamento y tiras artificiales", "IPC": 0.212, "Densidad": 0.006419, "Distancia": 0.993581, "Diversificacion": "Muy baja"}, {"HS12": "5407", "PRODUCTO": "Tejidos de filamentos sintéticos", "IPC": -0.184, "Densidad": 0.025176, "Distancia": 0.974824, "Diversificacion": "Baja"}, {"HS12": "5501", "PRODUCTO": "Hilo de filamentos sintéticos (excepto coser)", "IPC": 0.051, "Densidad": 0.031227, "Distancia": 0.968773, "Diversificacion": "Baja"}, {"HS12": "5503", "PRODUCTO": "Fibras sintéticas discontinuas en bruto", "IPC": -0.38, "Densidad": 0.038777, "Distancia": 0.961223, "Diversificacion": "Baja"}, {"HS12": "5508", "PRODUCTO": "Hilo de coser de fibras discontinuas", "IPC": -0.461, "Densidad": 0.056, "Distancia": 0.944, "Diversificacion": "Baja"}, {"HS12": "5510", "PRODUCTO": "Hilo de fibras discontinuas industrial", "IPC": 0.398, "Densidad": 0.042377, "Distancia": 0.957623, "Diversificacion": "Baja"}, {"HS12": "5512", "PRODUCTO": "Tejidos de fibras sintéticas (≥85%)", "IPC": 0.121, "Densidad": 0.034075, "Distancia": 0.965925, "Diversificacion": "Baja"}, {"HS12": "5514", "PRODUCTO": "Tejidos de fibras sintéticas discontinuas con algodón", "IPC": -0.172, "Densidad": 0.043149, "Distancia": 0.956851, "Diversificacion": "Baja"}, {"HS12": "5516", "PRODUCTO": "Tejidos de fibras artificiales discontinuas", "IPC": 0.218, "Densidad": 0.025534, "Distancia": 0.974466, "Diversificacion": "Baja"}, {"HS12": "5601", "PRODUCTO": "Guata textil, floca y polvo textil", "IPC": -0.065, "Densidad": 0.044987, "Distancia": 0.955013, "Diversificacion": "Baja"}, {"HS12": "5609", "PRODUCTO": "Otras manufacturas de cordelería", "IPC": 0.177, "Densidad": 0.042619, "Distancia": 0.957381, "Diversificacion": "Baja"}, {"HS12": "5702", "PRODUCTO": "Alfombras tejidas (telar/artesanales)", "IPC": -0.227, "Densidad": 0.069301, "Distancia": 0.930699, "Diversificacion": "Baja"}, {"HS12": "5703", "PRODUCTO": "Alfombras con mechones (tufted)", "IPC": 0.224, "Densidad": 0.056366, "Distancia": 0.943634, "Diversificacion": "Baja"}, {"HS12": "5705", "PRODUCTO": "Otros revestimientos textiles y alfombras", "IPC": -0.012, "Densidad": 0.038523, "Distancia": 0.961477, "Diversificacion": "Baja"}, {"HS12": "5804", "PRODUCTO": "Tules, encajes en pieza y motivos", "IPC": -0.435, "Densidad": 0.04781, "Distancia": 0.95219, "Diversificacion": "Baja"}, {"HS12": "5806", "PRODUCTO": "Cintas y tejidos estrechos", "IPC": 0.112, "Densidad": 0.044394, "Distancia": 0.955606, "Diversificacion": "Baja"}, {"HS12": "5808", "PRODUCTO": "Trenzas en pieza y adornos sin bordar", "IPC": -0.125, "Densidad": 0.050056, "Distancia": 0.949944, "Diversificacion": "Baja"}, {"HS12": "5809", "PRODUCTO": "Tejidos de hilados metálicos", "IPC": 0.138, "Densidad": 0.021207, "Distancia": 0.978793, "Diversificacion": "Baja"}, {"HS12": "5811", "PRODUCTO": "Productos textiles acolchados en pieza", "IPC": 0.282, "Densidad": 0.032829, "Distancia": 0.967171, "Diversificacion": "Baja"}, {"HS12": "5901", "PRODUCTO": "Tejidos recubiertos para encuadernación", "IPC": -0.536, "Densidad": 0.028232, "Distancia": 0.971768, "Diversificacion": "Baja"}, {"HS12": "5908", "PRODUCTO": "Mechas textiles y camisas incandescentes", "IPC": -0.026, "Densidad": 0.02368, "Distancia": 0.97632, "Diversificacion": "Baja"}, {"HS12": "6001", "PRODUCTO": "Tejidos de punto de pelo largo, buclados", "IPC": 0.109, "Densidad": 0.043826, "Distancia": 0.956174, "Diversificacion": "Baja"}, {"HS12": "6002", "PRODUCTO": "Cintas de punto elásticas (≤30cm)", "IPC": 0.204, "Densidad": 0.031474, "Distancia": 0.968526, "Diversificacion": "Baja"}, {"HS12": "6112", "PRODUCTO": "Buzos, trajes de esquí y de baño de punto", "IPC": -0.531, "Densidad": 0.078514, "Distancia": 0.921486, "Diversificacion": "Baja"}, {"HS12": "6113", "PRODUCTO": "Prendas de vestir de punto impregnadas", "IPC": -0.577, "Densidad": 0.066411, "Distancia": 0.933589, "Diversificacion": "Baja"}, {"HS12": "6116", "PRODUCTO": "Guantes, manoplas y mitones de punto", "IPC": -0.282, "Densidad": 0.055316, "Distancia": 0.944684, "Diversificacion": "Baja"}, {"HS12": "6201", "PRODUCTO": "Abrigos y chaquetas de tejido plano (hombre)", "IPC": -0.59, "Densidad": 0.075122, "Distancia": 0.924878, "Diversificacion": "Baja"}, {"HS12": "6202", "PRODUCTO": "Abrigos y chaquetas de tejido plano (mujer)", "IPC": -0.417, "Densidad": 0.065353, "Distancia": 0.934647, "Diversificacion": "Baja"}, {"HS12": "6203", "PRODUCTO": "Trajes, conjuntos, chaquetas y pantalones (hombre)", "IPC": -1.023, "Densidad": 0.113132, "Distancia": 0.886868, "Diversificacion": "Baja"}, {"HS12": "6204", "PRODUCTO": "Trajes, vestidos y faldas (mujer)", "IPC": -0.763, "Densidad": 0.099522, "Distancia": 0.900478, "Diversificacion": "Baja"}, {"HS12": "6206", "PRODUCTO": "Blusas y camisas de tejido plano (mujer)", "IPC": -0.695, "Densidad": 0.103498, "Distancia": 0.896502, "Diversificacion": "Baja"}, {"HS12": "6207", "PRODUCTO": "Prendas de vestir interior de tejido plano", "IPC": -0.703, "Densidad": 0.094921, "Distancia": 0.905079, "Diversificacion": "Baja"}, {"HS12": "6210", "PRODUCTO": "Prendas de vestir de fieltro o telas recubiertas", "IPC": -0.614, "Densidad": 0.094415, "Distancia": 0.905585, "Diversificacion": "Baja"}, {"HS12": "6211", "PRODUCTO": "Buzos y ropa de baño de tejido plano", "IPC": -0.779, "Densidad": 0.0993, "Distancia": 0.9007, "Diversificacion": "Baja"}, {"HS12": "6212", "PRODUCTO": "Sostenes, fajas, corsés y ligueros", "IPC": -0.666, "Densidad": 0.075289, "Distancia": 0.924711, "Diversificacion": "Baja"}, {"HS12": "6213", "PRODUCTO": "Pañuelos de bolsillo (tejido plano)", "IPC": -0.274, "Densidad": 0.038849, "Distancia": 0.961151, "Diversificacion": "Baja"}, {"HS12": "6215", "PRODUCTO": "Corbatas, pajaritas y pañuelos de cuello", "IPC": -0.063, "Densidad": 0.016121, "Distancia": 0.983879, "Diversificacion": "Muy baja"}, {"HS12": "6216", "PRODUCTO": "Guantes, manoplas y mitones de tejido plano", "IPC": -0.314, "Densidad": 0.054988, "Distancia": 0.945012, "Diversificacion": "Baja"}, {"HS12": "6217", "PRODUCTO": "Otros accesorios de vestir y partes de prendas", "IPC": -0.477, "Densidad": 0.086131, "Distancia": 0.913869, "Diversificacion": "Baja"}, {"HS12": "6302", "PRODUCTO": "Ropa de cama, mesa, tocador o cocina", "IPC": -0.599, "Densidad": 0.082336, "Distancia": 0.917664, "Diversificacion": "Baja"}, {"HS12": "6303", "PRODUCTO": "Cortinas y persianas textiles", "IPC": 0.174, "Densidad": 0.029537, "Distancia": 0.970463, "Diversificacion": "Baja"}, {"HS12": "6304", "PRODUCTO": "Otros artículos textiles de decoración", "IPC": -0.471, "Densidad": 0.061569, "Distancia": 0.938431, "Diversificacion": "Baja"}, {"HS12": "6306", "PRODUCTO": "Lonas, toldos y tiendas de campaña", "IPC": -0.331, "Densidad": 0.063436, "Distancia": 0.936564, "Diversificacion": "Baja"}, {"HS12": "6307", "PRODUCTO": "Otros artículos textiles confeccionados", "IPC": -0.279, "Densidad": 0.07739, "Distancia": 0.92261, "Diversificacion": "Baja"}, {"HS12": "6309", "PRODUCTO": "Artículos textiles usados y trapos", "IPC": -0.318, "Densidad": 0.060117, "Distancia": 0.939883, "Diversificacion": "Baja"}, {"HS12": "6310", "PRODUCTO": "Trapos y desperdicios de cordelería", "IPC": -0.682, "Densidad": 0.09627, "Distancia": 0.90373, "Diversificacion": "Baja"}, {"HS12": "6401", "PRODUCTO": "Calzado impermeable de caucho o plástico", "IPC": -0.55, "Densidad": 0.083054, "Distancia": 0.916946, "Diversificacion": "Baja"}, {"HS12": "6402", "PRODUCTO": "Calzado común de caucho o plástico", "IPC": -0.65, "Densidad": 0.051889, "Distancia": 0.948111, "Diversificacion": "Baja"}, {"HS12": "6403", "PRODUCTO": "Calzado común con parte superior de cuero", "IPC": -0.193, "Densidad": 0.068591, "Distancia": 0.931409, "Diversificacion": "Baja"}, {"HS12": "6404", "PRODUCTO": "Calzado con suela de caucho y parte textil", "IPC": -0.137, "Densidad": 0.049402, "Distancia": 0.950598, "Diversificacion": "Baja"}, {"HS12": "6405", "PRODUCTO": "Otros tipos de calzado n.c.p.", "IPC": -0.751, "Densidad": 0.092327, "Distancia": 0.907673, "Diversificacion": "Baja"}, {"HS12": "6406", "PRODUCTO": "Partes de calzado (plantillas/tacos)", "IPC": -0.217, "Densidad": 0.058008, "Distancia": 0.941992, "Diversificacion": "Baja"}, {"HS12": "6502", "PRODUCTO": "Cascos y formas para sombreros trenzados", "IPC": -1.101, "Densidad": 0.041254, "Distancia": 0.958746, "Diversificacion": "Baja"}, {"HS12": "6504", "PRODUCTO": "Sombreros y tocados trenzados", "IPC": -0.546, "Densidad": 0.058266, "Distancia": 0.941734, "Diversificacion": "Baja"}, {"HS12": "6506", "PRODUCTO": "Otros sombreros y tocados", "IPC": 0.332, "Densidad": 0.014641, "Distancia": 0.985359, "Diversificacion": "Muy baja"}, {"HS12": "6507", "PRODUCTO": "Accesorios para sombreros (viseras)", "IPC": 0.283, "Densidad": 0.019041, "Distancia": 0.980959, "Diversificacion": "Baja"}, {"HS12": "6601", "PRODUCTO": "Paraguas y sombrillas", "IPC": 0.197, "Densidad": 0.012453, "Distancia": 0.987547, "Diversificacion": "Muy baja"}, {"HS12": "6703", "PRODUCTO": "Cabello humano y pelo animal para pelucas", "IPC": -2.23, "Densidad": 0.052598, "Distancia": 0.947402, "Diversificacion": "Baja"}, {"HS12": "6704", "PRODUCTO": "Pelucas y pestañas postizas", "IPC": -2.152, "Densidad": 0.04963, "Distancia": 0.95037, "Diversificacion": "Baja"}, {"HS12": "6807", "PRODUCTO": "Manufacturas de asfalto y betún", "IPC": 0.043, "Densidad": 0.031708, "Distancia": 0.968292, "Diversificacion": "Baja"}, {"HS12": "6810", "PRODUCTO": "Manufacturas de cemento y hormigón", "IPC": 0.204, "Densidad": 0.050153, "Distancia": 0.949847, "Diversificacion": "Baja"}, {"HS12": "6812", "PRODUCTO": "Amianto trabajado y manufacturas", "IPC": -0.228, "Densidad": 0.018874, "Distancia": 0.981126, "Diversificacion": "Baja"}, {"HS12": "6813", "PRODUCTO": "Materiales de fricción (pastillas de freno)", "IPC": 0.236, "Densidad": 0.005592, "Distancia": 0.994408, "Diversificacion": "Muy baja"}, {"HS12": "6901", "PRODUCTO": "Ladrillos cerámicos de harinas fósiles", "IPC": -0.4, "Densidad": 0.056864, "Distancia": 0.943136, "Diversificacion": "Baja"}, {"HS12": "6904", "PRODUCTO": "Ladrillos y baldosas de construcción", "IPC": -0.486, "Densidad": 0.020737, "Distancia": 0.979263, "Diversificacion": "Baja"}, {"HS12": "6905", "PRODUCTO": "Tejas y artículos cerámicos estructurales", "IPC": 0.167, "Densidad": 0.03537, "Distancia": 0.96463, "Diversificacion": "Baja"}, {"HS12": "6911", "PRODUCTO": "Vajilla de mesa de porcelana", "IPC": 0.251, "Densidad": 0.02153, "Distancia": 0.97847, "Diversificacion": "Baja"}, {"HS12": "6914", "PRODUCTO": "Otras manufacturas de cerámica", "IPC": 0.255, "Densidad": 0.016463, "Distancia": 0.983537, "Diversificacion": "Muy baja"}, {"HS12": "7003", "PRODUCTO": "Vidrio fundido y laminado en hojas", "IPC": 0.374, "Densidad": 0.004301, "Distancia": 0.995699, "Diversificacion": "Muy baja"}, {"HS12": "7005", "PRODUCTO": "Vidrio flotado o pulido en hojas", "IPC": -0.337, "Densidad": 0.05319, "Distancia": 0.94681, "Diversificacion": "Baja"}, {"HS12": "7101", "PRODUCTO": "Perlas naturales o cultivadas", "IPC": -0.27, "Densidad": 0.009229, "Distancia": 0.990771, "Diversificacion": "Muy baja"}, {"HS12": "7103", "PRODUCTO": "Piedras preciosas y semipreciosas", "IPC": -2.161, "Densidad": 0.076816, "Distancia": 0.923184, "Diversificacion": "Baja"}, {"HS12": "7104", "PRODUCTO": "Piedras preciosas sintéticas o reconstruidas", "IPC": -0.07, "Densidad": 0.00185, "Distancia": 0.99815, "Diversificacion": "Muy baja"}, {"HS12": "7110", "PRODUCTO": "Platino en bruto o en polvo", "IPC": 0.18, "Densidad": 0.000385, "Distancia": 0.999615, "Diversificacion": "Muy baja"}, {"HS12": "7112", "PRODUCTO": "Chatarra de metales preciosos", "IPC": -0.767, "Densidad": 0.061965, "Distancia": 0.938035, "Diversificacion": "Baja"}, {"HS12": "7202", "PRODUCTO": "Ferroaleaciones", "IPC": -0.873, "Densidad": 0.064045, "Distancia": 0.935955, "Diversificacion": "Baja"}, {"HS12": "7203", "PRODUCTO": "Hierro esponja y productos de reducción", "IPC": -2.016, "Densidad": 0.022161, "Distancia": 0.977839, "Diversificacion": "Baja"}, {"HS12": "7206", "PRODUCTO": "Hierro y acero sin alear en lingotes", "IPC": -0.649, "Densidad": 0.031815, "Distancia": 0.968185, "Diversificacion": "Baja"}, {"HS12": "7208", "PRODUCTO": "Acero plano caliente sin revestir (≥600mm)", "IPC": 0.385, "Densidad": 0.002959, "Distancia": 0.997041, "Diversificacion": "Muy baja"}, {"HS12": "7209", "PRODUCTO": "Acero plano frío sin revestir (≥600mm)", "IPC": 0.27, "Densidad": 0.011189, "Distancia": 0.988811, "Diversificacion": "Muy baja"}, {"HS12": "7210", "PRODUCTO": "Acero plano revestido (≥600mm)", "IPC": -0.004, "Densidad": 0.057582, "Distancia": 0.942418, "Diversificacion": "Baja"}, {"HS12": "7213", "PRODUCTO": "Alambrón de acero (bobinas)", "IPC": -0.349, "Densidad": 0.050488, "Distancia": 0.949512, "Diversificacion": "Baja"}, {"HS12": "7214", "PRODUCTO": "Barras de acero laminadas en caliente", "IPC": -1.065, "Densidad": 0.114486, "Distancia": 0.885514, "Diversificacion": "Baja"}, {"HS12": "7215", "PRODUCTO": "Otras barras de acero sin alear", "IPC": 0.037, "Densidad": 0.040386, "Distancia": 0.959614, "Diversificacion": "Baja"}, {"HS12": "7216", "PRODUCTO": "Ángulos, perfiles y secciones de acero sin alear", "IPC": -0.279, "Densidad": 0.050857, "Distancia": 0.949143, "Diversificacion": "Baja"}, {"HS12": "7217", "PRODUCTO": "Alambre de acero sin alear", "IPC": -0.094, "Densidad": 0.057328, "Distancia": 0.942672, "Diversificacion": "Baja"}, {"HS12": "7228", "PRODUCTO": "Barras y perfiles de otros aceros aleados", "IPC": 0.314, "Densidad": 0.016689, "Distancia": 0.983311, "Diversificacion": "Muy baja"}, {"HS12": "7303", "PRODUCTO": "Tubos de hierro fundido", "IPC": 0.19, "Densidad": 0.025768, "Distancia": 0.974232, "Diversificacion": "Baja"}, {"HS12": "7304", "PRODUCTO": "Tubos y perfiles huecos sin costura", "IPC": 0.145, "Densidad": 0.012925, "Distancia": 0.987075, "Diversificacion": "Muy baja"}, {"HS12": "7305", "PRODUCTO": "Tubos de hierro o acero soldados >406.4mm", "IPC": -0.012, "Densidad": 0.003925, "Distancia": 0.996075, "Diversificacion": "Muy baja"}, {"HS12": "7306", "PRODUCTO": "Otros tubos y perfiles huecos de acero", "IPC": -0.505, "Densidad": 0.083738, "Distancia": 0.916262, "Diversificacion": "Baja"}, {"HS12": "7308", "PRODUCTO": "Estructuras y sus partes de hierro o acero", "IPC": 0.147, "Densidad": 0.057041, "Distancia": 0.942959, "Diversificacion": "Baja"}, {"HS12": "7311", "PRODUCTO": "Cilindros y tanques para gas de acero", "IPC": -0.381, "Densidad": 0.062701, "Distancia": 0.937299, "Diversificacion": "Baja"}, {"HS12": "7313", "PRODUCTO": "Alambre de púas y para cercas", "IPC": -1.048, "Densidad": 0.090989, "Distancia": 0.909011, "Diversificacion": "Baja"}, {"HS12": "7317", "PRODUCTO": "Clavos, grapas y tachuelas de acero", "IPC": -0.469, "Densidad": 0.059141, "Distancia": 0.940859, "Diversificacion": "Baja"}, {"HS12": "7323", "PRODUCTO": "Artículos de uso doméstico, cocina de acero", "IPC": 0.15, "Densidad": 0.010861, "Distancia": 0.989139, "Diversificacion": "Muy baja"}, {"HS12": "7403", "PRODUCTO": "Cobre refinado y aleaciones en bruto", "IPC": -2.303, "Densidad": 0.063488, "Distancia": 0.936512, "Diversificacion": "Baja"}, {"HS12": "7410", "PRODUCTO": "Hojas y tiras delgadas de cobre ≤ 0.15 mm", "IPC": -1.147, "Densidad": 0.004699, "Distancia": 0.995301, "Diversificacion": "Muy baja"}, {"HS12": "7502", "PRODUCTO": "Níquel en bruto", "IPC": -0.155, "Densidad": 0.009243, "Distancia": 0.990757, "Diversificacion": "Muy baja"}, {"HS12": "7601", "PRODUCTO": "Aluminio en bruto (lingotes)", "IPC": -1.602, "Densidad": 0.0684, "Distancia": 0.9316, "Diversificacion": "Baja"}, {"HS12": "7603", "PRODUCTO": "Aluminio en polvo o escamas", "IPC": -0.674, "Densidad": 0.013323, "Distancia": 0.986677, "Diversificacion": "Muy baja"}, {"HS12": "7604", "PRODUCTO": "Barras y perfiles de aluminio", "IPC": -0.076, "Densidad": 0.0604, "Distancia": 0.9396, "Diversificacion": "Baja"}, {"HS12": "7605", "PRODUCTO": "Alambre de aluminio", "IPC": -0.55, "Densidad": 0.039544, "Distancia": 0.960456, "Diversificacion": "Baja"}, {"HS12": "7614", "PRODUCTO": "Cables de aluminio (sin aislar)", "IPC": -0.182, "Densidad": 0.031789, "Distancia": 0.968211, "Diversificacion": "Baja"}, {"HS12": "7615", "PRODUCTO": "Artículos de uso doméstico de aluminio", "IPC": -0.186, "Densidad": 0.061193, "Distancia": 0.938807, "Diversificacion": "Baja"}, {"HS12": "8001", "PRODUCTO": "Estaño en bruto", "IPC": -1.301, "Densidad": 0.053544, "Distancia": 0.946456, "Diversificacion": "Baja"}, {"HS12": "8003", "PRODUCTO": "Barras y alambre de estaño", "IPC": 0.216, "Densidad": 0.00954, "Distancia": 0.99046, "Diversificacion": "Muy baja"}, {"HS12": "8110", "PRODUCTO": "Antimonio y sus manufacturas", "IPC": -1.344, "Densidad": 0.086235, "Distancia": 0.913765, "Diversificacion": "Baja"}, {"HS12": "8111", "PRODUCTO": "Manganeso, sus manufacturas y chatarra", "IPC": 0.208, "Densidad": 0.012374, "Distancia": 0.987626, "Diversificacion": "Muy baja"}, {"HS12": "8405", "PRODUCTO": "Generadores de gas de agua o acetileno", "IPC": -0.04, "Densidad": 0.02269, "Distancia": 0.97731, "Diversificacion": "Baja"}, {"HS12": "8410", "PRODUCTO": "Turbinas hidráulicas y reguladores", "IPC": 0.191, "Densidad": 0.014012, "Distancia": 0.985988, "Diversificacion": "Muy baja"}, {"HS12": "8426", "PRODUCTO": "Grúas y camiones grúa", "IPC": 0.288, "Densidad": 0.008733, "Distancia": 0.991267, "Diversificacion": "Muy baja"}, {"HS12": "8429", "PRODUCTO": "Excavadoras, bulldozers y maquinaria pesada", "IPC": -0.34, "Densidad": 0.031181, "Distancia": 0.968819, "Diversificacion": "Baja"}, {"HS12": "8437", "PRODUCTO": "Maquinaria para limpiar o moler granos", "IPC": -0.188, "Densidad": 0.046939, "Distancia": 0.953061, "Diversificacion": "Baja"}, {"HS12": "8452", "PRODUCTO": "Máquinas de coser y sus agujas", "IPC": 0.201, "Densidad": 0.00416, "Distancia": 0.99584, "Diversificacion": "Muy baja"}, {"HS12": "8453", "PRODUCTO": "Maquinaria para preparar cueros o calzado", "IPC": 0.399, "Densidad": 0.008921, "Distancia": 0.991079, "Diversificacion": "Muy baja"}, {"HS12": "8506", "PRODUCTO": "Pilas y baterías primarias", "IPC": 0.366, "Densidad": 0.000125, "Distancia": 0.999875, "Diversificacion": "Muy baja"}, {"HS12": "8548", "PRODUCTO": "Desechos de pilas y acumuladores eléctricos", "IPC": -1.351, "Densidad": 0.087313, "Distancia": 0.912687, "Diversificacion": "Baja"}, {"HS12": "8606", "PRODUCTO": "Vagones y furgones ferroviarios mercantes", "IPC": 0.325, "Densidad": 0.023495, "Distancia": 0.976505, "Diversificacion": "Baja"}, {"HS12": "8609", "PRODUCTO": "Contenedores de carga intermodales", "IPC": -0.429, "Densidad": 0.003585, "Distancia": 0.996415, "Diversificacion": "Muy baja"}, {"HS12": "8704", "PRODUCTO": "Camiones y vehículos de carga", "IPC": 0.072, "Densidad": 0.025463, "Distancia": 0.974537, "Diversificacion": "Baja"}, {"HS12": "8705", "PRODUCTO": "Vehículos de uso especial (grúas/barredoras)", "IPC": -0.24, "Densidad": 0.017611, "Distancia": 0.982389, "Diversificacion": "Baja"}, {"HS12": "8711", "PRODUCTO": "Motocicletas y velocípedos con motor", "IPC": 0.238, "Densidad": 0.021417, "Distancia": 0.978583, "Diversificacion": "Baja"}, {"HS12": "8712", "PRODUCTO": "Bicicletas y triciclos de reparto sin motor", "IPC": 0.379, "Densidad": 0.01911, "Distancia": 0.98089, "Diversificacion": "Baja"}, {"HS12": "8904", "PRODUCTO": "Remolcadores y barcos empujadores", "IPC": -0.998, "Densidad": 0.056145, "Distancia": 0.943855, "Diversificacion": "Baja"}, {"HS12": "8905", "PRODUCTO": "Buques especiales (dragas/plataformas)", "IPC": -0.945, "Densidad": 0.0313, "Distancia": 0.9687, "Diversificacion": "Baja"}, {"HS12": "8907", "PRODUCTO": "Balsas, boyas y estructuras flotantes", "IPC": -0.466, "Densidad": 0.059614, "Distancia": 0.940386, "Diversificacion": "Baja"}, {"HS12": "9015", "PRODUCTO": "Instrumentos de topografía u oceanografía", "IPC": -0.398, "Densidad": 0.033898, "Distancia": 0.966102, "Diversificacion": "Baja"}, {"HS12": "9403", "PRODUCTO": "Otros muebles y sus partes", "IPC": 0.207, "Densidad": 0.043649, "Distancia": 0.956351, "Diversificacion": "Baja"}, {"HS12": "9404", "PRODUCTO": "Colchones, edredones y almohadas", "IPC": -0.365, "Densidad": 0.077368, "Distancia": 0.922632, "Diversificacion": "Baja"}, {"HS12": "9406", "PRODUCTO": "Casas y módulos prefabricados", "IPC": -0.002, "Densidad": 0.053225, "Distancia": 0.946775, "Diversificacion": "Baja"}, {"HS12": "9505", "PRODUCTO": "Artículos para fiestas y carnaval", "IPC": -0.048, "Densidad": 0.018436, "Distancia": 0.981564, "Diversificacion": "Baja"}, {"HS12": "9603", "PRODUCTO": "Escobas, cepillos, brochas y fregonas", "IPC": 0.162, "Densidad": 0.040543, "Distancia": 0.959457, "Diversificacion": "Baja"}, {"HS12": "9605", "PRODUCTO": "Kits o neceseres de viaje para aseo", "IPC": -0.517, "Densidad": 0.040296, "Distancia": 0.959704, "Diversificacion": "Baja"}, {"HS12": "9606", "PRODUCTO": "Botones y broches para ropa", "IPC": -0.194, "Densidad": 0.041849, "Distancia": 0.958151, "Diversificacion": "Baja"}, {"HS12": "9607", "PRODUCTO": "Cremalleras (cierres) y sus partes", "IPC": 0.224, "Densidad": 0.015451, "Distancia": 0.984549, "Diversificacion": "Muy baja"}, {"HS12": "9615", "PRODUCTO": "Peines, horquillas y rulos para cabello", "IPC": 0.386, "Densidad": 0.002551, "Distancia": 0.997449, "Diversificacion": "Muy baja"}, {"HS12": "9618", "PRODUCTO": "Maniquíes de sastre y exhibidores", "IPC": 0.044, "Densidad": 0.036779, "Distancia": 0.963221, "Diversificacion": "Baja"}];
+
+        // Dataset ICER histórico 2015-2025 (Top 5 nacional de 2025)
+        const icerData = {
+            years: ['2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025'],
+            regions: {
+                limaMetropolitana: [53.653, 52.751, 53.813, 53.023, 53.646, 52.861, 54.394, 54.231, 54.349, 54.688, 54.538],
+                callao: [52.842, 51.736, 51.278, 50.448, 52.026, 52.092, 51.254, 53.074, 51.847, 52.188, 53.65],
+                limaRegion: [38.146, 38.469, 41.408, 42.404, 43.85, 41.64, 42.373, 43.857, 44.421, 45.138, 43.36],
+                arequipa: [45.285, 46.672, 44.505, 44.855, 45.87, 45.517, 43.913, 44.356, 44.516, 43.475, 41.367],
+                laLibertad: [40.751, 39.624, 39.222, 38.402, 40.465, 41.255, 38.905, 39.909, 38.74, 40.997, 40.704]
+            }
+        };
+
+        // Serie de Exportaciones Totales de Lima Provincias (Millones US$)
+        const exportsData = {
+            years: ['2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025'],
+            values: [1073.85, 822.89, 748.05, 963.16, 1086.75, 1065.24, 1330.38, 1489.33, 1481.76, 2017.95, 2695.55]
+        };
+
+        // Dataset del Simulador de Conectividad de Red para Lima Provincias
+        const simulatorData = {
+            hetero: {
+                density: '4.0352%',
+                distance: '95.9648%',
+                pci: '+1.489',
+                viability: 'Alta',
+                description: 'Desarrollar síntesis química de compuestos heterocíclicos de nitrógeno aprovecha la proximidad con la producción de insumos para agroquímicos y la refinación mineral de la región. Permite transicionar de la agroexportación de frutas en fresco a la manufactura de principios activos para pesticidas, fungicidas y reactivos químicos de flotación minera.'
+            },
+            ceramics: {
+                density: '3.2494%',
+                distance: '96.7506%',
+                pci: '+1.470',
+                viability: 'Alta',
+                description: 'Aprovecha las capacidades industriales metalúrgicas y de refinación de plomo y zinc instaladas en los distritos costeros y de sierra media. La fabricación de refractarios y componentes cerámicos avanzados para instrumentación y laboratorio agrícola conecta la vocación minera no metálica regional con la demanda de durabilidad técnica de la gran minería nacional.'
+            },
+            magnets: {
+                density: '2.5317%',
+                distance: '97.4683%',
+                pci: '+1.319',
+                viability: 'Alta',
+                description: 'Representa la diversificación hacia bienes de equipo complejos de alta demanda en las redes de fajas transportadoras de concentrados de minerales de Oyón y Huarochirí. La producción de sistemas electromagnéticos e imanes de potencia integra la metalurgia de cobre refinado con talleres de bobinado industrial y ensamblaje electromecánico.'
+            }
+        };
+
+        // Inicialización de Gráficos al cargar la ventana
+        window.onload = function() {
+            initCharts();
+            setupInteractiveEvents();
+            renderMatrixTable(limaRegRealDatabase);
+        };
+
+        function initCharts() {
+            // 1. Gráfico de Evolución del ICER (Líneas)
+            const ctxIcer = document.getElementById('chart-icer').getContext('2d');
+            chartIcerInstance = new Chart(ctxIcer, {
+                type: 'line',
+                data: {
+                    labels: icerData.years,
+                    datasets: [
+                        {
+                            label: 'Lima Región (Provincias)',
+                            data: icerData.regions.limaRegion,
+                            borderColor: '#6c8d45',
+                            backgroundColor: 'rgba(108,141,69,0.12)',
+                            borderWidth: 4,
+                            tension: 0.35,
+                            pointRadius: 4,
+                            pointBackgroundColor: '#6c8d45',
+                            fill: true
+                        },
+                        {
+                            label: 'Lima Metropolitana',
+                            data: icerData.regions.limaMetropolitana,
+                            borderColor: '#64748b',
+                            backgroundColor: 'transparent',
+                            borderWidth: 2,
+                            tension: 0.35,
+                            pointRadius: 2,
+                            borderDash: [4, 3]
+                        },
+                        {
+                            label: 'Callao',
+                            data: icerData.regions.callao,
+                            borderColor: '#0ea5e9',
+                            backgroundColor: 'transparent',
+                            borderWidth: 2,
+                            tension: 0.35,
+                            pointRadius: 2,
+                            borderDash: [4, 3]
+                        },
+                        {
+                            label: 'Arequipa',
+                            data: icerData.regions.arequipa,
+                            borderColor: '#d97706',
+                            backgroundColor: 'transparent',
+                            borderWidth: 2,
+                            tension: 0.35,
+                            pointRadius: 2,
+                            borderDash: [4, 3]
+                        },
+                        {
+                            label: 'La Libertad',
+                            data: icerData.regions.laLibertad,
+                            borderColor: '#f43f5e',
+                            backgroundColor: 'transparent',
+                            borderWidth: 2,
+                            tension: 0.35,
+                            pointRadius: 2,
+                            borderDash: [4, 3]
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    interaction: { mode: 'index', intersect: false },
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                boxWidth: 10,
+                                font: { size: 10 },
+                                usePointStyle: true
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return ` ${context.dataset.label}: ${context.raw.toFixed(3)}`;
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            grid: { color: '#f1f5f9' },
+                            ticks: { font: { size: 10 } }
+                        },
+                        x: {
+                            grid: { display: false },
+                            ticks: { font: { size: 10 } }
+                        }
+                    }
+                }
+            });
+
+            // 2. Gráfico de Barras - Evolución de Exportaciones (Lima Provincias)
+            const ctxExports = document.getElementById('chart-exports').getContext('2d');
+            chartExportsInstance = new Chart(ctxExports, {
+                type: 'bar',
+                data: {
+                    labels: exportsData.years,
+                    datasets: [{
+                        label: 'Exportaciones FOB (Millones US$)',
+                        data: exportsData.values,
+                        backgroundColor: '#b45309',
+                        borderRadius: 6,
+                        maxBarThickness: 34
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return ` US$ ${context.raw.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})}M`;
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            grid: { color: '#f1f5f9' },
+                            ticks: { font: { size: 10 } }
+                        },
+                        x: {
+                            grid: { display: false },
+                            ticks: { font: { size: 10 } }
+                        }
+                    }
+                }
+            });
+
+            // 3. Gráfico de Rosca - Intensidad Tecnológica (Lima Provincias)
+            const ctxTech = document.getElementById('chart-tech').getContext('2d');
+            chartTechInstance = new Chart(ctxTech, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Primarios', 'Basadas en Recursos', 'Mediana Tecnología', 'Baja Tecnología', 'No Clasificados', 'Alta Tecnología'],
+                    datasets: [{
+                        data: [51.30, 43.92, 4.09, 0.55, 0.10, 0.04],
+                        backgroundColor: [
+                            '#6c8d45', // Verde oliva primario
+                            '#b45309', // Bronce refinación mineral
+                            '#d97706', // Ámbar tech media
+                            '#f59e0b', // Amarillo tech baja
+                            '#94a3b8', // Gris no clasificados
+                            '#ef4444'  // Rojo alta tecnología
+                        ],
+                        borderWidth: 2,
+                        borderColor: '#ffffff'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return ` ${context.label}: ${context.raw.toFixed(2)}%`;
+                                }
+                            }
+                        }
+                    },
+                    cutout: '70%'
+                }
+            });
+        }
+
+        // Renderizado Dinámico de la Matriz de Viabilidad Real de Lima Provincias
+        function renderMatrixTable(dataset) {
+            const tbody = document.getElementById("matrix-table-body");
+            tbody.innerHTML = "";
+
+            dataset.forEach(row => {
+                const densPct = (row.Densidad * 100).toFixed(4) + "%";
+                const distPct = (row.Distancia * 100).toFixed(4) + "%";
+                
+                let badgeClass = "";
+                const checkDiv = String(row.Diversificacion).toLowerCase().trim();
+                if (checkDiv === "muy alta") {
+                    badgeClass = "bg-emerald-50 text-emerald-700 border-emerald-200 font-bold";
+                } else if (checkDiv === "alta") {
+                    badgeClass = "bg-blue-50 text-blue-700 border-blue-200 font-bold";
+                } else if (checkDiv === "baja") {
+                    badgeClass = "bg-amber-50 text-amber-700 border-amber-200 font-medium";
+                } else {
+                    badgeClass = "bg-rose-50 text-rose-700 border-rose-200 font-light";
+                }
+
+                const tr = document.createElement("tr");
+                tr.className = "hover:bg-slate-50/70 transition-colors";
+                tr.innerHTML = `
+                    <td class="p-4 font-mono text-slate-500 font-semibold">${row.HS12}</td>
+                    <td class="p-4 font-bold text-slate-900">${row.PRODUCTO}</td>
+                    <td class="p-4 text-center font-semibold text-slate-600">${row.IPC.toFixed(3)}</td>
+                    <td class="p-4 text-center font-bold text-emerald-800">${densPct}</td>
+                    <td class="p-4 text-center text-slate-500 font-medium">${distPct}</td>
+                    <td class="p-4 text-center">
+                        <span class="px-2.5 py-1 border text-[10px] rounded-full ${badgeClass}">
+                            ${row.Diversificacion}
+                        </span>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        // Configuración de eventos interactivos (búsqueda y selector del simulador)
+        function setupInteractiveEvents() {
+            // Buscador en Tiempo Real de la tabla del Top 10 de exportaciones
+            const searchInput = document.getElementById('table-search');
+            if (searchInput) {
+                searchInput.addEventListener('input', function(e) {
+                    const term = e.target.value.toLowerCase().trim();
+                    const rows = document.querySelectorAll('#export-table-body tr');
+                    
+                    rows.forEach(row => {
+                        const code = row.cells[1].textContent.toLowerCase();
+                        const product = row.cells[2].textContent.toLowerCase();
+                        const tech = row.cells[3].textContent.toLowerCase();
+                        
+                        if (code.includes(term) || product.includes(term) || tech.includes(term)) {
+                            row.style.display = '';
+                        } else {
+                            row.style.display = 'none';
+                        }
+                    });
+                });
+            }
+
+            // Filtrado e interactividad de la Matriz de Oportunidades de Lima Provincias (Sección 3)
+            const matrixSearch = document.getElementById("matrix-search");
+            const matrixFilter = document.getElementById("matrix-filter");
+
+            function handleMatrixFilter() {
+                const searchVal = matrixSearch.value.toLowerCase().trim();
+                const filterVal = matrixFilter.value;
+
+                const filtered = limaRegRealDatabase.filter(row => {
+                    const matchesSearch = row.PRODUCTO.toLowerCase().includes(searchVal) || row.HS12.toLowerCase().includes(searchVal);
+                    const matchesFilter = filterVal === "all" || row.Diversificacion.toLowerCase() === filterVal.toLowerCase();
+                    return matchesSearch && matchesFilter;
+                });
+
+                renderMatrixTable(filtered);
+            }
+
+            matrixSearch.addEventListener("input", handleMatrixFilter);
+            matrixFilter.addEventListener("change", handleMatrixFilter);
+
+            // Simulador de Conectividad de Red Interactivo
+            const selector = document.getElementById('industry-selector');
+            if (selector) {
+                selector.addEventListener('change', function(e) {
+                    const val = e.target.value;
+                    const data = simulatorData[val];
+                    
+                    if (data) {
+                        const densityEl = document.getElementById('sim-density');
+                        const distanceEl = document.getElementById('sim-distance');
+                        const pciEl = document.getElementById('sim-pci');
+                        const viabilityEl = document.getElementById('sim-viability');
+                        
+                        // Actualizar UI
+                        densityEl.textContent = data.density;
+                        distanceEl.textContent = data.distance;
+                        pciEl.textContent = data.pci;
+                        viabilityEl.textContent = data.viability;
+                        
+                        document.getElementById('sim-description').textContent = data.description;
+                    }
+                });
+            }
+        }
+    </script>
+</body>
+</html>

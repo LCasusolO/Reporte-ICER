@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REPORTE REGIONAL DE COMPLEJIDAD EXPORTADORA - PUNO</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js para visualización de datos de alto rendimiento -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- FontAwesome para iconografía avanzada -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Inter para una tipografía moderna y legible -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght=300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        puno: {
+                            50: '#fff7ed',
+                            100: '#ffedd5',
+                            200: '#fed7aa',
+                            300: '#fdba74',
+                            400: '#fb923c',
+                            500: '#ea580c', // Dorado mineral / naranja cobrizo
+                            600: '#ca8a04', // Oro viejo / bronce minero
+                            700: '#9a3412', // Cobre de fundición
+                            850: '#431407', // Pizarra cobrizo oscuro
+                            950: '#1c0d02'  // Tono profundo de socavón andino
+                        },
+                        pizarra: {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            200: '#e2e8f0',
+                            500: '#64748b', // Gris de relaves técnicos
+                            600: '#475569', // Gris oscuro de maquinaria pesada
+                            700: '#334155', // Gris institucional
+                            800: '#1e293b',
+                            950: '#0f172a'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f5f9;
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans min-h-screen flex flex-col antialiased">
+
+    <!-- Navbar Institucional -->
+    <header class="sticky top-0 z-50 bg-white border-b border-slate-200/80 shadow-sm backdrop-blur-md bg-white/95">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <span class="p-3 bg-puno-850 text-white rounded-xl shadow-md flex items-center justify-center">
+                    <i class="fa-solid fa-chart-line text-xl text-puno-300"></i>
+                </span>
+                <div>
+                    <h1 class="text-xs sm:text-sm font-semibold text-slate-500 tracking-wider">MONITOREO TERRITORIAL</h1>
+                    <h2 class="text-base sm:text-lg font-extrabold uppercase tracking-tight text-slate-900 leading-tight">
+                        REPORTE REGIONAL DE COMPLEJIDAD EXPORTADORA
+                    </h2>
+                </div>
+            </div>
+            
+            <div class="flex items-center">
+                <span class="text-xs font-semibold text-puno-700 bg-puno-50 px-4 py-2.5 rounded-full border border-puno-200/60 flex items-center gap-2 shadow-sm">
+                    <span class="w-2.5 h-2.5 rounded-full bg-puno-500 animate-pulse"></span>
+                    Puesto Actual: 17º
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero / Presentación de la Región -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 w-full">
+        <div class="relative overflow-hidden bg-gradient-to-r from-slate-950 via-puno-950 to-pizarra-950 text-white p-8 md:p-12 rounded-[2rem] shadow-xl border border-puno-950/40">
+            <!-- Capa de brillo radial decorativo -->
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(234,88,12,0.14),transparent_60%)] pointer-events-none"></div>
+            
+            <div class="relative z-10 space-y-6">
+                <!-- Nombre de la región como título único de máximo impacto -->
+                <div class="flex flex-col gap-1">
+                    <span class="text-xs font-bold uppercase tracking-widest text-puno-400">Eje Altiplánico, Minero y de Biodiversidad del Sur</span>
+                    <h2 class="text-5xl sm:text-7xl font-black tracking-tight text-puno-300">
+                        Puno
+                    </h2>
+                </div>
+                
+                <!-- Descripción limpia del reporte -->
+                <p class="text-base sm:text-lg text-slate-300 font-light max-w-4xl leading-relaxed">
+                    Diagnóstico dinámico de un coloso minero y agropecuario andino. Evaluación estructural de la masiva canasta aurífera y de estaño refinado, y modelado matemático del Espacio del Producto bajo los estándares del Harvard Growth Lab para superar las trampas de la especialización primaria.
+                </p>
+                
+                <!-- Metadatos del Período de Análisis -->
+                <div class="flex flex-wrap items-center gap-3 pt-2 text-xs font-semibold text-slate-300">
+                    <span class="flex items-center gap-2 bg-white/5 border border-white/10 px-3.5 py-1.5 rounded-lg">
+                        <i class="fa-regular fa-calendar text-puno-400"></i> 
+                        <span>Período de Análisis: <strong class="text-white">2015 - 2025</strong></span>
+                    </span>
+                    <span class="flex items-center gap-2 bg-white/5 border border-white/10 px-3.5 py-1.5 rounded-lg">
+                        <i class="fa-solid fa-mountain text-pizarra-500"></i>
+                        <span>Eje Central: <strong class="text-white">Oro Aluvial, Estaño en Bruto y Agroforestería de Camélidos</strong></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contenedor Principal de Reportes -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow space-y-10 w-full">
+        
+        <!-- Resumen Ejecutivo & KPIs Principales -->
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Card KPI 1: Exportaciones Totales -->
+            <div class="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm relative overflow-hidden group hover:border-puno-500 transition-all duration-300">
+                <div class="absolute top-0 right-0 p-3 opacity-10 text-puno-600 text-7xl group-hover:opacity-20 transition-all duration-300">
+                    <i class="fa-solid fa-arrow-trend-up"></i>
+                </div>
+                <span class="text-xs font-bold uppercase tracking-wider text-slate-400 block mb-1">Exportaciones Totales (2025)</span>
+                <div class="flex items-baseline gap-2 mb-2">
+                    <span class="text-3xl font-extrabold text-slate-900">US$ 7,588.04M</span>
+                    <span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-md flex items-center gap-0.5">
+                        <i class="fa-solid fa-arrow-up"></i> +476.11%
+                    </span>
+                </div>
+                <p class="text-xs text-slate-500 leading-relaxed">
+                    Puno consolida un despegue comercial masivo, multiplicando casi por seis sus retornos externos del 2015 apalancado por el valor internacional del oro y la producción sostenida de la mina San Rafael.
+                </p>
+            </div>
+
+            <!-- Card KPI 2: Estructura de Cartera -->
+            <div class="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm relative overflow-hidden group hover:border-cobre-500 transition-all duration-300">
+                <div class="absolute top-0 right-0 p-3 opacity-10 text-cobre-500 text-7xl group-hover:opacity-20 transition-all duration-300">
+                    <i class="fa-solid fa-boxes-stacked"></i>
+                </div>
+                <span class="text-xs font-bold uppercase tracking-wider text-slate-400 block mb-1">Estructura de Cartera</span>
+                <div class="flex items-baseline gap-2 mb-2">
+                    <span class="text-3xl font-extrabold text-slate-900">83.86%</span>
+                    <span class="text-xs font-bold text-puno-700 bg-puno-100 px-2 py-0.5 rounded-md">
+                        Basadas en Recursos
+                    </span>
+                </div>
+                <p class="text-xs text-slate-500 leading-relaxed">
+                    Las manufacturas basadas en recursos dominan la canasta comercial con un 83.86%, debido al procesamiento metalúrgico y la refinación local de oro en bruto, mientras que los productos primarios abarcan el 16.11%.
+                </p>
+            </div>
+
+            <!-- Card KPI 3: Posición de Complejidad -->
+            <div class="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm relative overflow-hidden group hover:border-slate-400 transition-all duration-300">
+                <div class="absolute top-0 right-0 p-3 opacity-10 text-slate-400 text-7xl group-hover:opacity-20 transition-all duration-300">
+                    <i class="fa-solid fa-medal"></i>
+                </div>
+                <span class="text-xs font-bold uppercase tracking-wider text-slate-400 block mb-1">Posición de Complejidad</span>
+                <div class="flex items-baseline gap-2 mb-2">
+                    <span class="text-3xl font-extrabold text-slate-900">Puesto 17º</span>
+                    <span class="text-xs font-medium text-slate-500">de 26 Regiones (2025)</span>
+                </div>
+                <p class="text-xs text-slate-500 leading-relaxed">
+                    La región se sitúa en el puesto 17º del ranking ICER nacional (34.112 puntos). Su reto central es canalizar la ingente renta minera para irradiar capacidades técnicas hacia su base textil, alimenticia y manufacturera.
+                </p>
+            </div>
+        </section>
+
+        <!-- Sección 1: Ranking y Evolución del ICER Regional -->
+        <section class="bg-white rounded-2xl border border-slate-200/80 p-6 sm:p-8 shadow-sm space-y-6">
+            <div class="border-b border-slate-100 pb-5">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                    <div class="space-y-1">
+                        <span class="text-xs font-bold text-puno-700 uppercase tracking-widest">INDICADOR ESTRUCTURAL</span>
+                        <h3 class="text-xl font-bold text-slate-900">1. Ranking y Evolución del ICER Regional</h3>
+                        <p class="text-xs text-slate-500">
+                            Evolución del Índice de Complejidad Exportadora Regional comparado contra el Top 5 nacional de clasificación (2025).
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-2 text-xs bg-slate-50 p-1.5 rounded-xl border border-slate-150">
+                        <span class="px-2.5 py-1 bg-white shadow-sm rounded-lg font-semibold text-slate-700">Comparativo: Inercia de Enclave</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gráfico y Tabla Comparativa -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                <!-- Gráfico de Líneas (Chart.js) -->
+                <div class="lg:col-span-7 bg-slate-50/50 rounded-2xl p-4 border border-slate-100 flex flex-col justify-between">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-xs font-semibold text-slate-600">Puntaje ICER Regional (2015-2025)</span>
+                        <span class="text-[10px] text-slate-400">Haz clic en la leyenda para ocultar/mostrar regiones</span>
+                    </div>
+                    <div class="relative h-[320px] w-full">
+                        <canvas id="chart-icer"></canvas>
+                    </div>
+                </div>
+
+                <!-- Tabla de Datos del Top 5 de Ranking -->
+                <div class="lg:col-span-5 flex flex-col justify-between space-y-4">
+                    <div class="bg-slate-50/50 rounded-2xl p-4 border border-slate-100 space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-semibold text-slate-700">Top 5 Nacional + Región de Análisis (2025)</span>
+                            <span class="text-[10px] bg-slate-200 text-slate-600 px-2 py-0.5 rounded-md font-mono">Ranking Nacional</span>
+                        </div>
+                        <div class="divide-y divide-slate-200/60 text-xs">
+                            <!-- Top 1 to 5 -->
+                            <div class="py-1.5 flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-slate-400"></span>
+                                    <span class="font-medium text-slate-700">Lima Metropolitana</span>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <span class="text-slate-500 font-mono">54.538</span>
+                                    <span class="w-12 text-center py-0.5 bg-slate-100 text-slate-600 rounded font-bold">1º</span>
+                                </div>
+                            </div>
+                            <div class="py-1.5 flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-[#0ea5e9]"></span>
+                                    <span class="font-medium text-slate-700">Callao</span>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <span class="text-slate-500 font-mono">53.650</span>
+                                    <span class="w-12 text-center py-0.5 bg-slate-100 text-slate-600 rounded font-bold">2º</span>
+                                </div>
+                            </div>
+                            <div class="py-1.5 flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-[#8b5cf6]"></span>
+                                    <span class="font-medium text-slate-700">Lima Región</span>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <span class="text-slate-500 font-mono">43.360</span>
+                                    <span class="w-12 text-center py-0.5 bg-slate-100 text-slate-600 rounded font-bold">3º</span>
+                                </div>
+                            </div>
+                            <div class="py-1.5 flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-[#fb923c]"></span>
+                                    <span class="font-medium text-slate-700">Arequipa</span>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <span class="text-slate-500 font-mono">41.367</span>
+                                    <span class="w-12 text-center py-0.5 bg-slate-100 text-slate-600 rounded font-bold">4º</span>
+                                </div>
+                            </div>
+                            <div class="py-1.5 flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-[#f43f5e]"></span>
+                                    <span class="font-medium text-slate-700">La Libertad</span>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <span class="text-slate-500 font-mono">40.704</span>
+                                    <span class="w-12 text-center py-0.5 bg-slate-100 text-slate-600 rounded font-bold">5º</span>
+                                </div>
+                            </div>
+                            <!-- Puno (Región de Análisis - 17º) -->
+                            <div class="py-2.5 flex items-center justify-between bg-puno-100/55 -mx-4 px-4 border-y border-puno-200/50">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-3 h-3 rounded-full bg-puno-500 border border-white"></span>
+                                    <span class="font-bold text-slate-900">Puno</span>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <span class="font-bold text-puno-850 font-mono">34.112</span>
+                                    <span class="w-12 text-center py-0.5 bg-puno-500 text-white rounded font-extrabold shadow-sm">17º</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-puno-50 border border-puno-100 rounded-2xl p-4 text-xs text-puno-950 space-y-2">
+                        <p class="font-semibold flex items-center gap-1.5">
+                            <i class="fa-solid fa-circle-info text-puno-600"></i> Paradoja del Volumen vs Conocimiento:
+                        </p>
+                        <p class="leading-relaxed text-slate-600">
+                            Puno exhibe un comportamiento econométrico típico de rigidez por enclave extractivo. A pesar de registrar una escalada masiva en el volumen total de divisas (pasando de US$ 1,317.12M en 2015 a US$ 7,588.04M en 2025), su puntaje ICER apenas se movió de 31.608 a 34.112 en el mismo lapso, manteniéndose en el puesto 17° nacional. Esto confirma que la acumulación de riqueza mineral no induce automáticamente la asimilación de conocimiento sofisticado en el Espacio del Producto regional si no existen encadenamientos industriales con clústeres urbanos como Juliaca.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 2: Diagnóstico de la Cartera Exportadora y Composición Tecnológica -->
+        <section class="bg-white rounded-2xl border border-slate-200/80 p-6 sm:p-8 shadow-sm space-y-8">
+            <div class="border-b border-slate-100 pb-5">
+                <span class="text-xs font-bold text-puno-700 uppercase tracking-widest">DIAGNÓSTICO ESTRUCTURAL</span>
+                <h3 class="text-xl font-bold text-slate-900">2. Diagnóstico de la Cartera Exportadora y Composición Tecnológica</h3>
+                <p class="text-xs text-slate-500">
+                    Evolución del valor comercial exportado e identificación de la intensidad del valor científico/tecnológico incorporado en la canasta de Puno.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Gráfico de Barras: Evolución de las Exportaciones -->
+                <div class="bg-slate-50/50 rounded-2xl p-4 border border-slate-100 flex flex-col justify-between">
+                    <span class="text-xs font-semibold text-slate-600 mb-3 block">Evolución del Valor FOB de Exportaciones (Millones US$)</span>
+                    <div class="relative h-[280px]">
+                        <canvas id="chart-exports"></canvas>
+                    </div>
+                </div>
+
+                <!-- Gráfico de Rosca: Estructura de Intensidad Tecnológica -->
+                <div class="bg-slate-50/50 rounded-2xl p-4 border border-slate-100 flex flex-col justify-between">
+                    <span class="text-xs font-semibold text-slate-600 mb-3 block">Composición por Contenido Tecnológico (2025)</span>
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
+                        <div class="md:col-span-7 relative h-[240px]">
+                            <canvas id="chart-tech"></canvas>
+                        </div>
+                        <div class="md:col-span-5 space-y-2.5 text-xs">
+                            <div class="flex items-center gap-1.5 justify-between">
+                                <span class="flex items-center gap-1.5 font-medium text-slate-600">
+                                    <span class="w-2.5 h-2.5 rounded bg-puno-700"></span> Basadas en Rec.
+                                </span>
+                                <span class="font-bold text-slate-900">83.86%</span>
+                            </div>
+                            <div class="flex items-center gap-1.5 justify-between">
+                                <span class="flex items-center gap-1.5 font-medium text-slate-600">
+                                    <span class="w-2.5 h-2.5 rounded bg-puno-400"></span> Primarios
+                                </span>
+                                <span class="font-bold text-slate-900">16.11%</span>
+                            </div>
+                            <div class="flex items-center gap-1.5 justify-between">
+                                <span class="flex items-center gap-1.5 font-medium text-slate-600">
+                                    <span class="w-2.5 h-2.5 rounded bg-pizarra-500"></span> Baja Tecnología
+                                </span>
+                                <span class="font-bold text-slate-900">0.02%</span>
+                            </div>
+                            <div class="flex items-center gap-1.5 justify-between">
+                                <span class="flex items-center gap-1.5 font-medium text-slate-600">
+                                    <span class="w-2.5 h-2.5 rounded bg-amber-500"></span> Mediana Tech
+                                </span>
+                                <span class="font-bold text-slate-900">0.02%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tabla de Productos de la Canasta Exportadora de Puno -->
+            <div class="space-y-4 pt-4">
+                <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                    <span class="text-sm font-semibold text-slate-700 flex items-center gap-2">
+                        <i class="fa-solid fa-list-ol text-puno-700"></i> Top 10 de Productos Más Exportados de Puno (2025)
+                    </span>
+                    
+                    <!-- Buscador e Interactividad -->
+                    <div class="relative w-full sm:w-72">
+                        <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-400 pointer-events-none">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </span>
+                        <input type="text" id="table-search" placeholder="Buscar producto o código arancelario..." 
+                               class="w-full pl-9 pr-4 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs focus:ring-2 focus:ring-puno-500 focus:border-puno-500 focus:bg-white outline-none transition-all">
+                    </div>
+                </div>
+
+                <div class="overflow-x-auto border border-slate-200 rounded-2xl shadow-sm custom-scrollbar">
+                    <table class="w-full text-left border-collapse text-xs">
+                        <thead>
+                            <tr class="bg-slate-50 text-slate-600 border-b border-slate-200 font-semibold uppercase tracking-wider">
+                                <th class="p-4 w-12 text-center">N°</th>
+                                <th class="p-4 w-28">Código HS12</th>
+                                <th class="p-4">Producto Exportado</th>
+                                <th class="p-4 w-44">Nivel Tecnológico</th>
+                                <th class="p-4 w-36 text-right">Valor (Millones US$)</th>
+                                <th class="p-4 w-28 text-right">Participación</th>
+                            </tr>
+                        </thead>
+                        <tbody id="export-table-body" class="divide-y divide-slate-100">
+                            <!-- Fila 1 -->
+                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                <td class="p-4 text-center font-bold text-slate-400">1</td>
+                                <td class="p-4 font-mono text-slate-500">7108</td>
+                                <td class="p-4 font-semibold text-slate-900">Oro en bruto, semielaborado o polvo</td>
+                                <td class="p-4">
+                                    <span class="px-2.5 py-1 bg-puno-50 text-puno-700 rounded-full font-medium text-[10px] border border-puno-100">
+                                        Basadas en recursos
+                                    </span>
+                                </td>
+                                <td class="p-4 text-right font-mono font-semibold text-slate-900">6,355.46</td>
+                                <td class="p-4 text-right font-semibold text-puno-700 bg-puno-50/10">83.76%</td>
+                            </tr>
+                            <!-- Fila 2 -->
+                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                <td class="p-4 text-center font-bold text-slate-400">2</td>
+                                <td class="p-4 font-mono text-slate-500">8001</td>
+                                <td class="p-4 font-semibold text-slate-900">Estaño en bruto (Minsur / San Rafael)</td>
+                                <td class="p-4">
+                                    <span class="px-2.5 py-1 bg-pizarra-50 text-pizarra-700 rounded-full font-medium text-[10px] border border-pizarra-100">
+                                        Productos primarios
+                                    </span>
+                                </td>
+                                <td class="p-4 text-right font-mono font-semibold text-slate-900">1,158.44</td>
+                                <td class="p-4 text-right font-semibold text-pizarra-700">15.27%</td>
+                            </tr>
+                            <!-- Fila 3 -->
+                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                <td class="p-4 text-center font-bold text-slate-400">3</td>
+                                <td class="p-4 font-mono text-slate-500">1008</td>
+                                <td class="p-4 font-semibold text-slate-900">Quinua y cereales altiplánicos (excluye trigo)</td>
+                                <td class="p-4">
+                                    <span class="px-2.5 py-1 bg-pizarra-50 text-pizarra-700 rounded-full font-medium text-[10px] border border-pizarra-100">
+                                        Productos primarios
+                                    </span>
+                                </td>
+                                <td class="p-4 text-right font-mono font-semibold text-slate-900">46.51</td>
+                                <td class="p-4 text-right font-semibold text-slate-600">0.61%</td>
+                            </tr>
+                            <!-- Fila 4 -->
+                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                <td class="p-4 text-center font-bold text-slate-400">4</td>
+                                <td class="p-4 font-mono text-slate-500">2522</td>
+                                <td class="p-4 font-semibold text-slate-900">Cal viva, apagada e hidráulica</td>
+                                <td class="p-4">
+                                    <span class="px-2.5 py-1 bg-puno-50 text-puno-700 rounded-full font-medium text-[10px] border border-puno-100">
+                                        Basadas en recursos
+                                    </span>
+                                </td>
+                                <td class="p-4 text-right font-mono font-semibold text-slate-900">4.51</td>
+                                <td class="p-4 text-right font-semibold text-slate-600">0.06%</td>
+                            </tr>
+                            <!-- Fila 5 -->
+                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                <td class="p-4 text-center font-bold text-slate-400">5</td>
+                                <td class="p-4 font-mono text-slate-500">0901</td>
+                                <td class="p-4 font-semibold text-slate-900">Café (grano/molido) de Sandia (Putina Punco)</td>
+                                <td class="p-4">
+                                    <span class="px-2.5 py-1 bg-pizarra-50 text-pizarra-700 rounded-full font-medium text-[10px] border border-pizarra-100">
+                                        Productos primarios
+                                    </span>
+                                </td>
+                                <td class="p-4 text-right font-mono font-semibold text-slate-900">3.17</td>
+                                <td class="p-4 text-right font-semibold text-slate-500">0.04%</td>
+                            </tr>
+                            <!-- Fila 6 -->
+                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                <td class="p-4 text-center font-bold text-slate-400">6</td>
+                                <td class="p-4 font-mono text-slate-500">0304</td>
+                                <td class="p-4 font-semibold text-slate-900">Filetes y demás carne de pescado (trucha congelada)</td>
+                                <td class="p-4">
+                                    <span class="px-2.5 py-1 bg-pizarra-50 text-pizarra-700 rounded-full font-medium text-[10px] border border-pizarra-100">
+                                        Productos primarios
+                                    </span>
+                                </td>
+                                <td class="p-4 text-right font-mono font-semibold text-slate-900">2.41</td>
+                                <td class="p-4 text-right font-semibold text-slate-500">0.03%</td>
+                            </tr>
+                            <!-- Fila 7 -->
+                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                <td class="p-4 text-center font-bold text-slate-400">7</td>
+                                <td class="p-4 font-mono text-slate-500">5101</td>
+                                <td class="p-4 font-semibold text-slate-900">Lana sin cardar ni peinar (fibra de alpaca sucia)</td>
+                                <td class="p-4">
+                                    <span class="px-2.5 py-1 bg-pizarra-50 text-pizarra-700 rounded-full font-medium text-[10px] border border-pizarra-100">
+                                        Productos primarios
+                                    </span>
+                                </td>
+                                <td class="p-4 text-right font-mono font-semibold text-slate-900">2.19</td>
+                                <td class="p-4 text-right font-semibold text-slate-500">0.03%</td>
+                            </tr>
+                            <!-- Fila 8 -->
+                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                <td class="p-4 text-center font-bold text-slate-400">8</td>
+                                <td class="p-4 font-mono text-slate-500">2616</td>
+                                <td class="p-4 font-semibold text-slate-900">Minerales de metales preciosos</td>
+                                <td class="p-4">
+                                    <span class="px-2.5 py-1 bg-puno-50 text-puno-700 rounded-full font-medium text-[10px] border border-puno-100">
+                                        Basadas en recursos
+                                    </span>
+                                </td>
+                                <td class="p-4 text-right font-mono font-semibold text-slate-900">2.16</td>
+                                <td class="p-4 text-right font-semibold text-slate-500">0.03%</td>
+                            </tr>
+                            <!-- Fila 9 -->
+                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                <td class="p-4 text-center font-bold text-slate-400">9</td>
+                                <td class="p-4 font-mono text-slate-500">0703</td>
+                                <td class="p-4 font-semibold text-slate-900">Cebollas, ajos y puerros frescos</td>
+                                <td class="p-4">
+                                    <span class="px-2.5 py-1 bg-pizarra-50 text-pizarra-700 rounded-full font-medium text-[10px] border border-pizarra-100">
+                                        Productos primarios
+                                    </span>
+                                </td>
+                                <td class="p-4 text-right font-mono font-semibold text-slate-900">1.94</td>
+                                <td class="p-4 text-right font-semibold text-slate-500">0.03%</td>
+                            </tr>
+                            <!-- Fila 10 -->
+                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                <td class="p-4 text-center font-bold text-slate-400">10</td>
+                                <td class="p-4 font-mono text-slate-500">0701</td>
+                                <td class="p-4 font-semibold text-slate-900">Papas (patatas) frescas o refrigeradas</td>
+                                <td class="p-4">
+                                    <span class="px-2.5 py-1 bg-pizarra-50 text-pizarra-700 rounded-full font-medium text-[10px] border border-pizarra-100">
+                                        Productos primarios
+                                    </span>
+                                </td>
+                                <td class="p-4 text-right font-mono font-semibold text-slate-900">1.40</td>
+                                <td class="p-4 text-right font-semibold text-slate-500">0.02%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Box Informativo: Análisis del Diagnóstico de Cartera de Puno -->
+            <div class="mt-6 bg-orange-50/40 border border-orange-250/70 rounded-2xl p-5 text-xs text-slate-700 space-y-3 shadow-sm">
+                <p class="font-bold text-orange-950 flex items-center gap-2 text-sm">
+                    <i class="fa-solid fa-square-poll-vertical text-puno-600"></i> Análisis Diagnóstico de la Cartera Exportadora de Puno
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-1 leading-relaxed">
+                    <div class="space-y-1.5">
+                        <span class="font-semibold text-orange-900 block">1. El Gigantesco Eje Aurífero y del Estaño:</span>
+                        <p class="text-slate-600">
+                            El oro en bruto (<strong class="text-slate-950">83.76%</strong>, US$ 6,355.46M) y el estaño en bruto (<strong class="text-slate-950">15.27%</strong>, US$ 1,158.44M) absorben juntos el 99.03% de la canasta exportadora regional. Puno posee la única mina de estaño del Perú (San Rafael), otorgándole un peso estratégico global, aunque opera de manera aislada respecto a los encadenamientos de manufactura locales.
+                        </p>
+                    </div>
+                    <div class="space-y-1.5">
+                        <span class="font-semibold text-orange-900 block">2. El Bloque Agropecuario Tradicional Altiplánico:</span>
+                        <p class="text-slate-600">
+                            La quinua (0.61%), la fibra de alpaca en bruto (0.03%), el café de los valles de Sandia (0.04%) y las papas nativas (0.02%) constituyen los núcleos económicos de la agricultura familiar de la región. Su complejidad es sumamente baja, requiriendo el salto urgente hacia lavaderos de fibra automatizados, hilados técnicos de exportación y derivados alimenticios empacados.
+                        </p>
+                    </div>
+                    <div class="space-y-1.5">
+                        <span class="font-semibold text-orange-900 block">3. La Ausencia de Manufacturas Complejas de Segunda Línea:</span>
+                        <p class="text-slate-600">
+                            A pesar del masivo volumen exportado (US$ 7,588.04M), las manufacturas de tecnología media y alta representan menos del <strong class="text-slate-950">0.04%</strong> conjunto. Puno sufre de una severa desconexión entre la disponibilidad de capital de su minería y la sofisticación técnica de su manufactura urbana concentrada en Juliaca.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 3: Oportunidades de Diversificación y Espacio del Producto -->
+        <section class="bg-white rounded-2xl border border-slate-200/80 p-6 sm:p-8 shadow-sm space-y-8">
+            <div class="border-b border-slate-100 pb-5">
+                <span class="text-xs font-bold text-puno-700 uppercase tracking-widest">ALGORITMO DE DIVERSIFICACIÓN REAL</span>
+                <h3 class="text-xl font-bold text-slate-900">3. Oportunidades de Diversificación y Espacio del Producto</h3>
+                <p class="text-xs text-slate-500">
+                    Análisis de proximidad estructural: Hacia dónde puede migrar de manera inteligente la economía de Puno apalancándose en sus capacidades preexistentes.
+                </p>
+            </div>
+
+            <!-- Simulador de Conectividad de Red con Datos Reales para Puno -->
+            <div class="bg-slate-900 text-white rounded-2xl p-6 shadow-md border border-slate-800 space-y-6">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                    <div class="space-y-1">
+                        <span class="text-[10px] font-bold text-puno-400 uppercase tracking-widest">HERRAMIENTA DE PLANIFICACIÓN ECONÓMICA</span>
+                        <h4 class="text-base font-bold flex items-center gap-2 text-puno-200">
+                            <i class="fa-solid fa-microchip text-puno-400"></i> Simulador de Conectividad de Red de Puno (Filtro por Producto Complejo)
+                        </h4>
+                    </div>
+                    <!-- Selector de Industrias Reales -->
+                    <select id="industry-selector" class="bg-slate-800 border border-slate-700 text-slate-200 text-xs rounded-xl px-3.5 py-2.5 outline-none focus:ring-2 focus:ring-puno-500 transition-all">
+                        <option value="magnets">HS 8505 - Electroimanes, imanes permanentes y sus acoplamientos o frenos (Soporte Extractivo)</option>
+                        <option value="looms">HS 8446 - Máquinas de tejer / Telares semi-automatizados (Clúster de Camélidos)</option>
+                        <option value="bearings">HS 8482 - Rodamientos de bolas, de rodillos o de agujas (Metalmecánica de Precisión)</option>
+                    </select>
+                </div>
+
+                <!-- Outputs del Simulador -->
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-6 pt-2">
+                    <div class="bg-slate-800/50 rounded-xl p-4 border border-slate-700/50 space-y-2">
+                        <span class="text-[10px] text-slate-400 font-bold uppercase tracking-wider block">Densidad de Capacidades</span>
+                        <div class="flex items-baseline gap-2">
+                            <span id="sim-density" class="text-2xl font-extrabold text-puno-400">0.3011%</span>
+                        </div>
+                        <p class="text-[11px] text-slate-300">Medida empírica de cercanía a la canasta de capacidades de la región.</p>
+                    </div>
+
+                    <div class="bg-slate-800/50 rounded-xl p-4 border border-slate-700/50 space-y-2">
+                        <span class="text-[10px] text-slate-400 font-bold uppercase tracking-wider block">Distancia (Distancia = 1 - Densidad)</span>
+                        <div class="flex items-baseline gap-2">
+                            <span id="sim-distance" class="text-2xl font-extrabold text-rose-400">99.6989%</span>
+                        </div>
+                        <p class="text-[11px] text-slate-300">Brecha técnica restante para el desarrollo autónomo de la industria.</p>
+                    </div>
+
+                    <div class="bg-slate-800/50 rounded-xl p-4 border border-slate-700/50 space-y-2">
+                        <span class="text-[10px] text-slate-400 font-bold uppercase tracking-wider block">Complejidad del Producto (IPC)</span>
+                        <div class="flex items-baseline gap-2">
+                            <span id="sim-pci" class="text-2xl font-extrabold text-amber-400">+1.319</span>
+                        </div>
+                        <p class="text-[11px] text-slate-300">Mide el nivel de sofisticación y exclusividad técnica global del bien propuesto.</p>
+                    </div>
+
+                    <div class="bg-slate-800/50 rounded-xl p-4 border border-slate-700/50 space-y-2">
+                        <span class="text-[10px] text-slate-400 font-bold uppercase tracking-wider block">Viabilidad de Transición</span>
+                        <div class="flex items-baseline gap-2">
+                            <span id="sim-viability" class="text-2xl font-extrabold text-emerald-400">Alta</span>
+                        </div>
+                        <p class="text-[11px] text-slate-300">Nivel de factibilidad según el mapa actual de encadenamiento de Puno.</p>
+                    </div>
+                </div>
+
+                <!-- Detalle del Vector Seleccionado -->
+                <div class="bg-slate-950/80 rounded-xl p-4 border border-slate-800/80 text-xs">
+                    <div class="flex items-start gap-3">
+                        <span class="text-2xl text-puno-400"><i class="fa-solid fa-quote-left"></i></span>
+                        <div class="space-y-1">
+                            <span class="font-semibold text-slate-300 block">Sustento del Algoritmo del Espacio del Producto para Puno:</span>
+                            <p id="sim-description" class="text-slate-400 leading-relaxed">
+                                Aprovecha las capacidades técnicas indirectas del sector minero de estaño y oro de Puno (Minsur y San Rafael). La fabricación de componentes magnéticos industriales de potencia se acopla a las necesidades de separación magnética pesada en plantas de beneficio mineralúrgico, permitiendo absorber conocimiento metalmecánico avanzado en la sierra sur.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Box Informativo: Cómo leer el simulador -->
+                <div class="bg-slate-800/30 border border-slate-700/50 rounded-xl p-4 text-xs text-slate-300 space-y-2">
+                    <p class="font-semibold text-white flex items-center gap-1.5 font-mono">
+                        <i class="fa-solid fa-circle-question text-puno-400"></i> ENTENDIENDO LOS INDICADORES MÉTRICOS:
+                    </p>
+                    <ul class="list-disc list-inside space-y-1 text-slate-400 pl-1">
+                        <li><strong>Densidad de Capacidades:</strong> Mide la dotación preexistente de capacidades requeridas en el clúster regional para fabricar el nuevo producto. En Puno los valores son reducidos por el aislamiento geográfico y la rigidez extractiva.</li>
+                        <li><strong>Distancia:</strong> Mide la brecha tecnológica y de conocimiento que separa a la canasta actual de la requerida (Distancia = 1 - Densidad).</li>
+                        <li><strong>IPC (Índice de Complejidad del Producto):</strong> Cuantifica la sofisticación tecnológica y la exclusividad de conocimientos necesarios a nivel global para producir dicho bien.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Matriz de Viabilidad de Diversificación Completa y Buscable -->
+            <div class="space-y-4">
+                <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                    <span class="text-sm font-semibold text-slate-700 flex items-center gap-2">
+                        <i class="fa-solid fa-diagram-project text-puno-700"></i> Matriz Completa de Oportunidades para Puno (112 productos)
+                    </span>
+                    
+                    <div class="flex flex-wrap items-center gap-2 w-full sm:w-auto">
+                        <!-- Filtro de Diversificación -->
+                        <select id="matrix-filter" class="bg-white border border-slate-200 rounded-xl px-3 py-2 text-xs font-semibold text-slate-700 outline-none focus:ring-2 focus:ring-puno-500">
+                            <option value="all">Todas las viabilidades</option>
+                            <option value="Muy alta">Muy alta</option>
+                            <option value="Alta">Alta</option>
+                            <option value="Baja">Baja</option>
+                            <option value="Muy baja">Muy baja</option>
+                        </select>
+                        <!-- Buscador Interno de la Matriz -->
+                        <div class="relative w-full sm:w-64">
+                            <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-400 pointer-events-none">
+                                <i class="fa-solid fa-magnifying-glass text-xs"></i>
+                            </span>
+                            <input type="text" id="matrix-search" placeholder="Buscar producto o arancel..." 
+                                   class="w-full pl-8 pr-4 py-2 bg-white border border-slate-200 rounded-xl text-xs focus:ring-2 focus:ring-puno-500 outline-none transition-all">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="overflow-x-auto border border-slate-200 rounded-2xl shadow-sm custom-scrollbar max-h-[500px]">
+                    <table class="w-full text-left border-collapse text-xs">
+                        <thead class="sticky top-0 bg-slate-50 z-10 border-b border-slate-200">
+                            <tr class="text-slate-600 font-semibold uppercase tracking-wider">
+                                <th class="p-4 w-28">Código HS12</th>
+                                <th class="p-4">Producto Propuesto</th>
+                                <th class="p-4 w-28 text-center">IPC</th>
+                                <th class="p-4 w-28 text-center">Densidad Real</th>
+                                <th class="p-4 w-28 text-center">Distancia Real</th>
+                                <th class="p-4 w-32 text-center">Viabilidad</th>
+                            </tr>
+                        </thead>
+                        <tbody id="matrix-table-body" class="divide-y divide-slate-100 bg-white">
+                            <!-- Inyectado dinámicamente con JS a partir de tu base de datos real de Puno -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Box Informativo: Cómo leer la Matriz de Viabilidad -->
+                <div class="bg-slate-50 border border-slate-200 rounded-2xl p-4 text-xs text-slate-600 space-y-2">
+                    <p class="font-semibold text-slate-800 flex items-center gap-1.5">
+                        <i class="fa-solid fa-circle-question text-puno-700"></i> ¿Cómo leer la Matriz de Oportunidades de Diversificación Real?
+                    </p>
+                    <ul class="list-disc list-inside space-y-1 text-slate-500 pl-1">
+                        <li><strong>Código HS12:</strong> Identifica el arancel según el Sistema Armonizado de designación de mercancías de la subpartida nacional.</li>
+                        <li><strong>IPC:</strong> El Índice de Complejidad del Producto indica qué tan complejo es el conocimiento productivo subyacente que requiere.</li>
+                        <li><strong>Densidad Real y Distancia Real (%):</strong> Los indicadores reales calculados matemáticamente para Puno, que miden la factibilidad y la brecha técnica regional.</li>
+                        <li><strong>Viabilidad:</strong> Clasificación probabilística, determinada por la aglomeración de capacidades ya existentes en Puno.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 px-4 border-t border-slate-800 mt-20">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="space-y-2">
+                <div class="flex items-center gap-2 text-white">
+                    <span class="p-1.5 bg-puno-600 rounded text-xs"><i class="fa-solid fa-chart-pie text-slate-950"></i></span>
+                    <span class="font-bold tracking-wider text-xs">CONSEJO NACIONAL DE COMPETITIVIDAD Y FORMALIZACIÓN - CNCF</span>
+                </div>
+            </div>
+            
+            <div class="flex flex-col items-end gap-2 text-right">
+                <span class="text-[10px] bg-slate-800 px-2.5 py-1 rounded text-slate-500 font-mono">Monitoreo Territorial de Complejidad Económica - Puno</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts y Gráficos -->
+    <script>
+        // Inicialización de variables de gráficos
+        let chartIcerInstance = null;
+        let chartExportsInstance = null;
+        let chartTechInstance = null;
+
+        // Base de Datos Real de 112 productos para Puno basada exactamente en "3. Matriz de oportunidades de diversificacion 2025_DB.xlsx"
+        const punoRealDatabase = [{"HS12": "2106", "PRODUCTO": "Otros preparados alimenticios", "IPC": -0.103, "Densidad": 0.006486670093248507, "Distancia": 0.9935133299067515, "Diversificacion": "Muy alta"}, {"HS12": "4205", "PRODUCTO": "Otras manufacturas de cuero", "IPC": -0.112, "Densidad": 0.006494623096441408, "Distancia": 0.9935053769035586, "Diversificacion": "Muy alta"}, {"HS12": "3917", "PRODUCTO": "Tubos, tuberías, mangueras y sus accesorios, de plástico", "IPC": -0.131, "Densidad": 0.006433443793501597, "Distancia": 0.9935665562064984, "Diversificacion": "Muy alta"}, {"HS12": "8474", "PRODUCTO": "Chancadoras, mezcladoras y cribas de mineral", "IPC": -0.219, "Densidad": 0.0074630281680695, "Distancia": 0.9925369718319305, "Diversificacion": "Muy alta"}, {"HS12": "4821", "PRODUCTO": "Etiquetas de papel o cartón (impresas o no)", "IPC": -0.239, "Densidad": 0.007631889085315602, "Distancia": 0.9923681109146844, "Diversificacion": "Muy alta"}, {"HS12": "3402", "PRODUCTO": "Agentes tensioactivos, preparaciones para lavar y de limpieza", "IPC": -0.26, "Densidad": 0.007217763671331942, "Distancia": 0.992782236328668, "Diversificacion": "Muy alta"}, {"HS12": "6307", "PRODUCTO": "Otros artículos textiles confeccionados", "IPC": -0.279, "Densidad": 0.00691706005873156, "Distancia": 0.9930829399412684, "Diversificacion": "Muy alta"}, {"HS12": "7216", "PRODUCTO": "Ángulos, perfiles y secciones de hierro o acero sin alear", "IPC": -0.279, "Densidad": 0.007203546387501963, "Distancia": 0.992796453612498, "Diversificacion": "Muy alta"}, {"HS12": "6116", "PRODUCTO": "Guantes, manoplas y mitones de punto", "IPC": -0.282, "Densidad": 0.006436023233938228, "Distancia": 0.9935639767660618, "Diversificacion": "Muy alta"}, {"HS12": "8505", "PRODUCTO": "Electroimanes, imanes permanentes y sus acoplamientos o frenos", "IPC": 1.319, "Densidad": 0.003011252743661947, "Distancia": 0.996988747256338, "Diversificacion": "Alta"}, {"HS12": "8446", "PRODUCTO": "Máquinas de tejer (telares)", "IPC": 1.289, "Densidad": 0.00190969818849336, "Distancia": 0.9980903018115066, "Diversificacion": "Alta"}, {"HS12": "8482", "PRODUCTO": "Rodamientos de bolas, de rodillos o de agujas", "IPC": 1.111, "Densidad": 0.003548694173332517, "Distancia": 0.9964513058266675, "Diversificacion": "Alta"}, {"HS12": "8508", "PRODUCTO": "Aspiradoras", "IPC": 1.097, "Densidad": 0.003672539118826798, "Distancia": 0.9963274608811732, "Diversificacion": "Alta"}, {"HS12": "9107", "PRODUCTO": "Interruptores horarios y temporizadores con mecanismo de reloj", "IPC": 1.053, "Densidad": 0.002352913666580223, "Distancia": 0.9976470863334198, "Diversificacion": "Alta"}, {"HS12": "8483", "PRODUCTO": "Ejes de transmisión, cigüeñales, engranajes y embragues", "IPC": 0.975, "Densidad": 0.003735766288935924, "Distancia": 0.9962642337110641, "Diversificacion": "Alta"}, {"HS12": "9032", "PRODUCTO": "Instrumentos y aparatos para la regulación o el control automáticos", "IPC": 0.949, "Densidad": 0.005477696106441009, "Distancia": 0.994522303893559, "Diversificacion": "Alta"}, {"HS12": "8543", "PRODUCTO": "Otras máquinas eléctricas industriales", "IPC": 0.945, "Densidad": 0.00447570635255448, "Distancia": 0.9955242936474455, "Diversificacion": "Alta"}, {"HS12": "8538", "PRODUCTO": "Partes para aparatos de conmutación, tableros y paneles eléctricos", "IPC": 0.883, "Densidad": 0.004437174187237791, "Distancia": 0.9955628258127622, "Diversificacion": "Alta"}, {"HS12": "8481", "PRODUCTO": "Válvulas, grifos y llaves de paso", "IPC": 0.859, "Densidad": 0.003882606528800207, "Distancia": 0.9961173934711998, "Diversificacion": "Alta"}, {"HS12": "8414", "PRODUCTO": "Compresores de aire o gas, bombas de vacío y ventiladores", "IPC": 0.856, "Densidad": 0.004348554120770897, "Distancia": 0.9956514458792292, "Diversificacion": "Alta"}, {"HS12": "9504", "PRODUCTO": "Consolas de videojuegos y juegos de mesa o salón", "IPC": 0.848, "Densidad": 0.00376256979032258, "Distancia": 0.9962374302096774, "Diversificacion": "Alta"}, {"HS12": "8421", "PRODUCTO": "Centrífugas, aparatos para filtrar o purificar líquidos o gases", "IPC": 0.831, "Densidad": 0.004771897957069356, "Distancia": 0.9952281020429307, "Diversificacion": "Alta"}, {"HS12": "9025", "PRODUCTO": "Termómetros, barómetros, hidrómetros e instrumentos flotantes", "IPC": 0.815, "Densidad": 0.004852674308008141, "Distancia": 0.9951473256919918, "Diversificacion": "Alta"}, {"HS12": "8408", "PRODUCTO": "Motores Diésel", "IPC": 0.801, "Densidad": 0.004973826388923087, "Distancia": 0.9950261736110769, "Diversificacion": "Alta"}, {"HS12": "8415", "PRODUCTO": "Equipos de aire acondicionado", "IPC": 0.784, "Densidad": 0.003459238019936681, "Distancia": 0.9965407619800634, "Diversificacion": "Alta"}, {"HS12": "8537", "PRODUCTO": "Tableros, paneles y consolas para el control o distribución eléctrica", "IPC": 0.756, "Densidad": 0.006248671916032598, "Distancia": 0.9937513280839674, "Diversificacion": "Alta"}, {"HS12": "9026", "PRODUCTO": "Medidores de caudal, presión y nivel", "IPC": 0.74, "Densidad": 0.003886865688226278, "Distancia": 0.9961131343117737, "Diversificacion": "Alta"}, {"HS12": "8424", "PRODUCTO": "Aparatos mecánicos para proyectar o pulverizar líquidos o polvos", "IPC": 0.716, "Densidad": 0.003304172308025008, "Distancia": 0.996695827691975, "Diversificacion": "Alta"}, {"HS12": "8412", "PRODUCTO": "Otros motores y máquinas de fuerza (reacción, hidráulicos)", "IPC": 0.694, "Densidad": 0.005014929462378507, "Distancia": 0.9949850705376215, "Diversificacion": "Alta"}, {"HS12": "8536", "PRODUCTO": "Aparatos de conmutación, protección o conexión eléctrica (≤ 1000 V)", "IPC": 0.689, "Densidad": 0.005242572553538064, "Distancia": 0.9947574274464619, "Diversificacion": "Alta"}, {"HS12": "4016", "PRODUCTO": "Otras manufacturas de caucho vulcanizado", "IPC": 0.674, "Densidad": 0.004716991842700104, "Distancia": 0.9952830081572999, "Diversificacion": "Alta"}, {"HS12": "9608", "PRODUCTO": "Bolígrafos, plumones y estilográficas", "IPC": 0.656, "Densidad": 0.00380126452964693, "Distancia": 0.9961987354703531, "Diversificacion": "Alta"}, {"HS12": "8504", "PRODUCTO": "Transformadores y rectificadores", "IPC": 0.645, "Densidad": 0.00418641471861729, "Distancia": 0.9958135852813828, "Diversificacion": "Alta"}, {"HS12": "8528", "PRODUCTO": "Monitores, proyectores y televisores", "IPC": 0.634, "Densidad": 0.004476453628161008, "Distancia": 0.995523546371839, "Diversificacion": "Alta"}, {"HS12": "8515", "PRODUCTO": "Equipos de soldadura eléctrica", "IPC": 0.621, "Densidad": 0.003009606718740275, "Distancia": 0.9969903932812597, "Diversificacion": "Alta"}, {"HS12": "9405", "PRODUCTO": "Lámparas, aparatos de iluminación y anuncios luminosos", "IPC": 0.618, "Densidad": 0.002589486882830528, "Distancia": 0.9974105131171694, "Diversificacion": "Alta"}, {"HS12": "8484", "PRODUCTO": "Empaquetaduras y juntas mecánicas (sets)", "IPC": 0.595, "Densidad": 0.002792599173303867, "Distancia": 0.9972074008266961, "Diversificacion": "Alta"}, {"HS12": "8423", "PRODUCTO": "Básculas y maquinaria de pesaje industrial", "IPC": 0.544, "Densidad": 0.004678917947624919, "Distancia": 0.9953210820523751, "Diversificacion": "Alta"}, {"HS12": "8445", "PRODUCTO": "Maquinaria textil para hilar, torcer, bobinar o devanar", "IPC": 0.517, "Densidad": 0.00337181166450748, "Distancia": 0.9966281883354925, "Diversificacion": "Alta"}, {"HS12": "7013", "PRODUCTO": "Cristalería para el hogar y oficina", "IPC": 0.485, "Densidad": 0.003671220162492883, "Distancia": 0.9963287798375071, "Diversificacion": "Alta"}, {"HS12": "8310", "PRODUCTO": "Placas de señalización y números de metal", "IPC": 0.474, "Densidad": 0.00562736263339531, "Distancia": 0.9943726373666046, "Diversificacion": "Alta"}, {"HS12": "7326", "PRODUCTO": "Otras manufacturas de hierro o acero", "IPC": 0.402, "Densidad": 0.004975338998037132, "Distancia": 0.9950246610019629, "Diversificacion": "Alta"}, {"HS12": "9615", "PRODUCTO": "Peines, horquillas y rulos para el cabello", "IPC": 0.386, "Densidad": 0.001328529095028642, "Distancia": 0.9986714709049713, "Diversificacion": "Alta"}, {"HS12": "9609", "PRODUCTO": "Lápices, minas, tizas, pasteles y carboncillos para dibujo", "IPC": 0.368, "Densidad": 0.003450444553780738, "Distancia": 0.9965495554462193, "Diversificacion": "Alta"}, {"HS12": "8716", "PRODUCTO": "Remolques, semirremolques y demás vehículos no autopropulsados", "IPC": 0.353, "Densidad": 0.005282381112139709, "Distancia": 0.9947176188878603, "Diversificacion": "Alta"}, {"HS12": "4822", "PRODUCTO": "Carretes y soportes de papel", "IPC": 0.302, "Densidad": 0.005701776862633432, "Distancia": 0.9942982231373666, "Diversificacion": "Alta"}, {"HS12": "9503", "PRODUCTO": "Juguetes, muñecas, maquetas a escala y rompecabezas de todo tipo", "IPC": 0.264, "Densidad": 0.002892810975268798, "Distancia": 0.9971071890247312, "Diversificacion": "Alta"}, {"HS12": "7117", "PRODUCTO": "Bisutería", "IPC": 0.195, "Densidad": 0.004447858846087893, "Distancia": 0.9955521411539121, "Diversificacion": "Alta"}, {"HS12": "7308", "PRODUCTO": "Estructuras y sus partes de hierro o acero (puentes, torres)", "IPC": 0.147, "Densidad": 0.005891496465082649, "Distancia": 0.9941085035349173, "Diversificacion": "Alta"}, {"HS12": "4303", "PRODUCTO": "Prendas, accesorios de vestir y artículos de peletería (piel)", "IPC": 0.112, "Densidad": 0.004888607147120092, "Distancia": 0.9951113928528799, "Diversificacion": "Alta"}, {"HS12": "5109", "PRODUCTO": "Hilo de lana o pelo fino acondicionado para venta al por menor", "IPC": 0.105, "Densidad": 0.006301043642252194, "Distancia": 0.9936989563577479, "Diversificacion": "Alta"}, {"HS12": "6913", "PRODUCTO": "Adornos y estatuillas de cerámica", "IPC": 0.026, "Densidad": 0.003976422506189789, "Distancia": 0.9960235774938102, "Diversificacion": "Alta"}, {"HS12": "8502", "PRODUCTO": "Grupos electrógenos y convertidores rotativos eléctricos", "IPC": -0.007, "Densidad": 0.00470290137074884, "Distancia": 0.9952970986292512, "Diversificacion": "Alta"}, {"HS12": "6404", "PRODUCTO": "Calzado con suela de caucho o cuero y parte superior textil", "IPC": -0.137, "Densidad": 0.00531207877836668, "Distancia": 0.9946879212216333, "Diversificacion": "Alta"}, {"HS12": "4202", "PRODUCTO": "Baúles, maletas, maletines, portafolios y estuches similares", "IPC": -0.143, "Densidad": 0.004487370755876023, "Distancia": 0.995512629244124, "Diversificacion": "Alta"}, {"HS12": "6213", "PRODUCTO": "Pañuelos de bolsillo (tejido plano)", "IPC": -0.274, "Densidad": 0.005383790106993985, "Distancia": 0.994616209893006, "Diversificacion": "Alta"}, {"HS12": "2006", "PRODUCTO": "Verduras, frutas y hortalizas confitadas o glaseadas con azúcar", "IPC": -0.333, "Densidad": 0.006491555063690233, "Distancia": 0.9935084449363097, "Diversificacion": "Baja"}, {"HS12": "3923", "PRODUCTO": "Envases y tapas de plástico", "IPC": -0.411, "Densidad": 0.007044339335807155, "Distancia": 0.9929556606641928, "Diversificacion": "Baja"}, {"HS12": "1904", "PRODUCTO": "Cereales para el desayuno y productos de cereales inflados", "IPC": -0.459, "Densidad": 0.007403442844938478, "Distancia": 0.9925965571550616, "Diversificacion": "Baja"}, {"HS12": "4820", "PRODUCTO": "Agendas, cuadernos y álbumes de papel", "IPC": -0.46, "Densidad": 0.007314026137622638, "Distancia": 0.9926859738623773, "Diversificacion": "Baja"}, {"HS12": "6304", "PRODUCTO": "Otros artículos textiles de mobiliario y decoración", "IPC": -0.471, "Densidad": 0.006485844623329782, "Distancia": 0.9935141553766702, "Diversificacion": "Baja"}, {"HS12": "6217", "PRODUCTO": "Otros accesorios de vestir y partes de prendas (tejido plano)", "IPC": -0.477, "Densidad": 0.006994992680169391, "Distancia": 0.9930050073198307, "Diversificacion": "Baja"}, {"HS12": "0701", "PRODUCTO": "Papas (patatas) frescas o refrigeradas", "IPC": -0.484, "Densidad": 0.009228457232839141, "Distancia": 0.9907715427671608, "Diversificacion": "Baja"}, {"HS12": "7306", "PRODUCTO": "Otros tubos y perfiles huecos de acero", "IPC": -0.505, "Densidad": 0.007928589728594157, "Distancia": 0.9920714102714059, "Diversificacion": "Baja"}, {"HS12": "6210", "PRODUCTO": "Prendas de vestir de fieltro o telas recubiertas (tejido plano)", "IPC": -0.614, "Densidad": 0.007165335214758178, "Distancia": 0.9928346647852418, "Diversificacion": "Baja"}, {"HS12": "7106", "PRODUCTO": "Plata en bruto, semielaborada o polvo", "IPC": -0.679, "Densidad": 0.01225471775941668, "Distancia": 0.9877452822405833, "Diversificacion": "Baja"}, {"HS12": "2005", "PRODUCTO": "Preparaciones de hortalizas (verduras) en conserva (no congeladas)", "IPC": -0.741, "Densidad": 0.009002654026908337, "Distancia": 0.9909973459730916, "Diversificacion": "Baja"}, {"HS12": "0710", "PRODUCTO": "Verduras congeladas", "IPC": -0.755, "Densidad": 0.007560112841962063, "Distancia": 0.992439887158038, "Diversificacion": "Baja"}, {"HS12": "6204", "PRODUCTO": "Trajes, vestidos, faldas y pantalones (tejido plano, mujer/niña)", "IPC": -0.763, "Densidad": 0.006318061154160343, "Distancia": 0.9936819388458397, "Diversificacion": "Baja"}, {"HS12": "6301", "PRODUCTO": "Mantas y alfombras de viaje", "IPC": -0.77, "Densidad": 0.006709593139310659, "Distancia": 0.9932904068606894, "Diversificacion": "Baja"}, {"HS12": "1302", "PRODUCTO": "Savias, pectinas y espesantes vegetales", "IPC": -0.775, "Densidad": 0.006879647726715836, "Distancia": 0.9931203522732842, "Diversificacion": "Baja"}, {"HS12": "6101", "PRODUCTO": "Abrigos y cortavientos de punto (hombre)", "IPC": -0.783, "Densidad": 0.00839126342728579, "Distancia": 0.9916087365727142, "Diversificacion": "Baja"}, {"HS12": "0712", "PRODUCTO": "Hortalizas (verduras) secas (enteras, cortadas o en polvo)", "IPC": -0.789, "Densidad": 0.007598736679134227, "Distancia": 0.9924012633208658, "Diversificacion": "Baja"}, {"HS12": "6102", "PRODUCTO": "Abrigos y cortavientos de punto (mujer)", "IPC": -0.848, "Densidad": 0.007652453603882579, "Distancia": 0.9923475463961174, "Diversificacion": "Baja"}, {"HS12": "6104", "PRODUCTO": "Ropa de vestir y vestidos de punto (mujer)", "IPC": -0.856, "Densidad": 0.00738843422211611, "Distancia": 0.9926115657778839, "Diversificacion": "Baja"}, {"HS12": "5105", "PRODUCTO": "Lana y pelo animal (fino o grueso), cardado o peinado", "IPC": -0.86, "Densidad": 0.009357698294036012, "Distancia": 0.990642301705964, "Diversificacion": "Baja"}, {"HS12": "1104", "PRODUCTO": "Cereales trabajados (copos/laminados)", "IPC": -0.943, "Densidad": 0.01049745402167566, "Distancia": 0.9895025459783243, "Diversificacion": "Baja"}, {"HS12": "6109", "PRODUCTO": "Camisetas y bividís de punto", "IPC": -0.96, "Densidad": 0.00848350478755017, "Distancia": 0.9915164952124498, "Diversificacion": "Baja"}, {"HS12": "6111", "PRODUCTO": "Prendas y accesorios de vestir para bebés, de punto", "IPC": -0.965, "Densidad": 0.007656870591342845, "Distancia": 0.9923431294086572, "Diversificacion": "Baja"}, {"HS12": "6110", "PRODUCTO": "Suéteres, chompas y chalecos de punto", "IPC": -0.969, "Densidad": 0.00725116346138681, "Distancia": 0.9927488365386132, "Diversificacion": "Baja"}, {"HS12": "1103", "PRODUCTO": "Granos, harinas y pellets de cereales (por molienda)", "IPC": -0.97, "Densidad": 0.00987624444502575, "Distancia": 0.9901237555549742, "Diversificacion": "Baja"}, {"HS12": "0806", "PRODUCTO": "Uvas (frescas o secas, incluidas las pasas)", "IPC": -1.028, "Densidad": 0.008617060734033824, "Distancia": 0.9913829392659662, "Diversificacion": "Baja"}, {"HS12": "0813", "PRODUCTO": "Otras frutas deshidratadas y mezclas", "IPC": -1.03, "Densidad": 0.01094242621085417, "Distancia": 0.9890575737891458, "Diversificacion": "Baja"}, {"HS12": "0304", "PRODUCTO": "Filetes y demás carne de pescado (fresca o congelada)", "IPC": -1.072, "Densidad": 0.01305683607926951, "Distancia": 0.9869431639207304, "Diversificacion": "Baja"}, {"HS12": "0106", "PRODUCTO": "Otros animales vivos", "IPC": -1.229, "Densidad": 0.009852742186377878, "Distancia": 0.9901472578136221, "Diversificacion": "Baja"}, {"HS12": "1005", "PRODUCTO": "Maíz", "IPC": -1.242, "Densidad": 0.009617773523567416, "Distancia": 0.9903822264764326, "Diversificacion": "Baja"}, {"HS12": "1102", "PRODUCTO": "Otras harinas de cereales", "IPC": -1.345, "Densidad": 0.01348418038424909, "Distancia": 0.9865158196157509, "Diversificacion": "Baja"}, {"HS12": "6305", "PRODUCTO": "Sacos y bolsas para envasar de materia textil", "IPC": -1.6, "Densidad": 0.01074455082987719, "Distancia": 0.9892554491701228, "Diversificacion": "Baja"}, {"HS12": "1208", "PRODUCTO": "Harinas y sémolas de semillas o frutos oleaginosos (excepto mostaza)", "IPC": -1.602, "Densidad": 0.008630449835779635, "Distancia": 0.9913695501642203, "Diversificacion": "Baja"}, {"HS12": "0904", "PRODUCTO": "Pimienta y ajíes secos/molidos (Capsicum)", "IPC": -1.706, "Densidad": 0.01227018248618623, "Distancia": 0.9877298175138137, "Diversificacion": "Baja"}, {"HS12": "0910", "PRODUCTO": "Jengibre, azafrán, cúrcuma, tomillo, laurel y demás especias", "IPC": -1.726, "Densidad": 0.01077027195414805, "Distancia": 0.989229728045852, "Diversificacion": "Baja"}, {"HS12": "1212", "PRODUCTO": "Algas, caña de azúcar y algarroba", "IPC": -1.774, "Densidad": 0.01390275948961131, "Distancia": 0.9860972405103887, "Diversificacion": "Baja"}, {"HS12": "1211", "PRODUCTO": "Plantas y partes de plantas para perfumería, farmacia o insecticidas", "IPC": -1.97, "Densidad": 0.01228589260242886, "Distancia": 0.9877141073975712, "Diversificacion": "Baja"}, {"HS12": "0703", "PRODUCTO": "Cebollas, ajos y puerros frescos", "IPC": -2.047, "Densidad": 0.01172451477775776, "Distancia": 0.9882754852222423, "Diversificacion": "Baja"}, {"HS12": "0901", "PRODUCTO": "Café (grano/molido/descafeinado)", "IPC": -2.2, "Densidad": 0.01342850954319128, "Distancia": 0.9865714904568087, "Diversificacion": "Baja"}, {"HS12": "0713", "PRODUCTO": "Legumbres secas desvainadas (menestras, frijoles, arvejas)", "IPC": -2.203, "Densidad": 0.01509664978361711, "Distancia": 0.9849033502163829, "Diversificacion": "Baja"}, {"HS12": "2616", "PRODUCTO": "Minerales de metales preciosos", "IPC": -2.261, "Densidad": 0.01515528892560967, "Distancia": 0.9848447110743903, "Diversificacion": "Baja"}, {"HS12": "1201", "PRODUCTO": "Habas de soja (soya, incluso rotas)", "IPC": -2.537, "Densidad": 0.01492136818163532, "Distancia": 0.9850786318183646, "Diversificacion": "Baja"}, {"HS12": "0714", "PRODUCTO": "Camote, yuca y tubérculos harinosos", "IPC": -2.595, "Densidad": 0.01587366965053148, "Distancia": 0.9841263303494685, "Diversificacion": "Baja"}, {"HS12": "1207", "PRODUCTO": "Otras semillas oleaginosas", "IPC": -2.849, "Densidad": 0.01686894441217745, "Distancia": 0.9831310555878225, "Diversificacion": "Baja"}, {"HS12": "1202", "PRODUCTO": "Cacahuetes (maníes) sin tostar ni cocer (en grano)", "IPC": -3.096, "Densidad": 0.01464189339843231, "Distancia": 0.9853581066015676, "Diversificacion": "Baja"}, {"HS12": "2617", "PRODUCTO": "Otros minerales metalíferos", "IPC": -3.167, "Densidad": 0.01128020279767708, "Distancia": 0.988719797202323, "Diversificacion": "Baja"}, {"HS12": "1801", "PRODUCTO": "Cacao en grano", "IPC": -4.829, "Densidad": 0.01821860742600697, "Distancia": 0.981781392573993, "Diversificacion": "Baja"}, {"HS12": "6216", "PRODUCTO": "Guantes, manoplas y mitones de tejido plano", "IPC": -0.314, "Densidad": 0.005139660682222377, "Distancia": 0.9948603393177776, "Diversificacion": "Muy baja"}, {"HS12": "6115", "PRODUCTO": "Calcetines, medias y pantimedias de punto", "IPC": -0.413, "Densidad": 0.005721075384934533, "Distancia": 0.9942789246150655, "Diversificacion": "Muy baja"}, {"HS12": "6202", "PRODUCTO": "Abrigos y chaquetas de tejido plano (mujer)", "IPC": -0.417, "Densidad": 0.005101013745907291, "Distancia": 0.9948989862540927, "Diversificacion": "Muy baja"}, {"HS12": "6505", "PRODUCTO": "Sombreros y prendas para la cabeza (de punto, fieltro o redecillas)", "IPC": -0.541, "Densidad": 0.005043403779577401, "Distancia": 0.9949565962204227, "Diversificacion": "Muy baja"}, {"HS12": "6214", "PRODUCTO": "Bufandas, chales y velos", "IPC": -0.542, "Densidad": 0.005624965521271163, "Distancia": 0.9943750344787289, "Diversificacion": "Muy baja"}, {"HS12": "6201", "PRODUCTO": "Abrigos y chaquetas de tejido plano (hombre)", "IPC": -0.59, "Densidad": 0.005152348193232521, "Distancia": 0.9948476518067675, "Diversificacion": "Muy baja"}, {"HS12": "6302", "PRODUCTO": "Ropa de cama, mesa, tocador o cocina de materia textil", "IPC": -0.599, "Densidad": 0.005552945476338553, "Distancia": 0.9944470545236614, "Diversificacion": "Muy baja"}, {"HS12": "6209", "PRODUCTO": "Prendas y accesorios de vestir para bebés (tejido plano)", "IPC": -0.682, "Densidad": 0.005998299607997302, "Distancia": 0.9940017003920028, "Diversificacion": "Muy baja"}, {"HS12": "6117", "PRODUCTO": "Accesorios y partes de ropa de punto", "IPC": -0.706, "Densidad": 0.005543097767216337, "Distancia": 0.9944569022327837, "Diversificacion": "Muy baja"}];
+
+        // Dataset ICER histórico 2015-2025 (Top 5 nacional de 2025 + Puno)
+        const icerData = {
+            years: ['2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025'],
+            regions: {
+                limaMetropolitana: [53.653, 52.751, 53.813, 53.023, 53.646, 52.861, 54.394, 54.231, 54.349, 54.688, 54.538],
+                callao: [52.842, 51.736, 51.278, 50.448, 52.026, 52.092, 51.254, 53.074, 51.847, 52.188, 53.65],
+                limaRegion: [38.146, 38.469, 41.408, 42.404, 43.85, 41.64, 42.373, 43.857, 44.421, 45.138, 43.36],
+                arequipa: [45.285, 46.672, 44.505, 44.855, 45.87, 45.517, 43.913, 44.356, 44.516, 43.475, 41.367],
+                laLibertad: [40.751, 39.624, 39.222, 38.402, 40.465, 41.255, 38.905, 39.909, 38.74, 40.997, 40.704],
+                puno: [31.608, 31.768, 32.014, 32.595, 37.91, 36.173, 34.797, 35.67, 34.022, 34.402, 34.112]
+            }
+        };
+
+        // Serie de Exportaciones Totales de Puno (Millones US$)
+        const exportsData = {
+            years: ['2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025'],
+            values: [1317.12, 1876.59, 1987.80, 1735.19, 1435.91, 1874.13, 3245.04, 2707.19, 2795.55, 5528.14, 7588.04]
+        };
+
+        // Dataset del Simulador de Conectividad de Red para Puno
+        const simulatorData = {
+            magnets: {
+                density: '0.3011%',
+                distance: '99.6989%',
+                pci: '+1.319',
+                viability: 'Alta',
+                description: 'Aprovecha las capacidades técnicas indirectas del sector minero de estaño y oro de Puno (Minsur y San Rafael). La fabricación de componentes magnéticos industriales de potencia se acopla a las necesidades de separación magnética pesada en plantas de beneficio mineralúrgico, permitiendo absorber conocimiento metalmecánico avanzado en la sierra sur.'
+            },
+            looms: {
+                density: '0.1910%',
+                distance: '99.8090%',
+                pci: '+1.289',
+                viability: 'Alta',
+                description: 'Se conecta de forma directa con el arraigado e histórico clúster artesanal y semi-industrial de camélidos (lana de alpaca y oveja) en Puno. Escalar hacia el ensamble y calibración de máquinas de tejer mecánicas y telares semi-automatizados permite dotar de bienes de equipo complejos a las asociaciones de tejedores de Juliaca y desanclar la exportación de fibra sucia sin procesar.'
+            },
+            bearings: {
+                density: '0.3549%',
+                distance: '99.6451%',
+                pci: '+1.111',
+                viability: 'Alta',
+                description: 'Responde de manera crítica al soporte mecánico del masivo parque automotor de transporte logístico y fajas transportadoras de trituración mineral de la región. Desarrollar rodamientos de rodillos y agujas asimila la capacidad instalada en tornería de precisión y metalmecánica básica de Juliaca, integrándola a cadenas de mayor valor tecnológico global.'
+            }
+        };
+
+        // Inicialización de Gráficos al cargar la ventana
+        window.onload = function() {
+            initCharts();
+            setupInteractiveEvents();
+            renderMatrixTable(punoRealDatabase);
+        };
+
+        function initCharts() {
+            // 1. Gráfico de Evolución del ICER (Líneas)
+            const ctxIcer = document.getElementById('chart-icer').getContext('2d');
+            chartIcerInstance = new Chart(ctxIcer, {
+                type: 'line',
+                data: {
+                    labels: icerData.years,
+                    datasets: [
+                        {
+                            label: 'Puno',
+                            data: icerData.regions.puno,
+                            borderColor: '#ea580c',
+                            backgroundColor: 'rgba(234,88,12,0.12)',
+                            borderWidth: 4,
+                            tension: 0.35,
+                            pointRadius: 4,
+                            pointBackgroundColor: '#ea580c',
+                            fill: true
+                        },
+                        {
+                            label: 'Lima Metropolitana',
+                            data: icerData.regions.limaMetropolitana,
+                            borderColor: '#64748b',
+                            backgroundColor: 'transparent',
+                            borderWidth: 2,
+                            tension: 0.35,
+                            pointRadius: 1,
+                            borderDash: [4, 3]
+                        },
+                        {
+                            label: 'Callao',
+                            data: icerData.regions.callao,
+                            borderColor: '#0ea5e9',
+                            backgroundColor: 'transparent',
+                            borderWidth: 2,
+                            tension: 0.35,
+                            pointRadius: 1,
+                            borderDash: [4, 3]
+                        },
+                        {
+                            label: 'Lima Región',
+                            data: icerData.regions.limaRegion,
+                            borderColor: '#8b5cf6',
+                            backgroundColor: 'transparent',
+                            borderWidth: 2,
+                            tension: 0.35,
+                            pointRadius: 1,
+                            borderDash: [4, 3]
+                        },
+                        {
+                            label: 'Arequipa',
+                            data: icerData.regions.arequipa,
+                            borderColor: '#ca8a04',
+                            backgroundColor: 'transparent',
+                            borderWidth: 2,
+                            tension: 0.35,
+                            pointRadius: 1,
+                            borderDash: [4, 3]
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    interaction: { mode: 'index', intersect: false },
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                boxWidth: 10,
+                                font: { size: 10 },
+                                usePointStyle: true
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return ` ${context.dataset.label}: ${context.raw.toFixed(3)}`;
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            grid: { color: '#f1f5f9' },
+                            ticks: { font: { size: 10 } }
+                        },
+                        x: {
+                            grid: { display: false },
+                            ticks: { font: { size: 10 } }
+                        }
+                    }
+                }
+            });
+
+            // 2. Gráfico de Barras - Evolución de Exportaciones (Puno)
+            const ctxExports = document.getElementById('chart-exports').getContext('2d');
+            chartExportsInstance = new Chart(ctxExports, {
+                type: 'bar',
+                data: {
+                    labels: exportsData.years,
+                    datasets: [{
+                        label: 'Exportaciones FOB (Millones US$)',
+                        data: exportsData.values,
+                        backgroundColor: '#7c2d12',
+                        borderRadius: 6,
+                        maxBarThickness: 34
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return ` US$ ${context.raw.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})}M`;
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            grid: { color: '#f1f5f9' },
+                            ticks: { font: { size: 10 } }
+                        },
+                        x: {
+                            grid: { display: false },
+                            ticks: { font: { size: 10 } }
+                        }
+                    }
+                }
+            });
+
+            // 3. Gráfico de Rosca - Intensidad Tecnológica (Puno)
+            const ctxTech = document.getElementById('chart-tech').getContext('2d');
+            chartTechInstance = new Chart(ctxTech, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Basadas en Recursos', 'Primarios', 'Baja Tecnología', 'Mediana Tecnología'],
+                    datasets: [{
+                        data: [83.86, 16.11, 0.02, 0.02],
+                        backgroundColor: [
+                            '#7c2d12', // Marrón cobre oro semielaborado
+                            '#ea580c', // Naranja estaño crudo
+                            '#64748b', // Gris tech baja
+                            '#ca8a04'  // Bronce tech media
+                        ],
+                        borderWidth: 2,
+                        borderColor: '#ffffff'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return ` ${context.label}: ${context.raw.toFixed(2)}%`;
+                                }
+                            }
+                        }
+                    },
+                    cutout: '70%'
+                }
+            });
+        }
+
+        // Renderizado Dinámico de la Matriz de Viabilidad Real de Puno
+        function renderMatrixTable(dataset) {
+            const tbody = document.getElementById("matrix-table-body");
+            tbody.innerHTML = "";
+
+            dataset.forEach(row => {
+                const densPct = (row.Densidad * 100).toFixed(4) + "%";
+                const distPct = (row.Distancia * 100).toFixed(4) + "%";
+                
+                let badgeClass = "";
+                const checkDiv = String(row.Diversificacion).toLowerCase().trim();
+                if (checkDiv === "muy alta") {
+                    badgeClass = "bg-emerald-50 text-emerald-700 border-emerald-200 font-bold";
+                } else if (checkDiv === "alta") {
+                    badgeClass = "bg-blue-50 text-blue-700 border-blue-200 font-bold";
+                } else if (checkDiv === "baja") {
+                    badgeClass = "bg-amber-50 text-amber-700 border-amber-200 font-medium";
+                } else {
+                    badgeClass = "bg-rose-50 text-rose-700 border-rose-200 font-light";
+                }
+
+                const tr = document.createElement("tr");
+                tr.className = "hover:bg-slate-50/70 transition-colors";
+                tr.innerHTML = `
+                    <td class="p-4 font-mono text-slate-500 font-semibold">${row.HS12}</td>
+                    <td class="p-4 font-bold text-slate-900">${row.PRODUCTO}</td>
+                    <td class="p-4 text-center font-semibold text-slate-600">${row.IPC.toFixed(3)}</td>
+                    <td class="p-4 text-center font-bold text-emerald-800">${densPct}</td>
+                    <td class="p-4 text-center text-slate-500 font-medium">${distPct}</td>
+                    <td class="p-4 text-center">
+                        <span class="px-2.5 py-1 border text-[10px] rounded-full ${badgeClass}">
+                            ${row.Diversificacion}
+                        </span>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        // Configuración de eventos interactivos (búsqueda y selector del simulador)
+        function setupInteractiveEvents() {
+            // Buscador en Tiempo Real de la tabla del Top 10 de exportaciones
+            const searchInput = document.getElementById('table-search');
+            if (searchInput) {
+                searchInput.addEventListener('input', function(e) {
+                    const term = e.target.value.toLowerCase().trim();
+                    const rows = document.querySelectorAll('#export-table-body tr');
+                    
+                    rows.forEach(row => {
+                        const code = row.cells[1].textContent.toLowerCase();
+                        const product = row.cells[2].textContent.toLowerCase();
+                        const tech = row.cells[3].textContent.toLowerCase();
+                        
+                        if (code.includes(term) || product.includes(term) || tech.includes(term)) {
+                            row.style.display = '';
+                        } else {
+                            row.style.display = 'none';
+                        }
+                    });
+                });
+            }
+
+            // Filtrado e interactividad de la Matriz de Oportunidades de Puno (Sección 3)
+            const matrixSearch = document.getElementById("matrix-search");
+            const matrixFilter = document.getElementById("matrix-filter");
+
+            function handleMatrixFilter() {
+                const searchVal = matrixSearch.value.toLowerCase().trim();
+                const filterVal = matrixFilter.value;
+
+                const filtered = punoRealDatabase.filter(row => {
+                    const matchesSearch = row.PRODUCTO.toLowerCase().includes(searchVal) || row.HS12.toLowerCase().includes(searchVal);
+                    const matchesFilter = filterVal === "all" || row.Diversificacion.toLowerCase() === filterVal.toLowerCase();
+                    return matchesSearch && matchesFilter;
+                });
+
+                renderMatrixTable(filtered);
+            }
+
+            matrixSearch.addEventListener("input", handleMatrixFilter);
+            matrixFilter.addEventListener("change", handleMatrixFilter);
+
+            // Simulador de Conectividad de Red Interactivo
+            const selector = document.getElementById('industry-selector');
+            if (selector) {
+                selector.addEventListener('change', function(e) {
+                    const val = e.target.value;
+                    const data = simulatorData[val];
+                    
+                    if (data) {
+                        const densityEl = document.getElementById('sim-density');
+                        const distanceEl = document.getElementById('sim-distance');
+                        const pciEl = document.getElementById('sim-pci');
+                        const viabilityEl = document.getElementById('sim-viability');
+                        
+                        // Actualizar UI
+                        densityEl.textContent = data.density;
+                        distanceEl.textContent = data.distance;
+                        pciEl.textContent = data.pci;
+                        viabilityEl.textContent = data.viability;
+                        
+                        document.getElementById('sim-description').textContent = data.description;
+                    }
+                });
+            }
+        }
+    </script>
+</body>
+</html>

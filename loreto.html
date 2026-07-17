@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REPORTE REGIONAL DE COMPLEJIDAD EXPORTADORA - LORETO</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js para visualización de datos de alto rendimiento -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- FontAwesome para iconografía avanzada -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Inter para una tipografía moderna y legible -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght=300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        loreto: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e', // Verde selva vibrante
+                            600: '#16a34a', // Verde institucional
+                            700: '#15803d', // Bosque amazónico profundo
+                            850: '#14532d', // Verde follaje profundo
+                            950: '#052e16'  // Tono nocturno de la Amazonía
+                        },
+                        subselva: {
+                            50: '#fefce8',
+                            100: '#fef9c3',
+                            200: '#fef08a',
+                            300: '#fde047',
+                            400: '#facc15',
+                            500: '#eab308', // Amarillo cálido de biodiversidad
+                            600: '#ca8a04', // Oro nativo
+                            700: '#a16207', // Tono arcilla/tierra
+                            800: '#854d0e',
+                            950: '#422006'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f5f9;
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans min-h-screen flex flex-col antialiased">
+
+    <!-- Navbar Institucional -->
+    <header class="sticky top-0 z-50 bg-white border-b border-slate-200/80 shadow-sm backdrop-blur-md bg-white/95">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <span class="p-3 bg-loreto-850 text-white rounded-xl shadow-md flex items-center justify-center">
+                    <i class="fa-solid fa-chart-line text-xl text-subselva-300"></i>
+                </span>
+                <div>
+                    <h1 class="text-xs sm:text-sm font-semibold text-slate-500 tracking-wider">MONITOREO TERRITORIAL</h1>
+                    <h2 class="text-base sm:text-lg font-extrabold uppercase tracking-tight text-slate-900 leading-tight">
+                        REPORTE REGIONAL DE COMPLEJIDAD EXPORTADORA
+                    </h2>
+                </div>
+            </div>
+            
+            <div class="flex items-center">
+                <span class="text-xs font-semibold text-loreto-800 bg-loreto-50 px-4 py-2.5 rounded-full border border-loreto-200/60 flex items-center gap-2 shadow-sm">
+                    <span class="w-2.5 h-2.5 rounded-full bg-loreto-500 animate-pulse"></span>
+                    Puesto Actual: 20º
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero / Presentación de la Región -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 w-full">
+        <div class="relative overflow-hidden bg-gradient-to-r from-slate-950 via-loreto-950 to-subselva-950 text-white p-8 md:p-12 rounded-[2rem] shadow-xl border border-loreto-950/40">
+            <!-- Capa de brillo radial decorativo -->
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(22,163,74,0.14),transparent_60%)] pointer-events-none"></div>
+            
+            <div class="relative z-10 space-y-6">
+                <!-- Nombre de la región como título único de máximo impacto -->
+                <div class="flex flex-col gap-1">
+                    <span class="text-xs font-bold uppercase tracking-widest text-subselva-400">Plataforma Económica del Oriente Peruano</span>
+                    <h2 class="text-5xl sm:text-7xl font-black tracking-tight text-loreto-300">
+                        Loreto
+                    </h2>
+                </div>
+                
+                <!-- Descripción limpia del reporte -->
+                <p class="text-base sm:text-lg text-slate-300 font-light max-w-4xl leading-relaxed">
+                    Diagnóstico estructural del núcleo exportador amazónico del país. Evaluación del perfil hidrocarburífero y de bionegocios nativos de la región, y modelado matemático del Espacio del Producto para promover el escalamiento industrial sostenible y la diversificación sofisticada en Loreto.
+                </p>
+                
+                <!-- Metadatos del Período de Análisis -->
+                <div class="flex flex-wrap items-center gap-3 pt-2 text-xs font-semibold text-slate-300">
+                    <span class="flex items-center gap-2 bg-white/5 border border-white/10 px-3.5 py-1.5 rounded-lg">
+                        <i class="fa-regular fa-calendar text-subselva-400"></i> 
+                        <span>Período de Análisis: <strong class="text-white">2015 - 2025</strong></span>
+                    </span>
+                    <span class="flex items-center gap-2 bg-white/5 border border-white/10 px-3.5 py-1.5 rounded-lg">
+                        <i class="fa-solid fa-droplet text-loreto-400"></i>
+                        <span>Eje Central: <strong class="text-white">Matriz de Hidrocarburos y Aprovechamiento de Biomasa</strong></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contenedor Principal de Reportes -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow space-y-10 w-full">
+        
+        <!-- Resumen Ejecutivo & KPIs Principales -->
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Card KPI 1: Exportaciones Totales -->
+            <div class="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm relative overflow-hidden group hover:border-subselva-500 transition-all duration-300">
+                <div class="absolute top-0 right-0 p-3 opacity-10 text-subselva-600 text-7xl group-hover:opacity-20 transition-all duration-300">
+                    <i class="fa-solid fa-arrow-trend-up"></i>
+                </div>
+                <span class="text-xs font-bold uppercase tracking-wider text-slate-400 block mb-1">Exportaciones Totales (2025)</span>
+                <div class="flex items-baseline gap-2 mb-2">
+                    <span class="text-3xl font-extrabold text-slate-900">US$ 313.55M</span>
+                    <span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-md flex items-center gap-0.5">
+                        <i class="fa-solid fa-arrow-up"></i> +119.06%
+                    </span>
+                </div>
+                <p class="text-xs text-slate-500 leading-relaxed">
+                    Loreto registra una recuperación sustancial de su valor comercial externo, alcanzando los US$ 313.55 millones en 2025, un incremento de 119.06% comparado con 2015 gracias al dinamismo de los despachos de crudo y refinados.
+                </p>
+            </div>
+
+            <!-- Card KPI 2: Estructura de Cartera -->
+            <div class="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm relative overflow-hidden group hover:border-loreto-500 transition-all duration-300">
+                <div class="absolute top-0 right-0 p-3 opacity-10 text-loreto-500 text-7xl group-hover:opacity-20 transition-all duration-300">
+                    <i class="fa-solid fa-boxes-stacked"></i>
+                </div>
+                <span class="text-xs font-bold uppercase tracking-wider text-slate-400 block mb-1">Estructura de Cartera</span>
+                <div class="flex items-baseline gap-2 mb-2">
+                    <span class="text-3xl font-extrabold text-slate-900">88.36%</span>
+                    <span class="text-xs font-bold text-loreto-700 bg-loreto-100 px-2 py-0.5 rounded-md">
+                        Productos Primarios
+                    </span>
+                </div>
+                <p class="text-xs text-slate-500 leading-relaxed">
+                    La economía presenta una alta concentración en productos primarios (88.36%), liderados por el petróleo crudo, seguidos de manufacturas basadas en recursos (11.57%) asociadas a la refinación local de derivados y maderas.
+                </p>
+            </div>
+
+            <!-- Card KPI 3: Posición de Complejidad -->
+            <div class="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm relative overflow-hidden group hover:border-slate-400 transition-all duration-300">
+                <div class="absolute top-0 right-0 p-3 opacity-10 text-slate-400 text-7xl group-hover:opacity-20 transition-all duration-300">
+                    <i class="fa-solid fa-medal"></i>
+                </div>
+                <span class="text-xs font-bold uppercase tracking-wider text-slate-400 block mb-1">Posición de Complejidad</span>
+                <div class="flex items-baseline gap-2 mb-2">
+                    <span class="text-3xl font-extrabold text-slate-900">Puesto 20º</span>
+                    <span class="text-xs font-medium text-slate-500">de 26 Regiones (2025)</span>
+                </div>
+                <p class="text-xs text-slate-500 leading-relaxed">
+                    Ubicado en el puesto 20º nacional con un puntaje ICER de 31.838. Loreto enfrenta el desafío de revertir la pérdida histórica de posiciones relativas y reestructurar su tejido tecnológico regional.
+                </p>
+            </div>
+        </section>
+
+        <!-- Sección 1: Ranking y Evolución del ICER Regional -->
+        <section class="bg-white rounded-2xl border border-slate-200/80 p-6 sm:p-8 shadow-sm space-y-6">
+            <div class="border-b border-slate-100 pb-5">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                    <div class="space-y-1">
+                        <span class="text-xs font-bold text-loreto-700 uppercase tracking-widest">INDICADOR ESTRUCTURAL</span>
+                        <h3 class="text-xl font-bold text-slate-900">1. Ranking y Evolución del ICER Regional</h3>
+                        <p class="text-xs text-slate-500">
+                            Evolución del Índice de Complejidad Exportadora Regional comparado contra el Top 5 nacional de clasificación (2025).
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-2 text-xs bg-slate-50 p-1.5 rounded-xl border border-slate-150">
+                        <span class="px-2.5 py-1 bg-white shadow-sm rounded-lg font-semibold text-slate-700">Comparativo: Posición Relativa</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gráfico y Tabla Comparativa -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                <!-- Gráfico de Líneas (Chart.js) -->
+                <div class="lg:col-span-7 bg-slate-50/50 rounded-2xl p-4 border border-slate-100 flex flex-col justify-between">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-xs font-semibold text-slate-600">Puntaje ICER Regional (2015-2025)</span>
+                        <span class="text-[10px] text-slate-400">Haz clic en la leyenda para ocultar/mostrar regiones</span>
+                    </div>
+                    <div class="relative h-[320px] w-full">
+                        <canvas id="chart-icer"></canvas>
+                    </div>
+                </div>
+
+                <!-- Tabla de Datos del Top 5 de Ranking -->
+                <div class="lg:col-span-5 flex flex-col justify-between space-y-4">
+                    <div class="bg-slate-50/50 rounded-2xl p-4 border border-slate-100 space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-semibold text-slate-700">Top 5 Nacional + Región de Análisis (2025)</span>
+                            <span class="text-[10px] bg-slate-200 text-slate-600 px-2 py-0.5 rounded-md font-mono">Ranking Nacional</span>
+                        </div>
+                        <div class="divide-y divide-slate-200/60 text-xs">
+                            <!-- Lima Metropolitana (1º) -->
+                            <div class="py-2 flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-slate-400"></span>
+                                    <span class="font-medium text-slate-700">Lima Metropolitana</span>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <span class="text-slate-500 font-mono">54.538</span>
+                                    <span class="w-12 text-center py-0.5 bg-slate-100 text-slate-600 rounded font-bold">1º</span>
+                                </div>
+                            </div>
+                            <!-- Callao (2º) -->
+                            <div class="py-2 flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-[#0ea5e9]"></span>
+                                    <span class="font-medium text-slate-700">Callao</span>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <span class="text-slate-500 font-mono">53.650</span>
+                                    <span class="w-12 text-center py-0.5 bg-slate-100 text-slate-600 rounded font-bold">2º</span>
+                                </div>
+                            </div>
+                            <!-- Lima Región (3º) -->
+                            <div class="py-2 flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-[#22c55e]"></span>
+                                    <span class="font-medium text-slate-700">Lima Región</span>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <span class="text-slate-500 font-mono">43.360</span>
+                                    <span class="w-12 text-center py-0.5 bg-slate-100 text-slate-600 rounded font-bold">3º</span>
+                                </div>
+                            </div>
+                            <!-- Arequipa (4º) -->
+                            <div class="py-2 flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-[#d97706]"></span>
+                                    <span class="font-medium text-slate-700">Arequipa</span>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <span class="text-slate-500 font-mono">41.367</span>
+                                    <span class="w-12 text-center py-0.5 bg-slate-100 text-slate-600 rounded font-bold">4º</span>
+                                </div>
+                            </div>
+                            <!-- La Libertad (5º) -->
+                            <div class="py-2 flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-[#f43f5e]"></span>
+                                    <span class="font-medium text-slate-700">La Libertad</span>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <span class="text-slate-500 font-mono">40.704</span>
+                                    <span class="w-12 text-center py-0.5 bg-slate-100 text-slate-600 rounded font-bold">5º</span>
+                                </div>
+                            </div>
+                            <!-- Loreto (Región de Análisis - 20º) -->
+                            <div class="py-2.5 flex items-center justify-between bg-loreto-100/55 -mx-4 px-4 border-y border-loreto-200/50">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-3 h-3 rounded-full bg-loreto-600 border border-white"></span>
+                                    <span class="font-bold text-slate-900">Loreto</span>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <span class="font-bold text-loreto-850 font-mono">31.838</span>
+                                    <span class="w-12 text-center py-0.5 bg-loreto-600 text-white rounded font-extrabold shadow-sm">20º</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-loreto-50 border border-loreto-100 rounded-2xl p-4 text-xs text-loreto-950 space-y-2">
+                        <p class="font-semibold flex items-center gap-1.5">
+                            <i class="fa-solid fa-circle-info text-loreto-600"></i> Comportamiento de Complejidad Económica:
+                        </p>
+                        <p class="leading-relaxed text-slate-600">
+                            Loreto registra una trayectoria de alta volatilidad estructural en los últimos 11 años. Ocupó una posición expectante en 2017 (Puesto 4° con ICER de 43.479), pero el agotamiento y fluctuaciones de la producción petrolera en los lotes nativos provocaron un descenso hasta el puesto 20° en 2025. Este comportamiento evidencia los riesgos econométricos del fenómeno de "enfermedad holandesa" regional, forzando la urgencia de diversificar capacidades hacia sectores no extractivos de alto valor biotecnológico.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 2: Diagnóstico de la Cartera Exportadora y Composición Tecnológica -->
+        <section class="bg-white rounded-2xl border border-slate-200/80 p-6 sm:p-8 shadow-sm space-y-8">
+            <div class="border-b border-slate-100 pb-5">
+                <span class="text-xs font-bold text-loreto-700 uppercase tracking-widest">DIAGNÓSTICO ESTRUCTURAL</span>
+                <h3 class="text-xl font-bold text-slate-900">2. Diagnóstico de la Cartera Exportadora y Composición Tecnológica</h3>
+                <p class="text-xs text-slate-500">
+                    Evolución del valor comercial exportado e identificación de la intensidad del valor científico/tecnológico incorporado en la canasta de Loreto.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Gráfico de Barras: Evolución de las Exportaciones -->
+                <div class="bg-slate-50/50 rounded-2xl p-4 border border-slate-100 flex flex-col justify-between">
+                    <span class="text-xs font-semibold text-slate-600 mb-3 block">Evolución del Valor FOB de Exportaciones (Millones US$)</span>
+                    <div class="relative h-[280px]">
+                        <canvas id="chart-exports"></canvas>
+                    </div>
+                </div>
+
+                <!-- Gráfico de Rosca: Estructura de Intensidad Tecnológica -->
+                <div class="bg-slate-50/50 rounded-2xl p-4 border border-slate-100 flex flex-col justify-between">
+                    <span class="text-xs font-semibold text-slate-600 mb-3 block">Composición por Contenido Tecnológico (2025)</span>
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
+                        <div class="md:col-span-7 relative h-[240px]">
+                            <canvas id="chart-tech"></canvas>
+                        </div>
+                        <div class="md:col-span-5 space-y-2.5 text-xs">
+                            <div class="flex items-center gap-1.5 justify-between">
+                                <span class="flex items-center gap-1.5 font-medium text-slate-600">
+                                    <span class="w-2.5 h-2.5 rounded bg-loreto-700"></span> Primarios
+                                </span>
+                                <span class="font-bold text-slate-900">88.36%</span>
+                            </div>
+                            <div class="flex items-center gap-1.5 justify-between">
+                                <span class="flex items-center gap-1.5 font-medium text-slate-600">
+                                    <span class="w-2.5 h-2.5 rounded bg-subselva-700"></span> Basadas en Rec.
+                                </span>
+                                <span class="font-bold text-slate-900">11.57%</span>
+                            </div>
+                            <div class="flex items-center gap-1.5 justify-between">
+                                <span class="flex items-center gap-1.5 font-medium text-slate-600">
+                                    <span class="w-2.5 h-2.5 rounded bg-subselva-500"></span> Mediana Tech
+                                </span>
+                                <span class="font-bold text-slate-900">0.05%</span>
+                            </div>
+                            <div class="flex items-center gap-1.5 justify-between">
+                                <span class="flex items-center gap-1.5 font-medium text-slate-600">
+                                    <span class="w-2.5 h-2.5 rounded bg-amber-400"></span> Alta Tecnología
+                                </span>
+                                <span class="font-bold text-slate-900">0.02%</span>
+                            </div>
+                            <div class="flex items-center gap-1.5 justify-between">
+                                <span class="flex items-center gap-1.5 font-medium text-slate-600">
+                                    <span class="w-2.5 h-2.5 rounded bg-slate-400"></span> Baja Tecnología
+                                </span>
+                                <span class="font-bold text-slate-900">0.00%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tabla de Productos de la Canasta Exportadora de Loreto -->
+            <div class="space-y-4 pt-4">
+                <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                    <span class="text-sm font-semibold text-slate-700 flex items-center gap-2">
+                        <i class="fa-solid fa-list-ol text-loreto-700"></i> Top 10 de Productos Más Exportados de Loreto (2025)
+                    </span>
+                    
+                    <!-- Buscador e Interactividad -->
+                    <div class="relative w-full sm:w-72">
+                        <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-400 pointer-events-none">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </span>
+                        <input type="text" id="table-search" placeholder="Buscar producto o código arancelario..." 
+                               class="w-full pl-9 pr-4 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs focus:ring-2 focus:ring-loreto-500 focus:border-loreto-500 focus:bg-white outline-none transition-all">
+                    </div>
+                </div>
+
+                <div class="overflow-x-auto border border-slate-200 rounded-2xl shadow-sm custom-scrollbar">
+                    <table class="w-full text-left border-collapse text-xs">
+                        <thead>
+                            <tr class="bg-slate-50 text-slate-600 border-b border-slate-200 font-semibold uppercase tracking-wider">
+                                <th class="p-4 w-12 text-center">N°</th>
+                                <th class="p-4 w-28">Código HS12</th>
+                                <th class="p-4">Producto Exportado</th>
+                                <th class="p-4 w-44">Nivel Tecnológico</th>
+                                <th class="p-4 w-36 text-right">Valor (Millones US$)</th>
+                                <th class="p-4 w-28 text-right">Participación</th>
+                            </tr>
+                        </thead>
+                        <tbody id="export-table-body" class="divide-y divide-slate-100">
+                            <!-- Fila 1 -->
+                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                <td class="p-4 text-center font-bold text-slate-400">1</td>
+                                <td class="p-4 font-mono text-slate-500">2709</td>
+                                <td class="p-4 font-semibold text-slate-900">Petróleo crudo</td>
+                                <td class="p-4">
+                                    <span class="px-2.5 py-1 bg-loreto-50 text-loreto-700 rounded-full font-medium text-[10px] border border-loreto-100">
+                                        Productos primarios
+                                    </span>
+                                </td>
+                                <td class="p-4 text-right font-mono font-semibold text-slate-900">271.83</td>
+                                <td class="p-4 text-right font-semibold text-loreto-700 bg-loreto-50/10">86.70%</td>
+                            </tr>
+                            <!-- Fila 2 -->
+                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                <td class="p-4 text-center font-bold text-slate-400">2</td>
+                                <td class="p-4 font-mono text-slate-500">2710</td>
+                                <td class="p-4 font-semibold text-slate-900">Refinados de petróleo y aceites usados (&gt;70%)</td>
+                                <td class="p-4">
+                                    <span class="px-2.5 py-1 bg-subselva-50 text-subselva-700 rounded-full font-medium text-[10px] border border-subselva-100">
+                                        Basadas en recursos
+                                    </span>
+                                </td>
+                                <td class="p-4 text-right font-mono font-semibold text-slate-900">35.02</td>
+                                <td class="p-4 text-right font-semibold text-subselva-700">11.17%</td>
+                            </tr>
+                            <!-- Fila 3 -->
+                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                <td class="p-4 text-center font-bold text-slate-400">3</td>
+                                <td class="p-4 font-mono text-slate-500">0301</td>
+                                <td class="p-4 font-semibold text-slate-900">Peces vivos (especies ornamentales/acuicultura)</td>
+                                <td class="p-4">
+                                    <span class="px-2.5 py-1 bg-loreto-50 text-loreto-700 rounded-full font-medium text-[10px] border border-loreto-100">
+                                        Productos primarios
+                                    </span>
+                                </td>
+                                <td class="p-4 text-right font-mono font-semibold text-slate-900">2.22</td>
+                                <td class="p-4 text-right font-semibold text-slate-600">0.71%</td>
+                            </tr>
+                            <!-- Fila 4 -->
+                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                <td class="p-4 text-center font-bold text-slate-400">4</td>
+                                <td class="p-4 font-mono text-slate-500">0106</td>
+                                <td class="p-4 font-semibold text-slate-900">Otros animales vivos (fauna silvestre autorizada)</td>
+                                <td class="p-4">
+                                    <span class="px-2.5 py-1 bg-loreto-50 text-loreto-700 rounded-full font-medium text-[10px] border border-loreto-100">
+                                        Productos primarios
+                                    </span>
+                                </td>
+                                <td class="p-4 text-right font-mono font-semibold text-slate-900">1.93</td>
+                                <td class="p-4 text-right font-semibold text-slate-600">0.62%</td>
+                            </tr>
+                            <!-- Fila 5 -->
+                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                <td class="p-4 text-center font-bold text-slate-400">5</td>
+                                <td class="p-4 font-mono text-slate-500">4412</td>
+                                <td class="p-4 font-semibold text-slate-900">Madera contrachapado, paneles chapados y laminada</td>
+                                <td class="p-4">
+                                    <span class="px-2.5 py-1 bg-subselva-50 text-subselva-700 rounded-full font-medium text-[10px] border border-subselva-100">
+                                        Basadas en recursos
+                                    </span>
+                                </td>
+                                <td class="p-4 text-right font-mono font-semibold text-slate-900">0.83</td>
+                                <td class="p-4 text-right font-semibold text-slate-500">0.26%</td>
+                            </tr>
+                            <!-- Fila 6 -->
+                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                <td class="p-4 text-center font-bold text-slate-400">6</td>
+                                <td class="p-4 font-mono text-slate-500">1801</td>
+                                <td class="p-4 font-semibold text-slate-900">Cacao en grano</td>
+                                <td class="p-4">
+                                    <span class="px-2.5 py-1 bg-loreto-50 text-loreto-700 rounded-full font-medium text-[10px] border border-loreto-100">
+                                        Productos primarios
+                                    </span>
+                                </td>
+                                <td class="p-4 text-right font-mono font-semibold text-slate-900">0.69</td>
+                                <td class="p-4 text-right font-semibold text-slate-500">0.22%</td>
+                            </tr>
+                            <!-- Fila 7 -->
+                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                <td class="p-4 text-center font-bold text-slate-400">7</td>
+                                <td class="p-4 font-mono text-slate-500">3301</td>
+                                <td class="p-4 font-semibold text-slate-900">Aceites esenciales y resinoides</td>
+                                <td class="p-4">
+                                    <span class="px-2.5 py-1 bg-subselva-50 text-subselva-700 rounded-full font-medium text-[10px] border border-subselva-100">
+                                        Basadas en recursos
+                                    </span>
+                                </td>
+                                <td class="p-4 text-right font-mono font-semibold text-slate-900">0.17</td>
+                                <td class="p-4 text-right font-semibold text-slate-500">0.05%</td>
+                            </tr>
+                            <!-- Fila 8 -->
+                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                <td class="p-4 text-center font-bold text-slate-400">8</td>
+                                <td class="p-4 font-mono text-slate-500">4407</td>
+                                <td class="p-4 font-semibold text-slate-900">Madera aserrada o desbastada longitudinalmente</td>
+                                <td class="p-4">
+                                    <span class="px-2.5 py-1 bg-subselva-50 text-subselva-700 rounded-full font-medium text-[10px] border border-subselva-100">
+                                        Basadas en recursos
+                                    </span>
+                                </td>
+                                <td class="p-4 text-right font-mono font-semibold text-slate-900">0.15</td>
+                                <td class="p-4 text-right font-semibold text-slate-500">0.05%</td>
+                            </tr>
+                            <!-- Fila 9 -->
+                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                <td class="p-4 text-center font-bold text-slate-400">9</td>
+                                <td class="p-4 font-mono text-slate-500">2501</td>
+                                <td class="p-4 font-semibold text-slate-900">Sal de mesa y cloruro de sodio</td>
+                                <td class="p-4">
+                                    <span class="px-2.5 py-1 bg-loreto-50 text-loreto-700 rounded-full font-medium text-[10px] border border-loreto-100">
+                                        Productos primarios
+                                    </span>
+                                </td>
+                                <td class="p-4 text-right font-mono font-semibold text-slate-900">0.15</td>
+                                <td class="p-4 text-right font-semibold text-slate-500">0.05%</td>
+                            </tr>
+                            <!-- Fila 10 -->
+                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                <td class="p-4 text-center font-bold text-slate-400">10</td>
+                                <td class="p-4 font-mono text-slate-500">3824</td>
+                                <td class="p-4 font-semibold text-slate-900">Aglutinantes para moldes y productos químicos n.c.p.</td>
+                                <td class="p-4">
+                                    <span class="px-2.5 py-1 bg-subselva-100 text-subselva-800 rounded-full font-medium text-[10px] border border-subselva-200">
+                                        Tecnología media
+                                    </span>
+                                </td>
+                                <td class="p-4 text-right font-mono font-semibold text-slate-900">0.10</td>
+                                <td class="p-4 text-right font-semibold text-slate-500">0.03%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Box Informativo: Análisis del Diagnóstico de Cartera de Loreto -->
+            <div class="mt-6 bg-emerald-50/40 border border-emerald-250/70 rounded-2xl p-5 text-xs text-slate-700 space-y-3 shadow-sm">
+                <p class="font-bold text-emerald-950 flex items-center gap-2 text-sm">
+                    <i class="fa-solid fa-square-poll-vertical text-loreto-600"></i> Análisis Diagnóstico de la Cartera Exportadora de Loreto
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-1 leading-relaxed">
+                    <div class="space-y-1.5">
+                        <span class="font-semibold text-emerald-900 block">1. La Extrema Dependencia del Crudo Fluvial:</span>
+                        <p class="text-slate-600">
+                            La canasta de Loreto se encuentra fuertemente concentrada en el binomio energético: petróleo crudo (<strong class="text-slate-950">86.70%</strong>) y refinados de petróleo (<strong class="text-slate-950">11.17%</strong>) representan juntos el 97.87% del valor exportado regional. Esta arquitectura expone a la región a severos choques de precios y a una vulnerabilidad macroeconómica estructural dependiente de la conectividad del Oleoducto Norperuano.
+                        </p>
+                    </div>
+                    <div class="space-y-1.5">
+                        <span class="font-semibold text-emerald-900 block">2. Bionegocios y Fauna como Sectores Germinales:</span>
+                        <p class="text-slate-600">
+                            Los peces vivos ornamentales (0.71%) y la fauna autorizada (0.62%) representan clústeres germinales de la biodiversidad loretana. Aunque su valor monetario es menor (US$ 4.15M conjuntos), poseen una densidad de mano de obra especializada local con alto potencial si se transiciona hacia cadenas logísticas frías avanzadas.
+                        </p>
+                    </div>
+                    <div class="space-y-1.5">
+                        <span class="font-semibold text-emerald-900 block">3. La Manufactura Maderera de Segunda Transformación:</span>
+                        <p class="text-slate-600">
+                            El sector forestal aparece a través del triplay/madera contrachapada (0.26%) y madera aserrada (0.05%). El salto en complejidad exige restringir los despachos de tablones primarios para consolidar plantas de tableros técnicos, resinas termoestables y elementos modulares de alta ingeniería ecológica maderera.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 3: Oportunidades de Diversificación y Espacio del Producto -->
+        <section class="bg-white rounded-2xl border border-slate-200/80 p-6 sm:p-8 shadow-sm space-y-8">
+            <div class="border-b border-slate-100 pb-5">
+                <span class="text-xs font-bold text-loreto-700 uppercase tracking-widest">ALGORITMO DE DIVERSIFICACIÓN REAL</span>
+                <h3 class="text-xl font-bold text-slate-900">3. Oportunidades de Diversificación y Espacio del Producto</h3>
+                <p class="text-xs text-slate-500">
+                    Análisis de proximidad estructural: Hacia dónde puede migrar de manera inteligente la economía de Loreto apalancándose en sus capacidades preexistentes.
+                </p>
+            </div>
+
+            <!-- Simulador de Conectividad de Red con Datos Reales para Loreto -->
+            <div class="bg-slate-900 text-white rounded-2xl p-6 shadow-md border border-slate-800 space-y-6">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                    <div class="space-y-1">
+                        <span class="text-[10px] font-bold text-loreto-400 uppercase tracking-widest">HERRAMIENTA DE PLANIFICACIÓN ECONÓMICA</span>
+                        <h4 class="text-base font-bold flex items-center gap-2 text-loreto-200">
+                            <i class="fa-solid fa-microchip text-loreto-400"></i> Simulador de Conectividad de Red de Loreto (Filtro por Producto Complejo)
+                        </h4>
+                    </div>
+                    <!-- Selector de Industrias Reales -->
+                    <select id="industry-selector" class="bg-slate-800 border border-slate-700 text-slate-200 text-xs rounded-xl px-3.5 py-2.5 outline-none focus:ring-2 focus:ring-loreto-500 transition-all">
+                        <option value="handtools">HS 8467 - Herramientas de mano neumáticas, hidráulicas o motor incorporado (Soporte Forestal)</option>
+                        <option value="resistors">HS 8533 - Resistencias eléctricas, reóstatos y potenciómetros (Infraestructura de Control)</option>
+                        <option value="screws">HS 7318 - Tornillos, pernos, tuercas y pasadores de hierro o acero (Astilleros Fluviales)</option>
+                    </select>
+                </div>
+
+                <!-- Outputs del Simulador -->
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-6 pt-2">
+                    <div class="bg-slate-800/50 rounded-xl p-4 border border-slate-700/50 space-y-2">
+                        <span class="text-[10px] text-slate-400 font-bold uppercase tracking-wider block">Densidad de Capacidades</span>
+                        <div class="flex items-baseline gap-2">
+                            <span id="sim-density" class="text-2xl font-extrabold text-loreto-400">0.0334%</span>
+                        </div>
+                        <p class="text-[11px] text-slate-300">Medida empírica de cercanía a la canasta de capacidades de la región.</p>
+                    </div>
+
+                    <div class="bg-slate-800/50 rounded-xl p-4 border border-slate-700/50 space-y-2">
+                        <span class="text-[10px] text-slate-400 font-bold uppercase tracking-wider block">Distancia (Distancia = 1 - Densidad)</span>
+                        <div class="flex items-baseline gap-2">
+                            <span id="sim-distance" class="text-2xl font-extrabold text-rose-400">99.6664%</span>
+                        </div>
+                        <p class="text-[11px] text-slate-300">Brecha técnica restante para el desarrollo autónomo de la industria.</p>
+                    </div>
+
+                    <div class="bg-slate-800/50 rounded-xl p-4 border border-slate-700/50 space-y-2">
+                        <span class="text-[10px] text-slate-400 font-bold uppercase tracking-wider block">Complejidad del Producto (IPC)</span>
+                        <div class="flex items-baseline gap-2">
+                            <span id="sim-pci" class="text-2xl font-extrabold text-subselva-400">+1.087</span>
+                        </div>
+                        <p class="text-[11px] text-slate-300">Mide el nivel de sofisticación y exclusividad técnica global del bien propuesto.</p>
+                    </div>
+
+                    <div class="bg-slate-800/50 rounded-xl p-4 border border-slate-700/50 space-y-2">
+                        <span class="text-[10px] text-slate-400 font-bold uppercase tracking-wider block">Viabilidad de Transición</span>
+                        <div class="flex items-baseline gap-2">
+                            <span id="sim-viability" class="text-2xl font-extrabold text-emerald-400">Alta</span>
+                        </div>
+                        <p class="text-[11px] text-slate-300">Nivel de factibilidad según el mapa actual de encadenamiento de Loreto.</p>
+                    </div>
+                </div>
+
+                <!-- Detalle del Vector Seleccionado -->
+                <div class="bg-slate-950/80 rounded-xl p-4 border border-slate-800/80 text-xs">
+                    <div class="flex items-start gap-3">
+                        <span class="text-2xl text-loreto-400"><i class="fa-solid fa-quote-left"></i></span>
+                        <div class="space-y-1">
+                            <span class="font-semibold text-slate-300 block">Sustento del Algoritmo del Espacio del Producto para Loreto:</span>
+                            <p id="sim-description" class="text-slate-400 leading-relaxed">
+                                Escalamiento hacia la metalmecánica forestal ligera que da soporte técnico a las operaciones de aserrío y carpintería en Iquitos. Desarrollar herramientas motorizadas portátiles permite absorber el conocimiento básico de mantenimiento de motores térmicos fluviales y de aserraderos locales, promoviendo mayor resiliencia industrial.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Box Informativo: Cómo leer el simulador -->
+                <div class="bg-slate-800/30 border border-slate-700/50 rounded-xl p-4 text-xs text-slate-300 space-y-2">
+                    <p class="font-semibold text-white flex items-center gap-1.5 font-mono">
+                        <i class="fa-solid fa-circle-question text-loreto-400"></i> ENTENDIENDO LOS INDICADORES MÉTRICOS:
+                    </p>
+                    <ul class="list-disc list-inside space-y-1 text-slate-400 pl-1">
+                        <li><strong>Densidad de Capacidades:</strong> Mide la dotación preexistente de capacidades requeridas en el clúster regional para fabricar el nuevo producto. En Loreto los valores son bajos debido al aislamiento manufacturero, lo que incrementa la distancia.</li>
+                        <li><strong>Distancia:</strong> Mide la brecha tecnológica y de conocimiento que separa a la canasta actual de la requerida (Distancia = 1 - Densidad).</li>
+                        <li><strong>IPC (Índice de Complejidad del Producto):</strong> Cuantifica la sofisticación tecnológica y la exclusividad de conocimientos necesarios a nivel global para producir dicho bien.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Matriz de Viabilidad de Diversificación Completa y Buscable -->
+            <div class="space-y-4">
+                <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                    <span class="text-sm font-semibold text-slate-700 flex items-center gap-2">
+                        <i class="fa-solid fa-diagram-project text-loreto-700"></i> Matriz Completa de Oportunidades para Loreto (Filtro Dinámico)
+                    </span>
+                    
+                    <div class="flex flex-wrap items-center gap-2 w-full sm:w-auto">
+                        <!-- Filtro de Diversificación -->
+                        <select id="matrix-filter" class="bg-white border border-slate-200 rounded-xl px-3 py-2 text-xs font-semibold text-slate-700 outline-none focus:ring-2 focus:ring-loreto-500">
+                            <option value="all">Todas las viabilidades</option>
+                            <option value="Muy alta">Muy alta</option>
+                            <option value="Alta">Alta</option>
+                            <option value="Baja">Baja</option>
+                            <option value="Muy baja">Muy baja</option>
+                        </select>
+                        <!-- Buscador Interno de la Matriz -->
+                        <div class="relative w-full sm:w-64">
+                            <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-400 pointer-events-none">
+                                <i class="fa-solid fa-magnifying-glass text-xs"></i>
+                            </span>
+                            <input type="text" id="matrix-search" placeholder="Buscar producto o arancel..." 
+                                   class="w-full pl-8 pr-4 py-2 bg-white border border-slate-200 rounded-xl text-xs focus:ring-2 focus:ring-loreto-500 outline-none transition-all">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="overflow-x-auto border border-slate-200 rounded-2xl shadow-sm custom-scrollbar max-h-[500px]">
+                    <table class="w-full text-left border-collapse text-xs">
+                        <thead class="sticky top-0 bg-slate-50 z-10 border-b border-slate-200">
+                            <tr class="text-slate-600 font-semibold uppercase tracking-wider">
+                                <th class="p-4 w-28">Código HS12</th>
+                                <th class="p-4">Producto Propuesto</th>
+                                <th class="p-4 w-28 text-center">IPC</th>
+                                <th class="p-4 w-28 text-center">Densidad Real</th>
+                                <th class="p-4 w-28 text-center">Distancia Real</th>
+                                <th class="p-4 w-32 text-center">Viabilidad</th>
+                            </tr>
+                        </thead>
+                        <tbody id="matrix-table-body" class="divide-y divide-slate-100 bg-white">
+                            <!-- Inyectado dinámicamente con JS a partir de tu base de datos real de Loreto -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Box Informativo: Cómo leer la Matriz de Viabilidad -->
+                <div class="bg-slate-50 border border-slate-200 rounded-2xl p-4 text-xs text-slate-600 space-y-2">
+                    <p class="font-semibold text-slate-800 flex items-center gap-1.5">
+                        <i class="fa-solid fa-circle-question text-loreto-700"></i> ¿Cómo leer la Matriz de Oportunidades de Diversificación Real?
+                    </p>
+                    <ul class="list-disc list-inside space-y-1 text-slate-500 pl-1">
+                        <li><strong>Código HS12:</strong> Identifica el arancel según el Sistema Armonizado de designación de mercancías de la subpartida nacional.</li>
+                        <li><strong>IPC:</strong> El Índice de Complejidad del Producto indica qué tan complejo es el conocimiento productivo subyacente que requiere.</li>
+                        <li><strong>Densidad Real y Distancia Real (%):</strong> Los indicadores reales calculados matemáticamente para Loreto, que miden la factibilidad y la brecha técnica regional.</li>
+                        <li><strong>Viabilidad:</strong> Clasificación probabilística, determinada por la aglomeración de capacidades ya existentes en Loreto.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 px-4 border-t border-slate-800 mt-20">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="space-y-2">
+                <div class="flex items-center gap-2 text-white">
+                    <span class="p-1.5 bg-loreto-600 rounded text-xs"><i class="fa-solid fa-chart-pie text-slate-950"></i></span>
+                    <span class="font-bold tracking-wider text-xs">CONSEJO NACIONAL DE COMPETITIVIDAD Y FORMALIZACIÓN - CNCF</span>
+                </div>
+            </div>
+            
+            <div class="flex flex-col items-end gap-2 text-right">
+                <span class="text-[10px] bg-slate-800 px-2.5 py-1 rounded text-slate-500 font-mono">Monitoreo Territorial de Complejidad Económica - Loreto</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts y Gráficos -->
+    <script>
+        // Inicialización de variables de gráficos
+        let chartIcerInstance = null;
+        let chartExportsInstance = null;
+        let chartTechInstance = null;
+
+        // Base de Datos Real para Loreto basada exactamente en "3. Matriz de oportunidades de diversificacion 2025_DB.xlsx"
+        const loretoRealDatabase = [{"HS12": "3913", "PRODUCTO": "Polímeros naturales y polímeros naturales modificados primarios", "IPC": 0.624, "Densidad": 0.006674405074409808, "Distancia": 0.9933255949255901, "Diversificacion": "Muy alta"}, {"HS12": "8803", "PRODUCTO": "Partes de globos, aeronaves, helicópteros y satélites", "IPC": 0.128, "Densidad": 0.009083402692018518, "Distancia": 0.9909165973079814, "Diversificacion": "Muy alta"}, {"HS12": "3307", "PRODUCTO": "Desodorantes corporales, preparaciones de afeitar y ambientadores", "IPC": 0.125, "Densidad": 0.00830861408594277, "Distancia": 0.9916913859140573, "Diversificacion": "Muy alta"}, {"HS12": "8467", "PRODUCTO": "Herramientas de mano neumáticas, hidráulicas o con motor incorporado", "IPC": 1.087, "Densidad": 0.003335607820402473, "Distancia": 0.9966643921795976, "Diversificacion": "Alta"}, {"HS12": "8533", "PRODUCTO": "Resistencias eléctricas (incluye reóstatos y potenciómetros)", "IPC": 1.086, "Densidad": 0.006421333284907736, "Distancia": 0.9935786667150923, "Diversificacion": "Alta"}, {"HS12": "7318", "PRODUCTO": "Tornillos, pernos, tuercas, remaches y pasadores de hierro o acero", "IPC": 0.923, "Densidad": 0.004382218572361975, "Distancia": 0.995617781427638, "Diversificacion": "Alta"}, {"HS12": "8428", "PRODUCTO": "Ascensores, fajas transportadoras y escaleras", "IPC": 0.859, "Densidad": 0.006238158431763383, "Distancia": 0.9937618415682367, "Diversificacion": "Alta"}, {"HS12": "4010", "PRODUCTO": "Correas de transmisión o transportadoras de caucho", "IPC": 0.819, "Densidad": 0.005308119173817158, "Distancia": 0.9946918808261829, "Diversificacion": "Alta"}, {"HS12": "3919", "PRODUCTO": "Cintas y láminas autoadhesivas de plástico", "IPC": 0.768, "Densidad": 0.004031328654698973, "Distancia": 0.995968671345301, "Diversificacion": "Alta"}, {"HS12": "7020", "PRODUCTO": "Otras manufacturas de vidrio", "IPC": 0.689, "Densidad": 0.004764179676248296, "Distancia": 0.9952358203237517, "Diversificacion": "Alta"}, {"HS12": "8536", "PRODUCTO": "Aparatos de conmutación, protección o conexión eléctrica (≤ 1000 V)", "IPC": 0.689, "Densidad": 0.005552477068370725, "Distancia": 0.9944475229316293, "Diversificacion": "Alta"}, {"HS12": "4016", "PRODUCTO": "Otras manufacturas de caucho vulcanizado", "IPC": 0.674, "Densidad": 0.006008619305184829, "Distancia": 0.9939913806948152, "Diversificacion": "Alta"}, {"HS12": "7307", "PRODUCTO": "Conexiones y accesorios para tubos de acero", "IPC": 0.57, "Densidad": 0.005267563177042844, "Distancia": 0.9947324368229572, "Diversificacion": "Alta"}, {"HS12": "7007", "PRODUCTO": "Vidrio de seguridad constituido por vidrio templado o laminado", "IPC": 0.509, "Densidad": 0.005232030657071109, "Distancia": 0.9947679693429289, "Diversificacion": "Alta"}, {"HS12": "3926", "PRODUCTO": "Otras manufacturas de plástico", "IPC": 0.404, "Densidad": 0.005486732397447341, "Distancia": 0.9945132676025527, "Diversificacion": "Alta"}, {"HS12": "3824", "PRODUCTO": "Aglutinantes para moldes de fundición y productos químicos n.c.p.", "IPC": 0.167, "Densidad": 0.005504099307375667, "Distancia": 0.9944959006926243, "Diversificacion": "Alta"}, {"HS12": "6001", "PRODUCTO": "Tejidos de punto de pelo largo, buclados o de felpa", "IPC": 0.109, "Densidad": 0.005599335960652745, "Distancia": 0.9944006640393472, "Diversificacion": "Alta"}, {"HS12": "5207", "PRODUCTO": "Hilo de algodón acondicionado para la venta al por menor", "IPC": 0.104, "Densidad": 0.006325771104706505, "Distancia": 0.9936742288952934, "Diversificacion": "Alta"}, {"HS12": "7314", "PRODUCTO": "Telas mecánicas, mallas y cercas de alambre de hierro o acero", "IPC": -0.102, "Densidad": 0.00741780121309193, "Distancia": 0.9925821987869081, "Diversificacion": "Baja"}, {"HS12": "8544", "PRODUCTO": "Cables eléctricos y cables de fibra óptica", "IPC": -0.25, "Densidad": 0.009564324784042975, "Distancia": 0.990435675215957, "Diversificacion": "Baja"}, {"HS12": "4418", "PRODUCTO": "Carpintería para construcción (paneles/pisos)", "IPC": -0.294, "Densidad": 0.01010962545811672, "Distancia": 0.9898903745418833, "Diversificacion": "Baja"}, {"HS12": "7317", "PRODUCTO": "Clavos, grapas y tachuelas de acero", "IPC": -0.469, "Densidad": 0.009298330875828603, "Distancia": 0.9907016691241713, "Diversificacion": "Baja"}, {"HS12": "0811", "PRODUCTO": "Frutas y frutos secos congelados", "IPC": -0.478, "Densidad": 0.01140584018401335, "Distancia": 0.9885941598159866, "Diversificacion": "Baja"}, {"HS12": "2007", "PRODUCTO": "Mermeladas, jaleas y purés de frutas", "IPC": -0.567, "Densidad": 0.01152862024260143, "Distancia": 0.9884713797573985, "Diversificacion": "Baja"}, {"HS12": "2403", "PRODUCTO": "Tabaco manufacturado y extractos", "IPC": -0.592, "Densidad": 0.007812655245551612, "Distancia": 0.9921873447544484, "Diversificacion": "Baja"}, {"HS12": "0604", "PRODUCTO": "Follaje, ramas, musgos y líquenes para ramos u ornamentos", "IPC": -0.747, "Densidad": 0.01185318467457929, "Distancia": 0.9881468153254207, "Diversificacion": "Baja"}, {"HS12": "0602", "PRODUCTO": "Plantas vivas, esquejes, injertos y micelio de hongos (setas)", "IPC": -0.759, "Densidad": 0.008791061846710163, "Distancia": 0.9912089381532898, "Diversificacion": "Baja"}, {"HS12": "1302", "PRODUCTO": "Savias, pectinas y espesantes vegetales", "IPC": -0.775, "Densidad": 0.008996391033669806, "Distancia": 0.9910036089663302, "Diversificacion": "Baja"}, {"HS12": "0511", "PRODUCTO": "Otros productos residuales de origen animal", "IPC": -0.802, "Densidad": 0.01487839421358505, "Distancia": 0.9851216057864149, "Diversificacion": "Baja"}, {"HS12": "4407", "PRODUCTO": "Madera aserrada o desbastada longitudinalmente (espesor > 6 mm)", "IPC": -1.555, "Densidad": 0.01644259357885125, "Distancia": 0.9835574064211487, "Diversificacion": "Baja"}, {"HS12": "0904", "PRODUCTO": "Pimienta y ajíes secos/molidos (Capsicum)", "IPC": -1.706, "Densidad": 0.01535752165482343, "Distancia": 0.9846424783451766, "Diversificacion": "Baja"}, {"HS12": "1211", "PRODUCTO": "Plantas y partes de plantas para perfumería, farmacia o insecticidas", "IPC": -1.97, "Densidad": 0.01468764604350518, "Distancia": 0.9853123539564949, "Diversificacion": "Baja"}, {"HS12": "0306", "PRODUCTO": "Crustáceos (langostinos/cangrejos)", "IPC": -2.199, "Densidad": 0.01901051731106887, "Distancia": 0.9809894826889312, "Diversificacion": "Baja"}, {"HS12": "5705", "PRODUCTO": "Otros revestimientos textiles para suelos y alfombras", "IPC": -0.012, "Densidad": 0.005514501020863158, "Distancia": 0.9944854989791369, "Diversificacion": "Muy baja"}, {"HS12": "9206", "PRODUCTO": "Instrumentos musicales de percusión (tambores, platillos, xilófonos)", "IPC": -0.517, "Densidad": 0.005670207217493032, "Distancia": 0.994329792782507, "Diversificacion": "Muy baja"}];
+
+        // Dataset ICER histórico 2015-2025 (Top 5 nacional de 2025 + Loreto)
+        const icerData = {
+            years: ['2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025'],
+            regions: {
+                limaMetropolitana: [53.653, 52.751, 53.813, 53.023, 53.646, 52.861, 54.394, 54.231, 54.349, 54.688, 54.538],
+                callao: [52.842, 51.736, 51.278, 50.448, 52.026, 52.092, 51.254, 53.074, 51.847, 52.188, 53.65],
+                limaRegion: [38.146, 38.469, 41.408, 42.404, 43.85, 41.64, 42.373, 43.857, 44.421, 45.138, 43.36],
+                arequipa: [45.285, 46.672, 44.505, 44.855, 45.87, 45.517, 43.913, 44.356, 44.516, 43.475, 41.367],
+                laLibertad: [40.751, 39.624, 39.222, 38.402, 40.465, 41.255, 38.905, 39.909, 38.74, 40.997, 40.704],
+                loreto: [39.583, 38.978, 43.479, 32.298, 31.361, 29.86, 35.857, 27.912, 31.147, 30.052, 31.838]
+            }
+        };
+
+        // Serie de Exportaciones Totales de Loreto (Millones US$)
+        const exportsData = {
+            years: ['2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025'],
+            values: [143.13, 110.45, 94.88, 125.60, 164.33, 112.50, 184.22, 224.55, 210.12, 280.45, 313.55]
+        };
+
+        // Dataset del Simulador de Conectividad de Red para Loreto
+        const simulatorData = {
+            handtools: {
+                density: '0.0334%',
+                distance: '99.6664%',
+                pci: '+1.087',
+                viability: 'Alta',
+                description: 'Escalamiento hacia la metalmecánica forestal ligera que da soporte técnico a las operaciones de aserrío y carpintería en Iquitos. Desarrollar herramientas motorizadas portátiles permite absorber el conocimiento básico de mantenimiento de motores térmicos fluviales y de aserraderos locales, promoviendo mayor resiliencia industrial.'
+            },
+            resistors: {
+                density: '0.0624%',
+                distance: '99.3579%',
+                pci: '+1.086',
+                viability: 'Alta',
+                description: 'Incursión estratégica en componentes electrónicos básicos para la automatización de tableros de control y bombas hidráulicas fluviales. Aprovecha la conectividad y demanda de mantenimiento eléctrico en la red energética aislada de la capital regional, permitiendo el despliegue de conocimientos en soldadura electrónica de precisión.'
+            },
+            screws: {
+                density: '0.0438%',
+                distance: '99.5618%',
+                pci: '+0.923',
+                viability: 'Alta',
+                description: 'Clave de encadenamiento con la industria de astilleros y metalmecánica de transporte fluvial que opera activamente en Loreto. Producir sujeciones de precisión metálicas bajo normas técnicas internacionales abastece de forma autónoma a la reparación de barcazas, motonaves y estructuras de madera locales, sustituyendo importaciones extra-regionales.'
+            }
+        };
+
+        // Inicialización de Gráficos al cargar la ventana
+        window.onload = function() {
+            initCharts();
+            setupInteractiveEvents();
+            renderMatrixTable(loretoRealDatabase);
+        };
+
+        function initCharts() {
+            // 1. Gráfico de Evolución del ICER (Líneas)
+            const ctxIcer = document.getElementById('chart-icer').getContext('2d');
+            chartIcerInstance = new Chart(ctxIcer, {
+                type: 'line',
+                data: {
+                    labels: icerData.years,
+                    datasets: [
+                        {
+                            label: 'Loreto',
+                            data: icerData.regions.loreto,
+                            borderColor: '#16a34a',
+                            backgroundColor: 'rgba(22,163,74,0.12)',
+                            borderWidth: 4,
+                            tension: 0.35,
+                            pointRadius: 4,
+                            pointBackgroundColor: '#16a34a',
+                            fill: true
+                        },
+                        {
+                            label: 'Lima Metropolitana',
+                            data: icerData.regions.limaMetropolitana,
+                            borderColor: '#64748b',
+                            backgroundColor: 'transparent',
+                            borderWidth: 2,
+                            tension: 0.35,
+                            pointRadius: 1,
+                            borderDash: [4, 3]
+                        },
+                        {
+                            label: 'Callao',
+                            data: icerData.regions.callao,
+                            borderColor: '#0ea5e9',
+                            backgroundColor: 'transparent',
+                            borderWidth: 2,
+                            tension: 0.35,
+                            pointRadius: 1,
+                            borderDash: [4, 3]
+                        },
+                        {
+                            label: 'Lima Región',
+                            data: icerData.regions.limaRegion,
+                            borderColor: '#8b5cf6',
+                            backgroundColor: 'transparent',
+                            borderWidth: 2,
+                            tension: 0.35,
+                            pointRadius: 1,
+                            borderDash: [4, 3]
+                        },
+                        {
+                            label: 'Arequipa',
+                            data: icerData.regions.arequipa,
+                            borderColor: '#d97706',
+                            backgroundColor: 'transparent',
+                            borderWidth: 2,
+                            tension: 0.35,
+                            pointRadius: 1,
+                            borderDash: [4, 3]
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    interaction: { mode: 'index', intersect: false },
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                boxWidth: 10,
+                                font: { size: 10 },
+                                usePointStyle: true
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return ` ${context.dataset.label}: ${context.raw.toFixed(3)}`;
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            grid: { color: '#f1f5f9' },
+                            ticks: { font: { size: 10 } }
+                        },
+                        x: {
+                            grid: { display: false },
+                            ticks: { font: { size: 10 } }
+                        }
+                    }
+                }
+            });
+
+            // 2. Gráfico de Barras - Evolución de Exportaciones (Loreto)
+            const ctxExports = document.getElementById('chart-exports').getContext('2d');
+            chartExportsInstance = new Chart(ctxExports, {
+                type: 'bar',
+                data: {
+                    labels: exportsData.years,
+                    datasets: [{
+                        label: 'Exportaciones FOB (Millones US$)',
+                        data: exportsData.values,
+                        backgroundColor: '#15803d',
+                        borderRadius: 6,
+                        maxBarThickness: 34
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return ` US$ ${context.raw.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})}M`;
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            grid: { color: '#f1f5f9' },
+                            ticks: { font: { size: 10 } }
+                        },
+                        x: {
+                            grid: { display: false },
+                            ticks: { font: { size: 10 } }
+                        }
+                    }
+                }
+            });
+
+            // 3. Gráfico de Rosca - Intensidad Tecnológica (Loreto)
+            const ctxTech = document.getElementById('chart-tech').getContext('2d');
+            chartTechInstance = new Chart(ctxTech, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Primarios', 'Basadas en Recursos', 'Mediana Tecnología', 'Alta Tecnología', 'Baja Tecnología'],
+                    datasets: [{
+                        data: [88.36, 11.57, 0.05, 0.02, 0.00],
+                        backgroundColor: [
+                            '#15803d', // Verde selva para crudo primario
+                            '#ca8a04', // Oro refinados y maderas
+                            '#eab308', // Amarillo tech media
+                            '#ef4444', // Rojo alta tecnología
+                            '#94a3b8'  // Gris baja tecnología
+                        ],
+                        borderWidth: 2,
+                        borderColor: '#ffffff'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return ` ${context.label}: ${context.raw.toFixed(2)}%`;
+                                }
+                            }
+                        }
+                    },
+                    cutout: '70%'
+                }
+            });
+        }
+
+        // Renderizado Dinámico de la Matriz de Viabilidad Real de Loreto
+        function renderMatrixTable(dataset) {
+            const tbody = document.getElementById("matrix-table-body");
+            tbody.innerHTML = "";
+
+            dataset.forEach(row => {
+                const densPct = (row.Densidad * 100).toFixed(4) + "%";
+                const distPct = (row.Distancia * 100).toFixed(4) + "%";
+                
+                let badgeClass = "";
+                const checkDiv = String(row.Diversificacion).toLowerCase().trim();
+                if (checkDiv === "muy alta") {
+                    badgeClass = "bg-emerald-50 text-emerald-700 border-emerald-200 font-bold";
+                } else if (checkDiv === "alta") {
+                    badgeClass = "bg-blue-50 text-blue-700 border-blue-200 font-bold";
+                } else if (checkDiv === "baja") {
+                    badgeClass = "bg-amber-50 text-amber-700 border-amber-200 font-medium";
+                } else {
+                    badgeClass = "bg-rose-50 text-rose-700 border-rose-200 font-light";
+                }
+
+                const tr = document.createElement("tr");
+                tr.className = "hover:bg-slate-50/70 transition-colors";
+                tr.innerHTML = `
+                    <td class="p-4 font-mono text-slate-500 font-semibold">${row.HS12}</td>
+                    <td class="p-4 font-bold text-slate-900">${row.PRODUCTO}</td>
+                    <td class="p-4 text-center font-semibold text-slate-600">${row.IPC.toFixed(3)}</td>
+                    <td class="p-4 text-center font-bold text-emerald-800">${densPct}</td>
+                    <td class="p-4 text-center text-slate-500 font-medium">${distPct}</td>
+                    <td class="p-4 text-center">
+                        <span class="px-2.5 py-1 border text-[10px] rounded-full ${badgeClass}">
+                            ${row.Diversificacion}
+                        </span>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        // Configuración de eventos interactivos (búsqueda y selector del simulador)
+        function setupInteractiveEvents() {
+            // Buscador en Tiempo Real de la tabla del Top 10 de exportaciones
+            const searchInput = document.getElementById('table-search');
+            if (searchInput) {
+                searchInput.addEventListener('input', function(e) {
+                    const term = e.target.value.toLowerCase().trim();
+                    const rows = document.querySelectorAll('#export-table-body tr');
+                    
+                    rows.forEach(row => {
+                        const code = row.cells[1].textContent.toLowerCase();
+                        const product = row.cells[2].textContent.toLowerCase();
+                        const tech = row.cells[3].textContent.toLowerCase();
+                        
+                        if (code.includes(term) || product.includes(term) || tech.includes(term)) {
+                            row.style.display = '';
+                        } else {
+                            row.style.display = 'none';
+                        }
+                    });
+                });
+            }
+
+            // Filtrado e interactividad de la Matriz de Oportunidades de Loreto (Sección 3)
+            const matrixSearch = document.getElementById("matrix-search");
+            const matrixFilter = document.getElementById("matrix-filter");
+
+            function handleMatrixFilter() {
+                const searchVal = matrixSearch.value.toLowerCase().trim();
+                const filterVal = matrixFilter.value;
+
+                const filtered = loretoRealDatabase.filter(row => {
+                    const matchesSearch = row.PRODUCTO.toLowerCase().includes(searchVal) || row.HS12.toLowerCase().includes(searchVal);
+                    const matchesFilter = filterVal === "all" || row.Diversificacion.toLowerCase() === filterVal.toLowerCase();
+                    return matchesSearch && matchesFilter;
+                });
+
+                renderMatrixTable(filtered);
+            }
+
+            matrixSearch.addEventListener("input", handleMatrixFilter);
+            matrixFilter.addEventListener("change", handleMatrixFilter);
+
+            // Simulador de Conectividad de Red Interactivo
+            const selector = document.getElementById('industry-selector');
+            if (selector) {
+                selector.addEventListener('change', function(e) {
+                    const val = e.target.value;
+                    const data = simulatorData[val];
+                    
+                    if (data) {
+                        const densityEl = document.getElementById('sim-density');
+                        const distanceEl = document.getElementById('sim-distance');
+                        const pciEl = document.getElementById('sim-pci');
+                        const viabilityEl = document.getElementById('sim-viability');
+                        
+                        // Actualizar UI
+                        densityEl.textContent = data.density;
+                        distanceEl.textContent = data.distance;
+                        pciEl.textContent = data.pci;
+                        viabilityEl.textContent = data.viability;
+                        
+                        document.getElementById('sim-description').textContent = data.description;
+                    }
+                });
+            }
+        }
+    </script>
+</body>
+</html>
